@@ -1,1 +1,0 @@
-# yeijinchoi.github.io

@@ -47,7 +47,7 @@ $(document).ready(function() {
            wheel_data = c.originalEvent.wheelDelta;
            if (wheel_data > 0 && count > 0 && scrollEvent == false) {
             c.preventDefault();
-            
+
              scrollEvent = true;
              count --;
              wheel_count();

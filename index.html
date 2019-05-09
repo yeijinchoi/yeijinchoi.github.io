@@ -30,7 +30,6 @@
       /*background-color: #ff3a5a;*/
       width: 100%;
       z-index: 100;
-      opacity: 0.9;
     }
     nav ul{
       width: 70%;
@@ -76,6 +75,8 @@
     div span:hover{
       background-color: #ff8c7d;
     }
+
+
     #video1{
       position: absolute;
       top: 50%;
@@ -136,7 +137,7 @@
       display: block;
       width: 20px;
       height: 1px;
-      background: #ffa6a6;
+      background: rgb(255, 61, 61);
       margin: 4px 0;
       border-radius: 10px;
     }
@@ -165,16 +166,34 @@
       font-size: 30px;
       list-style: none;
       margin-left: 47%;
-      margin-top: 24%;
+      margin-top: 20%;
     }
     #fullmenu ul li a {
       text-decoration:none;
-      color: white;
+      color: rgb(255, 61, 61);
     }
     #fullmenu ul li a:hover {
       text-decoration:none;
-      color: rgb(255, 61, 61);
+      color: white;
     }
+    #fullmenu ul li img {
+      width: 25px;
+      height: 25px;
+    }
+    .bt001 {
+      position: absolute;
+      top: 80%;
+      left: 90%;
+      width: 60px;
+      height: 60px;
+      border-radius: 70%;
+      background-color: #ff3a5a;
+      z-index: 999;
+
+
+    }
+
+
 
   </style>
 </head>
@@ -202,34 +221,48 @@
     <span class="sub_bt"></span>
   </div>
   <header>
-    <video id="video1" src="shop.mp4" autoplay loop muted poster="poster1.jpg">
+    <video id="video1" src="shop.mp4" autoplay loop muted poster="poster.jpg">
     </video>
+    <a href="https://www.youtube.com/watch?v=3ZiNFem3vrE" target="_blank">
+    <div class="bt001"></div></a>
   </header>
   <div id="fullmenu">
     <ul>
+      <li>
+        <img src="cursor.png" alt="">
+      </li><br>
       <li><a href="#">Project</a></li>
       <li><a href="#">Loonaverse</a></li>
       <li><a href="#">Unit</a></li>
       <li><a href="#">Member</a></li>
     </ul>
   </div>
-
   <section>
-    <video id="video2" src="basic1.mp4" autoplay loop muted poster="poster2.jpg">
+    <video id="video2" src="basic1.mp4" autoplay loop muted poster="poster.jpg">
           </video>
+          <a href="https://www.youtube.com/watch?v=4K4b9Z9lSwc&t=36s" target="_blank"><div class="bt001"></div></a>
     </section>
 
     <article>
-      <video id="video3" src="OEC1.mp4" autoplay loop muted poster="poster3.jpg">    </video>
+      <video id="video3" src="OEC1.mp4" autoplay loop muted poster="poster.jpg">    </video>
+      <a href="https://www.youtube.com/watch?v=tyInv6RWL0Q" target="_blank">
+      <div class="bt001">
+      </div>
+    </a>
+
     </article>
 
     <footer>
-      <video id="video4" src="YYXY1.mp4" autoplay loop muted poster="poster4.jpg">    </video>
+      <video id="video4" src="YYXY1.mp4" autoplay loop muted poster="poster.jpg">    </video>
+<a href="https://www.youtube.com/watch?v=tIWpr3tHzII" target="_blank"> <div class="bt001"></div> </a>
+
     </footer>
+
 <script type="text/javascript">
 $("#menu").click(function(){
   $("#fullmenu").toggle(500);
 });
 </script>
+
 </body>
 </html>
