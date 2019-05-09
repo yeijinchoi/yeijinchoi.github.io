@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LOOΠΔ</title>
+  <link rel="shortcut icon" type="image/x-icon" href="logo3.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="loonajs.js"></script>
+
+  <style media="screen">
+
+
+    *{margin: 0; padding: 0;}
+
+    html {min-width: 750px;}
+
+    header, section, article, footer{
+      height:1000px;
+      min-width: 750px;
+      position: relative;
+      overflow:hidden;
+    }
+
+
+    nav{
+      position: fixed;
+      /*background-color: #ff3a5a;*/
+      width: 100%;
+      z-index: 100;
+      opacity: 0.9;
+    }
+    nav ul{
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0;
+      overflow: hidden;
+    }
+    nav ul li {
+      font-family: 'Open Sans Condensed', sans-serif;
+      color: white;
+      font-size: 18px;
+      display: inline-block;
+      width: 20%;
+      height: 100%;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+    nav ul li:hover{
+
+      color: #ff8c7d;
+      background-color: black;
+    }
+    div{
+      width: 20px;
+      height: 200px;
+      /*background-color: black;*/
+      position: fixed;
+      top: 50%;
+      left: 5%;
+      z-index: 90;
+    }
+    div span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #ff3a5a;
+      border: 0px solid #ff3a5a;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    div span:hover{
+      background-color: #ff8c7d;
+    }
+    #video1{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    #video2{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    #video3{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    #video4{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    #logo{
+      margin: 0px 10px 0 0px;
+
+      position: absolute;
+      left: 25px;
+      top: 9px;
+      display: inline-block;
+      width: 122px;
+      height: 36px;
+      position: absolute;
+    }
+    #menu{
+      margin: 0px 30px 0 0px;
+      display: inline-block;
+      width: 20px;
+      height: 46px;
+      position: absolute;
+      top: 0;
+      left:inherit;
+      right:0;
+      background: transparent;
+      border: none;
+    }
+    #menu>span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: #ffa6a6;
+      margin: 4px 0;
+      border-radius: 10px;
+    }
+
+    #menu #a {
+      width: 100%;
+    }
+    #menu #b {
+      width: 60%;
+    }
+    #menu #c {
+      width: 30%;
+    }
+    #fullmenu{
+      display: none;
+      position: fixed;
+      top: 0;
+      left:inherit;
+      right:0;
+      background-color: rgb(255, 159, 159);
+      width: 100%;
+      height: 100%;
+    }
+    #fullmenu ul {
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 30px;
+      list-style: none;
+      margin-left: 47%;
+      margin-top: 24%;
+    }
+    #fullmenu ul li a {
+      text-decoration:none;
+      color: white;
+    }
+    #fullmenu ul li a:hover {
+      text-decoration:none;
+      color: rgb(255, 61, 61);
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="">
+      <img id="logo" src="logo7.png" >
+    </a>
+    <ul>
+      <li class="bt">LOOΠΔ</li>
+      <li class="bt">1/3</li>
+      <li class="bt">yeojin</li>
+      <li class="bt">ODD EYE CIRCLE</li>
+      <li class="bt">youth youth by young</li>
+    </ul>
+    <button type="button" name="button" id="menu">
+        <span id="a"></span>
+        <span id="b"></span>
+        <span id="c"></span>
+      </button>
+  </nav>
+  <div class="sub_menu">
+    <span class="sub_bt"></span>
+    <span class="sub_bt"></span>
+    <span class="sub_bt"></span>
+    <span class="sub_bt"></span>
+  </div>
+  <header>
+    <video id="video1" src="shop.mp4" autoplay loop muted poster="poster1.jpg">
+    </video>
+  </header>
+  <div id="fullmenu">
+    <ul>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Loonaverse</a></li>
+      <li><a href="#">Unit</a></li>
+      <li><a href="#">Member</a></li>
+    </ul>
+  </div>
+
+  <section>
+    <video id="video2" src="basic1.mp4" autoplay loop muted poster="poster2.jpg">
+          </video>
+    </section>
+    <div id="videoy">
+      <video src="videofile.ogg" autoplay poster="poster5.jpg">
+
+      </video>
+
+    </div>
+    <article>
+      <video id="video3" src="OEC1.mp4" autoplay loop muted poster="poster3.jpg">    </video>
+    </article>
+
+    <footer>
+      <video id="video4" src="YYXY1.mp4" autoplay loop muted poster="poster4.jpg">    </video>
+    </footer>
+<script type="text/javascript">
+$("#menu").click(function(){
+  $("#fullmenu").toggle(500);
+});
+</script>
+</body>
+</html>
