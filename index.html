@@ -1,187 +1,248 @@
-/*+++++++++++ Media Query ++++++++++++++*/
-@charset "utf-8";
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>코카-콜라 져니 : 한국 코카-콜라</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<link rel="stylesheet" href="css/common.css" type="text/css">
+	<style type="text/css">
 
-/* noto-sans-kr-regular - latin_korean */
-@font-face {
-	font-family: 'NotoSansKR-Regular';
-	src: url('../font/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
-	src: local('Noto Sans KR Regular'), local('NotoSansKR-Regular'),
-		url('../font/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('../font/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../font/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
+	</style>
+	<!-- [if lt IE 9]
+		<script src="js/html5shiv.js"></script>
+	<![endif] -->
+	<script type="text/javascript">
+		
+	</script>
+</head>
 
-/* noto-sans-kr-700 - latin_korean */
-@font-face {
-	font-family: 'NotoSansKR-Bold';
-	src: url('../font/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
-	src: local('Noto Sans KR Bold'), local('NotoSansKR-Bold'),
-		url('../font/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('../font/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../font/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
+<body>
 
-/* noto-sans-kr-900 - latin_korean */
-@font-face {
-	font-family: 'NotoSansKR-Black';
-	src: url('../font/noto-sans-kr-v13-latin_korean-900.eot'); /* IE9 Compat Modes */
-	src: local('Noto Sans KR Black'), local('NotoSansKR-Black'),
-		url('../font/noto-sans-kr-v13-latin_korean-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('../font/noto-sans-kr-v13-latin_korean-900.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-900.woff') format('woff'), /* Modern Browsers */
-		url('../font/noto-sans-kr-v13-latin_korean-900.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../font/noto-sans-kr-v13-latin_korean-900.svg#NotoSansKR') format('svg'); /* Legacy iOS */
-}
+	<header>
+		<div class="header_top">
+			<h1><a href="#"><img src="image/header_logo.png" alt="logo"><span class="blind">logo</span></a><h1>
+			<button class="open"><span>OPEN</span></button>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="#">Brand</a></li>
+				<li><a href="#">Co-ke story</a></li>
+				<li><a href="#">Life</a></li>
+				<li><a href="#">Company</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="visual bg_01">
+		<video src="media/visual_video.mp4" muted="muted" autoplay="autoplay" loop="1oop" ><span class="blind">coca-cola CF</span></video>
+		<div id="section9">
+			<div class="container">
+			<a href="#section1" class="scroll">scroll<span></span></a>
+			</div>
+		</div>
+	</section>
+
+	<section id="section1" class="company">
+		<img src="image/company_title.png" alt="feel coke!">
+		<div class="view_mask">
+			<ul>
+				<li class="slide_01 _active">
+					<div class="company_desc">
+					<p><span class="mobile_blind">독보적인 맛 뿐만 아니라 따라올 수 없는 독특한 디자인, 마케팅까지<br>명실상부 세계 1위 브랜드 가치, 함께하면 더 즐거운 코카콜라!<br></span>125년 이상의 역사를 가진 코카콜라의 이야기가 시작됩니다.</p>
+					</div>
+					<div class="btns">
+						<button class="_L">브랜드스토리</button>
+						<button class="_L">CI / BI</button>
+					</div>
+				</li>
+				<li class="slide_02">
+					<div class="company_desc">
+					<p><span class="mobile_blind">산하 21개 브랜드의 연 매출 규모 10억 달러(1조 1,400억 원),<br>소비자들이 취향에 따라 설탕 섭취량을 선택할 수 있도록 제로 옵션까지! <br></span>세계적인 브랜드 가치와 인지도를 자랑하는 코카-콜라 브랜드</p>
+					</div>
+					<div class="btns">
+						<button class="_L">모두보기</button>
+						<button class="_L">글로벌스토리</button>
+					</div>
+				</li>
+				<li class="slide_03">
+					<div class="company_desc">
+					<p><span class="mobile_blind">125년간 코카콜라와 함께 해 온 것은 다른 무엇도 아닌 사람들!<br>코카콜라와 함께 살아온, 그리고 살고있는 사람들
+					<br></span>코카콜라 앰배서더의 이야기가 지금 시작됩니다.</p>
+					</div>
+					<div class="btns">
+						<button class="_L">코-크 앰배서더</button>
+						<button class="_L">코-크 커뮤니티</button>
+					</div>
+				</li>
+			</ul>
+			<div class="company_bottom">
+				<div class="count_bar">총 3개의 콘텐츠</div>
+				<div class="con_btns">
+					<button class="con_prnx content_prev"><span class="blind">PREV</span></button>
+					<button class="con_prnx content_next"><span class="blind">NEXT</span></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="product">
+		<div class="product_imgs">
+			<img src="image/product-01.png" alt="코카콜라 패트병">
+			<img src="image/product-02.png" alt="코카콜라 캔">
+			<img src="image/product-03.png" alt="킨사이다">
+		</div>
+		<div class="mini_title">Product</div>
+			<p class="sub_title">언제나 이 맛, 이 느낌!</p>
+			<p class="title">TASTE FEELING</p>
+		<button class="_M">보러가기</button>
+	</section>
+
+	<section class="tip">
+		<div class="bg_02 bg_deco"><span class="blind">background</span></div>
+		<div class="animation_o"><span class="blind">animation_o</span></div>
+		<article class="tip_wrap">
+		<div class="mini_title">Editor’s TIP</div>
+		<div class="tip_title">
+		<p>코카-콜라를<br>맛있게 즐기는</p> 색다른 방법!
+		</div>
+		<button class="_M">보러가기</button>
+		</article>
+	</section>
+
+	<section class="content_wrap">
+		<section class="youtube">
+			<img src="image/youtube_thumb.jpg" alt="코카콜라 유튜브 썸네일">
+			<div>
+				<p class="sub_title">언제, 어디서나</p>
+				<p class="title"><span class="red">코-크</span> YOUTUBE</p>
+				<p class="hash">#CF #Video</p>
+				<button class="_S">보러가기</button>
+			</div>
+		</section>
+
+		<section class="event">
+			<div class="view_mask">
+				<ul class="clearfix">
+						<li class="active" data-index="0" style="width: 374px;">
+								<a href="#">
+									<img src="image/event_banner01.jpg" alt="당신의 선택으로 짜릿해지는 여름">
+								</a>
+							</li><li data-index="1" style="width: 374px;">
+								<a href="#">
+									<img src="image/event_banner02.jpg" alt="제주음식과 찰떡인 코카콜라 음료">
+								</a>
+							</li><li data-index="2" style="width: 374px;">
+								<a href="#">
+									<img src="image/event_banner03.jpg" alt="코크 플로우트 소개">
+								</a>
+							</li><li data-index="3" style="width: 374px;">
+								<a href="#">
+									<img src="image/event_banner04.jpg" alt="짜릿한 휴가 밸런스 게임">
+								</a>
+							</li></li><li data-index="3" style="width: 374px;">
+								<a href="#">
+									<img src="image/event_banner05.jpg" alt="코카콜라 제로의 역사">
+								</a>
+							</li>
+				</ul>
+			</div>
+			<div>
+				<p class="sub_title">짜릿한 즐거움!</p>
+				<p class="title"><span class="red">코카콜라</span> STORY</p>
+				<p class="hash">#이벤트 #고객소통</p>
+				<button class="_S">모아보기</button>
+			</div>
+		</section>
+	</section>
+
+	<section class="sns">
+		<div>
+			<p class="title"><span class="red">코카콜라</span> SNS</p>
+			<p class="sub_title">코카콜라 Official과 친구를 맺고<br>다양한 소식을 만나보세요</p>
+		</div>
+		<div class="sns_btns">
+			<button class="sns_btn _facebook"><span class="blind">facebook</span></button>
+			<button class="sns_btn _twitter"><span class="blind">twitter</span></button>
+			<button class="sns_btn _instagram"><span class="blind">instagram</span></button>
+		</div>
+		<div class="sns_slide">
+			<div class="view_mask">
+				<ul class="clearfix">
+					<li class="active">
+						<a href="#">
+							<img src="image/sns_01.jpg" alt="">
+						</a>
+					</li>
+					<li class="active">
+						<a href="#">
+							<img src="image/sns_02.jpg" alt="">
+						</a>
+					</li>
+					<li class="active">
+						<a href="#">
+							<img src="image/sns_03.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="image/sns_04.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="image/sns_05.jpg" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="image/sns_06.jpg" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sns_prnx_btns">
+			<button class="sns_prnx sns_prev"><span class="blind">PREV</span></button>
+			<button class="sns_prnx sns_next"><span class="blind">NEXT</span></button>
+		</div>
+	</section>
+
+	<section class="photo">
+		<div>
+			<p class="title"><span class="red">인스타 PICK!</span> 전세계 코카-콜라 한정판</p>
+			<p class="hash">#코카콜라 #이맛이느낌 #너답게짜릿하게</p>
+		</div>
+		<div class="photo_section">
+			<ul>
+				<li><button class="upload"><img class="upload_icon" src="image/photo_icon.png" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_02.jpg" alt=""><span></span></button></li><!--
+				 --><li><button><img src="image/photo_03.jpg" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_04.jpg" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_05.jpg" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_06.jpg" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_07.jpg" alt=""></button></li><!--
+				 --><li><button><img src="image/photo_08.jpg" alt=""></button></li>
+			</ul>
+		</div>
+			<button class="_M photo_M">더 보기</button>
+	</section>
+	<footer>
+		<div class="footer_wrap">
+			<ul class="corporate">
+				<li class="_mobile"><a href="#">글로벌 코카-콜라</a></li><!--
+			 --><li class="_mobile"><a href="#">한국 코카-콜라</a></li><!--
+			 --><li><a href="#">코카-콜라 저니</a></li><!--
+			 --><li><a href="#">프레스센터</a></li><!--
+			 --><li><a href="#">고객안내</a></li><!--
+			 --><li class="_mobile _last"><a href="#"><strong>개인정보처리방침</strong></a></li><!--
+			 --><li><a href="#"><strong>법적고지</strong></a></li>
+			</ul>
+			<span class="copy">© 2021 THE COCA-COLA COMPANY</span>
+		</div>
+	</footer>
 
 
-body { font-family: "NotoSansKR-Regular"; }
+</body>
 
-
-
-/* ====== mobile(start) ====== */
-@media screen and (max-width: 767px) {
-
-
-
-
-
-}
-/* ====== mobile(end) ====== */
-
-/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!     cocacola     !!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* ====== tablet(start) ====== */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-
-
-
-
-}
-/* ====== tablet(end) ====== */
-
-/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!     cocacola     !!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* ====== desktop(start) ====== */
-@media screen and (min-width: 1025px) {
-
-	.blob { position: absolute; top: 0; left: 0; fill: #ffc000; width: 50vmax; z-index: 50; animation: move 10s ease-in-out infinite; transform-origin: 50% 50%; }
-
-		@keyframes move {
-		0%   { transform: scale(0.5) translate(-50vw, -100vh); }
-		38%  { transform: scale(0.7) translate(100vw, 20vh) rotate(160deg); }
-		40%  { transform: scale(0.7) translate(100vw, 20vh) rotate(160deg); }
-		78%  { transform: scale(0.5) translate(-50vw, 50vh) rotate(-20deg); }
-		80%  { transform: scale(0.5) translate(-50vw, 50vh) rotate(-20deg); }
-		100% { transform: scale(0.5) translate(-50vw, -100vh); }
-	}
-
-
-	/* scroll */
-	.scroll { position: absolute; bottom: 20px; left: 50%; transform: translatex(-50%); z-index: 50; display: inline-block; color: #fff; transition: opacity 0.3s; }
-	.scroll:hover { opacity:.5; }
-
-	#section9 a { padding-top: 60px; }
-	#section9 a span { position: absolute; top: 0; left: 50%; width: 30px; height: 50px; margin-left: -15px; border: 2px solid #fff; border-radius: 50px; box-sizing: border-box; }
-	#section9 a span::before { position: absolute; top: 10px; left: 50%; content: ''; width: 6px; height: 6px; margin-left: -3px; background-color: #fff; border-radius: 100%; animation: sdb9 2s infinite; box-sizing: border-box; }
-
-		@keyframes sdb9 {
-		0% {transform: translate(0, 0); opacity: 0;}
-		40% {opacity: 1;}
-		80% {transform: translate(0, 20px); opacity: 0;}
-		100% {opacity: 0;}
-	}
-
-	button._L { width: 180px; height: 60px; margin-right: 10px; background: #ca0000; border-radius: 70px; text-align: center; font-weight: bold; color: white; }
-	button._L:hover { background: #ffc600; color: #ca0000; }
-
-	button._M { width: 140px; height: 50px; margin-right: 10px; border: 2px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; color: #ca0000; }
-	button._M:hover { background: #d63c3c; color: white; }
-	button._M::after { content:"⦁"; margin-left: 16px; }
-
-
-	button._S { width: 100px; height: 40px; margin-right: 10px; border: 1px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; font-size: 0.875em; color: #ca0000; }
-	button._S:hover { background: #d63c3c; color: white; }
-	button._S::after { content:"⦁"; margin-left: 7px; }
-
-
-	body { text-align: center; }
-
-	header { position: fixed; z-index: 100; }
-
-	nav { position: fixed; width: 100vw; height: 0; text-align: center; background: #c2272d; transition: height 0.3s ease-in-out; overflow: hidden; }
-	header:hover nav { height: 200px; }
-	nav:hover { height: 200px; }
-
-	nav ul { display: inline-block; position: absolute; left: 20%; max-width: 100%; min-width: 70%; top: 158px; }
-	nav ul > li { float: left; width: 20%; height: 130px; }
-	nav ul > li > a { color: #fff; }
-	nav ul > li > a:hover { color: #ffc600; }
-
-	div.header_top::before { content:""; position: fixed; left: 0; top: 0; display: inline-block;  width: 100%; height: 35px; background: #fff; z-index: 500; }
-	div.header_top { position: fixed; left: 0; top: 32px; width: 100%; height: 130px; background: url("../image/header_bg.png") no-repeat center; z-index: 1500; }
-
-	div.header_top img { display: block; width: 130px; margin: 1% auto; }
-
-	button.open { display: block; margin: 0 auto; background: #c1272d; width: 10px; height: 10px; border-radius: 500px; }
-
-	button.open span { position: relative; top: 15px; right: 14px; display: block; text-align: center; font-size: 15px; color: #c1272d; }
-
-
-	.mini_title { font-size: 1.125em; font-weight: bold; color: #c1272d; width: 120px; border-radius: 5px; background: #ffc600; text-align: center; vertical-align: middle; }
-
-	button.content_prev { background: url("../image/company_prev.png") no-repeat center; }
-	button.content_prev:hover { background: url("../image/company_prev_hover.png") no-repeat center; }
-	button.content_next { background: url("../image/company_next.png") no-repeat center; }
-	button.content_next:hover { background: url("../image/company_next_hover.png") no-repeat center; }
-
-	button.sns_prev { background: url("../image/company_prev.png") no-repeat center; }
-	button.sns_prev:hover { background: url("../image/company_prev_hover.png") no-repeat center; }
-	button.sns_next { background: url("../image/company_next.png") no-repeat center; }
-	button.sns_next:hover { background: url("../image/company_next_hover.png") no-repeat center; }
-
-
-
-	button.sns_btn { display: inline-block; float: left; width: 40px; height: 40px; margin-right: 20px; }
-
-	button._facebook { background: url("../image/facebook_icon.png") no-repeat center; }
-	button._facebook:hover { background: url("../image/facebook_icon_hover.png") no-repeat center; }
-	button._twitter { background: url("../image/twitter_icon.png") no-repeat center; }
-	button._twitter:hover { background: url("../image/twitter_icon_hover.png") no-repeat center; }
-	button._instagram { background: url("../image/instagram_icon.png") no-repeat center; }
-	button._instagram:hover { background: url("../image/instagram_icon_hover.png") no-repeat center; }
-
-
-
-	footer { position: relative; top: 100%; background: #c1272d; width: 100%; height: 196px; color: #fff; }
-	footer div.footer_wrap { margin: 0 auto; position: relative; width: 1000px; right: 170px; top: 56px; }
-
-	footer ul.corporate { position: absolute; top: 20px; left: 256px; text-align: center; }
-	footer ul.corporate > li { display: inline-block; position: relative; padding: 0 15px; line-height: 1; font-size: 0.875em; }
-	footer ul.corporate > li:first-child { padding-left: 0; }
-	footer ul.corporate > li > a { display: inline-block; color: #fff;  }
-	footer ul.corporate > li::after { content: ""; display: block; position: absolute; right: 0; top: 2px; width: 1px; height: 0.8em; background: #fff; }
-	footer ul.corporate > li:last-child::after { display: none; }
-
-	footer span.copy { position: absolute; top: 50px; left: 500px; }
-
-
-
-}
-/* ====== desktop(end) ====== */
+</html>
