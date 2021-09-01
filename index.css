@@ -1,0 +1,257 @@
+/*+++++++++++ Media Query ++++++++++++++*/
+@charset "utf-8";
+
+/* ====== mobile(start) ====== */
+@media screen and (max-width: 767px) {
+
+
+
+}
+/* ====== mobile(end) ====== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!     cocacola     !!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ====== tablet(start) ====== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+	header{ position: fixed; z-index: 100;}
+
+	
+	background
+
+	section.visual { width: 100%; padding-bottom: 200px; margin-bottom: 110px;}
+	video { display: block; width: 97%; height: 100vh; object-fit: cover; margin: 0 auto; }
+
+	.bg_01 {background: url("../image/background01.jpg") no-repeat center bottom; background-size: contain;}
+
+	section.company { display: block; width: 60%; margin: 0 auto; text-align: center; margin-bottom: 300px; }
+	section.company div.veiw_mask { display: block; margin: 0 auto; width: 760px; height: 340px; overflow: hidden; }
+	section.company ul { display: inline-block; margin-bottom: 50px; }
+	section.company ul > li { display: none; float: left; }
+	section.company ul > li._active { display: block; float: left; }
+	section.company ul > li > a { display: block; color: #fff; }
+	section.company > img { display: block; width: 234px; margin: 0 auto; margin-bottom: 70px; }
+	section.company div.company_desc { color: #676767; margin-bottom: 30px; }
+
+	div.company_bottom { position: relative; left: -5%; }
+
+	div.count_bar { clear: both; font-size: 0.87em; color: #373737; }
+	div.count_bar::after { content:""; display: inline-block; margin-left: 1vw; background: #efefef; width: 20vw; height: 5px; border-radius: 50px; }
+	div.count_bar::before { content:""; position: relative; width: 10vw; height: 5px; border-radius: 50px; background: #c1272d; }
+	div.con_btns { position: relative; width: 120px; right: -44vw; top: -30px; }
+	section.company button.con_prnx { display: inline-block; float: left; width: 40px; height: 40px; border-radius: 50px; margin-left: 10%; }
+
+
+	section.product { display: block; width: 60%; margin: 0 auto; text-align: center; margin-bottom: 100px; }
+	section.product img { margin-bottom: 30px; }
+	section.product div.mini_title { display: block; margin: 0 auto; padding: 2px; margin-bottom: 30px; }
+
+	section.product p.sub_title { color: #313131; font-size: 1.25em; font-weight: bold; }
+	section.product p.title { color: #313131; font-size: 2.1em; font-family: 'NotoSansKR-Black'; margin-bottom: 30px; }
+
+	section.tip { position: relative; margin-bottom: 150px; }
+	article.tip_wrap { position: absolute; top: 200px; left: 24%; width: 350px; text-align: right; }
+	section.tip div.mini_title { position: relative; left: 60%; display: block; margin-bottom: 30px; padding: 2px; }
+	section.tip div.tip_title { font-family: 'NotoSansKR-Black' ; font-size: 3.635em; color: #ffc600; margin-bottom: 40px; }
+	section.tip div.tip_title > p { color: white; }
+	section.tip div.bg_02 { position: absolute; z-index: -1000; overflow: hidden; width: 100%; height: 90vh; background: url("../image/background02.jpg") no-repeat center; }
+	section.tip div.bg_deco { position: relative; height: 800px }
+	section.tip div.bg_deco:after { content:"TASTE FEELING COCA-COLA TASTE FEELING COCA-COLA"; position: absolute; left: -50%; bottom: -10px; font-family: 'NotoSansKR-Black' ; color: #c1272d; font-size: 6.125em; width: 200%; white-space: nowrap; }
+	div.animation_o { position: absolute; transform: translateY(-240%); right: 24%; display: block; width: 204px; height: 230px; background: url("../image/animation_o.png") no-repeat center; }
+
+
+	section.content_wrap { position: relative; display: block; text-align: left; width: 1000px; top: 0; left: 2%; margin: 0 auto; }
+	section.content_wrap img { width: 400px; height: 267px; margin-bottom: 30px;}
+	section.content_wrap button { position: absolute; bottom: 15%; right: 20%; }
+
+	section.content_wrap span.red { color: #c1272d; }
+	section.content_wrap p.sub_title { font-size: 1.25em; font-weight: bold; color: #434343; }
+	section.content_wrap p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+	section.content_wrap p.hash { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+
+	section.youtube { position: absolute; width: 50%; left: 0; }
+	section.event { position: absolute; width: 50%; right: 0; }
+	section.event li { float: left; display: none; }
+
+	section.event li.active { display: block; }
+
+	section.sns { position: relative; top: 70%; text-align: left; width: 1100px; margin: 0 auto; left: 4%; }
+	section.sns p { text-align: left; }
+	section.sns span.red { color: #c1272d; }
+	section.sns p.sub_title { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+	section.sns p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+
+	section.sns .sns_slide { position: relative; top: -180px; left: 30%; width: 600px;}
+	section.sns .sns_slide div.view_mask { width: 100%; height: 184px; margin-top: 100px; overflow: hidden; }
+	section.sns .sns_slide ul { width: 300%; margin-left: 30px; }
+	section.sns .sns_slide li { display: none; float: left; width: 176px; margin-right: 10px; }
+	section.sns .sns_slide li::last-child { margin-right: 0; }
+	section.sns .sns_slide li.active { display: block; }
+	section.sns .sns_slide li:hover { border-radius: 10px; box-shadow: 3px 3px 3px #ccc; }
+	section.sns .sns_slide img { width: 100%; border-radius: 10px; }
+
+	div.sns_prnx_btns { position: relative; width: 44%; top: -286px; left: 46%; }
+	section.sns button.sns_prnx { display: inline-block; float: left; width: 40px; height: 40px; border-radius: 50px; }
+
+	button.sns_prev { position: absolute; left: -46%; }
+	button.sns_next { position: absolute; right: 1%; }
+
+	section.photo { margin: 0 auto; position: relative; top: 80%; text-align: left; width: 1100px; height: 76vh; overflow: hidden; }
+	section.photo p { text-align: center; }
+	section.photo p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+	section.photo span.red { color: #c1272d; }
+	section.photo p.hash { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+
+	section.photo div.photo_section { position: relative; left: 8%; }
+	section.photo div.photo_section li { float: left; margin: 0 10px 10px 0 ; z-index: 0; }
+	section.photo div.photo_section li:nth-child(4) { margin-left: 0; }
+	section.photo div.photo_section li:nth-child(8) { margin-left: 0; }
+	section.photo div.photo_section img { width: 220px; }
+	section.photo div.photo_section button { display: block; width: 220px; height: 220px; background: #ccc;}
+	section.photo div.photo_section button.upload { vertical-align: middle; }
+	section.photo div.photo_section img.upload_icon { display: block; width: 100px; margin: 0 auto; }
+	section.photo div.photo_section li > button.upload::after { content:""; display: none; }
+	section.photo div.photo_section li > button::before { content: "자세히 보기"; display: none; transform: translate(34%, 50%); width: 220px; height: 220px; position: absolute; margin: 0 auto; color: #fff; font-size: 0.875em; z-index: 3; }
+	section.photo div.photo_section li > button::after { content:""; display: none; position: absolute; transform: translateY(-100%); width: 220px; height: 220px; background: #000; opacity: 50%; z-index: 2; }
+	section.photo div.photo_section li:hover > button::before { display: block; }
+	section.photo div.photo_section li:hover > button::after { display: block; }
+	section.photo div.photo_section li:hover > button.upload { background: #919191; }
+	section.photo div.photo_section li:hover > button.upload::after { display: none; }
+	section.photo div.photo_section li:hover > button.upload::before { display: none; }
+
+	button.photo_M { position: absolute; top: 92%; left: 44%; display: block; margin: 0 auto; }
+
+
+
+}
+/* ====== tablet(end) ====== */
+
+/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!     cocacola     !!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* ====== desktop(start) ====== */
+@media screen and (min-width: 1025px) {
+
+	header{ position: fixed; z-index: 100;}
+
+
+	section.visual { width: 100%; padding-bottom: 200px; margin-bottom: 110px;}
+	video { display: block; width: 97%; height: 100vh; object-fit: cover; margin: 0 auto; }
+
+	.bg_01 {background: url("../image/background01.jpg") no-repeat center bottom; background-size: contain;}
+
+	section.company { display: block; width: 60%; margin: 0 auto; text-align: center; margin-bottom: 300px; }
+	section.company div.veiw_mask { display: block; margin: 0 auto; width: 760px; height: 340px; overflow: hidden; }
+	section.company ul { display: inline-block; margin-bottom: 50px; }
+	section.company ul > li { display: none; float: left; }
+	section.company ul > li._active { display: block; float: left; }
+	section.company ul > li > a { display: block; color: #fff; }
+	section.company > img { display: block; width: 234px; margin: 0 auto; margin-bottom: 70px; }
+	section.company div.company_desc { color: #676767; margin-bottom: 30px; }
+
+	div.company_bottom { position: relative; left: -5%; }
+
+	div.count_bar { clear: both; font-size: 0.87em; color: #373737; }
+	div.count_bar::after { content:""; display: inline-block; margin-left: 1vw; background: #efefef; width: 20vw; height: 5px; border-radius: 50px; }
+	div.count_bar::before { content:""; position: relative; width: 10vw; height: 5px; border-radius: 50px; background: #c1272d; }
+	div.con_btns { position: relative; width: 120px; right: -44vw; top: -30px; }
+	section.company button.con_prnx { display: inline-block; float: left; width: 40px; height: 40px; border-radius: 50px; margin-left: 10%; }
+
+
+	section.product { display: block; width: 60%; margin: 0 auto; text-align: center; margin-bottom: 100px; }
+	section.product img { margin-bottom: 30px; }
+	section.product div.mini_title { display: block; margin: 0 auto; padding: 2px; margin-bottom: 30px; }
+
+	section.product p.sub_title { color: #313131; font-size: 1.25em; font-weight: bold; }
+	section.product p.title { color: #313131; font-size: 2.1em; font-family: 'NotoSansKR-Black'; margin-bottom: 30px; }
+
+	section.tip { position: relative; margin-bottom: 150px; }
+	article.tip_wrap { position: absolute; top: 200px; left: 24%; width: 350px; text-align: right; }
+	section.tip div.mini_title { position: relative; left: 60%; display: block; margin-bottom: 30px; padding: 2px; }
+	section.tip div.tip_title { font-family: 'NotoSansKR-Black' ; font-size: 3.635em; color: #ffc600; margin-bottom: 40px; }
+	section.tip div.tip_title > p { color: white; }
+	section.tip div.bg_02 { position: absolute; z-index: -1000; overflow: hidden; width: 100%; height: 90vh; background: url("../image/background02.jpg") no-repeat center; }
+	section.tip div.bg_deco { position: relative; height: 800px }
+	section.tip div.bg_deco:after { content:"TASTE FEELING COCA-COLA TASTE FEELING COCA-COLA"; position: absolute; left: -50%; bottom: -10px; font-family: 'NotoSansKR-Black' ; color: #c1272d; font-size: 6.125em; width: 200%; white-space: nowrap; }
+	div.animation_o { position: absolute; transform: translateY(-240%); right: 24%; display: block; width: 204px; height: 230px; background: url("../image/animation_o.png") no-repeat center; }
+
+
+	section.content_wrap { position: relative; display: block; text-align: left; width: 1000px; top: 0; left: 2%; margin: 0 auto; }
+	section.content_wrap img { width: 400px; height: 267px; margin-bottom: 30px;}
+	section.content_wrap button { position: absolute; bottom: 15%; right: 20%; }
+
+	section.content_wrap span.red { color: #c1272d; }
+	section.content_wrap p.sub_title { font-size: 1.25em; font-weight: bold; color: #434343; }
+	section.content_wrap p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+	section.content_wrap p.hash { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+
+	section.youtube { position: absolute; width: 50%; left: 0; }
+	section.event { position: absolute; width: 50%; right: 0; }
+	section.event li { float: left; display: none; }
+
+	section.event li.active { display: block; }
+
+	section.sns { position: relative; top: 70%; text-align: left; width: 1100px; margin: 0 auto; left: 4%; }
+	section.sns p { text-align: left; }
+	section.sns span.red { color: #c1272d; }
+	section.sns p.sub_title { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+	section.sns p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+
+	section.sns .sns_slide { position: relative; top: -180px; left: 30%; width: 600px;}
+	section.sns .sns_slide div.view_mask { width: 100%; height: 184px; margin-top: 100px; overflow: hidden; }
+	section.sns .sns_slide ul { width: 300%; margin-left: 30px; }
+	section.sns .sns_slide li { display: none; float: left; width: 176px; margin-right: 10px; }
+	section.sns .sns_slide li::last-child { margin-right: 0; }
+	section.sns .sns_slide li.active { display: block; }
+	section.sns .sns_slide li:hover { border-radius: 10px; box-shadow: 3px 3px 3px #ccc; }
+	section.sns .sns_slide img { width: 100%; border-radius: 10px; }
+
+	div.sns_prnx_btns { position: relative; width: 44%; top: -286px; left: 46%; }
+	section.sns button.sns_prnx { display: inline-block; float: left; width: 40px; height: 40px; border-radius: 50px; }
+
+	button.sns_prev { position: absolute; left: -46%; }
+	button.sns_next { position: absolute; right: 1%; }
+
+	section.photo { margin: 0 auto; position: relative; top: 80%; text-align: left; width: 1100px; height: 76vh; overflow: hidden; }
+	section.photo p { text-align: center; }
+	section.photo p.title { font-size: 1.625em; font-weight: bold; color: #434343; }
+	section.photo span.red { color: #c1272d; }
+	section.photo p.hash { font-size: 1.125em; color: #434343; margin-bottom: 50px; }
+
+	section.photo div.photo_section { position: relative; left: 8%; }
+	section.photo div.photo_section li { float: left; margin: 0 10px 10px 0 ; z-index: 0; }
+	section.photo div.photo_section li:nth-child(4) { margin-left: 0; }
+	section.photo div.photo_section li:nth-child(8) { margin-left: 0; }
+	section.photo div.photo_section img { width: 220px; }
+	section.photo div.photo_section button { display: block; width: 220px; height: 220px; background: #ccc;}
+	section.photo div.photo_section button.upload { vertical-align: middle; }
+	section.photo div.photo_section img.upload_icon { display: block; width: 100px; margin: 0 auto; }
+	section.photo div.photo_section li > button.upload::after { content:""; display: none; }
+	section.photo div.photo_section li > button::before { content: "자세히 보기"; display: none; transform: translate(34%, 50%); width: 220px; height: 220px; position: absolute; margin: 0 auto; color: #fff; font-size: 0.875em; z-index: 3; }
+	section.photo div.photo_section li > button::after { content:""; display: none; position: absolute; transform: translateY(-100%); width: 220px; height: 220px; background: #000; opacity: 50%; z-index: 2; }
+	section.photo div.photo_section li:hover > button::before { display: block; }
+	section.photo div.photo_section li:hover > button::after { display: block; }
+	section.photo div.photo_section li:hover > button.upload { background: #919191; }
+	section.photo div.photo_section li:hover > button.upload::after { display: none; }
+	section.photo div.photo_section li:hover > button.upload::before { display: none; }
+
+	button.photo_M { position: absolute; top: 92%; left: 44%; display: block; margin: 0 auto; }
+
+
+
+
+
+}
+/* ====== desktop(end) ====== */
