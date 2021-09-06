@@ -64,6 +64,100 @@ body { font-family: "NotoSansKR-Regular"; }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 
 
+	.blob { position: absolute; top: 0; left: 0; fill: #ffc000; width: 50vmax; z-index: 50; animation: move 10s ease-in-out infinite; transform-origin: 50% 50%; }
+
+		@keyframes move {
+		0%   { transform: scale(0.5) translate(-50vw, -100vh); }
+		38%  { transform: scale(0.7) translate(100vw, 20vh) rotate(160deg); }
+		40%  { transform: scale(0.7) translate(100vw, 20vh) rotate(160deg); }
+		78%  { transform: scale(0.5) translate(-50vw, 50vh) rotate(-20deg); }
+		80%  { transform: scale(0.5) translate(-50vw, 50vh) rotate(-20deg); }
+		100% { transform: scale(0.5) translate(-50vw, -100vh); }
+	}
+
+
+	/* scroll */
+	.scroll { position: absolute; bottom: 20px; left: 50%; transform: translatex(-50%); z-index: 50; display: inline-block; color: #fff; transition: opacity 0.3s; }
+	.scroll:hover { opacity:.5; }
+
+	#section9 a { padding-top: 60px; }
+	#section9 a span { position: absolute; top: 0; left: 50%; width: 30px; height: 50px; margin-left: -15px; border: 2px solid #fff; border-radius: 50px; box-sizing: border-box; }
+	#section9 a span::before { position: absolute; top: 10px; left: 50%; content: ''; width: 6px; height: 6px; margin-left: -3px; background-color: #fff; border-radius: 100%; animation: sdb9 2s infinite; box-sizing: border-box; }
+
+		@keyframes sdb9 {
+		0% {transform: translate(0, 0); opacity: 0;}
+		40% {opacity: 1;}
+		80% {transform: translate(0, 20px); opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	button._L { width: 180px; height: 60px; margin-right: 10px; background: #ca0000; border-radius: 70px; text-align: center; font-weight: bold; color: white; }
+	button._L:hover { background: #ffc600; color: #ca0000; }
+
+	button._M { width: 140px; height: 50px; margin-right: 10px; border: 2px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; color: #ca0000; }
+	button._M:hover { background: #d63c3c; color: white; }
+	button._M::after { content:"⦁"; margin-left: 16px; }
+
+
+	button._S { width: 100px; height: 40px; margin-right: 10px; border: 1px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; font-size: 0.875em; color: #ca0000; }
+	button._S:hover { background: #d63c3c; color: white; }
+	button._S::after { content:"⦁"; margin-left: 7px; }
+
+
+	body { text-align: center; }
+
+	header { position: fixed; z-index: 100; background: #c2272d; width: 100%; height: 60px; }
+
+	nav { position: fixed; right:0; width: 0; height: 100vh; text-align: center; background: #c2272d; transition: width 0.3s ease-in-out; overflow: hidden; }
+	header.on nav { width: 40%; }
+
+	nav ul { display: inline-block; position: absolute; left: 20%; max-width: 100%; min-width: 70%; top: 158px; }
+	nav ul > li { text-align: left;  height: 50px; font-size: 1.438em;}
+	nav ul > li > a { color: #fff; }
+
+
+	div.header_top { position: fixed; width: 100%; height: 124px; margin: 0 auto; background: url("../image/header_bg.png") no-repeat center; z-index: 1500; }
+	div.header_top img { display: block; width: 130px; margin: 5% auto; }
+	div.header_top:after { content:""; display: inline-block; position: absolute; right: 5%; top: 18%; width: 20px; height: 20px; background: url("../image/header_open_M.png") no-repeat center; }
+
+	button.open { display: none; }
+
+	.mini_title { font-size: 1.125em; font-weight: bold; color: #c1272d; width: 120px; border-radius: 5px; background: #ffc600; text-align: center; vertical-align: middle; }
+
+	button.content_prev { background: url("../image/company_prev.png") no-repeat center; }
+	button.content_prev:hover { background: url("../image/company_prev_hover.png") no-repeat center; }
+	button.content_next { background: url("../image/company_next.png") no-repeat center; }
+	button.content_next:hover { background: url("../image/company_next_hover.png") no-repeat center; }
+
+	button.sns_prev { background: url("../image/company_prev.png") no-repeat center; }
+	button.sns_prev:hover { background: url("../image/company_prev_hover.png") no-repeat center; }
+	button.sns_next { background: url("../image/company_next.png") no-repeat center; }
+	button.sns_next:hover { background: url("../image/company_next_hover.png") no-repeat center; }
+
+
+
+	button.sns_btn { display: inline-block; float: left; width: 40px; height: 40px; margin-right: 20px; }
+
+	button._facebook { background: url("../image/facebook_icon.png") no-repeat center; }
+	button._facebook:hover { background: url("../image/facebook_icon_hover.png") no-repeat center; }
+	button._twitter { background: url("../image/twitter_icon.png") no-repeat center; }
+	button._twitter:hover { background: url("../image/twitter_icon_hover.png") no-repeat center; }
+	button._instagram { background: url("../image/instagram_icon.png") no-repeat center; }
+	button._instagram:hover { background: url("../image/instagram_icon_hover.png") no-repeat center; }
+
+
+
+	footer { position: relative; top: 100%; background: #c1272d; width: 100%; height: 196px; color: #fff; }
+	footer div.footer_wrap { margin: 0 auto; position: relative; right: 150px; top: 56px; }
+
+	footer span.copy { position: absolute; top: 50px; left: 500px; }
+	div.footer_wrap ul { display: inline-block; margin: 0 auto; }
+	div.footer_wrap li { display: none; }
+	div.footer_wrap li._mobile { display: inline-block; float: left; margin: 0 auto; color: white; }
+	div.footer_wrap li a { color: white; }
+
+	li._mobile::after { content: "|"; margin-left: 10px; margin-right: 10px; }
+	li._mobile::after:last-child { content: "|"; display: none;}
 
 
 
@@ -112,12 +206,12 @@ body { font-family: "NotoSansKR-Regular"; }
 	button._L:hover { background: #ffc600; color: #ca0000; }
 
 	button._M { width: 140px; height: 50px; margin-right: 10px; border: 2px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; color: #ca0000; }
-	button._M:hover { background: #d63c3c; color: white; }
+	button._M:hover { background: #ca0000; color: white; }
 	button._M::after { content:"⦁"; margin-left: 16px; }
 
 
 	button._S { width: 100px; height: 40px; margin-right: 10px; border: 1px solid #ca0000; background: #fff; border-radius: 50px; text-align: center; font-weight: bold; font-size: 0.875em; color: #ca0000; }
-	button._S:hover { background: #d63c3c; color: white; }
+	button._S:hover { background: #ca0000; color: white; }
 	button._S::after { content:"⦁"; margin-left: 7px; }
 
 
