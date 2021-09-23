@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Work - Web Design</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/common.css" type="text/css">
+	<link rel="stylesheet" href="css/work.css" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+	<style type="text/css">
+
+	</style>
+	<!-- [if lt IE 9]
+		<script src="js/html5shiv.js"></script>
+	<![endif] -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+
+	function fade() {
+				let animation_height = $(window).innerHeight() * 0.5;
+				let ratio = Math.round((1 / animation_height) * 10000) / 10000;
+				$(".fade").each(function () {
+					let objectTop = $(this).offset().top;
+					let windowBottom = $(window).scrollTop() + $(window).innerHeight();
+					if (objectTop < windowBottom) {
+						if (objectTop < windowBottom - animation_height) {
+							$(this).css({
+								transition: "opacity 0.1s linear",
+								transition: "left 0.1s linear",
+								opacity: 1,
+								left: "0px",
+							});
+						} else {
+							$(this).css({
+								transition: "opacity 0.5s linear",
+								opacity: (windowBottom - objectTop) * ratio
+							});
+						}
+					} else {
+						$(this).css({
+							opacity: 0,
+						});
+					}
+				});
+			}
+			$(".fade").css({
+				opacity: 0,
+			});
+			fade();
+
+			$(window).scroll(function () {
+				fade();
+			});
+
+
+	});
+
+	</script>
+</head>
+
+<body>
+	<div class="work_page_bg">
+		<img class="work_shape01" src="images/work_shape_bg.png" alt="노란색 타원 배경">
+		<img class="work_shape02" src="images/int_shape_bg.png" alt="파란색 타원 배경">
+	</div>
+	<section class="work_01 clearfix">
+		<div class="side_R">
+			<button class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></button>
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/wd_01.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Re Design</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">경기산업기술교육센터</p>
+				<p class="desc_date">2019.05</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Standard Web</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>경기산업기술교육센터 과정 중 디자인한 고정형 웹사이트로<br>제한된 1시간 안에 사이트 리뉴얼 시안을 작성,<br>최고의 결과물을 뽑아냈습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color13"></span> #2ab3e3<br><span class="work-color color14"></span> #4abdbf</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>ⓒ Design by choi-yeijin</p>
+	</footer>
+</body>
+
+</html>

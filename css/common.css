@@ -1,0 +1,150 @@
+/* +++++++++++++++++++ index.css +++++++++++++++++++ */
+
+@charset "utf-8";
+/* noto-sans-kr-regular - latin_korean */
+@font-face {
+	font-family: 'NotoSansKR-Regular';
+	src: url('../font/noto-sans-kr-v13-latin_korean-regular.eot'); /* IE9 Compat Modes */
+	src: local('Noto Sans KR Regular'), local('NotoSansKR-Regular'),
+		url('../font/noto-sans-kr-v13-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../font/noto-sans-kr-v13-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../font/noto-sans-kr-v13-latin_korean-regular.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+}
+
+/* noto-sans-kr-700 - latin_korean */
+@font-face {
+	font-family: 'NotoSansKR-Bold';
+	src: url('../font/noto-sans-kr-v13-latin_korean-700.eot'); /* IE9 Compat Modes */
+	src: local('Noto Sans KR Bold'), local('NotoSansKR-Bold'),
+		url('../font/noto-sans-kr-v13-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../font/noto-sans-kr-v13-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-700.woff') format('woff'), /* Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../font/noto-sans-kr-v13-latin_korean-700.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+}
+
+/* noto-sans-kr-900 - latin_korean */
+@font-face {
+	font-family: 'NotoSansKR-Black';
+	src: url('../font/noto-sans-kr-v13-latin_korean-900.eot'); /* IE9 Compat Modes */
+	src: local('Noto Sans KR Black'), local('NotoSansKR-Black'),
+		url('../font/noto-sans-kr-v13-latin_korean-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../font/noto-sans-kr-v13-latin_korean-900.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-900.woff') format('woff'), /* Modern Browsers */
+		url('../font/noto-sans-kr-v13-latin_korean-900.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../font/noto-sans-kr-v13-latin_korean-900.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+}
+
+/* =========== mobile(start) ============ */
+@media screen and (max-width: 767px) {
+
+
+
+
+
+}
+/* =========== mobile(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== tablet(start) ============ */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+	.text_blue { color: #1185ff; }
+	.white { color: #fff; }
+
+	button._L { display: none; position: relative; left: -250px; bottom: -500px; width: 120px; height: 120px; background: url("../images/arrow_bg_M.png") no-repeat center center; z-index: 100; }
+	button._L > img { position: absolute; width: 30px; height: auto; top: 30%; left: 37%; }
+
+	button._L > img { animation: buttonL 1.2s ease-in-out infinite; }
+
+	@keyframes buttonL {
+		0% {transform: translate(0, 0); opacity: 0;}
+		40% {opacity: 1;}
+		80% {transform: translate(0, 20px); opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	.trans_bg { position: relative; width: 116px; height: 120px; top: 50vh; right: 150px; z-index: 100; }
+	.trans_bg:hover > div._M { animation: buttonM 5s infinite; }
+	@keyframes buttonM {
+		0% {transform: rotate(0);}
+		100% {transform: rotate(720deg);}
+	}
+	.trans_bg:hover p.p_contact { color: #ffc000; }
+	div._M { width: 100%; height: 100%; background: url("../images/arrow_bg_M.png") no-repeat center center; }
+	.trans_bg p.p_contact { position: absolute; width: 66px; height: 105px; font-weight: bold; top: 40%; left: 20%; }
+
+	div._S { width: 100%; height: 100%; background: url("../images/arrow_bg_S.png") no-repeat center center; }
+	.trans_bg:hover > div._S { animation: buttonM 5s infinite; }
+	.trans_bg > p.p_back { position: absolute; font-size: 0.875em; width: 66px; height: 105px; font-weight: bold; top: 42%; left: 26%; }
+
+
+	footer { width: 100%; height: 200px; }
+
+	footer > p { transform: translateY(100px); width: 300px; margin: 0 auto; text-align: center; font-size: 15px; }
+
+
+}
+/* =========== tablet(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== Desktop(start) ============ */
+@media screen and (min-width: 1025px) {
+
+
+	.text_blue { color: #1185ff; }
+	.white { color: #fff; }
+
+	button._L { position: relative; right: 70%; top: -4vh; width: 240px; height: 240px; background: url("../images/arrow_bg_L.png") no-repeat center center; z-index: 100; }
+	button._L > img { position: absolute; width: 66px; height: 105px; top: 30%; left: 37%; }
+
+	button._L > img { animation: buttonL 1.2s ease-in-out infinite; }
+
+	@keyframes buttonL {
+		0% {transform: translate(0, 0); opacity: 0;}
+		40% {opacity: 1;}
+		80% {transform: translate(0, 20px); opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	.trans_bg { position: relative; width: 116px; height: 120px; top: 30vh; right: 40px; z-index: 100; }
+	.trans_bg:hover > div._M { animation: buttonM 5s infinite; }
+	@keyframes buttonM {
+		0% {transform: rotate(0);}
+		100% {transform: rotate(720deg);}
+	}
+	.trans_bg:hover p.p_contact { color: #ffc000; }
+	div._M { width: 100%; height: 100%; background: url("../images/arrow_bg_M.png") no-repeat center center; }
+	.trans_bg p.p_contact { position: absolute; width: 66px; height: 105px; font-weight: bold; top: 40%; left: 20%; }
+
+	div._S { width: 100%; height: 100%; background: url("../images/arrow_bg_S.png") no-repeat center center; }
+	.trans_bg:hover > div._S { animation: buttonM 5s infinite; }
+	.trans_bg > p.p_back { position: absolute; font-size: 0.875em; width: 66px; height: 105px; font-weight: bold; top: 42%; left: 26%; }
+
+
+	footer { width: 100%; height: 200px; }
+
+	footer > p { transform: translateY(100px); width: 300px; margin: 0 auto; text-align: center; font-size: 15px; }
+
+
+}
+/* =========== Desktop(end) ============ */
+
+	body { font-family: "NotoSansKR-Regular"; background: #f5f8ff;  }

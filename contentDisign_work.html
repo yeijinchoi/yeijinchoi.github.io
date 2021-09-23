@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Work - Visual Design</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/common.css" type="text/css">
+	<link rel="stylesheet" href="css/work.css" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+	<style type="text/css">
+
+	</style>
+	<!-- [if lt IE 9]
+		<script src="js/html5shiv.js"></script>
+	<![endif] -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+
+		function fade() {
+		      let animation_height = $(window).innerHeight() * 0.5;
+		      let ratio = Math.round((1 / animation_height) * 10000) / 10000;
+		      $(".fade").each(function () {
+		        let objectTop = $(this).offset().top;
+		        let windowBottom = $(window).scrollTop() + $(window).innerHeight();
+		        if (objectTop < windowBottom) {
+		          if (objectTop < windowBottom - animation_height) {
+		            $(this).css({
+		              transition: "opacity 0.1s linear",
+		              transition: "left 0.1s linear",
+		              opacity: 1,
+		              left: "0px",
+		            });
+		          } else {
+		            $(this).css({
+		              transition: "opacity 0.5s linear",
+		              opacity: (windowBottom - objectTop) * ratio
+		            });
+		          }
+		        } else {
+		          $(this).css({
+		            opacity: 0,
+		          });
+		        }
+		      });
+		    }
+		    $(".fade").css({
+		      opacity: 0,
+		    });
+		    fade();
+
+		    $(window).scroll(function () {
+		      fade();
+		    });
+
+
+		});
+
+	</script>
+</head>
+
+<body>
+	<div class="work_page_bg">
+		<img class="work_shape01" src="images/work_shape_bg.png" alt="노란색 타원 배경">
+		<img class="work_shape02" src="images/int_shape_bg.png" alt="파란색 타원 배경">
+	</div>
+	<section class="work_01 clearfix">
+		<div class="side_R">
+			<a href="index.html" class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></a>
+			<img class="des" src="images/texi.png">
+			<p class="work_title">Web Banner<br><span class="text_R">Visual Design</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">PAPA JONES</p>
+				<p class="desc_date">수원 정자점 어플 광고</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Application AD</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>근무지(ok114)에서 작업한 자체 어플 광고 디자인 작업물으로<br>피자하면 떠오르는 컬러 두 개를 메인 컬러로 채택하고<br>누구나 한 번에 알아볼 수 있는 직관적인 이미지를 사용하여 제작하였습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>G마켓 산스</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color5"></span> #ffc035<br><span class="work-color color6"></span> #d12503</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="work_02 clearfix fade">
+		<div class="side_R">
+			<img class="des" src="images/sistem.png">
+			<p class="work_title">Web Banner<br><span class="text_R">Visual Design</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">에스에스시스템공조</p>
+				<p class="desc_date">시스템에어컨 업체 어플 광고</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Application AD</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>근무지(ok114)에서 작업한 자체 어플 광고 디자인 작업물으로<br>취급 품목인 시스템에어컨의 이미지 컬러를 파란색으로 설정하고 이미지를 배치하여<br>고객님께 시원한 인상과 신뢰감을 드릴 수 있도록 디자인했습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>G마켓 산스</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color7"></span> #007dfe<br><span class="work-color color8"></span> #d0e6fe</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="work_01 clearfix fade">
+		<div class="side_R">
+			<img class="des" src="images/poster.png">
+			<p class="work_title">Web Poster<br><span class="text_R">Design</span></p>
+		</div>
+		<div class="side_L clearfix">
+			<div class="text_box">
+				<p class="desc_title">paradise regained</p>
+				<p class="desc_date">웹 전시회 레디메이드 포스터 디자인</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Ready-made Design</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color9"></span> #ecacd6<br><span class="work-color color10"></span> #117b8d</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="work_02 clearfix fade">
+		<div class="side_R">
+			<img class="des" src="images/card.png">
+			<p class="work_title">Photo Card<br><span class="text_R">Design</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">이달의 소녀</p>
+				<p class="desc_date">photo card Design</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Resposive Web</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color11"></span> #f9c1ab<br><span class="work-color color12"></span> #E11119</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+	<section class="work_01 clearfix fade">
+		<div class="side_R">
+			<img class="des" src="images/poster2.png">
+			<p class="work_title">Web Poster<br><span class="text_R">Design</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">기관 웹포스터 디자인</p>
+				<p class="desc_date">민관학 원탁토론회 웹 포스터</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Web Poster</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color5"></span> #ffc035<br><span class="work-color color6"></span> #d12503</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>ⓒ Design by choi-yeijin</p>
+	</footer>
+</body>
+
+</html>

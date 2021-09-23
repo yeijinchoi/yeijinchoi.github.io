@@ -1,0 +1,272 @@
+/* +++++++++++++++++++ index.css +++++++++++++++++++ */
+
+
+
+/* =========== mobile(start) ============ */
+@media screen and (max-width: 767px) {
+
+
+
+
+
+}
+/* =========== mobile(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== tablet(start) ============ */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+	.fade {width: 100vw; overflow: hidden; }
+	section.visual { position: relative; display: block; text-align: right; width: 100%; height: 100vh; margin: 0 auto; overflow: hidden; background: url("../images/bg.jpg") no-repeat center;}
+	div.vis_wrap { display: block; width: 100%; margin: 0 auto; transform: translateX(-42%); position: absolute; z-index: 500; left: 50%; }
+	div.visual_bg { position: absolute; z-index: 50; }
+	.alpha { display: none;}
+
+	.txt_shape01 { position: absolute; top: 200px; }
+	.vis_text { width: 70%; transform: translateY(40vh); color: #ffc000; }
+	.vis_text > p {font-size: 3.250em; font-family: NotoSansKR-black; }
+
+	p.name { font-weight: bold; color: #ffc000; font-size: 1em; font-style: italic; -webkit-transform: translate(-340px, -50px);}
+
+	.shape01 { position: absolute; width: 300px; height: auto; top: 66%; right: -50px; opacity: 0.5; }
+	.shape02 { position: absolute; width: 300px; height: auto; top: 150%; left: 0; z-index: -100; opacity: 0.5; }
+	.bg01 { position: absolute; top: 70%; right: 30%; }
+
+	nav { position: fixed; bottom: 6vh; right: 6vw; width: 76px; text-align: right; z-index: 100; }
+	nav > ul > li { width: 70px; height: 30px; }
+
+	nav > ul > li > a { color: #ffc000; font-weight: bold; }
+	nav > ul > li > a:after { content: ""; display: none; width: 50px; height: 8px; background: #7dbcff; margin-top: -10px; margin-left: 20px; }
+
+	nav > ul > li:hover > a:after { display: block; }
+
+	section.work { display: block; width: 700px; height: 300px; margin: 200px auto; overflow: hidden; }
+
+	section.work > ul { display: inline-block; width: 100%; margin-top: 50px; transform: translateX(4vw);}
+
+	section.work > ul > li { text-align: right; width: 170px; height: 216px; float: left; margin-left: 60px; transition: transform 0.1s ease-in-out 0.1s; }
+	section.work > ul > li > span.work_box > a { position: relative; top: 63%;  width: 100px; font-weight: bold; font-size: 1.5em; line-height: 1.3; }
+	section.work > ul > li > span.work_box { display: block; width: 170px; height: 216px; transition: transform 0.2s ease-in-out 0.1s; padding: 20px; }
+
+	span.design > a { color: #94c8ff; }
+
+	section.work > ul > li.design { margin-left: 0;  }
+	section.work > ul > li.design > span.work_box { border: 2px solid #1185ff; }
+	section.work > ul > li.design > span.work_box > a { color: #1185ff; top: 46%; }
+	section.work > ul > li.design:hover { border: 1px solid #1185ff; transform: rotate(10deg); }
+	section.work > ul > li.design:hover > span.work_box { background: #1185ff; transform: rotate(20deg); }
+	section.work > ul > li.design:hover > span.work_box > a { color: #fff; }
+
+
+	section.work > ul > li.web_design > span.work_box { border: 2px solid #ffc000; }
+	section.work > ul > li.web_design > span.work_box > a { color: #ffc000; }
+	section.work > ul > li.web_design:hover { border: 1px solid #ffc000; transform: rotate(10deg); }
+	section.work > ul > li.web_design:hover > span.work_box { background: #ffc000; transform: rotate(20deg); }
+	section.work > ul > li.web_design:hover > span.work_box > a { color: #fff; }
+
+	section.work > ul > li.web_pub > span.work_box { border: 2px solid #ccc; }
+	section.work > ul > li.web_pub > span.work_box > a { color: #ccc; }
+	section.work > ul > li.web_pub:hover { border: 1px solid #ccc; transform: rotate(10deg); }
+	section.work > ul > li.web_pub:hover > span.work_box { background: #ccc; transform: rotate(20deg); }
+	section.work > ul > li.web_pub:hover > span.work_box > a { color: #fff; }
+
+
+	section.intro { position: relative; font-size: 1.125em; width: 700px; left: 9%; }
+	section.intro div { display: block; float: left; margin: 0 auto;}
+	section.intro > div.int_sub { position: absolute; right: 0; font-size: 0.875em; }
+	section.intro > div.int_sub > img { margin-bottom: 30px; }
+
+	section.intro > div.int_title { margin-top: 20px; line-height: 1.2; }
+
+	p.int_sub_title { font-size: 1.5em; color: #444444; }
+	p.int_main_title { font-size: 2.875em; font-family: "NotoSansKR-black"; }
+
+
+	div.skill_color { position: absolute; width: 100px; height: 100%; margin-top: 8px; }
+	div.skill_color .red { display: inline-block; width: 10px; height: 10px; background: #ed1c24; border-radius: 20px; margin-left: 10px; }
+	div.skill_color .green { display: inline-block; width: 10px; height: 10px; background: #197b30; border-radius: 20px; margin-left: 10px; }
+	div.skill_color .yellow { display: inline-block; width: 10px; height: 10px; background: #f68e56; border-radius: 20px; margin-left: 10px; }
+
+	section.profile { position: relative; display: block; width: 100%; height: 600px; margin: 0 auto; overflow: hidden; }
+	div.profile_box { position: absolute; top: 90px; width: 70%; height: 280px; right: 16%; border: 1px solid #1185ff; background: #fff; z-index: 1; }
+	div.mimoticon { position: absolute; width: 40%; text-align: center; height: 100%; background: #1185ff; right: 0; padding-top: 2%;}
+	div.mimoticon img { width: 80%; margin-top: 30px;}
+	.profile_title { margin: 20px; font-size: 2em; font-weight: bold; color: #1185ff; }
+	.profile_desc_title { margin-left: 20px; margin-bottom: 4px; font-weight: bold; }
+	.profile_desc { margin-left: 20px; color: #565656; margin-bottom: 5px; }
+	.profile_text_bg { position: absolute; top: 180px; left: 20%; opacity: 0.5; }
+	.profile_shape_bg { position: absolute; top: 0; right: -10%; z-index: 0.01; opacity: 0.5; }
+
+	section.skill { position: relative; display: block; width: 100%; height: 300px; margin: 0 auto; }
+	div.skill_box { display: block; width: 90%; height: 200px; background: white; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 20px 20px 1px #ffc000; }
+	div.skill_top_bar { display: block; width: 100%; height: 40px; background: #f6f6f6;  }
+	div.skill_bar { position: relative; display: block; width: 90%; height: 40px; background: #f6f6f6; border-radius: 100px; top: 34%; left: 5%; overflow: hidden; }
+	span.bar_title { position: relative; top: 20%; left: 47%; font-weight: bold; }
+	.bars p { color: #fff; font-size: 1.2em; margin: 0 auto; width: 30%; transform: translateY(20%); }
+	.bars { display: inline-block; height: 100%; }
+	._html { width: 25%; background: #f68e56; }
+	._js { width: 10%; background: #8dc63f; }
+	._ps { width: 35%; background: #f26d7d; }
+	._ai { width: 30%; background: #bd8cbf; }
+
+	section.edu_exp { display: block; width: 100%; height: 600px; margin: 200px auto; overflow: hidden; }
+	div.inner_wrap { position: relative; width: 700px; height: 100%; margin: 0 auto; }
+
+	div.e_img_box { background: #ccc; position: absolute; width: 50%; height: 500px; left: 0; }
+
+	div.e_text_box { position: absolute; width: 300px; height: 100%; right: 0; }
+	div.e_text_box ul { margin-bottom: 30px; }
+	div.e_text_box li { margin-bottom: 10px; }
+	.edu_title { font-weight: bold; }
+	.fr_title { font-size: 1.25em; font-weight: bold; padding-bottom: 8px; margin-bottom: 20px; border-bottom: 3px solid #1185ff; width: 100px; }
+	._active:before { content:""; display: inline-block; background: url("../images/edu_exp_icon.png") no-repeat center; width: 24px; height: 16px; transform: translateX(-30px); }
+	._active > button { color: #1185ff; }
+	._active > .edu_title { transform: translateX(-26px); }
+
+
+	section.sns { display: block; width: 100%; height: 50px; margin: 0 auto; }
+
+	section.sns > a { display: block; width: 200px; height: auto; margin: 0 auto; font-weight: bold; -webkit-transform: translate(2vw, 20px); }
+	section.sns > a:hover > p { color: #1185ff; }
+	section.sns > a > img { float: left; }
+	section.sns > a > p { display: inline-block; float: left; margin-left: 10px;}
+
+
+}
+/* =========== tablet(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== Desktop(start) ============ */
+@media screen and (min-width: 1025px) {
+
+	.fade {width: 100vw; overflow: hidden; }
+	section.visual { position: relative; display: block; text-align: right; width: 100%; height: 100vh; margin: 0 auto; overflow: hidden; background: url("../images/bg.jpg") no-repeat center;}
+	div.vis_wrap { display: block; width: 900px; margin: 0 auto; transform: translateX(-44%); position: absolute; z-index: 500; left: 50%; }
+	div.visual_bg { position: absolute; z-index: 50; }
+	.alpha { position: absolute; z-index: 1; opacity: 0.4; left: -100px; top: -100px; }
+
+	.txt_shape01 { position: absolute; top: 200px; }
+	.vis_text { width: 70%; transform: translateY(40vh); color: #ffc000; }
+	.vis_text > p {font-size: 3.250em; font-family: NotoSansKR-black; }
+
+	p.name { font-weight: bold; color: #ffc000; font-size: 1em; font-style: italic; -webkit-transform: translate(-340px, -50px);}
+
+	.shape01 { position: absolute; top: 66%; right: -50px; opacity: 0.5; }
+	.shape02 { position: absolute; top: 150%; left: 0; z-index: -100; opacity: 0.5; }
+	.bg01 { position: absolute; top: 70%; right: 30%; }
+
+	nav { position: fixed; bottom: 6vh; right: 6vw; width: 76px; text-align: right; z-index: 100; }
+	nav > ul > li { width: 70px; height: 30px; }
+
+	nav > ul > li > a { color: #ffc000; font-weight: bold; }
+	nav > ul > li > a:after { content: ""; display: none; width: 50px; height: 8px; background: #7dbcff; margin-top: -10px; margin-left: 20px; }
+
+	nav > ul > li:hover > a:after { display: block; }
+
+	section.work { display: block; width: 800px; height: 300px; margin: 200px auto; overflow: hidden; }
+
+	section.work > ul { display: inline-block; width: 100%; margin-top: 50px; transform: translateX(4vw);}
+
+	section.work > ul > li { text-align: right; width: 170px; height: 216px; float: left; margin-left: 60px; transition: transform 0.1s ease-in-out 0.1s; }
+	section.work > ul > li > span.work_box > a { position: relative; top: 63%;  width: 100px; font-weight: bold; font-size: 1.5em; line-height: 1.3; }
+	section.work > ul > li > span.work_box { display: block; width: 170px; height: 216px; transition: transform 0.2s ease-in-out 0.1s; padding: 20px; }
+
+	span.design > a { color: #94c8ff; }
+
+	section.work > ul > li.design { margin-left: 0;  }
+	section.work > ul > li.design > span.work_box { border: 2px solid #1185ff; }
+	section.work > ul > li.design > span.work_box > a { color: #1185ff; top: 46%; }
+	section.work > ul > li.design:hover { border: 1px solid #1185ff; transform: rotate(10deg); }
+	section.work > ul > li.design:hover > span.work_box { background: #1185ff; transform: rotate(20deg); }
+	section.work > ul > li.design:hover > span.work_box > a { color: #fff; }
+
+
+	section.work > ul > li.web_design > span.work_box { border: 2px solid #ffc000; }
+	section.work > ul > li.web_design > span.work_box > a { color: #ffc000; }
+	section.work > ul > li.web_design:hover { border: 1px solid #ffc000; transform: rotate(10deg); }
+	section.work > ul > li.web_design:hover > span.work_box { background: #ffc000; transform: rotate(20deg); }
+	section.work > ul > li.web_design:hover > span.work_box > a { color: #fff; }
+
+	section.work > ul > li.web_pub > span.work_box { border: 2px solid #ccc; }
+	section.work > ul > li.web_pub > span.work_box > a { color: #ccc; }
+	section.work > ul > li.web_pub:hover { border: 1px solid #ccc; transform: rotate(10deg); }
+	section.work > ul > li.web_pub:hover > span.work_box { background: #ccc; transform: rotate(20deg); }
+	section.work > ul > li.web_pub:hover > span.work_box > a { color: #fff; }
+
+
+	section.intro { position: relative; font-size: 1.125em; width: 1000px; margin: 200px auto; }
+	section.intro div { display: block; float: left; margin: 0 auto;}
+	section.intro > div.int_sub { position: absolute; right: 0; font-size: 0.875em; }
+	section.intro > div.int_sub > img { margin-bottom: 30px; }
+
+	section.intro > div.int_title { margin-top: 20px; line-height: 1.2; }
+
+	p.int_sub_title { font-size: 1.5em; color: #444444; }
+	p.int_main_title { font-size: 2.875em; font-family: "NotoSansKR-black"; }
+
+
+	div.skill_color { position: absolute; width: 100px; height: 100%; margin-top: 8px; }
+	div.skill_color .red { display: inline-block; width: 10px; height: 10px; background: #ed1c24; border-radius: 20px; margin-left: 10px; }
+	div.skill_color .green { display: inline-block; width: 10px; height: 10px; background: #197b30; border-radius: 20px; margin-left: 10px; }
+	div.skill_color .yellow { display: inline-block; width: 10px; height: 10px; background: #f68e56; border-radius: 20px; margin-left: 10px; }
+
+	section.profile { position: relative; display: block; width: 100%; height: 600px; margin: 0 auto; overflow: hidden; }
+	div.profile_box { position: absolute; width: 40%; height: 280px; right: 20%; border: 1px solid #1185ff; background: #fff; z-index: 1; }
+	div.mimoticon { position: absolute; width: 60%; text-align: center; height: 100%; background: #1185ff; right: 0; padding-top: 2%;}
+	.profile_title { margin: 20px; font-size: 2em; font-weight: bold; color: #1185ff; }
+	.profile_desc_title { margin-left: 20px; margin-bottom: 4px; font-weight: bold; }
+	.profile_desc { margin-left: 20px; color: #565656; margin-bottom: 5px; }
+	.profile_text_bg { position: absolute; top: 180px; left: 20%; opacity: 0.5; }
+	.profile_shape_bg { position: absolute; top: 0; right: -10%; z-index: 0.01; opacity: 0.5; }
+
+	section.skill { position: relative; display: block; width: 100%; height: 300px; margin: 0 auto; }
+	div.skill_box { display: block; width: 70%; height: 200px; background: white; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 20px 20px 1px #ffc000; }
+	div.skill_top_bar { display: block; width: 100%; height: 40px; background: #f6f6f6;  }
+	div.skill_bar { position: relative; display: block; width: 90%; height: 40px; background: #f6f6f6; border-radius: 100px; top: 34%; left: 5%; overflow: hidden; }
+	span.bar_title { position: relative; top: 20%; left: 47%; font-weight: bold; }
+	.bars p { color: #fff; font-size: 1.2em; margin: 0 auto; width: 30%; transform: translateY(20%); }
+	.bars { display: inline-block; height: 100%; }
+	._html { width: 25%; background: #f68e56; }
+	._js { width: 10%; background: #8dc63f; }
+	._ps { width: 35%; background: #f26d7d; }
+	._ai { width: 30%; background: #bd8cbf; }
+
+	section.edu_exp { display: block; width: 100%; height: 600px; margin: 200px auto; overflow: hidden; }
+	div.inner_wrap { position: relative; width: 1100px; height: 100%; margin: 0 auto; }
+
+	div.e_img_box { background: #ccc; position: absolute; width: 50%; height: 500px; left: 0; }
+
+	div.e_text_box { position: absolute; width: 300px; height: 100%; right: 0; }
+	div.e_text_box ul { margin-bottom: 30px; }
+	div.e_text_box li { margin-bottom: 10px; }
+	.edu_title { font-weight: bold; }
+	.fr_title { font-size: 1.25em; font-weight: bold; padding-bottom: 8px; margin-bottom: 20px; border-bottom: 3px solid #1185ff; width: 100px; }
+	._active:before { content:""; display: inline-block; background: url("../images/edu_exp_icon.png") no-repeat center; width: 24px; height: 16px; transform: translateX(-30px); }
+	._active > button { color: #1185ff; }
+	._active > .edu_title { transform: translateX(-26px); }
+
+
+	section.sns { display: block; width: 100%; height: 50px; margin: 0 auto; }
+
+	section.sns > a { display: block; width: 200px; height: auto; margin: 0 auto; font-weight: bold; -webkit-transform: translate(2vw, 20px); }
+	section.sns > a:hover > p { color: #1185ff; }
+	section.sns > a > img { float: left; }
+	section.sns > a > p { display: inline-block; float: left; margin-left: 10px;}
+
+}
+/* =========== Desktop(end) ============ */

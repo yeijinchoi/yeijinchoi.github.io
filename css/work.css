@@ -1,0 +1,122 @@
+/* +++++++++++++++++++ index.css +++++++++++++++++++ */
+
+
+
+/* =========== mobile(start) ============ */
+@media screen and (max-width: 767px) {
+
+
+
+
+
+}
+/* =========== mobile(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== tablet(start) ============ */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+
+
+
+
+}
+/* =========== tablet(end) ============ */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* =========== Desktop(start) ============ */
+@media screen and (min-width: 1025px) {
+
+	
+
+	.work_page_bg { position: fixed; overflow: hidden; width: 100%; height: 100vh; opacity: 0.3; }
+
+	.work_shape01 { position: absolute; left: -40px; bottom: 0; }
+	.work_shape02 { position: absolute; right: -10%; top: 0; }
+
+	section { margin-bottom: 10px; }
+
+	section.work_01 { position: relative; display: block; width: 100%; height: 100vh; }
+	section.work_03 { display: block; position: relative; width: 100%; height: 100vh; }
+	section.work_02 { position: relative; display: block; width: 100%; height: 100vh; }
+	.work_title { position: absolute; left: 80px; top: 8%; font-size: 3.125em; color: white; z-index: 3; line-height: 1.1; }
+	.text_R { font-family: "NotoSansKR-black"; }
+
+	.side_R { position: absolute; background: #0072ff; width: 44%; height: 100%; overflow: hidden; float: left; }
+	.side_L { float: left; }
+
+	.trans_bg { position: absolute; top: 5%; right: 50px; }
+	.work-color { display: inline-block; border: 1px solid #ffc035; width: 20px; height: 20px; margin-right: 5px; border-radius: 30px; vertical-align: middle; }
+
+	section.work_01 > .side_R img.des { position: absolute; left: 0; bottom: 0; object-fit: cover; z-index: 1; }
+	section.work_02 > .side_R img.des { position: absolute; right: 0; bottom: 0; object-fit: cover; z-index: 1; }
+	section.work_03 > .side_R img.des { position: absolute; left: 0; bottom: 0; object-fit: cover; z-index: 1; }
+
+	section.work_01 > .side_R img.web { position: absolute; left: 150px; bottom: -10px; object-fit: cover; z-index: 1; }
+	section.work_02 > .side_R img.web { position: absolute; right: 0; bottom: -10px; object-fit: cover; z-index: 1; }
+	section.work_03 > .side_R img.web { position: absolute; left: 150px; bottom: -10px; object-fit: cover; z-index: 1; }
+
+	section.work_02 > .side_R { position: absolute; right: 0; background: #0072ff; width: 44%; height: 100%; overflow: hidden; }
+
+	section.work_01 div.text_box { position: absolute; width: 40%; background: #fff; left: 44%; bottom: 0; }
+	section.work_03 div.text_box { position: absolute; width: 40%; left: 44%; transform: translateY(50%); background: #fff; clear: both;}
+
+	section.work_02 div.text_box { position: absolute; width: 40%; background: #fff; right: 44%; bottom: 0;}
+	.more { position: absolute; top: 166px; left: 350px; display: block; width: 100px; height: 30px; border: 1px solid #fff; overflow: hidden; z-index: 50; color: white; text-align: center; }
+	.more::after { content: ""; display: none; position: relative; display: block; width: 0; height: 100%; background: #ffc035; transition: width 0.5s; z-index: 0; }
+	.more:hover::after { width: 100%; }
+
+	section.work_01 .desc_title { display: block; font-family: "NotoSansKR-black"; color: #0072ff; font-size: 3.125em; -webkit-transform: translate(-4%, -40px); text-align: right; }
+	section.work_01 .desc_date { display: block; font-size: 1.25em; color: darkgray; -webkit-transform: translate(-4%, -42px); text-align: right; }
+	.desc_main { margin-left: 5%; }
+	.desc_main li { margin-bottom: 30px; }
+	.desc_main li > h2 { color: #0072ff; font-weight: bold; }
+
+	section.work_03 .desc_title { display: block; font-family: "NotoSansKR-black"; color: #0072ff; font-size: 3.125em; -webkit-transform: translate(-6%, -40px); text-align: right; }
+	section.work_03 .desc_date { display: block; font-size: 1.25em; color: darkgray; -webkit-transform: translate(-6%, -42px); text-align: right;  }
+
+	section.work_02 .desc_title { display: block; font-family: "NotoSansKR-black"; color: #0072ff; font-size: 3.125em; -webkit-transform: translate(4%, -40px); }
+	section.work_02 .desc_date { display: block; font-size: 1.25em; color: darkgray; -webkit-transform: translate(4%, -42px); }
+
+	.color1 { background: #c32f34; }
+	.color2 { background: #fff; }
+	.color3 { background: #9711D5; }
+	.color4 { background: #E11119; }
+
+	.color5 { background: #ffc035; }
+	.color6 { background: #d12503; }
+	.color7 { background: #007dfe; }
+	.color8 { background: #d0e6fe; }
+	.color9 { background: #ecacd6; }
+	.color10 { background: #117b8d; }
+	.color11 { background: #f9c1ab; }
+	.color12 { background: #E11119; }
+
+	.color13 { background: #2ab3e3; }
+	.color14 { background: #4abdbf; }
+
+		div.wd_mockup { position: relative; display: block; width: 890px; height: 691px; overflow: visible; background: url("../images/wd_mockup.png") no-repeat top; top: 25%; left: 5%; }
+
+		span.wd_wire { position: relative; display: block; width: 739px; height: 419px; overflow: hidden; top: 2.6%; left: 8.4%; }
+		span.wd_wire > img { position: absolute; width: 739px; transform: translateY(0%); transition: transform 4s; }
+		span.wd_wire:hover > img { position: absolute; width: 739px; transform: translateY(-71%); }
+
+
+
+
+}
+/* =========== Desktop(end) ============ */

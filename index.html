@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/common.css" type="text/css">
+	<link rel="stylesheet" href="css/index.css" type="text/css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<style type="text/css">
+
+	</style>
+	<!-- [if lt IE 9]
+		<script src="js/html5shiv.js"></script>
+	<![endif] -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$(document).mousemove(function(evt){
+
+			var evt = evt ? evt : window.event;
+			var user_X = evt.clientX;
+			var user_Y = evt.clientY;
+			var center = $("section.visual").outerWidth() / 2;
+			var middle = $("section.visual").outerHeight() / 2;
+			var translate_X = -(user_X - center);
+			var translate_Y = -(user_Y - middle);
+
+			$("img.alpha").css("transform", "translate("+ translate_X / 100 +"px,"+ translate_Y / 100 +"px)");
+			$("img.shape01").css("transform", "translate("+ translate_X / 80 +"px,"+ translate_Y / 20 +"px)");
+
+
+
+		});
+
+			$(window).scroll(function(){
+				var st_val = $(this).scrollTop();
+				var target_offset_t = $(".arrow").offset().top;
+
+				if(st_val > target_offset_t){
+					$(".navi").css("color", "#1185ff");
+				}
+				else {
+					$(".navi").css("color", "#ffc000");
+				}
+
+				});
+
+
+		$(".click").click(function(){
+			$(this).toggleClass("_active");
+		});
+
+		function fade() {
+		      let animation_height = $(window).innerHeight() * 0.5;
+		      let ratio = Math.round((1 / animation_height) * 10000) / 10000;
+		      $(".fade").each(function () {
+		        let objectTop = $(this).offset().top;
+		        let windowBottom = $(window).scrollTop() + $(window).innerHeight();
+		        if (objectTop < windowBottom) {
+		          if (objectTop < windowBottom - animation_height) {
+		            $(this).css({
+		              transition: "opacity 0.1s linear",
+		              transition: "bottom 0.1s linear",
+		              opacity: 1,
+		              top: "0px",
+		            });
+		          } else {
+		            $(this).css({
+		              transition: "opacity 0.5s linear",
+		              opacity: (windowBottom - objectTop) * ratio,
+		              transition: "top 0.5s linear",
+		              top: `${200 * (1 - (windowBottom - objectTop) * ratio)}px`,
+		            });
+		          }
+		        } else {
+		          $(this).css({
+		            opacity: 0,
+		            top: "200px",
+		          });
+		        }
+		      });
+		    }
+		    $(".fade").css({
+		      opacity: 0,
+		      top: "200px",
+		    });
+		    fade();
+
+		    $(window).scroll(function () {
+		      fade();
+		    });
+
+
+		});
+
+	</script>
+</head>
+
+<body>
+
+	<section class="visual">
+		<div class="visual_bg"><img class="alpha" src="images/bg_alpha.png"></div>
+		<div class="vis_wrap">
+			<img class="bg01" src="images/vis_dotted_bg.png" alt="파란색 점 배경">
+			<div class="vis_text">
+				<p><span class="white">WEB</span> PUBLISHER</p>
+				<p><span class="white">P</span>ORTFOLIO</p>
+				<p class="name">{ <span class="white">choi-yeijin</span> }</p>
+			</div>
+			<button class="arrow _L"><img src="images/vis_arrow.png"></button>
+			<button class="trans_bg"><div class="_M"></div><a href="mailto:yei9704@naver.com" title="CONTACT"><p class="p_contact white">CONTACT</p></a></button>
+		</div>
+		<img class="shape01" src="images/vis_shape_bg.png" alt="파란색 타원 배경">
+	</section>
+	<nav>
+		<ul class="clearfix">
+			<li><a class="navi" href="#">Home</a></li>
+			<li><a class="navi" href="#work">Work</a></li>
+			<li><a class="navi" href="#profile">Profile</a></li>
+			<li><a class="navi" href="#sns">SNS</a></li>
+		</ul>
+	</nav>
+
+	<section class="work fade" id="work">
+		<ul class="clearfix">
+			<li class="design"><span class="work_box"><a href="contentDisign_work.html">Content<br>Visual<br>Design</a></span></li>
+			<li class="web_design"><span class="work_box"><a href="webDesign_work.html">Web<br>Design</a></span></li>
+			<li class="web_pub"><span class="work_box"><a href="web_work.html">Web<br>Publishing</a></span></li>
+		</ul>
+	</section>
+	<img class="shape02" src="images/work_shape_bg.png" alt="노란색 타원 배경">
+	<section class="intro clearfix fade">
+		<div class="int_title">
+			<p class="int_sub_title">I’m Web Publisher</p>
+			<p class="int_main_title text_blue">CHOI YEI-JIN</p>
+		</div>
+		<div class="int_sub">
+			<img src="images/intro_sub_arrow.png">
+			<p>누구나 이해할 수 있는 <span class="text_blue">퍼블리싱</span><br>시대의 흐름에 발 맞추는 <span class="text_blue">디자인</span><br>끈질긴 회복탄력성과 업무에 대한 집중력,<br>창조적인 시선을 유지하기 위해 노력하고 있습니다.</p>
+		</div>
+	</section>
+	<section class="profile fade" id="profile">
+		<div class="profile_box">
+			<div class="mimoticon"><img src="images/mimotocon.png"></div>
+			<p class="profile_title">#Profile</p>
+			<p class="profile_desc_title">Birth</p>
+			<p class="profile_desc">1997.04.16</p>
+			<p class="profile_desc_title">Residence</p>
+			<p class="profile_desc">경기도 수원시 권선구</p>
+			<p class="profile_desc_title">E-mail</p>
+			<p class="profile_desc">yei9704@naver.com</p>
+		</div>
+		<img class="profile_text_bg" src="images/sect_background_01.png">
+		<img class="profile_shape_bg" src="images/int_shape_bg.png">
+	</section>
+
+	<section class="skill">
+		<div class="skill_box">
+			<div class="skill_top_bar"><div class="skill_color"><span class="red"></span><span class="green"></span><span class="yellow"></span></div><span class="bar_title">Skill Point</span></div>
+			<div class="skill_bar"><span class="bars _html"><p>HTML/CSS</p></span><span class="bars _js"><p>JS</p></span><span class="bars _ps"><p>Photoshop</p></span><span class="bars _ai"><p>Illustlator</p></span></div>
+		</div>
+	</section>
+
+	<section class="edu_exp fade">
+		<div class="e_img_box">
+		</div>
+		<div class="inner_wrap">
+			<div class="e_text_box">
+				<ul class="edu">
+					<p class="fr_title">Education</p>
+					<li class="click _active">
+						<button class="edu_title">백석문화대학교</button>
+						<p>디자인학부 시각디자인과 중퇴</p>
+					</li>
+					<li class="click">
+						<button class="edu_title">경기산업기술교육센터</button>
+						<p>웹콘텐츠디자인과정 수료</p>
+					</li>
+					<li class="click">
+						<button class="edu_title">하이미디어컴퓨터학원</button>
+						<p>UI/UX 웹퍼블리셔 과정 수료</p>
+					</li>
+				</ul>
+				<ul class="exp">
+					<p class="fr_title">Experience</p>
+					<li class="click">
+						<button class="edu_title">경기산업기술교육센터</button>
+						<p>썬스코 Project Manager<br>편집디자인 프로젝트 팀장</p>
+					</li>
+					<li class="click">
+						<button class="edu_title">하이미디어컴퓨터학원</button>
+						<p>SGSG Project Manager</p>
+					</li>
+					<li class="click">
+						<button class="edu_title">OK114 편집부</button>
+						<p>2019.06 ~ 2020.12 근무</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="sns" id="sns">
+		<a href="https://www.instagram.com/invites/contact/?i=ugpdle70hl6w&utm_content=limwygn"><img src="images/sns_icon.png" alt="instagram"><p>choiozoe</p></a>
+	</section>
+
+	<footer>
+		<p>ⓒ Design by choi-yeijin</p>
+	</footer>
+</body>
+</html>
