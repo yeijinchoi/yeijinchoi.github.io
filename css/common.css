@@ -435,8 +435,8 @@
 	header { display: block ;}
 	nav { margin: 0 auto; display: block; width: 1024px; height: 120px; position: relative; padding-top: 20px; }
 	nav h1 { position: absolute; font-size: 20px; padding-top: 10px;} 
-	nav ul {  position: absolute; right: 100px; padding-top: 10px;} 
-	nav ul li { display: inline-block; width: 100px; float: left; margin-left: 20px;}
+	nav > ul {  position: absolute; right: 100px; padding-top: 10px;} 
+	nav > ul > li { display: inline-block; width: 100px; float: left; margin-left: 20px;}
 
 	.Contact-btn { width: 110px; height: 40px; background-color: #5383F6; text-align: center; border-radius: 50px; float: right; color: #fff;}
 
@@ -841,6 +841,10 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 	}
 
 	nav ul li.work .blind-subnav ul {
+		position: static !important;
+		right: auto !important;
+		left: auto !important;
+		top: auto !important;
 		display: flex;
 		gap: 16px;
 		align-items: center;
@@ -850,13 +854,14 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 		border: 1px solid #E8E8E8;
 		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 		transform: none !important;
+		width: max-content !important;
 	}
 
 	nav ul li.work .blind-subnav li {
 		font-size: 13px;
-		width: auto;
-		float: none;
-		margin-left: 0;
+		width: auto !important;
+		float: none !important;
+		margin-left: 0 !important;
 		white-space: nowrap;
 		cursor: pointer;
 	}
