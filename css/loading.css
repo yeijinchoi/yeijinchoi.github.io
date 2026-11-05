@@ -1,70 +1,55 @@
-/* +++++++++++++++++++ index.css +++++++++++++++++++ */
+/* +++++++++++++++++++ loading.css +++++++++++++++++++ */
+/* 2026-11-05 개편: flex 수직·수평 중앙정렬, 모바일 잘림·하단 쏠림 해결 */
 
-
-
-/* =========== mobile(start) ============ */
-@media screen and (max-width: 767px) {
-
-
-	.load_page { display: block; width: 100%; height: 100vh; text-align: center; }
-	.load_page img { margin-top: 30vh; width: 200px; height: 200px; }
-	.load_page p { margin-top: 40px; color: #0072ff; }
-	.wrap { display: block; width: 400px; height: 100vw; margin: 0 auto; }
-	.bold { font-family: "EliceDigitalBaeum_Bold"; }
-	p.gray { font-size: 0.875em; color: #474a6b; }
-
-
-}
-/* =========== mobile(end) ============ */
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* =========== tablet(start) ============ */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-
-	.load_page { display: block; width: 100%; height: 100vh; text-align: center; }
-	.load_page img { margin-top: 30vh; width: 200px; height: 200px; }
-	.load_page p { margin-top: 40px; color: #0072ff; }
-	.wrap { display: block; width: 700px; height: 100vw; margin: 0 auto; }
-	.bold { font-family: "EliceDigitalBaeum_Bold"; }
-	p.gray { font-size: 0.875em; color: #474a6b; }
-
-
-}
-/* =========== tablet(end) ============ */
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PORTFOLIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* =========== Desktop(start) ============ */
-@media screen and (min-width: 1025px) {
-
-
-	.load_page { display: block; width: 100%; height: 100vh; text-align: center; }
-	.load_page img { margin-top: 30vh; width: 200px; height: 200px; }
-	.load_page p { margin-top: 40px; color: #0072ff; }
-	.wrap { display: block; width: 700px; height: 100vw; margin: 0 auto; }
-	.bold { font-family: "EliceDigitalBaeum_Bold"; }
-	p.gray { font-size: 0.875em; color: #474a6b; }
-
-}
-/* =========== Desktop(end) ============ */
 @font-face {
     font-family: 'EliceDigitalBaeum_Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 body { overflow: hidden; }
+
+.load_page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	min-height: 100dvh; /* 모바일 사파리 주소창 대응 */
+	width: 100%;
+	text-align: center;
+	padding: 24px 20px;
+	box-sizing: border-box;
+}
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 540px;
+	margin: 0 auto;
+}
+
+.load_page img {
+	margin-top: 0 !important;
+	width: 160px;
+	height: 160px;
+}
+
+.load_text {
+	margin-top: 28px;
+	width: 100%;
+}
+
+.load_text p {
+	word-break: keep-all; /* 한글 단어 끊김 방지 */
+	line-height: 1.6;
+	margin-top: 14px;
+	color: #0072ff;
+}
+
+.bold { font-family: "EliceDigitalBaeum_Bold"; }
+
+p.gray { font-size: 0.875em; color: #474a6b; }
