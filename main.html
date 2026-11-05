@@ -16,6 +16,7 @@
 	<![endif] -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/career-slider.js"></script>
 	
 </head>
 
@@ -113,50 +114,57 @@
 	</div>
 	<section class="Career_section">
 		<div class="Wrapper carrer_wrapper clearfix">
-			<div class="carrer_wrap">
-				<div class="company_line clearfix">
-					<div class="company_name _b">KTN114(OK114)</div>
-					<div class="company_date">2019.06 ~ 2020.12 (사원급)</div>
-				</div>
-				<div class="company_function">
-					<ul>
-						<li>자사 자체 발행 전화번호부 편집 업무</li>
-						<li>고객사 홈페이지 제작 (자사 템플릿 이용)</li>
-						<li>자사 전화번호부 어플 배너 광고 / 팝업 광고 편집</li>
-						<li>기타 지사 내 편집 업무 수행</li>
-						<li>고객과의 커뮤니케이션</li>
-					</ul>
+			<button type="button" class="career_nav career_prev" aria-label="이전 경력 보기">&lt;</button>
+			<div class="career_viewport">
+				<div class="career_track">
+					<div class="carrer_wrap career_card">
+						<div class="company_line clearfix">
+							<div class="company_name _b">KTN114(OK114)</div>
+							<div class="company_date">2019.06 ~ 2020.12 (사원급)</div>
+						</div>
+						<div class="company_function">
+							<ul>
+								<li>자사 자체 발행 전화번호부 편집 업무</li>
+								<li>고객사 홈페이지 제작 (자사 템플릿 이용)</li>
+								<li>자사 전화번호부 어플 배너 광고 / 팝업 광고 편집</li>
+								<li>기타 지사 내 편집 업무 수행</li>
+								<li>고객과의 커뮤니케이션</li>
+							</ul>
+						</div>
+					</div>
+					<div class="carrer_wrap career_card">
+						<div class="company_line clearfix">
+							<div class="company_name _b">한국딥러닝</div>
+							<div class="company_date">2021.10 ~ 2024.03 (대리급)</div>
+						</div>
+						<div class="company_function">
+							<ul>
+								<li>3D 애셋 마켓 플레이스 ‘POLYGROUND’ UI 디자인</li>
+								<li><b>딥러닝 OCR, 3D DX 관련 발표자료 (PPT) 30여 건 작성</b></li>
+								<li>ChatGPT 3.5 기반 애플리케이션 UI/UX 디자인</li>
+								<li>자사 홈페이지 v.2 ~ v.3 디자인, 개발, 유지보수</li>
+								<li>자사 솔루션 소개 페이지 디자인, 개발, 유지보수</li>
+							</ul>
+						</div>
+					</div>
+					<div class="carrer_wrap career_card">
+						<div class="company_line clearfix">
+							<div class="company_name _bl">(주)이고진</div>
+							<div class="company_date">2024.10 ~ 재직중 (사원급)</div>
+						</div>
+						<div class="company_function">
+							<ul>
+								<li>AI 활용 상세페이지 웹표준화 및 제품 이미지 생성</li>
+								<li>자사 제품 상세페이지 디자인 및 웹퍼블리싱</li>
+								<li>Figma 활용 타부서 협업</li>
+								<li>온라인몰 배너 등 마케팅 콘텐츠 제작</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="carrer_wrap">
-				<div class="company_line clearfix">
-					<div class="company_name _b">한국딥러닝</div>
-					<div class="company_date">2021.10 ~ 2024.03 (대리급)</div>
-				</div>
-				<div class="company_function">
-					<ul>
-						<li>3D 애셋 마켓 플레이스 ‘POLYGROUND’ UI 디자인</li>
-						<li><b>딥러닝 OCR, 3D DX 관련 발표자료 (PPT) 30여 건 작성</b></li>
-						<li>ChatGPT 3.5 기반 애플리케이션 UI/UX 디자인</li>
-						<li>자사 홈페이지 v.2 ~ v.3 디자인, 개발, 유지보수</li>
-						<li>자사 솔루션 소개 페이지 디자인, 개발, 유지보수</li>
-					</ul>
-				</div>
-			</div>
-			<div class="carrer_wrap">
-				<div class="company_line clearfix">
-					<div class="company_name _bl">(주)이고진</div>
-					<div class="company_date">2024.10 ~ 재직중 (사원급)</div>
-				</div>
-				<div class="company_function">
-					<ul>
-						<li>AI 활용 상세페이지 웹표준화 및 제품 이미지 생성</li>
-						<li>자사 제품 상세페이지 디자인 및 웹퍼블리싱</li>
-						<li>Figma 활용 타부서 협업</li>
-						<li>온라인몰 배너 등 마케팅 콘텐츠 제작</li>
-					</ul>
-				</div>
-			</div>
+			<button type="button" class="career_nav career_next" aria-label="다음 경력 보기">&gt;</button>
+			<div class="career_dots" role="tablist" aria-label="경력 슬라이드 위치"></div>
 		</div>
 	</section>
 	<section class="chat_section">
