@@ -795,3 +795,22 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 	.profile_wrapper { width: 368px; padding: 28px 24px; }
 	.Profile_circle { margin: 0 20px 10px 0; }
 }
+
+/* ---------- 네비게이션 / 서브메뉴 최상위 노출 ----------
+   히어로 영역 비행기 그래픽(main-typo.png)보다 항상 앞에 오도록
+   모든 브레이크포인트에서 z-index를 상향 */
+header nav {
+	position: relative;
+	z-index: 1000;
+}
+
+.blind-subnav {
+	position: relative;
+	z-index: 1001;
+}
+
+.blind-subnav ul {
+	position: relative;
+	z-index: 1002;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
