@@ -87,7 +87,7 @@
 	.profile_wrapper { width: 368px; height: 398px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width: 100px; height: 100px; background: #E8E8E8; border-radius: 600px; top: -20px; left: -20px; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 348px; background: #fff; border-radius: 20px; height: 430px; right: 0; padding-top: 100px; padding-left: 25px; padding-right: 20px;}
+	.profile_section_wrap { position: absolute; width: 348px; background: transparent; border-radius: 20px; height: 430px; right: 0; padding-top: 100px; padding-left: 25px; padding-right: 20px;}
 
 	.Profile_circle img { width: 100%; }
 
@@ -259,7 +259,7 @@
 	.profile_wrapper { width: 768px; height: 258px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width: 100px; height: 100px; background: #E8E8E8; border-radius: 600px; left: 0; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 700px; background: #fff; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 45px; }
+	.profile_section_wrap { position: absolute; width: 700px; background: transparent; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 45px; }
 
 	.Profile_circle img { width: 100%; }
 
@@ -463,7 +463,7 @@
 	.profile_wrapper { width: 1024px; height: 258px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width:258px; height: 258px; background: #E8E8E8; border-radius: 600px; left: 0; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 830px; background: #fff; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 80px; }
+	.profile_section_wrap { position: absolute; width: 830px; background: transparent; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 80px; }
 
 	.Profile_circle img { width: 100%; }
 
@@ -584,7 +584,29 @@
 }
 /* =========== Desktop(end) ============ */
 
-body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
+body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
+
+/* 고정 너비 메인 컨테이너 : 살짝 명도가 있는 오프화이트(#FAFAFC)로 좌우 그레이(#F5F6F8)와 은은한 대비 */
+.site_wrap {
+	width: 1100px;
+	max-width: 100%;
+	margin: 0 auto;
+	background: #FAFAFC;
+	min-height: 100vh;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.03);
+	border-left: 1px solid #ECEEF1;
+	border-right: 1px solid #ECEEF1;
+	position: relative;
+}
+
+@media screen and (max-width: 1100px) {
+	.site_wrap {
+		width: 100%;
+		border-left: 0;
+		border-right: 0;
+		box-shadow: none;
+	}
+}
 
 /* ============================================================
    2026-11-05 시안 반영 : 프로필 카드 정돈 + 경력 카드 슬라이더
@@ -619,8 +641,8 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 .career_card {
 	flex: 0 0 calc((100% - 24px) / 2);
 	float: none;
-	background: #F8F8F8;
-	border: 1px solid #EAEAEA;
+	background: #EEF0F4;
+	border: 1px solid #E2E5EA;
 	border-radius: 16px;
 	box-shadow: none;
 	padding: 28px 32px;
@@ -697,13 +719,15 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 	border: 1px solid #EAEAEA;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	font-size: 20px;
-	font-family: "NotoSansKR-Bold";
-	color: #333;
-	text-align: center;
-	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
-	transition: opacity 0.2s, box-shadow 0.2s;
+	transition: opacity 0.2s, box-shadow 0.2s, transform 0.15s ease;
+	user-select: none;
 }
+
+.career_nav:active:not(:disabled) { transform: scale(0.92); }
 
 .career_next { order: 3; }
 
@@ -754,8 +778,8 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
    PC 시안(IMG_3709) 배색 : 페이지 배경 화이트, 프로필 카드는 연한 그레이 + 보더 */
 .profile_wrapper {
 	height: auto;
-	background: #F8F8F8;
-	border: 1px solid #EAEAEA;
+	background: #EEF0F4;
+	border: 1px solid #E2E5EA;
 	border-radius: 20px;
 	box-shadow: none;
 }
