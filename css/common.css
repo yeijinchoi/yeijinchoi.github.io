@@ -433,7 +433,7 @@
 
 
 	header { display: block ;}
-	nav { margin: 0 auto; display: block; width: 1024px; height: 120px; position: relative; padding-top: 20px; }
+	nav { margin: 0 auto; display: block; width: 940px; height: 120px; position: relative; padding-top: 20px; }
 	nav h1 { position: absolute; font-size: 20px; padding-top: 10px;} 
 	nav > ul {  position: absolute; right: 100px; padding-top: 10px;} 
 	nav > ul > li { display: inline-block; width: 100px; float: left; margin-left: 20px;}
@@ -443,7 +443,7 @@
 	.bold { font-family: "NotoSansKR-Bold"; }
 
 	.visualwrap { width: 100%; overflow: hidden; padding-bottom: 45px;}
-	.visualT { width: 1024px; display: block; margin: 0 auto; padding-top: 70px; position: relative;}
+	.visualT { width: 940px; display: block; margin: 0 auto; padding-top: 70px; position: relative;}
 	.visualT h2 {font-size: 57px; font-family: "NotoSansKR-Light"; }
 	.visualT h2 span.jean { font-size: 24px;}
 
@@ -460,7 +460,7 @@
 	.first-icon img { width: 100%; }
 
 	.first_section { width: 100%; margin-top: 140px; display: block;}
-	.profile_wrapper { width: 1024px; height: 258px; display: block; margin: 0 auto; position: relative; }
+	.profile_wrapper { width: 940px; height: 258px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width:258px; height: 258px; background: #E8E8E8; border-radius: 600px; left: 0; z-index: 50;}
 	.profile_section_wrap { position: absolute; width: 830px; background: transparent; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 80px; }
@@ -482,17 +482,17 @@
 
 	.intro { margin-bottom: 30px; }
 
-	.skill_wrapper { width: 1024px; display: block; margin: 0 auto; padding-top: 90px; }
+	.skill_wrapper { width: 940px; display: block; margin: 0 auto; padding-top: 90px; }
 	.skillset { display: inline-block; width: 49%; height: 52px; position: relative; }
 
 	.skillset img { position: absolute; transform: translateY(-50%); top: 50%; height: 49px; }
-	.skillset .bar { width: 410px; background: #A6D4FF; height: 16px; position: absolute; right: 0; transform: translateY(-50%); top: 50%; border-radius: 30px; margin-right: 20px;}
+	.skillset .bar { width: 360px; background: #A6D4FF; height: 16px; position: absolute; right: 0; transform: translateY(-50%); top: 50%; border-radius: 30px; margin-right: 20px;}
 
-	.chat_section { width: 1024px; display: block; margin: 0 auto; padding-top: 90px; height: 400px;}
+	.chat_section { width: 940px; display: block; margin: 0 auto; padding-top: 90px; height: 400px;}
 	.chat_section > div { width: 100%; position: relative; }
 
 	.Career_section { width: 100%; }
-	.carrer_wrapper { width: 1024px; margin: 0 auto; display: block; background: #fff; border-radius: 10px; margin-top: 90px; padding: 30px 40px; line-height: 1.5;}
+	.carrer_wrapper { width: 940px; margin: 0 auto; display: block; background: #fff; border-radius: 10px; margin-top: 90px; padding: 30px 40px; line-height: 1.5;}
 
 	.carrer_wrap { float: left; width: 33.333%; padding: 0 15px; margin-bottom: 0;}
 	.company_line > div { float: left; margin-bottom: 20px; line-height: 1.2;}
@@ -510,14 +510,14 @@
 	.chat_R_p {  position: absolute; top: 50%; transform: translateY(-50%); right: 24px; color: #fff;}
 
 	.Webdesign_section { width: 100%; }
-	.webdesign_wrapper { width: 1024px; margin: 0 auto; display: block; }
+	.webdesign_wrapper { width: 940px; margin: 0 auto; display: block; }
 
 	footer { width: 100%; height: 100px; text-align: center; padding-top: 34px; border-top: 1px solid #F2F2F2; color: #C9C9C9;}
 
 	.wrap_title { font-size: 36px; text-align: center; margin-bottom: 50px;}
 
 	.Webdesign_section { width: 100%; padding-bottom: 90px;}
-	.webdesign_wrapper { width: 1024px; margin: 0 auto; display: block; }
+	.webdesign_wrapper { width: 940px; margin: 0 auto; display: block; }
 	.Works_wrap img { width: 100%; text-align: center; }
 	.Works_wrap div div img { transition:
 		width 0.1s,
@@ -546,10 +546,10 @@
 	.Mobile_S { background: #fff; width: 236px; height: 440px; float: left; margin-right: 20px; border-radius: 5px; overflow: hidden; }
 	.Mobile_S img { width: 100%; }
 
-	.Mobile_Wrapper { width: 1024px; margin: 0 auto; padding-bottom: 90px; }
+	.Mobile_Wrapper { width: 940px; margin: 0 auto; padding-bottom: 90px; }
 
 	.GraphicDesign_section { width: 100%; border-top: 1px solid #F2F2F2; padding-top: 90px;  }
-	.Graphic_wrapper { width: 1024px; margin: 0 auto; margin-bottom: 90px; display: block; }
+	.Graphic_wrapper { width: 940px; margin: 0 auto; margin-bottom: 90px; display: block; }
 
 	.Graphic_L { background: #fff; width: 326px; height: 240px; float: left; margin-right: 20px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
 	.Graphic_L img { width: 100%; object-position: center;} 
@@ -557,7 +557,7 @@
 	._last_b { margin-right: 0px; }
 
 	.Last_section { width: 100%; padding-top: 90px; border-top: 1px solid #F2F2F2;}
-	.last_wrapper { width: 1024px; margin: 0 auto;  margin-bottom: 90px; position: relative ;}
+	.last_wrapper { width: 940px; margin: 0 auto;  margin-bottom: 90px; position: relative ;}
 
 	.last_wrapper div { width: 736px; height: 62px; background: url("../images/message-blue-l.png") no-repeat right; background-size: contain; position: absolute; color: #fff; padding-top: 20px; padding-left: 18px; left: 0;}
 
@@ -620,7 +620,7 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	width: 1024px;
+	width: 940px;
 	max-width: calc(100% - 32px);
 	margin: 90px auto 0;
 	padding: 0;
@@ -812,7 +812,7 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 
 /* ---------- 데스크톱 : 프로필 카드 / 비행기 그래픽 ---------- */
 @media screen and (min-width: 1025px) {
-	.profile_wrapper { width: 1024px; padding: 32px 40px; }
+	.profile_wrapper { width: 940px; padding: 32px 40px; }
 	.Profile_circle { margin-right: 40px; margin-top: 6px; }
 	.visualimg { width: 460px; bottom: -30px; right: 10px; }
 	.visualimg img { width: 380px; }
