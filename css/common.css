@@ -584,7 +584,7 @@
 }
 /* =========== Desktop(end) ============ */
 
-body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
+body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 
 /* ============================================================
    2026-11-05 시안 반영 : 프로필 카드 정돈 + 경력 카드 슬라이더
@@ -619,13 +619,20 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 .career_card {
 	flex: 0 0 calc((100% - 24px) / 2);
 	float: none;
-	background: #fff;
+	background: #F8F8F8;
 	border: 1px solid #EAEAEA;
 	border-radius: 16px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+	box-shadow: none;
 	padding: 28px 32px;
 	margin-bottom: 0;
 	line-height: 1.7;
+}
+
+/* 현재 재직 중인 회사 카드((주)이고진, badge_current 포함) : 화이트 하이라이트 */
+.career_card:has(.badge_current) {
+	background: #FFFFFF;
+	border: 1px solid #DEDEDE;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .company_line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
@@ -743,12 +750,14 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 	.company_line .company_date { order: 2; white-space: nowrap; }
 }
 
-/* ---------- 프로필 카드 정돈 (공통) ---------- */
+/* ---------- 프로필 카드 정돈 (공통) ----------
+   PC 시안(IMG_3709) 배색 : 페이지 배경 화이트, 프로필 카드는 연한 그레이 + 보더 */
 .profile_wrapper {
 	height: auto;
-	background: #fff;
+	background: #F8F8F8;
+	border: 1px solid #EAEAEA;
 	border-radius: 20px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+	box-shadow: none;
 }
 
 .Profile_circle {
