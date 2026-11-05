@@ -783,6 +783,7 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 	height: auto;
 	padding: 0;
 	overflow: hidden;
+	background: transparent !important;
 }
 
 /* ---------- 데스크톱 : 프로필 카드 / 비행기 그래픽 ---------- */
@@ -820,21 +821,26 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 		z-index: 1000;
 	}
 
-	.blind-subnav {
-		position: absolute;
-		top: 60px;
-		right: 105px;
-		z-index: 1001;
-		display: none;
+	nav ul li.work {
+		position: relative;
 	}
 
-	nav:hover .blind-subnav,
-	.blind-subnav:hover {
+	nav ul li.work .blind-subnav {
+		position: absolute;
+		top: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1001;
+		display: none;
+		width: max-content;
+	}
+
+	nav ul li.work:hover .blind-subnav,
+	nav ul li.work .blind-subnav:hover {
 		display: block;
 	}
 
-	nav:hover .blind-subnav ul,
-	.blind-subnav:hover ul {
+	nav ul li.work .blind-subnav ul {
 		display: flex;
 		gap: 16px;
 		align-items: center;
@@ -846,10 +852,17 @@ body { font-family: "NotoSansKR-Regular"; background: #ffffff; }
 		transform: none !important;
 	}
 
-	.blind-subnav li {
+	nav ul li.work .blind-subnav li {
 		font-size: 13px;
+		width: auto;
+		float: none;
+		margin-left: 0;
 		white-space: nowrap;
 		cursor: pointer;
+	}
+
+	nav ul li.work .blind-subnav li:hover {
+		color: #5383F6;
 	}
 }
 /* ============================================================
