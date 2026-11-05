@@ -796,21 +796,50 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 	.Profile_circle { margin: 0 20px 10px 0; }
 }
 
-/* ---------- 네비게이션 / 서브메뉴 최상위 노출 ----------
-   히어로 영역 비행기 그래픽(main-typo.png)보다 항상 앞에 오도록
-   모든 브레이크포인트에서 z-index를 상향 */
-header nav {
-	position: relative;
-	z-index: 1000;
+/* ---------- 네비게이션 / 서브메뉴 위치 정돈 ----------
+   모바일/태블릿(≤1024px) : 터치 환경에서 :hover 고정·좌표 어긋남으로 오작동 → 완전 숨김
+   데스크톱(≥1025px) : Works 아래 작은 알약 팝업으로 정돈 (비행기 그래픽보다 항상 앞) */
+@media screen and (max-width: 1024px) {
+	.blind-subnav {
+		display: none !important;
+	}
 }
 
-.blind-subnav {
-	position: relative;
-	z-index: 1001;
-}
+@media screen and (min-width: 1025px) {
+	nav {
+		position: relative;
+		z-index: 1000;
+	}
 
-.blind-subnav ul {
-	position: relative;
-	z-index: 1002;
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	.blind-subnav {
+		position: absolute;
+		top: 60px;
+		right: 105px;
+		z-index: 1001;
+		display: none;
+	}
+
+	nav:hover .blind-subnav,
+	.blind-subnav:hover {
+		display: block;
+	}
+
+	nav:hover .blind-subnav ul,
+	.blind-subnav:hover ul {
+		display: flex;
+		gap: 16px;
+		align-items: center;
+		background: #fff;
+		padding: 8px 18px;
+		border-radius: 50px;
+		border: 1px solid #E8E8E8;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+		transform: none !important;
+	}
+
+	.blind-subnav li {
+		font-size: 13px;
+		white-space: nowrap;
+		cursor: pointer;
+	}
 }
