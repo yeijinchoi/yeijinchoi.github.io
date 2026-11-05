@@ -646,6 +646,21 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 ._b { border: 1px solid #000; color: #000; }
 ._bl { background: #000; color: #fff; }
 
+/* 재직중 포인트 배지 */
+.badge_current {
+	display: inline-block;
+	background: #10B981;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "NotoSansKR-Bold";
+	padding: 3px 10px;
+	border-radius: 20px;
+	margin-left: 8px;
+	vertical-align: middle;
+	flex: 0 0 auto;
+}
+
 .company_date { width: auto; height: auto; padding: 0; font-size: 14px; color: #666; }
 
 .company_function ul { line-height: 1.7; }
