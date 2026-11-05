@@ -17,54 +17,11 @@
 	<![endif] -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-	$(document).ready(function(){
-
-
-	function fade() {
-				let animation_height = $(window).innerHeight() * 0.5;
-				let ratio = Math.round((1 / animation_height) * 10000) / 10000;
-				$(".fade").each(function () {
-					let objectTop = $(this).offset().top;
-					let windowBottom = $(window).scrollTop() + $(window).innerHeight();
-					if (objectTop < windowBottom) {
-						if (objectTop < windowBottom - animation_height) {
-							$(this).css({
-								transition: "opacity 0.1s linear",
-								transition: "left 0.1s linear",
-								opacity: 1,
-								left: "0px",
-							});
-						} else {
-							$(this).css({
-								transition: "opacity 0.5s linear",
-								opacity: (windowBottom - objectTop) * ratio
-							});
-						}
-					} else {
-						$(this).css({
-							opacity: 0,
-						});
-					}
-				});
-			}
-			$(".fade").css({
-				opacity: 0,
-			});
-			fade();
-
-			$(window).scroll(function () {
-				fade();
-			});
-
-
-	});
-
-	</script>
+	<script type="text/javascript" src="js/work.js"></script>
 </head>
 
 <body>
+	<button class="top_btn">TOP</button>
 	<div class="work_page_bg">
 		<img class="work_shape01" src="images/work_shape_bg.png" alt="노란색 타원 배경">
 		<img class="work_shape02" src="images/int_shape_bg.png" alt="파란색 타원 배경">
@@ -72,6 +29,36 @@
 	<section class="work_01 clearfix">
 		<div class="side_R">
 			<a href="main.html" class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></a>
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/POLYGROUND-screen-full.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Product</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<a class="title-hover" href="https://www.polyground.ai"><p class="desc_title">POLYGROUND</p></a>
+				<p class="desc_date">2023.10</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>3D Assets Market Platform</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>한국딥러닝 재직 중 기획 참여 / 웹디자인 참여비율 100%로<br>기획, 웹개발, 서버개발팀 총 10명의 팀원과 함께 런칭한 <br>3D Asset 마켓 플랫폼입니다. </p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Pretendard</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color15"></span> #000000<br><span class="work-color color01"></span> #ffffff</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+	<section class="work_02 clearfix">
+		<div class="side_R">
 			<div class="wd_mockup"><span class="wd_wire"><img src="images/wd_01.png"></span></div>
 			<p class="work_title">Web site<br><span class="text_R">Re Design</span></p>
 		</div>
@@ -100,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-
+	
 	<footer>
 		<p>ⓒ Design by choi-yeijin</p>
 	</footer>

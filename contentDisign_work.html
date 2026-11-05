@@ -17,61 +17,18 @@
 	<![endif] -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-
-
-		function fade() {
-		      let animation_height = $(window).innerHeight() * 0.5;
-		      let ratio = Math.round((1 / animation_height) * 10000) / 10000;
-		      $(".fade").each(function () {
-		        let objectTop = $(this).offset().top;
-		        let windowBottom = $(window).scrollTop() + $(window).innerHeight();
-		        if (objectTop < windowBottom) {
-		          if (objectTop < windowBottom - animation_height) {
-		            $(this).css({
-		              transition: "opacity 0.1s linear",
-		              transition: "left 0.1s linear",
-		              opacity: 1,
-		              left: "0px",
-		            });
-		          } else {
-		            $(this).css({
-		              transition: "opacity 0.5s linear",
-		              opacity: (windowBottom - objectTop) * ratio
-		            });
-		          }
-		        } else {
-		          $(this).css({
-		            opacity: 0,
-		          });
-		        }
-		      });
-		    }
-		    $(".fade").css({
-		      opacity: 0,
-		    });
-		    fade();
-
-		    $(window).scroll(function () {
-		      fade();
-		    });
-
-
-		});
-
-	</script>
+	<script type="text/javascript" src="js/work.js"></script>
 </head>
 
 <body>
+	<button class="top_btn">TOP</button>
 	<div class="work_page_bg">
 		<img class="work_shape01" src="images/work_shape_bg.png" alt="노란색 타원 배경">
 		<img class="work_shape02" src="images/int_shape_bg.png" alt="파란색 타원 배경">
 	</div>
 	<section class="work_01 clearfix">
 		<div class="side_R">
-			<a href="main.html" class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></a>
+			<a href="index.html" class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></a>
 			<img class="des" src="images/texi.png">
 			<p class="work_title">Web Banner<br><span class="text_R">Visual Design</span></p>
 		</div>
@@ -148,7 +105,7 @@
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+								<p>거리두기 단계 조정으로 인해 비대면으로 진행된 시/소설 낭독회 "復낙원"<br>웹포스터를 의뢰 받아 작업한 레디메이드 포스터로 존 밀턴의 복낙원<br>(Paradise regained)을 모티프로 한 낭독회인 만큼 Regained를 키워드로 삼아<br>석고상의 뒷모습을 몽환적인 분위기로 표현했습니다.</p>
 						</li>
 						<li>
 							<h2>FONT</h2>
@@ -175,15 +132,15 @@
 					<ul class="desc_main">
 						<li>
 							<h2>TYPE</h2>
-								<p>Resposive Web</p>
+								<p>PhotoCard Design</p>
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+								<p>이달의소녀 데뷔 1주년을 맞아 팬덤에 비공식 배포된 컬러칩 콘셉트의 포토카드로<br>소속사에서 부여한 각 멤버의 상징색을 메인컬러로 삼고 지갑에 넣고 다닐 수 있도록<br>심플하게 디자인했습니다.</p>
 						</li>
 						<li>
 							<h2>FONT</h2>
-								<p>Noto Sans KR</p>
+								<p>KoPub돋움</p>
 						</li>
 						<li>
 							<h2>COLOR</h2>
@@ -209,11 +166,11 @@
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+								<p>이벤트 회사에서 의뢰받아 디자인한 지역 주최 토론회 웹포스터로<br>의뢰한 지역 로고 메인 컬러인 노란색을 메인컬러로 지정하고<br>토론회라는 주제에 부합하는 간결한 일러스트를 사용하여 2시간 작업, 2번의 컨펌 끝에 완성하였습니다.</p>
 						</li>
 						<li>
 							<h2>FONT</h2>
-								<p>Noto Sans KR</p>
+								<p>G마켓 산스, 경기천년제목체</p>
 						</li>
 						<li>
 							<h2>COLOR</h2>

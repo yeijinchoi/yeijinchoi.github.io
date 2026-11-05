@@ -16,199 +16,217 @@
 	<![endif] -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-
-			$(document).mousemove(function(evt){
-
-			var evt = evt ? evt : window.event;
-			var user_X = evt.clientX;
-			var user_Y = evt.clientY;
-			var center = $("section.visual").outerWidth() / 2;
-			var middle = $("section.visual").outerHeight() / 2;
-			var translate_X = -(user_X - center);
-			var translate_Y = -(user_Y - middle);
-
-			$("img.alpha").css("transform", "translate("+ translate_X / 100 +"px,"+ translate_Y / 100 +"px)");
-			$("img.shape01").css("transform", "translate("+ translate_X / 80 +"px,"+ translate_Y / 20 +"px)");
-
-
-
-		});
-
-			$(window).scroll(function(){
-				var st_val = $(this).scrollTop();
-				var target_offset_t = $(".arrow").offset().top;
-
-				if(st_val > target_offset_t){
-					$(".navi").css("color", "#1185ff");
-				}
-				else {
-					$(".navi").css("color", "#ffc000");
-				}
-
-				});
-
-
-		$(".click").click(function(){
-			$(this).toggleClass("_active");
-		});
-
-		function fade() {
-		      let animation_height = $(window).innerHeight() * 0.5;
-		      let ratio = Math.round((1 / animation_height) * 10000) / 10000;
-		      $(".fade").each(function () {
-		        let objectTop = $(this).offset().top;
-		        let windowBottom = $(window).scrollTop() + $(window).innerHeight();
-		        if (objectTop < windowBottom) {
-		          if (objectTop < windowBottom - animation_height) {
-		            $(this).css({
-		              transition: "opacity 0.1s linear",
-		              transition: "bottom 0.1s linear",
-		              opacity: 1,
-		              top: "0px",
-		            });
-		          } else {
-		            $(this).css({
-		              transition: "opacity 0.5s linear",
-		              opacity: (windowBottom - objectTop) * ratio,
-		              transition: "top 0.5s linear",
-		              top: `${200 * (1 - (windowBottom - objectTop) * ratio)}px`,
-		            });
-		          }
-		        } else {
-		          $(this).css({
-		            opacity: 0,
-		            top: "200px",
-		          });
-		        }
-		      });
-		    }
-		    $(".fade").css({
-		      opacity: 0,
-		      top: "200px",
-		    });
-		    fade();
-
-		    $(window).scroll(function () {
-		      fade();
-		    });
-
-
-		});
-
-	</script>
+	
 </head>
 
 <body>
-
-	<section class="visual">
-		<div class="visual_bg"><img class="alpha" src="images/bg_alpha.png"></div>
-		<div class="vis_wrap">
-			<img class="bg01" src="images/vis_dotted_bg.png" alt="파란색 점 배경">
-			<div class="vis_text">
-				<p><span class="white">WEB</span> PUBLISHER</p>
-				<p><span class="white">P</span>ORTFOLIO</p>
-				<p class="name">{ <span class="white">choi-yeijin</span> }</p>
+	<header class="clearfix">
+		<nav class="clearfix">
+			<h1>Jean</h1>
+			<ul class="clearfix">
+				<li><a href="#">Profile</a></li>
+				<li class="work"><a href="web_work.html">Works</a></li>
+			</ul>
+			<button class="Contact-btn"><a href="mailto:yei9704@naver.com" style="color: #fff;">Contact</a></button>
+			<div class="blind-subnav">
+				<ul>
+					<a href="webDesign_work.html"><li>Web Design</li></a>
+					<a href="web_work.html"><li>Web Publishing</li></a>
+				</ul>
 			</div>
-			<button class="arrow _L"><img src="images/vis_arrow.png"></button>
-			<button class="trans_bg"><div class="_M"></div><a href="mailto:yei9704@naver.com" title="CONTACT"><p class="p_contact white">CONTACT</p></a></button>
+		</nav>
+		<div class="visualwrap clearfix">
+			<div class="visualT">
+				<h2>
+					Hello, I'm<br><span class="bold">Yeijin Choi </span><span class="jean">aka Jean</span>
+				</h2>
+				
+				<div class="header_clipwrap">
+					<p>ver 2. 2023.05.09</p>
+				</div>
+				<div class="clearfix">
+					<span class="first-icon"><img src="images/first-icon.png" alt=""></span>
+					<div class="clip_right">
+						<p>제안 <span class="bold">받는 중</span></p>
+					</div>
+				</div>
+				<div class="visualimg">
+					<img src="images/main-typo.png" alt="">
+				</div>
+			</div>
 		</div>
-		<img class="shape01" src="images/vis_shape_bg.png" alt="파란색 타원 배경">
-	</section>
-	<nav>
-		<ul class="clearfix">
-			<li><a class="navi" href="#">Home</a></li>
-			<li><a class="navi" href="#work">Work</a></li>
-			<li><a class="navi" href="#profile">Profile</a></li>
-			<li><a class="navi" href="#sns">SNS</a></li>
-		</ul>
-	</nav>
-
-	<section class="work fade" id="work">
-		<ul class="clearfix">
-			<li class="design"><span class="work_box"><a href="contentDisign_work.html">Content<br>Visual<br>Design</a></span></li>
-			<li class="web_design"><span class="work_box"><a href="webDesign_work.html">Web<br>Design</a></span></li>
-			<li class="web_pub"><span class="work_box"><a href="web_work.html">Web<br>Publishing</a></span></li>
-		</ul>
-	</section>
-	<img class="shape02" src="images/work_shape_bg.png" alt="노란색 타원 배경">
-	<section class="intro clearfix fade">
-		<div class="int_title">
-			<p class="int_sub_title">I’m Web Publisher</p>
-			<p class="int_main_title text_blue">CHOI YEI-JIN</p>
-		</div>
-		<div class="int_sub">
-			<img src="images/intro_sub_arrow.png">
-			<p>누구나 이해할 수 있는 <span class="text_blue">퍼블리싱</span><br>시대의 흐름에 발 맞추는 <span class="text_blue">디자인</span><br>끈질긴 회복탄력성과 업무에 대한 집중력,<br>창조적인 시선을 유지하기 위해 노력하고 있습니다.</p>
-		</div>
-	</section>
-	<section class="profile fade" id="profile">
-		<div class="profile_box">
-			<div class="mimoticon"><img src="images/mimotocon.png"></div>
-			<p class="profile_title">#Profile</p>
-			<p class="profile_desc_title">Birth</p>
-			<p class="profile_desc">1997.04.16</p>
-			<p class="profile_desc_title">Residence</p>
-			<p class="profile_desc">경기도 수원시 권선구</p>
-			<p class="profile_desc_title">E-mail</p>
-			<p class="profile_desc">yei9704@naver.com</p>
-		</div>
-		<img class="profile_text_bg" src="images/sect_background_01.png">
-		<img class="profile_shape_bg" src="images/int_shape_bg.png">
-	</section>
-
-	<section class="skill">
-		<div class="skill_box">
-			<div class="skill_top_bar"><div class="skill_color"><span class="red"></span><span class="green"></span><span class="yellow"></span></div><span class="bar_title">Skill Point</span></div>
-			<div class="skill_bar"><span class="bars _html"><p>HTML/CSS</p></span><span class="bars _js"><p>JS</p></span><span class="bars _ps"><p>Photoshop</p></span><span class="bars _ai"><p>Illustlator</p></span></div>
-		</div>
-	</section>
-
-	<section class="edu_exp fade">
-		<div class="e_img_box">
-		</div>
-		<div class="inner_wrap">
-			<div class="e_text_box">
-				<ul class="edu">
-					<p class="fr_title">Education</p>
-					<li class="click _active">
-						<button class="edu_title">백석문화대학교</button>
-						<p>디자인학부 시각디자인과 중퇴</p>
-					</li>
-					<li class="click">
-						<button class="edu_title">경기산업기술교육센터</button>
-						<p>웹콘텐츠디자인과정 수료</p>
-					</li>
-					<li class="click">
-						<button class="edu_title">하이미디어컴퓨터학원</button>
-						<p>UI/UX 웹퍼블리셔 과정 수료</p>
-					</li>
-				</ul>
-				<ul class="exp">
-					<p class="fr_title">Experience</p>
-					<li class="click">
-						<button class="edu_title">경기산업기술교육센터</button>
-						<p>썬스코 Project Manager<br>편집디자인 프로젝트 팀장</p>
-					</li>
-					<li class="click">
-						<button class="edu_title">하이미디어컴퓨터학원</button>
-						<p>SGSG Project Manager</p>
-					</li>
-					<li class="click">
-						<button class="edu_title">OK114 편집부</button>
-						<p>2019.06 ~ 2020.12 근무</p>
-					</li>
-				</ul>
+	</header>
+	<section class="first_section clearfix">
+		<div class="Wrapper profile_wrapper clearfix">
+			<div class="Profile_circle"><img src="images/profile-img.png" alt=""></div>
+			<div class="profile_section_wrap">
+				<div class="Name clearfix">
+					<p class="ko_name">최예진</p>
+					<p class="en_name">Jean Choi</p>
+				</div>
+				<div class="intro">스타트업 웹 디자이너, 퍼블리셔 커리어와 함께 쌓아온 단단한 책임감으로<br><b>웹디자인, 웹퍼블리싱, 콘텐츠디자인</b> 프로젝트를 진행합니다.</div>
+				<div class="Tag">
+					<button class="tag_orange"><p class="tag_orange_p">HTML5</p></button>
+					<button class="tag_orange"><p class="tag_orange_p">CSS3</p></button>
+					<button class="tag_orange"><p class="tag_orange_p">Jquery</p></button>
+					<button class="tag_orange"><p class="tag_orange_p">Java script</p></button>
+					<button class="tag_white"><p class="tag_white_p">Photoshop</p></button>
+					<button class="tag_white"><p class="tag_white_p">illustrator</p></button>
+					<button class="tag_white"><p class="tag_white_p">Figma</p></button>
+				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="sns" id="sns">
-		<a href="https://www.instagram.com/invites/contact/?i=ugpdle70hl6w&utm_content=limwygn"><img src="images/sns_icon.png" alt="instagram"><p>choiozoe</p></a>
+	<div class="Wrapper skill_wrapper">
+		<div class="skillset clearfix">
+			<div class="skill_icon"><img src="images/html-icon.png" alt="html"></div>
+			<div class="bar" id="html"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/photoshop-icon.png" alt="Photoshop"></div>
+			<div class="bar" id="Photoshop"><div></div></div>
+		</div>
+		<div class="skillset clearfix">
+			<div class="skill_icon"><img src="images/css-icon.png" alt="css"></div>
+			<div class="bar" id="css"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/illustlator-icon.png" alt="illustrator"></div>
+			<div class="bar" id="illustrator"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/js-icon.png" alt="javascript"></div>
+			<div class="bar" id="javascript"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/figma-icon.png" alt="figma"></div>
+			<div class="bar" id="figma"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/Jquery-icon.png" alt="Jquery"></div>
+			<div class="bar" id="Jquery"><div></div></div>
+		</div>
+		<div class="skillset">
+			<div class="skill_icon"><img src="images/communication-icon.png" alt="communication"></div>
+			<div class="bar" id="communication"><div></div></div>
+		</div>
+	</div>
+	<section class="Career_section">
+		<div class="Wrapper carrer_wrapper clearfix">
+			<div class="carrer_wrap _R">
+				<div class="company_line clearfix">
+					<div class="company_name _b">KTN114(OK114)</div>
+					<div class="company_date">2019.06 ~ 2020.12 (사원급)</div>
+				</div>
+				<div class="company_function">
+					<ul>
+						<li>자사 자체 발행 전화번호부 편집 업무</li>
+						<li>고객사 홈페이지 제작 (자사 템플릿 이용)</li>
+						<li>자사 전화번호부 어플 배너 광고 / 팝업 광고 편집</li>
+						<li>기타 지사 내 편집 업무 수행</li>
+						<li>고객과의 커뮤니케이션</li>
+					</ul>
+				</div>
+			</div>
+			<div class="carrer_wrap _L">
+					<div class="company_line clearfix">
+						<div class="company_name _bl">한국딥러닝</div>
+						<div class="company_date">2021.10 ~ 2023.03 (대리급)</div>
+					</div>
+					<div class="company_function">
+						<ul>
+							<li>3D 애셋 마켓 플레이스 ‘POLYGROUND’ UI 디자인</li>
+							<li><b>딥러닝 OCR, 3D DX 관련 발표자료 (PPT) 30여 건 작성</b></li>
+							<li>ChatGPT 3.5 기반 애플리케이션 UI/UX 디자인</li>
+							<li>자사 홈페이지 v.2 ~ v.3 디자인, 개발, 유지보수</li>
+							<li>자사 솔루션 소개 페이지 디자인, 개발, 유지보수</li>
+						</ul>
+				</div>
+			</div>
+		</div>
 	</section>
-
+	<section class="chat_section">
+		<div class="chat_L">
+			<div class="chat_L_p">어떤 마음가짐으로 일하고 있나요?</div>
+		</div>
+		<div class="chat_R">
+			<div class="chat_R_p">소통과 배려, 책임감을 무기로 디자이너와 웹개발자 사이의 유연한 연결고리로써 업무에 임하고 있습니다.</div>
+		</div>
+	</section>
+	<section class="Webdesign_section">
+		<div class="Wrapper webdesign_wrapper">
+			<h2 class="wrap_title">Web Design Works</h2>
+			<div class="Works_wrap clearfix">
+				<div class="webdes_four clearfix">
+					<div class="hover-before"><p>DEEP OCR VIEWER</p><a href="web_work.html#work_03"><img src="images/web_deepocr-view.png" alt="딥오씨알뷰어"></a></div>
+					<div class="hover-before"><p>SGSG 소극소극</p><a href="web_work.html#work_04"><img src="images/web_sgsg.png" alt="딥오씨알뷰어"></a></div>
+					<div class="hover-before"><p>KDL 브랜드페이지 v2</p><a href="web_work.html"><img src="images/web_kdl-1.png" alt="딥오씨알뷰어"></a></div>
+					<div class="hover-before"><p>KDL 브랜드페이지 v1</p><a href="web_work.html"><img src="images/web_deepocr_2.png" alt="딥오씨알뷰어"></a></div>
+				</div>
+				<div class="webdes_one _up clearfix">
+					<div class="hover-before"><p>KDL 브랜드페이지 v3</p><a href="web_work.html#work_01"><img src="images/web_kdl-3.png" alt="딥오씨알뷰어"></a></div>
+				</div>
+				<div class="webdes_five clearfix">
+					<div class="hover-before"><p>DEEP OCR 홈페이지</p><a href="web_work.html#work_05"><img src="images/web_deepocr.png" alt="딥오씨알뷰어"></a></div>
+					<div class="hover-before"><p>DEEP INVOICE 홈페이지</p><a href="web_work.html#work_02"><img src="images/web_deepinvo.png" alt="딥오씨알뷰어"></a></div>
+				</div>
+				<div class="webdes_one _down clearfix">
+					<div class="hover-before"><p>POLYGROUND</p><a href="webDesign_work.html"><img src="images/web_polyground.png" alt="딥오씨알뷰어"></a></div>
+				</div>
+				<div class="webdes_two _last_b clearfix">
+					<div class="hover-before"><p>POLYGROUND 사전예약</p><a href="webDesign_work.html"><img src="images/web_polyregi.png" alt="딥오씨알뷰어"></a></div>
+					<div class="hover-before"><p>Jean Choi 포트폴리오</p><a href="web_work.html#work_06"><img src="images/web_portfolio.png" alt="딥오씨알뷰어"></a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="Mobile_section clearfix">
+		<div class="Wrapper Mobile_Wrapper">
+			<h2 class="wrap_title">Mobile UI/UX Design Works</h2>
+			<ul class="clearfix">
+				<li class="Mobile_S"><img src="images/mobile-2.png" alt=""></li>
+				<li class="Mobile_L"><img src="images/mobile-1.png" alt=""></li>
+			</ul>
+			<a class="pf-download-btn" href="images/240723최예진포트폴리오.pdf" download><button>PDF 포트폴리오 Download</button></a>
+		</div>
+	</section>
+	<section class="GraphicDesign_section">
+		<h2 class="wrap_title">Graphic Design Works</h2>
+		<div class="Wrapper Graphic_wrapper clearfix">
+			<div class="Graphic_L">
+				<img src="images/grapic-1.png" alt="">
+			</div>
+			<div class="Graphic_L">
+				<img src="images/grapic-2.png" alt="">
+			</div>
+			<div class="Graphic_L _last_b">
+				<img src="images/grapic-3.png" alt="">
+			</div>
+			<div class="Graphic_L">
+				<img src="images/grapic-4.png" alt="">
+			</div>
+			<div class="Graphic_L">
+				<img src="images/grapic-5.png" alt="">
+			</div>
+			<div class="Graphic_L _last_b">
+				<img src="images/grapic-6.png" alt="">
+			</div>
+			<div class="Graphic_L">
+				<img src="images/grapic-7.png" alt="">
+			</div>
+			<div class="Graphic_L">
+				<img src="images/grapic-8.png" alt="">
+			</div>
+			<div class="Graphic_L _last_b">
+				<img src="images/grapic-9.png" alt="">
+			</div>
+		</div>
+	</section>
+	<section class="Last_section mobile_blind">
+		<div class="Wrapper last_wrapper">
+			<div><p> 인내심과 팀원간 소통 능력, 업무에 대한 강한 책임감으로 담당 프로젝트를 성공으로 이끌겠습니다. </p></div>
+		</div>
+	</section>
 	<footer>
 		<p>ⓒ Design by choi-yeijin</p>
 	</footer>

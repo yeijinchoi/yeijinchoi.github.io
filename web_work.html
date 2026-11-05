@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
-	<title>Work - Web Publising</title>
+	<title>Work - Web Design</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/common.css" type="text/css">
@@ -17,112 +17,63 @@
 	<![endif] -->
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript">
-
-		$(document).ready(function(){
-
-
-			$(document).ready(function(){
-
-
-			function fade() {
-			      let animation_height = $(window).innerHeight() * 0.5;
-			      let ratio = Math.round((1 / animation_height) * 10000) / 10000;
-			      $(".fade").each(function () {
-			        let objectTop = $(this).offset().top;
-			        let windowBottom = $(window).scrollTop() + $(window).innerHeight();
-			        if (objectTop < windowBottom) {
-			          if (objectTop < windowBottom - animation_height) {
-			            $(this).css({
-			              transition: "opacity 0.1s linear",
-			              transition: "left 0.1s linear",
-			              opacity: 1,
-			              left: "0px",
-			            });
-			          } else {
-			            $(this).css({
-			              transition: "opacity 0.5s linear",
-			              opacity: (windowBottom - objectTop) * ratio
-			            });
-			          }
-			        } else {
-			          $(this).css({
-			            opacity: 0,
-			          });
-			        }
-			      });
-			    }
-			    $(".fade").css({
-			      opacity: 0,
-			    });
-			    fade();
-
-			    $(window).scroll(function () {
-			      fade();
-			    });
-
-
-			});
-
-	</script>
+	<script type="text/javascript" src="js/work.js"></script>
 </head>
 
 <body>
+	<button class="top_btn">TOP</button>
 	<div class="work_page_bg">
 		<img class="work_shape01" src="images/work_shape_bg.png" alt="노란색 타원 배경">
 		<img class="work_shape02" src="images/int_shape_bg.png" alt="파란색 타원 배경">
 	</div>
-	<section class="work_01 clearfix">
+	<section class="work_01 clearfix" id="work_01">
 		<div class="side_R">
 			<a href="main.html" class="trans_bg"><div class="_S"></div><p class="p_back white">뒤로 가기</p></a>
-			<img class="web" src="images/web_mockup01.png">
-			<p class="work_title">Web site<br><span class="text_R">Renewal</span></p>
-			<a class="more" href="http://choibenz.dothome.co.kr/" target="_blank">view more</a>
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/kdl-screenshot-full.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Building</span></p>
 		</div>
 		<div class="side_L">
 			<div class="text_box">
-				<p class="desc_title">COCA-COLA</p>
-				<p class="desc_date">2021.08~2021.09</p>
+				<a class="title-hover" href="https://www.koreadeep.com" target="_blank"><p class="desc_title">KDL Brand Website</p></a>
+				<p class="desc_date">2023.12</p>
 					<ul class="desc_main">
 						<li>
 							<h2>TYPE</h2>
-								<p>Resposive Web</p>
+								<p>Responsive Web</p>
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>Coca-cola journey 웹사이트 리뉴얼 프로젝트로<br>코카콜라의 메인 색상인 레드와 화이트 투톤을 조화롭게 사용할 수 있도록 했고<br>해당 브랜드의 트레이드 마크인 곡선을 적극적으로 활용하여 디자인했습니다.</p>
+								<p>한국딥러닝 재직 중 마케팅 기획자와 협업하여<br>디자인부터 퍼블리싱, 웹 프론트엔드 작업까지<br>혼자서 작업한 반응형 브랜드 웹사이트입니다.</p>
 						</li>
 						<li>
 							<h2>FONT</h2>
-								<p>Noto Sans KR</p>
+								<p>NotoSansKR</p>
 						</li>
 						<li>
 							<h2>COLOR</h2>
-								<p><span class="work-color color1"></span>#c32f34<br><span class="work-color color2"></span>#fff</p>
+								<p><span class="work-color color15"></span> #000000<br><span class="work-color color02"></span> #ffffff</p>
 						</li>
 					</ul>
 			</div>
 		</div>
 	</section>
-
-	<section class="work_02 clearfix fade">
+	<section class="work_02 clearfix" id="work_02">
 		<div class="side_R">
-			<img class="web" src="images/web_mockup02.png">
-			<p class="work_title">Web site<br><span class="text_R">Branding</span></p>
-			<a class="more" href="#">view more</a>
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/deepinvo-screenshot-full.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Building</span></p>
 		</div>
 		<div class="side_L">
 			<div class="text_box">
-				<p class="desc_title">SGSG</p>
-				<p class="desc_date">2021.06~2021.07</p>
+				<p class="desc_title">DEEP INVOICE</p>
+				<p class="desc_date">2022.05</p>
 					<ul class="desc_main">
 						<li>
 							<h2>TYPE</h2>
-								<p>Resposive Web</p>
+								<p>Responsive Web</p>
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>소극소극은 소극장 공연 전용 플랫폼으로서 작은 극이라는 그대로의 의미와 더불어<br>공연장 속 ‘소근소근’ 예절과 닮은 어감의 단어를 채택하여 브랜드 네이밍을 하였고<br>공연 문화의 현대적 키워드인 다양성을 상징하는 색상과 공연 역사를 상징하는<br>반가면을 형상화한  실루엣을 사용하여 로고를 제작하였습니다.</p>
+								<p>한국딥러닝의 물류 OCR 솔루션인 DEEP INVOICE의 <br>원페이지 랜딩페이지를 기획, 디자인, 웹개발 작업까지 혼자서 진행했습니다. </p>
 						</li>
 						<li>
 							<h2>FONT</h2>
@@ -130,31 +81,29 @@
 						</li>
 						<li>
 							<h2>COLOR</h2>
-								<p><span class="work-color color3"></span>#9711D5<br><span class="work-color color4"></span>#E11119</p>
+								<p><span class="work-color color13"></span> #2ab3e3<br><span class="work-color color14"></span> #4abdbf</p>
 						</li>
 					</ul>
 			</div>
 		</div>
 	</section>
-
-	<section class="work_01 clearfix fade">
+	<section class="work_03 clearfix" id="work_03">
 		<div class="side_R">
-			<img class="web" src="images/web_mockup03.png">
-			<p class="work_title">Web site<br><span class="text_R">Renewal</span></p>
-			<a class="more" href="http://choibenz.dothome.co.kr/" target="_blank">view more</a>
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/ocr-screenshot-full.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Building</span></p>
 		</div>
 		<div class="side_L">
 			<div class="text_box">
-				<p class="desc_title">사이트 준비 중</p>
-				<p class="desc_date">2021.09 ~ 보수 중입니다.</p>
+				<a class="title-hover" href="http://deepocr.iptime.org:5052/" target="_blank"><p class="desc_title">DEEP OCR Demo</p></a>
+				<p class="desc_date">2022.06</p>
 					<ul class="desc_main">
 						<li>
 							<h2>TYPE</h2>
-								<p>Resposive Web</p>
+								<p>Responsive Web</p>
 						</li>
 						<li>
 							<h2>INFO</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,<br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+								<p>한국딥러닝의 OCR 솔루션인 DEEP OCR의 <br>데모페이지를 기획, 디자인, html, css 퍼블리싱하였습니다. </p>
 						</li>
 						<li>
 							<h2>FONT</h2>
@@ -162,13 +111,72 @@
 						</li>
 						<li>
 							<h2>COLOR</h2>
-								<p><span class="work-color color2"></span>#fff<br><span class="work-color color2"></span>#fff</p>
+								<p><span class="work-color color7"></span> #2ab3e3<br><span class="work-color color13"></span> #4abdbf</p>
 						</li>
 					</ul>
 			</div>
 		</div>
 	</section>
-
+	<section class="work_02 clearfix" id="work_04">
+		<div class="side_R">
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/sgsg-screenshot-full.png"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Building</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">SGSG 브랜드 Project</p>
+				<p class="desc_date">2021.05</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Responsive Web</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>하이미디어 컴퓨터 아카데미 수료 과제로  <br>새로운 컨셉의 소극장 브랜드 웹사이트를 기획, 디자인, 웹개발 작업까지<br> 팀장으로서 총괄 진행했습니다. </p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color12"></span> #2ab3e3<br><span class="work-color color3"></span> #4abdbf</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
+	<section class="work_03 clearfix" id="work_05">
+		<div class="side_R">
+			<div class="wd_mockup"><span class="wd_wire"><img src="images/deepocr-screenshot-full.jpeg"></span></div>
+			<p class="work_title">Web site<br><span class="text_R">Design/Building</span></p>
+		</div>
+		<div class="side_L">
+			<div class="text_box">
+				<p class="desc_title">DEEP OCR</p>
+				<p class="desc_date">2022.04</p>
+					<ul class="desc_main">
+						<li>
+							<h2>TYPE</h2>
+								<p>Responsive Web</p>
+						</li>
+						<li>
+							<h2>INFO</h2>
+								<p>한국딥러닝의 OCR 솔루션인 DEEP OCR의 <br>랜딩페이지를 기획, 디자인, html, css 퍼블리싱하였습니다. </p>
+						</li>
+						<li>
+							<h2>FONT</h2>
+								<p>Noto Sans KR</p>
+						</li>
+						<li>
+							<h2>COLOR</h2>
+								<p><span class="work-color color7"></span> #2ab3e3<br><span class="work-color color14"></span> #4abdbf</p>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</section>
 	<footer>
 		<p>ⓒ Design by choi-yeijin</p>
 	</footer>
