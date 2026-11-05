@@ -843,3 +843,218 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 		cursor: pointer;
 	}
 }
+/* ============================================================
+   2026-11-05 : 모바일 햄버거 네비게이션 및 드로어 메뉴
+   ≤1024px(태블릿·모바일) : 가로 메뉴 숨김 + 햄버거 버튼 노출
+   ≥1025px(데스크톱) : 햄버거·드로어 완전 숨김, 기존 가로 메뉴 유지
+   ============================================================ */
+
+/* 데스크톱 기본 : 햄버거 버튼 숨김 */
+.nav-hamburger { display: none; }
+
+/* 드로어 공통 (기본 닫힘, 화면 밖) */
+.mobile-nav-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2000;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.mobile-nav-overlay.is-open {
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.mobile-nav-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(17, 17, 17, 0.45);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.is-open .mobile-nav-backdrop { opacity: 1; }
+
+.mobile-nav-drawer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: min(320px, 84vw);
+	background: #fff;
+	box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+	transform: translateX(100%);
+	transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+	display: flex;
+	flex-direction: column;
+	padding: 16px 28px 40px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav-overlay.is-open .mobile-nav-drawer { transform: translateX(0); }
+
+/* 열렸을 때 뒤쪽 스크롤 잠금 */
+body.mobile-nav-open { overflow: hidden; }
+
+/* 닫기(X) 버튼 */
+.mobile-nav-close {
+	align-self: flex-end;
+	width: 44px;
+	height: 44px;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	position: relative;
+}
+
+.mobile-nav-close::before,
+.mobile-nav-close::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 24px;
+	height: 2px;
+	background: #111;
+	border-radius: 2px;
+}
+
+.mobile-nav-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.mobile-nav-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* 메뉴 리스트 */
+.mobile-nav-list {
+	margin-top: 26px;
+	display: flex;
+	flex-direction: column;
+}
+
+.mobile-nav-item {
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.mobile-nav-item > a,
+.mobile-nav-works-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 18px 4px;
+	font-size: 20px;
+	font-family: "NotoSansKR-Bold";
+	color: #111;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	text-align: left;
+	letter-spacing: 0.01em;
+}
+
+.mobile-nav-item > a:active,
+.mobile-nav-works-toggle:active { color: #5383F6; }
+
+/* Works 토글 화살표 */
+.mobile-nav-arrow {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid #111;
+	border-bottom: 2px solid #111;
+	transform: rotate(45deg);
+	transition: transform 0.3s ease;
+	flex: 0 0 auto;
+}
+
+.mobile-nav-works.is-expanded .mobile-nav-arrow { transform: rotate(-135deg); }
+
+/* 서브메뉴 (아코디언 펼침) */
+.mobile-nav-submenu {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.35s ease;
+}
+
+.mobile-nav-works.is-expanded .mobile-nav-submenu { max-height: 220px; }
+
+.mobile-nav-submenu li { border-bottom: 0; }
+
+.mobile-nav-submenu a {
+	display: flex;
+	align-items: center;
+	padding: 13px 20px 13px 12px;
+	font-size: 16px;
+	font-family: "NotoSansKR-Regular";
+	color: #555;
+}
+
+.mobile-nav-submenu a::before {
+	content: "";
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #5383F6;
+	margin-right: 10px;
+	flex: 0 0 auto;
+}
+
+.mobile-nav-submenu a:active { color: #5383F6; }
+
+/* ===== 태블릿·모바일(≤1024px) : 햄버거 모드 ===== */
+@media screen and (max-width: 1024px) {
+
+	/* 기존 데스크톱 가로 메뉴 숨김 (드로어 안 리스트는 제외) */
+	nav > ul,
+	nav .Contact-btn,
+	nav .blind-subnav {
+		display: none !important;
+	}
+
+	/* 햄버거 버튼 */
+	.nav-hamburger {
+		display: flex;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 44px;
+		height: 44px;
+		background: transparent;
+		border: 0;
+		padding: 10px 8px;
+		cursor: pointer;
+		z-index: 1200;
+		flex-direction: column;
+		justify-content: center;
+		gap: 6px;
+	}
+
+	.nav-hamburger-line {
+		display: block;
+		width: 26px;
+		height: 2px;
+		background: #111;
+		border-radius: 2px;
+		transition: transform 0.3s ease, opacity 0.2s ease;
+		transform-origin: center;
+	}
+
+	/* 열림 상태 : X 모양으로 변형 */
+	.nav-hamburger.is-active .nav-hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+	.nav-hamburger.is-active .nav-hamburger-line:nth-child(2) { opacity: 0; }
+	.nav-hamburger.is-active .nav-hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+	/* 헤더가 드로어 뒤로 가도록 */
+	header {
+		position: relative;
+		z-index: 100;
+	}
+}
