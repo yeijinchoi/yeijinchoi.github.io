@@ -607,7 +607,7 @@ body { font-family: "NotoSansKR-Regular"; background: #f8f8f8; }
 	line-height: 1.5;
 }
 
-.career_viewport { flex: 1 1 auto; min-width: 0; overflow: hidden; order: 2; }
+.career_viewport { flex: 1 1 0; min-width: 0; overflow: hidden; order: 2; }
 
 .career_track {
 	display: flex;
