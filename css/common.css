@@ -2307,14 +2307,20 @@ body.mobile-nav-open { overflow: hidden; }
 /* 말풍선 */
 .slime_talk_bubble {
 	position: relative;
-	background: rgba(238, 240, 244, 0.62);
-	-webkit-backdrop-filter: blur(16px) saturate(140%);
-	backdrop-filter: blur(16px) saturate(140%);
+	/* 유리 질감 : 왼쪽 위에서 비스듬히 들어오는 반사광(sheen) + 반투명 바탕 + 안쪽 가장자리 빛(보더 아님) */
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.22) 38%, rgba(255, 255, 255, 0) 62%),
+		rgba(232, 235, 241, 0.62);
+	-webkit-backdrop-filter: blur(20px) saturate(160%);
+	backdrop-filter: blur(20px) saturate(160%);
 	color: #222;
 	border: none;
 	border-radius: 24px;
 	padding: 18px 22px 22px;
-	box-shadow: none;
+	box-shadow:
+		inset 0 1px 1.5px rgba(255, 255, 255, 0.95),
+		inset 0 -1px 2px rgba(255, 255, 255, 0.4),
+		inset 1px 0 1px rgba(255, 255, 255, 0.5);
 	transform-origin: 50% 0;
 }
 /* 꼬리도 같은 유리 질감 (삼각형 clip-path + 같은 반투명 배경·블러) */
@@ -2326,9 +2332,9 @@ body.mobile-nav-open { overflow: hidden; }
 	width: 18px;
 	height: 10px;
 	margin-left: -9px;
-	background: rgba(238, 240, 244, 0.62);
-	-webkit-backdrop-filter: blur(16px) saturate(140%);
-	backdrop-filter: blur(16px) saturate(140%);
+	background: rgba(246, 247, 250, 0.7);
+	-webkit-backdrop-filter: blur(20px) saturate(160%);
+	backdrop-filter: blur(20px) saturate(160%);
 	clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 .slime_talk_bubble.is-pop { animation: slimeBubblePop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
