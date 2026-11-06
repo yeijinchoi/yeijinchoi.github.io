@@ -98,7 +98,7 @@ yeijinchoi.github.io/
    - 각 카드 내부 타이포: 스킬명(`skill_name`, 14.5px Bold, `#222`) + 퍼센티지(`skill_percent`, 13px Bold, `#5383F6`) 상단 배치 및 하단 8px 슬림 트랙 게이지 바(`bar`) 일체화.
 9. **AI & Creative Works 섹션 (`.Ai_section`, `#ai-works`)**:
    - 생성형 AI를 실무 파이프라인에 적극 도입한 프로젝트 2종을 2열 Bento 카드로 구성.
-   - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Midjourney, Photoshop AI, 프롬프트 엔지니어링, 인페인팅 실무)
+   - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Higgsfield AI, Claude Code, VS Code 기반 이미지 생성 및 퍼블리싱 실무)
    - 카드 2: AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹 (Claude/ChatGPT 시나리오·암호 로직, 비주얼 단서 생성, 인터랙티브 웹 UI)
    - 각 카드별 3단계 AI 워크플로우 칩 및 실무 효용성(AI 리터러시 강조) 콜아웃 박스 완비.
 
