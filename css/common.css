@@ -887,7 +887,7 @@ body { font-family: "SUIT", sans-serif; font-weight: 400; background: #F5F6F8; }
 /* 재직중 포인트 배지 */
 .badge_current {
 	display: inline-block;
-	background: #10B981;
+	background: #5383F6;
 	color: #fff;
 	font-size: 12px;
 	font-weight: bold;
