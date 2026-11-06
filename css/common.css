@@ -545,7 +545,7 @@
 		display: flex !important;
 		align-items: center;
 		height: 100%;
-		gap: 32px;
+		gap: 50px;
 		margin: 0 32px 0 auto !important;
 		padding: 0;
 		list-style: none;
@@ -819,15 +819,6 @@
 	#figma div { width: 86%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#Jquery div { width: 95%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#communication div { width: 100%; background: #5383F6; height: 16px; border-radius: 50px;}
-
-	.blind-subnav ul { background: #fff; padding: 10px 20px 10px 20px; border-radius: 100px; border: 1px solid #E8E8E8; transform: translate(80px, 50px); display: none; }
-
-	nav:hover .blind-subnav ul { display: block;}
-
-	.blind-subnav li { transform: translateX(-8px); font-size: 13px; }
-
-	.blind-subnav li:hover { color: #5383F6; }
-
 
 }
 /* =========== Desktop(end) ============ */
@@ -1136,29 +1127,50 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 		right: auto !important;
 		left: auto !important;
 		top: auto !important;
-		display: flex;
-		gap: 16px;
-		align-items: center;
-		background: #fff;
-		padding: 8px 18px;
-		border-radius: 50px;
-		border: 1px solid #E8E8E8;
-		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+		display: flex !important;
+		gap: 16px !important;
+		align-items: center !important;
+		justify-content: center !important;
+		background: #fff !important;
+		padding: 8px 20px !important;
+		border-radius: 50px !important;
+		border: 1px solid #E8E8E8 !important;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
 		transform: none !important;
 		width: max-content !important;
+		box-sizing: border-box !important;
+	}
+
+	nav ul li.work .blind-subnav a {
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		min-width: 96px !important;
+		text-align: center !important;
+		transform: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		text-decoration: none !important;
 	}
 
 	nav ul li.work .blind-subnav li {
-		font-size: 13px;
-		width: auto !important;
+		font-size: 13px !important;
+		width: 100% !important;
 		float: none !important;
-		margin-left: 0 !important;
-		white-space: nowrap;
-		cursor: pointer;
+		margin: 0 !important;
+		padding: 0 !important;
+		white-space: nowrap !important;
+		cursor: pointer !important;
+		transform: none !important;
+		text-align: center !important;
+		list-style: none !important;
+		color: #333 !important;
+		font-weight: 500 !important;
+		transition: color 0.2s ease !important;
 	}
 
 	nav ul li.work .blind-subnav li:hover {
-		color: #5383F6;
+		color: #5383F6 !important;
 	}
 
 	/* ============================================================

@@ -80,8 +80,9 @@ yeijinchoi.github.io/
    - 데스크톱: 3열 × 3행 CSS Grid (`grid-template-columns: repeat(3, 300px); gap: 20px;`) 940px 정돈
    - 각 카드(`.Graphic_L`): `height: 240px; border-radius: 8px;`, 이미지 `object-fit: cover;`
    - 호버 시 은은한 상승 애니메이션(`translateY(-4px)` 및 부드러운 그림자)
-6. **데스크톱 네비게이션 서브메뉴 호버 브리지**:
+6. **데스크톱 네비게이션 서브메뉴 호버 브리지 및 대칭 정렬**:
    - `li.work`에 `padding-bottom: 25px; margin-bottom: -25px;` 및 `.blind-subnav` 상단 투명 가상요소(`::before`)를 배치하여, 마우스가 Works에서 알약 팝업으로 이동할 때 호버 상태가 끊기지 않도록 브리지 처리 완료.
+   - 서브 네비 알약(`.blind-subnav ul`): `Works` 텍스트와 정확히 일치하는 가로 절대 중앙정렬(`left: 50%; transform: translateX(-50%)`). 내부 아이템(`Web Design`, `Web Publishing`)은 각 96px 균등 너비와 중앙정렬을 적용하여 두 단어 사이의 간격 중심과 알약 중심, `Works` 텍스트 중심이 0.0px 오차로 완벽히 일치하도록 대칭 설계. 좌우 패딩 각 21px 균등 배분 및 구형 `translateX(-8px)` 제거.
 7. **무신사 스타일 쫀득한 플로팅 알약 네비게이션**:
    - 데스크톱(≥1025px)에서 스크롤(scrollY ≥ 90px) 시 상단 고정 플로팅 알약 캡슐(`nav.nav-floating`)로 자연스럽게 변환.
    - 레이아웃: 좌측 Logo(`h1`), 중앙 절대 정렬 메뉴(`nav > ul`: `left: 50%; transform: translateX(-50%)`), 우측 끝단 밀착 Contact 버튼(`margin-left: auto;`)
