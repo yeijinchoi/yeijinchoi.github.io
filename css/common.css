@@ -2310,3 +2310,146 @@ body.mobile-nav-open { overflow: hidden; }
 @media screen and (max-width: 767px) {
 	.chat_section > .chat_R { width: 368px; }
 }
+
+/* ============================================================
+   슬라임 토크 : 슬라임 클릭 시 아래 빈 공간에 게임처럼 뜨는 말풍선 (js/slime-talk.js)
+   톤: 포인트 블루 말풍선 + 블랙 이름표 (기존 채팅 말풍선·배지와 동일 팔레트)
+   ============================================================ */
+.blob_stage { cursor: pointer !important; }
+.blob_stage:focus-visible { outline: 2px solid #5383F6; outline-offset: 6px; border-radius: 24px; }
+
+.slime_talk {
+	position: absolute;
+	left: 50%;
+	top: calc(100% - 4px);
+	transform: translateX(-50%);
+	width: 420px;
+	z-index: 3;
+}
+.slime_talk [hidden] { display: none !important; }
+
+/* 첫 안내 */
+.slime_talk_hint {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: fit-content;
+	margin: 0 auto;
+	padding: 7px 16px;
+	background: #EEF0F4;
+	color: #555;
+	font-size: 12px;
+	font-weight: 700;
+	font-family: "SUIT", sans-serif;
+	border-radius: 50px;
+	animation: slimeHintBob 1.8s ease-in-out infinite;
+}
+@keyframes slimeHintBob {
+	0%, 100% { transform: translateY(0); }
+	50%      { transform: translateY(-4px); }
+}
+
+/* 말풍선 */
+.slime_talk_bubble {
+	position: relative;
+	background: #5383F6;
+	color: #fff;
+	border-radius: 24px;
+	padding: 14px 22px 18px;
+	box-shadow: 0 10px 28px rgba(83, 131, 246, 0.25);
+	transform-origin: 50% 0;
+}
+.slime_talk_bubble::before {
+	content: "";
+	position: absolute;
+	top: -9px;
+	left: 50%;
+	margin-left: -10px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #5383F6;
+}
+.slime_talk_bubble.is-pop { animation: slimeBubblePop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes slimeBubblePop {
+	0%   { opacity: 0; transform: scale(0.88) translateY(-6px); }
+	100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.slime_talk_top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+.slime_talk_name {
+	background: #000;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	font-family: "SUIT", sans-serif;
+	padding: 2px 11px;
+	border-radius: 50px;
+}
+.slime_talk_count {
+	font-size: 12px;
+	font-weight: 400;
+	font-family: "SUIT", sans-serif;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.slime_talk_text {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "SUIT", sans-serif;
+	line-height: 1.7;
+	text-align: left;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+.slime_talk_ghost { visibility: hidden; }
+
+/* 다음 대사 표시(▼) : 타이핑이 끝나면 깜빡임 */
+.slime_talk_next {
+	position: absolute;
+	right: 20px;
+	bottom: 8px;
+	font-size: 10px;
+	color: #fff;
+	opacity: 0;
+}
+.slime_talk_bubble.is-done .slime_talk_next { animation: slimeNextBlink 1s ease-in-out infinite; }
+@keyframes slimeNextBlink {
+	0%, 100% { opacity: 0.25; transform: translateY(0); }
+	50%      { opacity: 1; transform: translateY(2px); }
+}
+
+/* 데스크톱 : 말풍선이 아래로 걸치므로 하단 여백 확보 */
+@media screen and (min-width: 1025px) {
+	.visualwrap { padding-bottom: 130px !important; }
+}
+
+/* 태블릿·모바일 : 슬라임 바로 아래, 흐름 안에 배치 */
+@media screen and (max-width: 1024px) {
+	.visual_graphic_col {
+		height: auto !important;
+		flex-direction: column !important;
+	}
+	.slime_talk {
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: none;
+		width: calc(100% - 8px);
+		max-width: 420px;
+		margin-top: 8px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.slime_talk_hint,
+	.slime_talk_bubble.is-pop,
+	.slime_talk_bubble.is-done .slime_talk_next { animation: none; }
+	.slime_talk_bubble.is-done .slime_talk_next { opacity: 1; }
+}

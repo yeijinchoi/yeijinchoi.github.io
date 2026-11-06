@@ -5,7 +5,7 @@
 	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css?v=20261105c" type="text/css">
-	<link rel="stylesheet" href="css/common.css?v=20261106ag" type="text/css">
+	<link rel="stylesheet" href="css/common.css?v=20261106ah" type="text/css">
 	<link rel="stylesheet" href="css/index.css?v=20261105c" type="text/css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<meta property="og:type" content="website">
@@ -30,6 +30,7 @@
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
 	<script type="text/javascript" src="js/blob-interactive.js?v=20261106i"></script>
+	<script type="text/javascript" src="js/slime-talk.js?v=20261106b"></script>
 
 </head>
 
@@ -170,6 +171,18 @@
 								</g>
 							</g>
 						</svg>
+					</div>
+					<!-- 슬라임 토크 : 슬라임 클릭 시 아래에 말풍선으로 경력 이야기 (대사: js/slime-talk.js) -->
+					<div class="slime_talk" id="slimeTalk">
+						<div class="slime_talk_hint"><span class="slime_talk_hint_icon">👆</span>슬라임을 눌러보세요</div>
+						<div class="slime_talk_bubble" hidden>
+							<div class="slime_talk_top">
+								<span class="slime_talk_name">Jean</span>
+								<span class="slime_talk_count" aria-hidden="true"></span>
+							</div>
+							<p class="slime_talk_text" aria-live="polite"><span class="slime_talk_typed"></span><span class="slime_talk_ghost" aria-hidden="true"></span></p>
+							<span class="slime_talk_next" aria-hidden="true">▼</span>
+						</div>
 					</div>
 				</div>
 			</div>
