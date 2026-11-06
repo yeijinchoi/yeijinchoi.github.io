@@ -250,3 +250,16 @@ body { background: #f5f6f8; }
 		padding: 20px;
 	}
 }
+
+/* 개편으로 링크를 제공하지 않는 프로젝트 안내 (ver 배지 아래) */
+.p_note {
+	margin: 4px 0 0;
+	font-size: 12px;
+	line-height: 1.6;
+	color: #666;
+	word-break: keep-all;
+}
+@media screen and (max-width: 1024px) {
+	.p_note { flex: 0 0 100%; margin-top: 2px; }
+	.p_note br { display: none; }
+}
