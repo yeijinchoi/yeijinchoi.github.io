@@ -2591,3 +2591,21 @@ div.Name .en_name { transform: none; text-align: left; }
 	min-width: 1ch;
 	text-align: center;
 }
+
+/* ============================================================
+   스킬 카드 : 아이콘(구슬 배지)을 스킬 이름 왼쪽에 작게 붙이기
+   구조: .skill_header > .skill_title(구슬 + 이름) + .skill_percent, 아래에 전폭 프로그레스 바
+   ============================================================ */
+.skillset { display: block !important; padding: 16px 20px !important; }
+.skillset .skill_info { gap: 10px !important; }
+.skillset .skill_title {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+.skillset .skill_title .skill_icon_badge {
+	flex: 0 0 18px !important;
+	width: 18px !important;
+	height: 18px !important;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14) !important;
+}
