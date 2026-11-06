@@ -2831,3 +2831,21 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 		width: calc((100% - 32px) / 3) !important;
 	}
 }
+
+/* ============================================================
+   버튼에는 그림자를 넣지 않음 (2026-11-06 사용자 지시, 일단 전체 제거)
+   ============================================================ */
+.Contact-btn,
+.nav-hamburger,
+.career_nav,
+.career_nav:hover,
+.gs_btn,
+.back_home,
+.works_more_link,
+.pf-download-btn,
+.pdf_card .pf-download-btn,
+.pdf_card .pf-download-btn:hover,
+.top_btn,
+.mobile-nav-close,
+.back_home:hover,
+.works_more_link:hover { box-shadow: none !important; }
