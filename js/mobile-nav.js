@@ -67,9 +67,60 @@
 		});
 	}
 
+	/* 2026-11-06 : 데스크톱(≥1025px) 무신사 스타일 쫀득한 플로팅 알약 네비게이션 */
+	function initFloatingNav() {
+		var nav = document.querySelector('header nav');
+		if (!nav) return;
+
+		var placeholder = document.createElement('div');
+		placeholder.className = 'nav-placeholder';
+		placeholder.style.display = 'none';
+		if (nav.parentNode) {
+			nav.parentNode.insertBefore(placeholder, nav);
+		}
+
+		var threshold = 80;
+		var isFloating = false;
+
+		function update() {
+			if (window.innerWidth < 1025) {
+				if (isFloating) {
+					isFloating = false;
+					nav.classList.remove('nav-floating');
+					placeholder.style.display = 'none';
+				}
+				return;
+			}
+
+			var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+			if (scrollY >= threshold) {
+				if (!isFloating) {
+					placeholder.style.height = (nav.offsetHeight || 80) + 'px';
+					placeholder.style.display = 'block';
+					nav.classList.add('nav-floating');
+					isFloating = true;
+				}
+			} else {
+				if (isFloating) {
+					nav.classList.remove('nav-floating');
+					placeholder.style.display = 'none';
+					isFloating = false;
+				}
+			}
+		}
+
+		window.addEventListener('scroll', update, { passive: true });
+		window.addEventListener('resize', update, { passive: true });
+		update();
+	}
+
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', init);
+		document.addEventListener('DOMContentLoaded', function () {
+			init();
+			initFloatingNav();
+		});
 	} else {
 		init();
+		initFloatingNav();
 	}
 })();

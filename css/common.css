@@ -517,13 +517,71 @@
 	.trans_bg > p.p_back { position: absolute; font-size: 0.875em; width: 66px; height: 105px; font-weight: bold; top: 42%; left: 26%; }
 
 
-	header { display: block ;}
-	nav { margin: 0 auto; display: block; width: 940px; height: 120px; position: relative; padding-top: 20px; }
-	nav h1 { position: absolute; font-size: 20px; padding-top: 10px;} 
-	nav > ul {  position: absolute; right: 100px; padding-top: 10px;} 
-	nav > ul > li { display: inline-block; width: 100px; float: left; margin-left: 20px;}
+	header { display: block; position: relative; }
+	.nav-placeholder { width: 100%; height: 80px; }
+	nav {
+		margin: 0 auto;
+		display: flex !important;
+		align-items: center;
+		justify-content: space-between;
+		width: 940px;
+		height: 80px;
+		position: relative;
+		padding: 0 10px;
+		box-sizing: border-box;
+		z-index: 1000;
+	}
+	nav h1 {
+		position: static !important;
+		font-size: 22px;
+		font-weight: 700;
+		letter-spacing: -0.5px;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+	}
+	nav h1 a { color: #111; text-decoration: none; }
+	nav > ul {
+		position: static !important;
+		display: flex !important;
+		align-items: center;
+		gap: 36px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	nav > ul > li {
+		position: relative;
+		display: inline-block;
+		width: auto !important;
+		float: none !important;
+		margin: 0 !important;
+		font-size: 15px;
+		font-weight: 500;
+	}
+	nav > ul > li > a { color: #222; text-decoration: none; transition: color 0.2s ease; }
+	nav > ul > li > a:hover { color: #5383F6; }
 
-	.Contact-btn { width: 110px; height: 40px; background-color: #5383F6; text-align: center; border-radius: 50px; float: right; color: #fff;}
+	.Contact-btn {
+		width: auto !important;
+		height: 40px !important;
+		padding: 0 24px !important;
+		background-color: #5383F6;
+		text-align: center;
+		border-radius: 50px;
+		float: none !important;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		display: inline-flex !important;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		font-weight: 500;
+		transition: background-color 0.2s ease, transform 0.2s ease;
+	}
+	.Contact-btn:hover { background-color: #3b6fd8; transform: scale(1.03); }
+	.Contact-btn a { color: #fff !important; text-decoration: none; }
 
 	.bold { font-family: "NotoSansKR-Bold"; }
 
@@ -1091,6 +1149,66 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 
 	nav ul li.work .blind-subnav li:hover {
 		color: #5383F6;
+	}
+
+	/* ============================================================
+	   2026-11-06 : 무신사 스타일 쫀득한 플로팅 알약 네비게이션
+	   ============================================================ */
+	@keyframes floatPillSpring {
+		0% {
+			opacity: 0.5;
+			top: -45px;
+			transform: translateX(-50%) scale(0.93);
+		}
+		65% {
+			top: 23px;
+			transform: translateX(-50%) scale(1.02);
+		}
+		85% {
+			top: 19px;
+			transform: translateX(-50%) scale(0.995);
+		}
+		100% {
+			opacity: 1;
+			top: 20px;
+			transform: translateX(-50%) scale(1);
+		}
+	}
+
+	nav.nav-floating {
+		position: fixed !important;
+		top: 20px !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		width: 880px !important;
+		max-width: calc(100% - 40px) !important;
+		height: 56px !important;
+		padding: 0 28px !important;
+		background: rgba(250, 250, 252, 0.88) !important;
+		backdrop-filter: blur(20px) saturate(180%) !important;
+		-webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+		border-radius: 50px !important;
+		border: 1px solid rgba(220, 224, 230, 0.85) !important;
+		box-shadow: 0 12px 36px rgba(0, 0, 0, 0.09), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+		z-index: 9999 !important;
+		animation: floatPillSpring 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+	}
+	nav.nav-floating h1 {
+		font-size: 20px !important;
+	}
+	nav.nav-floating > ul {
+		gap: 30px !important;
+	}
+	nav.nav-floating > ul > li {
+		font-size: 14.5px !important;
+	}
+	nav.nav-floating .Contact-btn {
+		height: 36px !important;
+		padding: 0 20px !important;
+		font-size: 13.5px !important;
+	}
+	nav.nav-floating ul li.work .blind-subnav {
+		top: 26px !important;
 	}
 }
 /* ============================================================
