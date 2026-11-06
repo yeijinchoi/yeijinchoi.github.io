@@ -1732,16 +1732,21 @@ body.mobile-nav-open { overflow: hidden; }
 	transition: background 0.12s ease-out !important;
 }
 
-.slime_hero_img {
+.fluid_drop_svg {
+	display: block !important;
 	width: 380px !important;
 	max-width: 100% !important;
 	height: auto !important;
-	display: block !important;
 	margin: 0 auto !important;
-	user-select: none !important;
-	pointer-events: none !important;
+	overflow: visible !important;
 	transform-origin: center center !important;
 	will-change: transform !important;
+}
+
+.slime_eyes_parallax {
+	will-change: transform;
+	transform-origin: 200px 172px;
+	transition: none;
 }
 
 /* 궤도 위성 미니 오브 */

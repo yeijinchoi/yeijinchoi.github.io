@@ -75,10 +75,9 @@ yeijinchoi.github.io/
    - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 그라데이션 페블 배지**로 감각적 표현 (HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루, Communication 시그니처블루).
    - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
 
-6. **AI & Creative Works 섹션 (`.ai_works_section`)**:
-   - 데스크톱: 2열 카드 그리드 (`.ai_works_grid`, 2열 균등 배치)
-   - **카드 프리뷰 영역 (`.ai_card_preview`)**: Works 카드 톤과 일체화된 **딥블랙(`background: #0D0E12`)에 볼드 화이트 텍스트(`color: #FFFFFF !important`)** 타이포그래피 배치 (`E-COMMERCE DETAIL PAGE`, `ARG PROJECT · IN PROGRESS`).
-   - 메타 영역: 화이트 서피스, 볼드 제목, 소프트 그레이 키워드 태그 (Higgsfield AI, Claude Code, VS Code, ChatGPT 등).
+7. **히어로 슬라임 그래픽 (`#blobCore`)**:
+   - 3D 메인 슬라임 바디(푸딩 형태의 도톰하고 부드러운 유기형 구체, `#477AEF` 리치 블루 그라데이션)와 흰색 눈동자 레이어를 SVG 상에서 완전히 독립 분리.
+   - 몸체는 3D 원근 틸트 및 유기적 브리딩 모션을 수행하고, 흰색 눈동자는 마우스 커서의 위치를 입체적으로 쫓아가는 독립 패럴랙스 시선 추적 인터랙션 적용.
    - 1~2행: 좌측 KDL v3 (2열 2행 대형), 우측 KDL v2·v1 (각 1열 1행)
    - 3~4행: 좌측 DEEP OCR 홈페이지·뷰어 (각 1열 1행), 우측 POLYGROUND (2열 2행 대형)
    - 5행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)
