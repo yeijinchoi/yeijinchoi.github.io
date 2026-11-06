@@ -570,6 +570,7 @@
 	nav > ul > li > a:hover { color: #5383F6; }
 
 	.Contact-btn {
+		margin-left: auto !important;
 		width: auto !important;
 		height: 40px !important;
 		padding: 0 24px !important;
