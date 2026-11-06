@@ -41,6 +41,7 @@ yeijinchoi.github.io/
 │   ├── career-slider.js    # 경력 카드 슬라이더 (손가락 버튼 👈/👉, 스와이프, 인디케이터)
 │   ├── slime-talk.js       # 슬라임 클릭 시 아래에 말풍선으로 경력/일하는 방식을 타이핑 효과로 이야기 (대사 배열 SLIME_LINES)
 │   ├── career-years.js     # 히어로 "경력 n년 차" 배지: 경력 근무기간(CAREER_PERIODS) 합산 자동 계산·카운트업, window.CAREER_YEARS 로 슬라임 대사에도 공유
+│   ├── chat-typing.js      # 본문 채팅 말풍선(마음가짐 Q&A, 마지막 다짐)이 스크롤 시 톡 떠오르며 타이핑되는 효과
 │   ├── skill-gauge.js      # 스킬 게이지가 스크롤로 화면에 들어오면 0 → 목표치로 차오르는 효과
 │   ├── graphic-slider.js   # Graphic Design Works 코버플로우 슬라이드 (순환, 스와이프, 자동재생)
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
@@ -154,6 +155,7 @@ yeijinchoi.github.io/
 - 폰트: **SUIT Variable** 단일 폰트 (`font/SUIT-Variable.woff2`, `common.css` 상단 `@font-face`, 굵기 100~900). 항상 `font-family: "SUIT", sans-serif` + 숫자 `font-weight`(Light 300 / Regular 400 / Medium 500 / Bold 700 / Black 900)로 지정. 다른 폰트 추가 금지.
 - **AI 카드의 배지·태그·화살표에는 보더를 넣지 않습니다**(어두운 반투명 면으로만 구분, `ai_work.html`의 `.ai_mock`도 동일).
 - **배지·알약 안에는 이모지를 넣지 않습니다** (텍스트만. 아이콘이 필요하면 기존 `first-icon` 이미지 방식 사용).
+- 본문 채팅 말풍선(`.chat_L`, `.chat_R`, `.last_wrapper div`)은 스크롤로 화면에 들어오면 떠오르며 한 글자씩 타이핑(`js/chat-typing.js`, 질문→답변 순서, 1회 재생, 동작 줄이기 시 즉시 표시). 새 말풍선 텍스트를 바꿀 땐 `main.html` 원문만 고치면 JS가 자동으로 타이핑 처리.
 - 말풍선(`.chat_L`, `.chat_R`, `.last_wrapper div`): 텍스트는 **항상 말풍선 영역 정중앙**(flex 중앙정렬, `common.css` 맨 아래 "말풍선" 블록). 말풍선 요소 폭은 이미지 폭(328 / 736px)과 맞춰야 중앙이 어긋나지 않음.
 - **섹션 간격은 `common.css` 맨 아래 "섹션 간격 시스템" 블록의 변수로만 관리**: `--sec-gap`(큰 섹션 사이: 데스크톱 120 / 태블릿 96 / 모바일 80px), `--sec-gap-sm`(경력→채팅 묶음 64/56/48px), `--title-gap`(섹션 타이틀→콘텐츠 48/48/40px), 프로필→스킬 32px 고정. 새 섹션은 `margin-top: var(--sec-gap)`만 주고, 섹션 안 padding/margin/구분선으로 간격을 만들지 않습니다.
 - 섹션 타이틀은 기존 `h2.wrap_title`, 내부 폭 940px, 컨테이너 1100px 규격 유지.
