@@ -393,7 +393,7 @@ body { background: #f5f6f8; }
 /* 룩북(정면·뒷면·클로즈업 3컷 합본)은 가로로 넓게 */
 .ag_look { height: 330px; object-position: 50% 22%; }
 .ag_row { display: grid; gap: 8px; }
-.ag_row4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ag_row3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .ag_row img { aspect-ratio: 1 / 1; height: auto; object-position: 50% 30%; }
 /* 운동기구 화보 : 룩북 + 뷰티 컷 나란히 */
 .ag_pair { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 8px; height: 400px; }
