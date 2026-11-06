@@ -2555,7 +2555,6 @@ div.Name .en_name { transform: none; text-align: left; }
 	white-space: nowrap;
 	box-shadow: 0 6px 16px rgba(83, 131, 246, 0.25);
 }
-.career_day_icon { font-size: 14px; }
 .career_day_num {
 	font-weight: 900;
 	font-family: "SUIT", sans-serif;
