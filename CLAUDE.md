@@ -93,18 +93,19 @@ yeijinchoi.github.io/
    - 모바일(≤1024px): 네비 앞 `Jean` 로고 숨김(`display: none;`), 햄버거 버튼은 PC 플로팅 알약과 동일한 글래스모피즘 톤(`48×48px`, `border-radius: 50%`, 반투명 블러·그림자)으로 우측 상단(`top: 16px; right: 16px; fixed`)에 고정 플로팅. 드로어 메뉴(Profile, Works 아코디언, Contact) 완벽 유지.
 8. **스킬 섹션 모던 카드형 및 공식 브랜드 컬러 통일 배지 (`.skill_wrapper`, `.skillset`)**:
    - 8개 스킬을 2열 4행 모던 스킬 카드 그리드로 개편.
-   - 각 스킬에 42×42px 통일 둥근 사각 배지(`skill_icon_badge`, `#FAFAFC` 바탕, `#E8EBEF` 보더, `border-radius: 12px`) 적용.
+   - 외곽선 전면 제거(`border: none !important;`): 답답한 회색 테두리 대신 부드러운 소프트 섀도우(`box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);`)로 미니멀하고 시원한 카드 표면 구현.
+   - 각 스킬에 42×42px 통일 둥근 사각 배지(`skill_icon_badge`, `#F1F4F8` 바탕, 테두리 없음, `border-radius: 12px`) 적용.
    - 내부 벡터 아이콘: 공식 브랜드 컬러 벡터 SVG 적용 (HTML5 오렌지, CSS3 블루, JS 옐로우 스퀘어, jQuery 블루 스퀘어, Photoshop 다크네이비+시안, Illustrator 다크와인+앰버, Figma 5컬러, Communication 로열블루 협업 말풍선).
    - 각 카드 내부 타이포: 스킬명(`skill_name`, 14.5px Bold, `#222`) + 퍼센티지(`skill_percent`, 13px Bold, `#5383F6`) 상단 배치 및 하단 8px 슬림 트랙 게이지 바(`bar`) 일체화.
 9. **AI & Creative Works 섹션 (`.Ai_section`, `#ai-works`)**:
-   - 생성형 AI를 실무 파이프라인에 적극 도입한 프로젝트 2종을 2열 Bento 카드로 구성.
+   - 생성형 AI를 실무 파이프라인에 적극 도입한 프로젝트 2종을 2열 Bento 카드로 구성. 외곽선 전면 제거(`border: none;`).
+   - 프리뷰 영역: 안쪽 복잡한 박스 및 긴 설명 텍스트를 전면 삭제하고, 시원한 대문자 영문 키워드(`E-COMMERCE DETAIL PAGE`, `ARG PROJECT · IN PROGRESS`)만 미니멀하고 세련되게 배치.
    - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Higgsfield AI, Claude Code, VS Code 기반 이미지 생성 및 퍼블리싱 실무)
    - 카드 2: AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹 (Claude/ChatGPT 시나리오·암호 로직, 비주얼 단서 생성, 인터랙티브 웹 UI)
-   - 각 카드별 3단계 AI 워크플로우 칩 및 실무 효용성(AI 리터러시 강조) 콜아웃 박스 완비.
 10. **히어로 섹션 및 3D 인터랙티브 고인 물방울 그래픽 (`.visualT`, `.blob_stage`, `.fluid_drop_svg`)**:
    - 좌측 텍스트 컬럼(`.visual_text_col`): `padding-left: 36px`을 부여하여 좌측 마진에서 오른쪽으로 여유 있게 당겨 시각적 무게감 균형 확보.
-   - 우측 비주얼 그래픽(`.visual_graphic_col`): 예진 님의 직관적인 스케치 기반으로 추출한 부드러운 고인 물방울(비정형 젤리 실루엣) SVG 3D 그래픽.
-   - 표면장력 물리 인터랙션(`js/blob-interactive.js`): 마우스 커서가 다가오면 표면장력으로 스르륵 찌그러지며 피하는(evade/repel) 16개 정점 스프링 물리 모션 및 3D 틸트 적용. 클릭 액션은 배제하고 순수 호버 반응형 액체 물리로 구현.
+   - 우측 비주얼 그래픽(`.visual_graphic_col`): 손그림의 잔떨림이나 찌글찌글한 굴곡을 완전히 걷어내고, 도자기처럼 매끄러운 6개 앵커의 완벽한 실키 C2 연속 곡선으로 다듬은 3D 고인 물방울 SVG.
+   - 표면장력 물리 인터랙션(`js/blob-interactive.js`): 마우스 커서가 다가오면 표면장력으로 스르륵 찌그러지며 피하는(evade/repel) 유체 탄성 물리 모션 및 3D 틸트 적용. 클릭 액션은 배제하고 순수 호버 반응형 액체 물리로 구현.
 
 ---
 
