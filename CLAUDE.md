@@ -174,6 +174,7 @@ yeijinchoi.github.io/
 | 스킬 추가/수정 | `main.html` `.skillset` + `common.css` 스킬 섹션 (`.skill_icon_badge` 색, 바 채움 % 는 `#html` 등 id별 규칙) |
 | 경력 추가 | `main.html` `.career_track` 안에 `.carrer_wrap.career_card` 복제 (현재 재직 카드만 `badge_current`) |
 | Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
+| 상세 페이지 "홈으로" 뒤로가기 버튼 | `web_work.html` / `webDesign_work.html` `.work_wrap` 맨 위 `.back_home` (스타일 `work.css` 맨 아래) — 새 상세 페이지를 만들면 같은 마크업을 복사 |
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
 | AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image` |
 | 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
