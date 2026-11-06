@@ -2433,14 +2433,14 @@ div.Name .en_name { transform: none; text-align: left; }
 }
 .profile_section_wrap .Tag button {
 	margin: 0;
-	height: 30px;
-	padding: 0 12px;
+	height: 26px;
+	padding: 0 11px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	line-height: 1;
 }
-.profile_section_wrap .Tag button p { margin: 0; padding: 0; line-height: 1; }
+.profile_section_wrap .Tag button p { margin: 0; padding: 0; line-height: 1; font-size: 12px; }
 
 /* ============================================================
    섹션 간격 시스템 (모든 섹션 사이 간격은 이 블록 한 곳에서만 관리)
