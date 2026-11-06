@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
-	<script type="text/javascript" src="js/blob-interactive.js?v=20261106g"></script>
+	<script type="text/javascript" src="js/blob-interactive.js?v=20261106h"></script>
 
 </head>
 
@@ -143,15 +143,28 @@
 								</g>
 							</g>
 
-							<!-- 3. 분리된 눈 레이어 (마우스 커서 독립 시선 추적 패럴랙스) -->
-							<g id="slimeEyes" class="slime_eyes_parallax">
-								<!-- 왼쪽 눈 -->
-								<g id="leftEye" transform="translate(166, 172)">
-									<path d="M 0 -21 C -6.6 -21, -12 -11.6, -12 0 C -12 11.6, -6.6 21, 0 21 C 6.6 21, 12 11.6, 12 0 C 12 -4, 11 -6.5, 9.5 -8 C 7 -6.5, 5 -7.5, 4.2 -10.2 C 3.5 -13, 5 -16, 7.5 -17.5 C 5.5 -19.8, 3 -21, 0 -21 Z" fill="#FFFFFF"/>
+							<!-- 3. 분리된 눈 & 표정 레이어 (마우스 커서 독립 시선 추적, 깜빡임, 미소) -->
+							<g id="slimeFace" class="slime_eyes_parallax">
+								<!-- 기본 눈망울 (초롱초롱한 눈 + 상단 노치) -->
+								<g id="faceNormal" class="face_normal">
+									<!-- 왼쪽 눈 -->
+									<g id="leftEyeWrap" transform="translate(166, 172)">
+										<path id="leftEye" d="M 0 -21 C -6.6 -21, -12 -11.6, -12 0 C -12 11.6, -6.6 21, 0 21 C 6.6 21, 12 11.6, 12 0 C 12 -4, 11 -6.5, 9.5 -8 C 7 -6.5, 5 -7.5, 4.2 -10.2 C 3.5 -13, 5 -16, 7.5 -17.5 C 5.5 -19.8, 3 -21, 0 -21 Z" fill="#FFFFFF"/>
+									</g>
+									<!-- 오른쪽 눈 -->
+									<g id="rightEyeWrap" transform="translate(234, 172)">
+										<path id="rightEye" d="M 0 -21 C -6.6 -21, -12 -11.6, -12 0 C -12 11.6, -6.6 21, 0 21 C 6.6 21, 12 11.6, 12 0 C 12 -4, 11 -6.5, 9.5 -8 C 7 -6.5, 5 -7.5, 4.2 -10.2 C 3.5 -13, 5 -16, 7.5 -17.5 C 5.5 -19.8, 3 -21, 0 -21 Z" fill="#FFFFFF"/>
+									</g>
 								</g>
-								<!-- 오른쪽 눈 -->
-								<g id="rightEye" transform="translate(234, 172)">
-									<path d="M 0 -21 C -6.6 -21, -12 -11.6, -12 0 C -12 11.6, -6.6 21, 0 21 C 6.6 21, 12 11.6, 12 0 C 12 -4, 11 -6.5, 9.5 -8 C 7 -6.5, 5 -7.5, 4.2 -10.2 C 3.5 -13, 5 -16, 7.5 -17.5 C 5.5 -19.8, 3 -21, 0 -21 Z" fill="#FFFFFF"/>
+
+								<!-- 미소 표정 (호버/클릭 시 활짝 웃는 반달눈 ^ ^ 및 미소 입) -->
+								<g id="faceSmile" class="face_smile" opacity="0">
+									<!-- 왼쪽 반달 눈 -->
+									<path d="M 154 177 C 160 165, 172 165, 178 177" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+									<!-- 오른쪽 반달 눈 -->
+									<path d="M 222 177 C 228 165, 240 165, 246 177" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+									<!-- 깜찍한 미소 입 -->
+									<path d="M 194 195 C 197 201, 203 201, 206 195" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
 								</g>
 							</g>
 						</svg>
