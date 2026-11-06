@@ -2201,40 +2201,6 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 /* ============================================================
-   말풍선 텍스트 : 모든 구간에서 말풍선 영역의 정중앙 정렬
-   (chat_L / chat_R / last_wrapper 말풍선 공통 규칙, 새 말풍선도 이 패턴 사용)
-   ============================================================ */
-.chat_L,
-.chat_R,
-.last_wrapper div {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 0 28px;
-}
-.chat_L_p,
-.chat_R_p,
-.last_wrapper div p {
-	position: static !important;
-	transform: none !important;
-	width: auto !important;
-	max-width: 100%;
-	margin: 0;
-	padding: 0;
-	line-height: 1.45;
-	word-break: keep-all;
-}
-
-/* 말풍선 요소 폭 = 말풍선 이미지 폭 (".chat_section > div { width: 100% }" 보다 우선) */
-.chat_section > .chat_L { width: 328px; }
-.chat_section > .chat_R { width: 736px; margin-left: auto; }
-@media screen and (max-width: 767px) {
-	.chat_section > .chat_R { width: 368px; }
-}
-
-/* ============================================================
    슬라임 토크 : 슬라임 클릭 시 아래 빈 공간에 게임처럼 뜨는 말풍선 (js/slime-talk.js)
    톤: 프로필 카드(#EEF0F4)보다 살짝 옅은 소프트 그레이 말풍선(#F4F5F9) + 블랙 이름표 (기존 채팅 말풍선·배지와 동일 팔레트)
    ============================================================ */
@@ -2251,51 +2217,32 @@ body.mobile-nav-open { overflow: hidden; }
 }
 .slime_talk [hidden] { display: none !important; }
 
-/* 첫 안내 : 글래스모피즘 말풍선 (nav 플로팅 알약과 같은 반투명 블러 톤) */
+/* 첫 안내 : 보더 없는 유리 말풍선 (말칸+꼬리는 js/glass-bubble.js 가 하나의 윤곽선으로 그림) */
 .slime_talk_hint {
+	--gb-r: 22px;
+	--gb-t: 10px;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: fit-content;
-	margin: 12px auto 0;
-	padding: 12px 24px;
-	background: rgba(238, 240, 244, 0.72);
-	-webkit-backdrop-filter: blur(16px) saturate(140%);
-	backdrop-filter: blur(16px) saturate(140%);
-	border: 1px solid rgba(220, 224, 230, 0.85);
-	border-radius: 24px;
-	box-shadow: 0 10px 28px rgba(83, 131, 246, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	margin: 2px auto 0;
+	padding: 22px 26px 12px;          /* 위 22 = 꼬리 영역 10 + 안쪽 여백 12 */
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 2px) 0 10px / 100% 2px no-repeat,
+		linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.22) 38%, rgba(255, 255, 255, 0) 62%),
+		rgba(232, 235, 241, 0.62);
+	-webkit-backdrop-filter: blur(20px) saturate(160%);
+	backdrop-filter: blur(20px) saturate(160%);
+	border: none;
+	border-radius: 22px;
+	box-shadow: none;
 	color: #333;
 	font-size: 14px;
 	font-weight: 500;
 	font-family: "SUIT", sans-serif;
 	line-height: 1.3;
 	animation: slimeHintBob 2.2s ease-in-out infinite;
-}
-/* 말풍선 꼬리 (테두리용 + 유리 채움용 삼각형 2겹) */
-.slime_talk_hint::before,
-.slime_talk_hint::after {
-	content: "";
-	position: absolute;
-	left: 50%;
-	clip-path: polygon(50% 0, 0 100%, 100% 100%);
-}
-.slime_talk_hint::before {
-	top: -9px;
-	width: 18px;
-	height: 9px;
-	margin-left: -9px;
-	background: rgba(220, 224, 230, 0.85);
-}
-.slime_talk_hint::after {
-	top: -8px;
-	width: 16px;
-	height: 8px;
-	margin-left: -8px;
-	background: rgba(238, 240, 244, 0.85);
-	-webkit-backdrop-filter: blur(16px);
-	backdrop-filter: blur(16px);
 }
 @keyframes slimeHintBob {
 	0%, 100% { transform: translateY(0); }
@@ -2304,9 +2251,12 @@ body.mobile-nav-open { overflow: hidden; }
 
 /* 말풍선 */
 .slime_talk_bubble {
+	--gb-r: 24px;
+	--gb-t: 10px;
 	position: relative;
-	/* 유리 질감 : 왼쪽 위에서 비스듬히 들어오는 반사광(sheen) + 반투명 바탕 + 안쪽 가장자리 빛(보더 아님) */
+	/* 유리 질감 : 상단 하이라이트 선(꼬리 영역 아래) + 왼쪽 위 반사광 + 반투명 바탕. 윤곽선(말칸+꼬리)은 js/glass-bubble.js */
 	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 2px) 0 10px / 100% 2px no-repeat,
 		linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.22) 38%, rgba(255, 255, 255, 0) 62%),
 		rgba(232, 235, 241, 0.62);
 	-webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -2314,26 +2264,9 @@ body.mobile-nav-open { overflow: hidden; }
 	color: #222;
 	border: none;
 	border-radius: 24px;
-	padding: 18px 22px 22px;
-	box-shadow:
-		inset 0 1px 1.5px rgba(255, 255, 255, 0.95),
-		inset 0 -1px 2px rgba(255, 255, 255, 0.4),
-		inset 1px 0 1px rgba(255, 255, 255, 0.5);
+	padding: 28px 22px 22px;          /* 위 28 = 꼬리 영역 10 + 안쪽 여백 18 */
+	box-shadow: none;
 	transform-origin: 50% 0;
-}
-/* 꼬리도 같은 유리 질감 (삼각형 clip-path + 같은 반투명 배경·블러) */
-.slime_talk_bubble::before {
-	content: "";
-	position: absolute;
-	top: -9px;
-	left: 50%;
-	width: 18px;
-	height: 10px;
-	margin-left: -9px;
-	background: rgba(246, 247, 250, 0.7);
-	-webkit-backdrop-filter: blur(20px) saturate(160%);
-	backdrop-filter: blur(20px) saturate(160%);
-	clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 .slime_talk_bubble.is-pop { animation: slimeBubblePop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 @keyframes slimeBubblePop {
@@ -2471,7 +2404,7 @@ div.Name .en_name { transform: none; text-align: left; }
 .site_wrap .Ai_section { margin-top: var(--sec-gap); padding-bottom: 0; }
 .site_wrap .GraphicDesign_section { margin-top: var(--sec-gap); padding-top: 0; border-top: 0; }
 .site_wrap .Last_section { margin-top: var(--sec-gap); padding: 0; border-top: 0; }
-.site_wrap .last_wrapper { margin-bottom: 0; height: 62px; }
+.site_wrap .last_wrapper { margin-bottom: 0; height: auto; }
 .site_wrap .Last_section + footer { margin-top: var(--sec-gap); }
 
 .site_wrap .wrap_title { margin-top: 0; margin-bottom: var(--title-gap); }
@@ -2852,21 +2785,129 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	filter: hue-rotate(190deg) saturate(2.4) brightness(0.88);
 }
 
-/* 본문 채팅 말풍선 : 스크롤하면 톡 떠오르며 타이핑 (js/chat-typing.js) */
-.ct_ghost { visibility: hidden; }
+/* ============================================================
+   본문 채팅 말풍선 : 글래스모피즘 + 타이핑과 함께 말풍선이 늘어남 (js/chat-typing.js)
+   - 이미지 말풍선 대신 CSS 말풍선 : 글자 수만큼 가로로 커지고, 최대 폭에서 줄바꿈되며 세로로 커짐
+   - 뒤에 깔린 은은한 블루 빛(::before) 덕분에 유리 질감이 비쳐 보임
+   - 텍스트는 항상 말풍선 안에서 가운데 정렬
+   ============================================================ */
+.chat_section,
+.last_wrapper { position: relative; isolation: isolate; }
+.chat_section::before,
+.last_wrapper::before {
+	content: "";
+	position: absolute;
+	inset: -70px -30px;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(260px 150px at 24% 28%, rgba(56, 189, 248, 0.34), transparent 72%),
+		radial-gradient(320px 170px at 76% 72%, rgba(83, 131, 246, 0.36), transparent 72%);
+}
+
+/* 줄(row) : 질문은 왼쪽, 답변은 오른쪽 */
+.site_wrap .chat_section > .chat_L,
+.site_wrap .chat_section > .chat_R {
+	display: flex;
+	width: 100%;
+	height: auto;
+	margin: 0 0 14px;
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	box-sizing: border-box;
+}
+.site_wrap .chat_section > .chat_L { justify-content: flex-start; }
+.site_wrap .chat_section > .chat_R { justify-content: flex-end; margin-bottom: 0; }
+
+/* 말풍선 공통 (유리 질감) : 윤곽선(말칸+꼬리)은 js/glass-bubble.js 가 clip-path 로 그림 */
+.site_wrap .chat_section .chat_L_p,
+.site_wrap .chat_section .chat_R_p,
+.site_wrap .last_wrapper > div {
+	--gb-r: 28px;
+	--gb-t: 10px;
+	position: relative;
+	top: auto;
+	left: auto;
+	right: auto;
+	transform: none;
+	display: block;
+	width: auto;
+	max-width: min(100%, 540px);
+	height: auto;
+	min-height: 52px;
+	margin: 0;
+	padding: 14px 28px 14px 38px;     /* 왼쪽 38 = 꼬리 영역 10 + 안쪽 여백 28 */
+	box-sizing: border-box;
+	border: none;
+	border-radius: 28px;               /* JS 실패 시 대비용, .gb-shaped 가 붙으면 윤곽선이 대신함 */
+	font-size: 14px;
+	line-height: 1.7;
+	text-align: center;
+	word-break: keep-all;
+	-webkit-backdrop-filter: blur(20px) saturate(170%);
+	backdrop-filter: blur(20px) saturate(170%);
+	box-shadow: none;
+}
+.site_wrap .chat_section .chat_R_p { padding: 14px 38px 14px 28px; }   /* 오른쪽 꼬리 */
+.gb-shaped { border-radius: 0 !important; }
+.site_wrap .last_wrapper > div p { margin: 0; padding: 0; color: inherit; line-height: inherit; }
+
+/* 질문(회색 유리) */
+.site_wrap .chat_section .chat_L_p {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 2px),
+		linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.16) 40%, rgba(255, 255, 255, 0) 68%),
+		rgba(205, 212, 228, 0.62);
+	color: #222;
+}
+/* 답변·다짐(블루 유리) */
+.site_wrap .chat_section .chat_R_p,
+.site_wrap .last_wrapper > div {
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 2px),
+		linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.14) 40%, rgba(255, 255, 255, 0) 68%),
+		rgba(83, 131, 246, 0.82);
+	color: #fff;
+}
+
+/* 등장 : 줄이 톡 떠오름 -> 말풍선 안에서 타이핑 */
 .typing-ready .chat_L,
 .typing-ready .chat_R,
-.typing-ready .last_wrapper div {
+.typing-ready .last_wrapper > div {
 	opacity: 0;
 	transform: translateY(14px) scale(0.94);
 	transition: opacity 0.4s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .typing-ready .chat_L { transform-origin: 0 100%; }
 .typing-ready .chat_R { transform-origin: 100% 100%; }
-.typing-ready .last_wrapper div { transform-origin: 0 100%; }
+.typing-ready .last_wrapper > div { transform-origin: 0 100%; }
 .typing-ready .chat_L.is-show,
 .typing-ready .chat_R.is-show,
-.typing-ready .last_wrapper div.is-show {
-	opacity: 1;
-	transform: none;
+.typing-ready .last_wrapper > div.is-show { opacity: 1; transform: none; }
+
+/* 타이핑 시작 전 "..." 입력 중 표시 */
+.ct_dots { display: inline-flex; align-items: center; gap: 5px; height: 1.7em; }
+.ct_dots i {
+	display: block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: currentColor;
+	opacity: 0.4;
+	animation: ctDot 1s ease-in-out infinite;
+}
+.ct_dots i:nth-child(2) { animation-delay: 0.15s; }
+.ct_dots i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes ctDot {
+	0%, 100% { transform: translateY(0); opacity: 0.35; }
+	40%      { transform: translateY(-4px); opacity: 0.9; }
+}
+@media (prefers-reduced-motion: reduce) { .ct_dots i { animation: none; } }
+
+@media screen and (max-width: 767px) {
+	.site_wrap .chat_section .chat_L_p,
+	.site_wrap .chat_section .chat_R_p,
+	.site_wrap .last_wrapper > div { --gb-r: 24px; padding: 13px 22px 13px 32px; border-radius: 24px; }
+	.site_wrap .chat_section .chat_R_p { padding: 13px 32px 13px 22px; }
 }

@@ -41,6 +41,9 @@
 		var ghost = box.querySelector('.slime_talk_ghost');
 		var next = box.querySelector('.slime_talk_next');
 
+		// 말칸 + 꼬리를 하나의 유리 윤곽선으로 (js/glass-bubble.js)
+		if (window.GlassBubble) { GlassBubble.attach(bubble, 'top'); GlassBubble.attach(hint, 'top'); }
+
 		var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		var index = -1;
 		var charPos = 0;
