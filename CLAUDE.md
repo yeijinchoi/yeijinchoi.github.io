@@ -187,7 +187,7 @@ yeijinchoi.github.io/
 | 상세 페이지 "홈으로" 뒤로가기 버튼 | `web_work.html` / `webDesign_work.html` `.work_wrap` 맨 위 `.back_home` (스타일 `work.css` 맨 아래) — 새 상세 페이지를 만들면 같은 마크업을 복사 |
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
 | AI 상세 페이지 내용·이미지 채우기 | `ai_work.html` 각 `.project` (`.ai_mock` 자리를 `<div class="p_mockup"><img ...></div>`로 교체, 개요 `.p_overview`, 기간 `.p_period`, 작업참여 `.pill`, 툴 `.tool_chip`) |
-| AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image`. ARG 카드는 `images/arg-thumb.gif`(이스크라 구동 화면 7장면 반복: 메일 알림→받은메일함→메일→검색 첫 화면→검색어 입력→검색 결과, 868×520, 약 110KB) + 동작 줄이기용 정지 이미지 `images/arg-thumb.jpg`. 원본 게임은 GitHub `yeijinchoi/iskra-arg`(`index.html`)이고, 게임이 바뀌면 같은 장면으로 다시 캡처해 GIF만 교체 |
+| AI 카드 썸네일 | 커머스 카드(`.ai_card_commerce`)는 AI 모델 컷 4장 슬라이드: `images/ai-model-1~4.webp`(룩북 그레이 후디 → 뷰티 컷 → 룩북 화이트 후디 → 뷰티 컷, 각 30~45KB), `main.html` `.ai_card_bg` 안 `.ai_slide_1~4`, 4초마다 교차(16초 순환, 동작 줄이기 시 1번만 정지 표시), 이미지 위치는 `common.css` 맨 아래 `.ai_slide_N`의 `background-position`. ARG 카드는 `images/arg-thumb.gif`(이스크라 구동 화면 7장면 반복: 메일 알림→받은메일함→메일→검색 첫 화면→검색어 입력→검색 결과, 868×520, 약 110KB) + 동작 줄이기용 정지 이미지 `images/arg-thumb.jpg`. 원본 게임은 GitHub `yeijinchoi/iskra-arg`(`index.html`)이고, 게임이 바뀌면 같은 장면으로 다시 캡처해 GIF만 교체 |
 | 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
 | Mobile UI/UX 섹션 (이미지 없이 "PDF 포트폴리오에서 확인" 안내 카드 + 다운로드 버튼) | `main.html` `.Mobile_section` `.pdf_card` / 스타일 `common.css` 맨 아래 |
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |

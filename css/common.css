@@ -2926,3 +2926,38 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 @media (prefers-reduced-motion: reduce) {
 	.ai_card_arg .ai_card_bg { background-image: url('../images/arg-thumb.jpg?v=20261106'); }
 }
+
+/* ============================================================
+   AI 카드 썸네일 : 커머스 상세페이지 카드 = AI 모델 컷 4장이 부드럽게 교차하는 슬라이드
+   images/ai-model-1~4.webp (룩북 → 뷰티 컷 → 룩북 → 뷰티 컷), 4초마다 교차
+   ============================================================ */
+.ai_slide {
+	position: absolute;
+	inset: 0;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0;
+	animation: aiSlideFade 16s linear infinite;
+}
+.ai_slide_1 { background-image: url('../images/ai-model-1.webp'); background-position: 50% 30%; animation-delay: 0s; }
+.ai_slide_2 { background-image: url('../images/ai-model-2.webp'); background-position: 50% 54%; animation-delay: 4s; }
+.ai_slide_3 { background-image: url('../images/ai-model-3.webp'); background-position: 50% 30%; animation-delay: 8s; }
+.ai_slide_4 { background-image: url('../images/ai-model-4.webp'); background-position: 50% 48%; animation-delay: 12s; }
+@keyframes aiSlideFade {
+	0%   { opacity: 0; }
+	5%   { opacity: 1; }
+	25%  { opacity: 1; }
+	30%  { opacity: 0; }
+	100% { opacity: 0; }
+}
+/* 밝은 배경의 사진 위에서도 라벨·제목·태그가 또렷하도록 ARG 카드와 같은 오버레이/라벨 처리 */
+.ai_card_commerce::after {
+	background: linear-gradient(180deg, rgba(13, 14, 18, 0.35) 0%, rgba(13, 14, 18, 0.35) 36%, rgba(13, 14, 18, 0.88) 74%, rgba(13, 14, 18, 0.97) 100%);
+}
+.ai_card_commerce .ai_card_keyword { color: #fff; text-shadow: 0 1px 8px rgba(13, 14, 18, 0.7); }
+.ai_card_commerce .ai_card_arrow { background: rgba(13, 14, 18, 0.55); }
+@media (prefers-reduced-motion: reduce) {
+	.ai_slide { animation: none; }
+	.ai_slide_1 { opacity: 1; }
+}
