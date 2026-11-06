@@ -855,15 +855,36 @@ body { font-family: "SUIT", sans-serif; font-weight: 400; background: #F5F6F8; }
 	line-height: 1.7;
 }
 
-/* 현재 재직 중인 회사 카드((주)이고진, badge_current 포함) : 화이트 바탕 + 포인트 컬러 그라데이션 보더 */
+/* 현재 재직 중인 회사 카드((주)이고진, badge_current 포함) : 화이트 바탕 + 4px 포인트 컬러 회전 그라데이션 보더 (블루 팔레트 내에서 빙글빙글) */
+@property --career-angle {
+	syntax: '<angle>';
+	inherits: false;
+	initial-value: 0deg;
+}
+
 .career_card:has(.badge_current) {
 	background: #FFFFFF;
 	position: relative;
-	border: 2.5px solid transparent;
+	border: 4px solid transparent;
 	background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(135deg, #5383F6 0%, #38BDF8 100%);
+	background-image: linear-gradient(#FFFFFF, #FFFFFF), conic-gradient(from var(--career-angle), #5383F6, #38BDF8, #A6D4FF, #38BDF8, #5383F6);
 	background-origin: border-box;
 	background-clip: padding-box, border-box;
-	box-shadow: 0 8px 26px rgba(83, 131, 246, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+	box-shadow: 0 8px 28px rgba(83, 131, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.04);
+	animation: careerBorderSpin 4s linear infinite, careerGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes careerBorderSpin {
+	to { --career-angle: 360deg; }
+}
+
+@keyframes careerGlowPulse {
+	0%, 100% { box-shadow: 0 8px 24px rgba(83, 131, 246, 0.16), 0 2px 8px rgba(0, 0, 0, 0.04); }
+	50%      { box-shadow: 0 10px 34px rgba(56, 189, 248, 0.30), 0 2px 8px rgba(0, 0, 0, 0.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.career_card:has(.badge_current) { animation: none; }
 }
 
 .company_line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }

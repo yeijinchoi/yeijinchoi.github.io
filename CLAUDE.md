@@ -69,7 +69,7 @@ yeijinchoi.github.io/
 
 2. **경력 카드 (`.career_card`)**:
    - **기본 경력 카드**: 테두리 완전 삭제(`border: none;`), 깔끔한 소프트 서피스(`background: #EEF0F4;`)
-   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 2.5px 포인트 컬러 그라데이션 보더(`linear-gradient(135deg, #5383F6 0%, #38BDF8 100%)`), 블루 포인트 배지(`.badge_current`, `#5383F6`, '재직중'), 블루 섀도우
+   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 4px 포인트 컬러 회전 그라데이션 보더(`conic-gradient` + `@property --career-angle`, 4초 순환 `careerBorderSpin` + 글로우 펄스 `careerGlowPulse`, `prefers-reduced-motion` 시 정지), 블루 포인트 배지(`.badge_current`, `#5383F6`, '재직중'), 블루 섀도우
    - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음), 터치 시 스케일 인터랙션
 
 3. **스킬 섹션 (`.skill_wrapper`, `.skillset`)**:
