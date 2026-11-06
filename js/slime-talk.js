@@ -10,7 +10,7 @@
 	'use strict';
 
 	var SLIME_LINES = [
-		'안녕하세요! 저는 6년 차 웹 디자이너 · 퍼블리셔 예진이에요 👋',
+		'안녕하세요! 저는 {years}년 차 웹 디자이너 · 퍼블리셔 예진이에요 👋',
 		'2019년 KTN114에서 첫 커리어를 시작했어요. 전화번호부 편집, 고객사 홈페이지 제작을 하면서 고객과 직접 소통하는 법을 배웠죠.',
 		'2021년엔 한국딥러닝으로 옮겨 3D 애셋 마켓 ‘POLYGROUND’ UI 디자인을 맡았어요.',
 		'딥러닝 OCR, 3D DX 발표자료(PPT)를 30여 건 만들고, 자사 홈페이지 v.2 ~ v.3는 디자인부터 개발, 유지보수까지 직접 했어요.',
@@ -22,6 +22,11 @@
 	];
 
 	var TYPE_SPEED = 32; // ms / 글자
+
+	// 대사 안의 {years} 는 js/career-years.js 가 계산한 경력 연차로 자동 치환됩니다
+	function lineAt(i) {
+		return SLIME_LINES[i].replace('{years}', window.CAREER_YEARS || 6);
+	}
 
 	function init() {
 		var stage = document.getElementById('blobStage');
@@ -42,7 +47,7 @@
 		var typing = false;
 
 		function render() {
-			var line = SLIME_LINES[index];
+			var line = lineAt(index);
 			// typed(보이는 글자) + ghost(아직 안 나온 글자, 투명) -> 말풍선 크기가 타이핑 중에도 변하지 않음
 			typed.textContent = line.slice(0, charPos);
 			ghost.textContent = line.slice(charPos);
@@ -51,7 +56,7 @@
 		function finish() {
 			clearTimeout(timer);
 			typing = false;
-			charPos = SLIME_LINES[index].length;
+			charPos = lineAt(index).length;
 			render();
 			bubble.classList.add('is-done');
 		}
@@ -59,11 +64,11 @@
 		function tick() {
 			charPos++;
 			render();
-			if (charPos >= SLIME_LINES[index].length) {
+			if (charPos >= lineAt(index).length) {
 				finish();
 				return;
 			}
-			var ch = SLIME_LINES[index].charAt(charPos - 1);
+			var ch = lineAt(index).charAt(charPos - 1);
 			var pause = /[.,!?]/.test(ch) ? 160 : 0;
 			timer = setTimeout(tick, TYPE_SPEED + pause);
 		}
@@ -95,7 +100,7 @@
 			bubble.style.minHeight = '';
 			typed.textContent = '';
 			for (i = 0; i < SLIME_LINES.length; i++) {
-				ghost.textContent = SLIME_LINES[i];
+				ghost.textContent = lineAt(i);
 				max = Math.max(max, bubble.offsetHeight);
 			}
 			typed.textContent = keepTyped;

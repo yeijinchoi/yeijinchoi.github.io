@@ -2534,10 +2534,10 @@ div.Name .en_name { transform: none; text-align: left; }
 .site_wrap .wrap_title { margin-top: 0; margin-bottom: var(--title-gap); }
 
 /* ============================================================
-   커리어 시작 n일째 배지 (히어로 배지 행, js/career-days.js)
+   경력 n년 차 배지 (히어로 배지 행, js/career-years.js)
    톤: 포인트 블루(#5383F6) 알약 + 흰 글자 (ver 배지·제안 배지와 같은 36px 높이)
    ============================================================ */
-.visual_badges_row .career_day_badge {
+.visual_badges_row .career_year_badge {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -2555,10 +2555,10 @@ div.Name .en_name { transform: none; text-align: left; }
 	white-space: nowrap;
 	box-shadow: 0 6px 16px rgba(83, 131, 246, 0.25);
 }
-.career_day_num {
+.career_year_num {
 	font-weight: 900;
 	font-family: "SUIT", sans-serif;
 	font-variant-numeric: tabular-nums;   /* 카운트업 중 숫자 폭이 흔들리지 않게 */
-	min-width: 3.4ch;
+	min-width: 1ch;
 	text-align: center;
 }
