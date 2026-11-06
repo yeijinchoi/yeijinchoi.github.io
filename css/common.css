@@ -2337,7 +2337,7 @@ body.mobile-nav-open { overflow: hidden; }
 	width: fit-content;
 	margin: 12px auto 0;
 	padding: 12px 24px;
-	background: rgba(255, 255, 255, 0.55);
+	background: rgba(238, 240, 244, 0.72);
 	-webkit-backdrop-filter: blur(16px) saturate(140%);
 	backdrop-filter: blur(16px) saturate(140%);
 	border: 1px solid rgba(220, 224, 230, 0.85);
@@ -2370,7 +2370,7 @@ body.mobile-nav-open { overflow: hidden; }
 	width: 16px;
 	height: 8px;
 	margin-left: -8px;
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(238, 240, 244, 0.85);
 	-webkit-backdrop-filter: blur(16px);
 	backdrop-filter: blur(16px);
 }
