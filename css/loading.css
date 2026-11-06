@@ -52,35 +52,23 @@ p.gray { font-size: 0.875em; color: #474a6b; }
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 12px;
 	width: 100%;
 	max-width: 400px;
 	margin: 28px auto 0;
-	padding: 20px 24px 22px;
+	padding: 20px 24px;
 	box-sizing: border-box;
 	background: #EEF0F4;
 	border: none;
 	border-radius: 8px;
 	box-shadow: none;
 }
-.load_note_label {
-	padding: 3px 12px;
-	background: #111;
-	color: #fff;
-	border-radius: 50px;
-	font-size: 12px;
-	font-weight: 700;
-	letter-spacing: 0.06em;
-	line-height: 1.4;
-}
 .load_text .load_note_text {
 	margin: 0;
-	color: #333;
+	color: #5383F6;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 1.7;
 	word-break: keep-all;
 }
-.load_note_text b { color: #5383F6; font-weight: 700; }
 
 .load_text .load_count { margin-top: 24px; font-size: 0.85em; }

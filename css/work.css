@@ -295,3 +295,67 @@ body { background: #f5f6f8; }
 @media screen and (max-width: 767px) {
 	.back_home { margin-bottom: 24px; }
 }
+
+/* ============================================================
+   AI & Creative 상세 페이지 (ai_work.html)
+   이미지가 아직 없는 프로젝트는 메인 AI 카드와 같은 딥블랙 카드로 표시
+   ============================================================ */
+.ai_mock {
+	flex: 1 1 auto;
+	min-width: 0;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	padding: 32px 24px;
+	box-sizing: border-box;
+	background: #0D0E12;
+	border-radius: 8px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+	text-align: center;
+}
+.ai_mock .ai_card_keyword {
+	font-size: 12px;
+	font-weight: 700;
+	color: #94A3B8;
+	letter-spacing: 1.5px;
+	background: rgba(255, 255, 255, 0.08);
+	padding: 4px 10px;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ai_mock_title {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.4;
+	word-break: keep-all;
+}
+.ai_mock_tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.ai_mock_tags span {
+	padding: 5px 11px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #E2E8F0;
+}
+.ai_mock_soon { margin-top: 6px; font-size: 12px; color: #64748B; }
+
+.tool_chip {
+	display: inline-block;
+	padding: 3px 12px;
+	background: #EEF0F4;
+	border-radius: 30px;
+	font-size: 12px;
+	color: #333;
+}
+
+@media screen and (max-width: 767px) {
+	.ai_mock { width: 100%; height: 260px; padding: 24px 16px; gap: 14px; }
+	.ai_mock_title { font-size: 20px; }
+}

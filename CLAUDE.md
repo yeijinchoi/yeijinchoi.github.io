@@ -27,6 +27,7 @@ yeijinchoi.github.io/
 ├── main.html               # 포트폴리오 메인 페이지
 ├── web_work.html           # Works 상세 페이지 (웹퍼블리싱 & 웹디자인 지그재그 목업)
 ├── webDesign_work.html     # Works 상세 페이지 (웹디자인 전용 프로젝트)
+├── ai_work.html            # AI & Creative Works 상세 페이지 (커머스 상세페이지 AI 파이프라인 / ARG 프로젝트)
 ├── contentDisign_work.html # 그래픽/콘텐츠 디자인 페이지
 ├── CNAME                   # jeanychoi.com
 ├── css/
@@ -93,6 +94,7 @@ yeijinchoi.github.io/
 5. **AI & Creative Works 섹션 (`.Ai_section`, `#ai-works`)**:
    - **블랙 단일 컨테이너 카드 (`.ai_work_card`)**: 상하로 흰색/검은색 칸을 나누지 않고, 카드 전체를 하나의 일체형 딥블랙 컨테이너(`background: #0D0E12`, `min-height: 280px`, `border-radius: 16px`)로 통합.
    - **배경 썸네일 준비 구조**: 추후 관련 프로젝트 썸네일 이미지를 배경(`background-image`)으로 바로 적용할 수 있도록 `.ai_card_bg` 전용 레이어와 반투명 다크 그라데이션 오버레이(`::after`) 배치. 이미지가 들어가도 타이포그래피가 또렷하게 가독성을 유지함.
+   - **상세 페이지 연결**: 카드 전체가 `ai_work.html#ai_01` / `#ai_02` 링크(`<a class="ai_work_card">`), 오른쪽 위 원형 화살표(`.ai_card_arrow`). 상세 페이지는 `web_work.html`과 같은 구조(`.project` / `.p_info`)이고 이미지가 없는 동안엔 같은 딥블랙 톤의 `.ai_mock` 카드 + "상세 이미지 준비 중" 표시.
    - **내부 콘텐츠 배치 (`.ai_card_inner`)**:
      - 상단: 영문 카테고리 배지 (`.ai_card_keyword`, `E-COMMERCE DETAIL PAGE` / `ARG PROJECT · IN PROGRESS`)
      - 하단: 한글 메인 타이틀 (`.ai_card_title`, 20px Bold White `#FFFFFF`) + 반투명 글래스 다크 태그 (`.ai_card_tags span`, Higgsfield AI, Claude Code, VS Code, 상세페이지 퍼블리싱 등)
@@ -177,11 +179,12 @@ yeijinchoi.github.io/
 | Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
 | 상세 페이지 "홈으로" 뒤로가기 버튼 | `web_work.html` / `webDesign_work.html` `.work_wrap` 맨 위 `.back_home` (스타일 `work.css` 맨 아래) — 새 상세 페이지를 만들면 같은 마크업을 복사 |
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
+| AI 상세 페이지 내용·이미지 채우기 | `ai_work.html` 각 `.project` (`.ai_mock` 자리를 `<div class="p_mockup"><img ...></div>`로 교체, 개요 `.p_overview`, 기간 `.p_period`, 작업참여 `.pill`, 툴 `.tool_chip`) |
 | AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image` |
 | 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
 | Mobile UI/UX 섹션 (이미지 없이 "PDF 포트폴리오에서 확인" 안내 카드 + 다운로드 버튼) | `main.html` `.Mobile_section` `.pdf_card` / 스타일 `common.css` 맨 아래 |
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |
-| 메뉴 항목 | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
+| 메뉴 항목 (Works 서브메뉴: Web Design / Web Publishing / AI & Creative) | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
 | 슬라임 동작 | `js/blob-interactive.js` + `common.css` 히어로 구간 |
 | 경력 n년 차 배지 | `main.html` `.career_year_badge` + `js/career-years.js` 맨 위 `CAREER_PERIODS`(경력 근무기간, 합산 개월÷12 = n년 차, 슬라임 첫 대사 `{years}`도 같이 갱신) / 스타일 `common.css` 맨 아래 |
 | 슬라임 말풍선 대사 수정 | `js/slime-talk.js` 맨 위 `SLIME_LINES` 배열 (경력이 바뀌면 같이 수정, 마지막 줄 다음엔 처음으로 순환) / 스타일은 `common.css` 맨 아래 "슬라임 토크" 블록 |
