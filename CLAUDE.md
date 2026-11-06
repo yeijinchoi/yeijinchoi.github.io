@@ -83,11 +83,13 @@ yeijinchoi.github.io/
 6. **데스크톱 네비게이션 서브메뉴 호버 브리지**:
    - `li.work`에 `padding-bottom: 25px; margin-bottom: -25px;` 및 `.blind-subnav` 상단 투명 가상요소(`::before`)를 배치하여, 마우스가 Works에서 알약 팝업으로 이동할 때 호버 상태가 끊기지 않도록 브리지 처리 완료.
 7. **무신사 스타일 쫀득한 플로팅 알약 네비게이션**:
-   - 데스크톱(≥1025px)에서 스크롤(scrollY ≥ 80px) 시 상단 고정 플로팅 알약 캡슐(`nav.nav-floating`)로 자연스럽게 변환.
+   - 데스크톱(≥1025px)에서 스크롤(scrollY ≥ 90px) 시 상단 고정 플로팅 알약 캡슐(`nav.nav-floating`)로 자연스럽게 변환.
+   - 레이아웃: 좌측 Logo(`h1`), 중앙 절대 정렬 메뉴(`nav > ul`: `left: 50%; transform: translateX(-50%)`), 우측 끝단 밀착 Contact 버튼(`margin-left: auto;`)
    - 스타일: `width: 880px; height: 56px; border-radius: 50px; background: rgba(250, 250, 252, 0.88); backdrop-filter: blur(20px); border: 1px solid rgba(220, 224, 230, 0.85); box-shadow: 0 12px 36px rgba(0,0,0,0.09);`
    - 변형 애니메이션: `animation: floatPillSpring 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;` 쫀득한 스프링 모션 적용.
-   - 컨텐츠 점프 방지: `.nav-placeholder` 요소가 기존 80px 높이를 유지하여 스크롤 시 본문 덜컹거림 원천 차단.
-   - 모바일(≤1024px): 햄버거 버튼 및 슬라이드 드로어 메뉴 유지.
+   - 플로팅 전(상단 휴지 상태): `width: 940px; height: 110px; padding: 30px 0 0 0;`, `Profile/Works`는 우측 `Contact` 버튼 바로 옆에 정렬되어 넉넉한 상단 여백 유지.
+   - 컨텐츠 점프 방지: `.nav-placeholder` 요소가 기존 110px 높이를 유지하여 스크롤 시 본문 덜컹거림 원천 차단.
+   - 모바일(≤1024px): 네비 앞 `Jean` 로고 숨김(`display: none;`), 햄버거 버튼은 PC 플로팅 알약과 동일한 글래스모피즘 톤(`48×48px`, `border-radius: 50%`, 반투명 블러·그림자)으로 우측 상단(`top: 16px; right: 16px; fixed`)에 고정 플로팅. 드로어 메뉴(Profile, Works 아코디언, Contact) 완벽 유지.
 
 ---
 
