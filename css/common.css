@@ -2688,3 +2688,13 @@ div.Name .en_name { transform: none; text-align: left; }
 	.pdf_card { padding: 40px 20px; gap: 20px; }
 	.pdf_card_text br { display: none; }
 }
+
+/* 모바일 히어로 : 네비 아래 불필요한 위쪽 여백을 줄여 슬라임을 위로 */
+@media screen and (max-width: 767px) {
+	.site_wrap .visualwrap { margin-top: 24px !important; }
+}
+
+/* 슬라임 포커스 링은 키보드 조작일 때만 표시 (마우스·터치 클릭 시에는 숨김) */
+.blob_stage.no-ring,
+.blob_stage.no-ring:focus,
+.blob_stage.no-ring:focus-visible { outline: none !important; }

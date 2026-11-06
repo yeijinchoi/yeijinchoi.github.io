@@ -134,6 +134,9 @@
 		stage.setAttribute('tabindex', '0');
 		stage.setAttribute('aria-label', '저를 눌러서 인사해 주세요');
 
+		// 마우스·터치로 누를 땐 포커스 링 숨김, 키보드를 쓰면 다시 표시
+		stage.addEventListener('pointerdown', function () { stage.classList.add('no-ring'); });
+		stage.addEventListener('keydown', function () { stage.classList.remove('no-ring'); });
 		stage.addEventListener('click', onTalk);
 		stage.addEventListener('keydown', function (e) {
 			if (e.key === 'Enter' || e.key === ' ') {
