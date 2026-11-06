@@ -46,3 +46,41 @@ body { overflow: hidden; }
 .bold { font-family: "SUIT", sans-serif; font-weight: 700; }
 
 p.gray { font-size: 0.875em; color: #474a6b; }
+
+/* 이 포트폴리오 안내 : 텍스트 나열에서 끊어 보이도록 영역 상자로 분리 */
+.load_note {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	max-width: 400px;
+	margin: 28px auto 0;
+	padding: 20px 24px 22px;
+	box-sizing: border-box;
+	background: #FAFAFC;
+	border: 1px solid #E2E5EA;
+	border-radius: 8px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+.load_note_label {
+	padding: 3px 12px;
+	background: #111;
+	color: #fff;
+	border-radius: 50px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.4;
+}
+.load_text .load_note_text {
+	margin: 0;
+	color: #333;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.7;
+	word-break: keep-all;
+}
+.load_note_text b { color: #5383F6; font-weight: 700; }
+
+.load_text .load_count { margin-top: 24px; font-size: 0.85em; }
