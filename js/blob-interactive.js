@@ -3,18 +3,19 @@
  * - 3D Perspective Body Tilt tracking mouse
  * - Independent Eye Parallax Gaze
  * - Natural Eye Blinking on randomized timer
- * - Happy Smiling Reaction (^ ^) on hover / click
+ * - Soft organic eye-closing into a gentle smile (^ ^) on hover / click
  */
 (function() {
 	function initSlimePhysics() {
 		var stage = document.getElementById('blobStage');
 		var svg = document.getElementById('blobCore');
-		var slimeBody = document.getElementById('slimeBody');
 		var slimeFace = document.getElementById('slimeFace');
 		var faceNormal = document.getElementById('faceNormal');
 		var faceSmile = document.getElementById('faceSmile');
 		var leftEye = document.getElementById('leftEye');
 		var rightEye = document.getElementById('rightEye');
+		var leftSmile = document.getElementById('leftSmile');
+		var rightSmile = document.getElementById('rightSmile');
 		if (!stage || !svg || !slimeFace) return;
 
 		var tiltTargetX = 0;
@@ -28,9 +29,12 @@
 		var eyeCurY = 0;
 
 		var isSmiling = false;
+		var smileTarget = 0;
+		var smileProgress = 0;
 		var smileTimer = null;
+
 		var isBlinking = false;
-		var blinkScale = 1;
+		var blinkProgress = 1; // 1 = fully open, 0.08 = closed
 
 		var heroWrap = document.querySelector('.visualwrap') || stage;
 
@@ -61,51 +65,41 @@
 			eyeTargetY = 0;
 		});
 
-		// Hover directly on slime -> SMILE!
+		// Hover directly on slime -> 자연스럽게 눈 감으며 미소!
 		stage.addEventListener('mouseenter', function() {
-			triggerSmile(true);
+			setSmile(true);
 		});
 
 		stage.addEventListener('mouseleave', function() {
-			triggerSmile(false);
+			setSmile(false);
 		});
 
-		// Click on slime -> Happy bounce & smile
+		// Click on slime -> 2.5초간 기분 좋게 웃기
 		stage.addEventListener('click', function() {
-			triggerSmile(true);
+			setSmile(true);
 			if (smileTimer) clearTimeout(smileTimer);
 			smileTimer = setTimeout(function() {
-				triggerSmile(false);
-			}, 2200);
+				setSmile(false);
+			}, 2500);
 		});
 
-		function triggerSmile(smile) {
-			isSmiling = smile;
-			if (faceNormal && faceSmile) {
-				faceNormal.style.transition = 'opacity 0.22s ease';
-				faceSmile.style.transition = 'opacity 0.22s ease';
-				if (smile) {
-					faceNormal.style.opacity = '0';
-					faceSmile.style.opacity = '1';
-				} else {
-					faceNormal.style.opacity = '1';
-					faceSmile.style.opacity = '0';
-				}
-			}
+		function setSmile(val) {
+			isSmiling = val;
+			smileTarget = val ? 1 : 0;
 		}
 
-		// Natural Blinking Loop
+		// Natural Blinking Loop (평소 눈 깜빡임)
 		function scheduleBlink() {
-			var delay = 2800 + Math.random() * 3200;
+			var delay = 2600 + Math.random() * 3200;
 			setTimeout(function() {
-				if (!isSmiling) {
+				if (!isSmiling && smileProgress < 0.1) {
 					doBlink(function() {
-						// 25% chance of an immediate double blink!
+						// 25% 확률로 귀여운 연속 깜빡임(더블 블링크)
 						if (Math.random() < 0.25) {
 							setTimeout(function() {
-								if (!isSmiling) doBlink(scheduleBlink);
+								if (!isSmiling && smileProgress < 0.1) doBlink(scheduleBlink);
 								else scheduleBlink();
-							}, 160);
+							}, 150);
 						} else {
 							scheduleBlink();
 						}
@@ -122,26 +116,24 @@
 			var duration = 150; // ms
 
 			function animateBlink(now) {
-				var elapsed = now - startTime;
-				var progress = elapsed / duration;
-				if (progress < 0.5) {
-					blinkScale = 1 - (progress * 2) * 0.92;
-				} else if (progress < 1) {
-					blinkScale = 0.08 + ((progress - 0.5) * 2) * 0.92;
-				} else {
-					blinkScale = 1;
+				if (isSmiling || smileProgress > 0.1) {
 					isBlinking = false;
-					if (leftEye && rightEye) {
-						leftEye.setAttribute('transform', 'scale(1, 1)');
-						rightEye.setAttribute('transform', 'scale(1, 1)');
-					}
+					blinkProgress = 1;
 					if (callback) callback();
 					return;
 				}
 
-				if (leftEye && rightEye) {
-					leftEye.setAttribute('transform', 'scale(1, ' + blinkScale.toFixed(2) + ')');
-					rightEye.setAttribute('transform', 'scale(1, ' + blinkScale.toFixed(2) + ')');
+				var elapsed = now - startTime;
+				var p = elapsed / duration;
+				if (p < 0.5) {
+					blinkProgress = 1 - (p * 2) * 0.92;
+				} else if (p < 1) {
+					blinkProgress = 0.08 + ((p - 0.5) * 2) * 0.92;
+				} else {
+					blinkProgress = 1;
+					isBlinking = false;
+					if (callback) callback();
+					return;
 				}
 				requestAnimationFrame(animateBlink);
 			}
@@ -151,7 +143,7 @@
 
 		scheduleBlink();
 
-		// Main Render Loop
+		// Main Physics & Render Loop
 		var time = 0;
 		function render() {
 			time += 0.025;
@@ -165,12 +157,62 @@
 			eyeCurX += (eyeTargetX - eyeCurX) * 0.12;
 			eyeCurY += (eyeTargetY - eyeCurY) * 0.12;
 
-			// Slime body 3D perspective
-			var bodyScaleY = isSmiling ? 0.96 : 1;
-			var bodyScaleX = isSmiling ? 1.04 : 1;
+			// 자연스럽게 눈 감으며 웃는 스마일 모프 보간 (0 -> 1 또는 1 -> 0)
+			smileProgress += (smileTarget - smileProgress) * 0.14;
+
+			var normScaleY, normOpacity, smileScaleY, smileOpacity;
+			var sp = smileProgress;
+
+			if (sp <= 0.45) {
+				// 1단계: 눈이 부드럽게 감기며 가늘어짐
+				normScaleY = 1.0 - (sp / 0.45) * 0.92;
+				normOpacity = 1.0;
+				smileScaleY = 0.25;
+				smileOpacity = 0.0;
+			} else if (sp <= 0.55) {
+				// 2단계: 완전히 감긴 찰나, 감긴 눈에서 반달눈으로 교체
+				var mid = (sp - 0.45) / 0.10;
+				normScaleY = 0.08;
+				normOpacity = Math.max(0, 1.0 - mid);
+				smileScaleY = 0.25 + mid * 0.25;
+				smileOpacity = Math.min(1, mid);
+			} else {
+				// 3단계: 반달눈이 기분 좋게 둥글려지며 방긋 웃음
+				var rest = (sp - 0.55) / 0.45;
+				normScaleY = 0.08;
+				normOpacity = 0.0;
+				smileScaleY = 0.5 + rest * 0.5;
+				smileOpacity = 1.0;
+			}
+
+			// 평소 깜빡임과 합성
+			if (!isSmiling && sp < 0.1) {
+				normScaleY *= blinkProgress;
+			}
+
+			// DOM 반영
+			if (leftEye && rightEye) {
+				leftEye.setAttribute('transform', 'scale(1, ' + normScaleY.toFixed(3) + ')');
+				rightEye.setAttribute('transform', 'scale(1, ' + normScaleY.toFixed(3) + ')');
+			}
+			if (faceNormal) {
+				faceNormal.setAttribute('opacity', normOpacity.toFixed(2));
+			}
+
+			if (leftSmile && rightSmile) {
+				leftSmile.setAttribute('transform', 'scale(1, ' + smileScaleY.toFixed(3) + ')');
+				rightSmile.setAttribute('transform', 'scale(1, ' + smileScaleY.toFixed(3) + ')');
+			}
+			if (faceSmile) {
+				faceSmile.setAttribute('opacity', smileOpacity.toFixed(2));
+			}
+
+			// 슬라임 몸체: 웃을 때 볼이 살짝 퐁신하게 찌부되는 푸딩 리액션
+			var bodyScaleY = 1 - (sp * 0.04);
+			var bodyScaleX = 1 + (sp * 0.04);
 			svg.style.transform = 'perspective(900px) translateY(' + idleY.toFixed(2) + 'px) rotateX(' + tiltCurX.toFixed(2) + 'deg) rotateY(' + tiltCurY.toFixed(2) + 'deg) scale(' + (idleScale * bodyScaleX).toFixed(3) + ', ' + (idleScale * bodyScaleY).toFixed(3) + ')';
 
-			// Independent Face Parallax
+			// 시선 패럴랙스
 			slimeFace.setAttribute('transform', 'translate(' + eyeCurX.toFixed(2) + ', ' + eyeCurY.toFixed(2) + ')');
 
 			requestAnimationFrame(render);
