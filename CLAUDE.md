@@ -64,8 +64,8 @@ yeijinchoi.github.io/
    - 배경: `#EEF0F4`, 테두리: `1px solid #E2E5EA`, 둥근 모서리: `border-radius: 20px;`
    - 내부 텍스트 영역(`profile_section_wrap`): `background: transparent !important;` (글자 박스만 하얗게 쪼개지지 않고 단일 카드로 매끄럽게 연결)
 2. **경력 카드 (`.career_card`)**:
-   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 하이라이트(`background: #FFFFFF !important;`), 테두리 `#D5D9E0`, 그림자 부여, 초록색 포인트 배지(`.badge_current`, `#10B981`, '재직중')
-   - **이전 경력 (`한국딥러닝`, `KTN114`)**: 연그레이 카드(`background: #EEF0F4;`), 테두리 `#E2E5EA`
+   - **기본 경력 카드**: 테두리 완전 삭제(`border: none;`), 깔끔한 소프트 서피스(`background: #EEF0F4;`)
+   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 2.5px 포인트 컬러 그라데이션 보더(`linear-gradient(135deg, #5383F6 0%, #38BDF8 100%)`), 초록색 포인트 배지(`.badge_current`, `#10B981`, '재직중'), 블루 섀도우
    - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음), 터치 시 스케일 인터랙션
 3. **Works 프로젝트 목업 (`.p_mockup`)**:
    - 가로 배치: 좌우 지그재그 (홀수: 목업 좌 / 정보 우, 짝수: 목업 우 / 정보 좌)

@@ -1,12 +1,13 @@
 /**
- * 3D Interactive Mascot Character (Park Park 'ㅂ' Silhouette)
- * - Exact silhouette and cute character eyes from Ye-jin's Pickle assistant
- * - Eyes follow the cursor with smooth dampening
- * - Whole character 3D tilts and breathes gently
- * - Pure signature blue (#5383F6), ZERO purple, ZERO click distortion
+ * 3D Interactive Fluid Character / Art Graphic
+ * - Smooth rounded dome head + chubby droplet body in signature blue (#5383F6)
+ * - White stylized glints / eyes with subtle mouse tracking
+ * - 3D perspective tilt tracking cursor
+ * - Gentle organic breathing wave
+ * - NO click distortion
  */
 (function() {
-	function initCharacterMascot() {
+	function initFluidOrb() {
 		var stage = document.getElementById('blobStage');
 		var svg = document.getElementById('blobCore');
 		var leftEye = document.getElementById('leftEye');
@@ -35,13 +36,11 @@
 			dx = Math.max(-1.2, Math.min(1.2, dx));
 			dy = Math.max(-1.2, Math.min(1.2, dy));
 
-			// 3D tilt
 			tiltTargetY = dx * 14;
 			tiltTargetX = -dy * 14;
 
-			// Eyes track cursor
-			eyeTargetX = dx * 8;
-			eyeTargetY = dy * 7;
+			eyeTargetX = dx * 7;
+			eyeTargetY = dy * 5;
 		}
 
 		window.addEventListener('mousemove', updateMouse);
@@ -57,22 +56,20 @@
 		function render() {
 			time += 0.025;
 
-			// Gentle breathing float
 			var idleY = Math.sin(time) * 4;
-			var idleScale = 1 + Math.sin(time * 0.8) * 0.01;
+			var idleScale = 1 + Math.sin(time * 0.8) * 0.012;
 
-			// Lerp physics
 			tiltCurX += (tiltTargetX - tiltCurX) * 0.08;
 			tiltCurY += (tiltTargetY - tiltCurY) * 0.08;
-			eyeCurX += (eyeTargetX - eyeCurX) * 0.12;
-			eyeCurY += (eyeTargetY - eyeCurY) * 0.12;
+
+			eyeCurX += (eyeTargetX - eyeCurX) * 0.1;
+			eyeCurY += (eyeTargetY - eyeCurY) * 0.1;
 
 			svg.style.transform = 'perspective(900px) translateY(' + idleY.toFixed(2) + 'px) rotateX(' + tiltCurX.toFixed(2) + 'deg) rotateY(' + tiltCurY.toFixed(2) + 'deg) scale(' + idleScale.toFixed(3) + ')';
 
 			if (leftEye && rightEye) {
-				var eyeTransform = 'translate3d(' + eyeCurX.toFixed(1) + 'px, ' + eyeCurY.toFixed(1) + 'px, 0)';
-				leftEye.style.transform = eyeTransform;
-				rightEye.style.transform = eyeTransform;
+				leftEye.style.transform = 'translate(' + eyeCurX.toFixed(2) + 'px, ' + eyeCurY.toFixed(2) + 'px)';
+				rightEye.style.transform = 'translate(' + eyeCurX.toFixed(2) + 'px, ' + eyeCurY.toFixed(2) + 'px)';
 			}
 
 			requestAnimationFrame(render);
@@ -82,8 +79,8 @@
 	}
 
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initCharacterMascot);
+		document.addEventListener('DOMContentLoaded', initFluidOrb);
 	} else {
-		initCharacterMascot();
+		initFluidOrb();
 	}
 })();

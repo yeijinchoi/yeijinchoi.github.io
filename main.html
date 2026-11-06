@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
-	<script type="text/javascript" src="js/blob-interactive.js?v=20261106d"></script>
+	<script type="text/javascript" src="js/blob-interactive.js?v=20261106e"></script>
 
 </head>
 
@@ -91,15 +91,15 @@
 					</div>
 				</div>
 				<div class="visual_graphic_col">
-					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 캐릭터 인터랙티브 그래픽">
+					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 아트 그래픽">
 						<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
 							<defs>
 								<filter id="dropGlow" x="-30%" y="-30%" width="160%" height="160%">
 									<feGaussianBlur stdDeviation="30" result="blur"/>
 								</filter>
-								<filter id="drop3dShadow" x="-20%" y="-20%" width="150%" height="150%">
-									<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#5383F6" flood-opacity="0.35"/>
-									<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1D4ED8" flood-opacity="0.22"/>
+								<filter id="drop3dShadow" x="-30%" y="-20%" width="160%" height="160%">
+									<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#5383F6" flood-opacity="0.32"/>
+									<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1D4ED8" flood-opacity="0.2"/>
 								</filter>
 								<radialGradient id="charBodyGrad" cx="35%" cy="30%" r="70%">
 									<stop offset="0%" stop-color="#93C5FD"/>
@@ -110,44 +110,36 @@
 								</radialGradient>
 								<linearGradient id="charRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
 									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-									<stop offset="50%" stop-color="#93C5FD" stop-opacity="0.2"/>
-									<stop offset="100%" stop-color="#5383F6" stop-opacity="0.75"/>
+									<stop offset="45%" stop-color="#93C5FD" stop-opacity="0.22"/>
+									<stop offset="100%" stop-color="#5383F6" stop-opacity="0.8"/>
 								</linearGradient>
 								<radialGradient id="charHighlight" cx="30%" cy="24%" r="35%">
 									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.88"/>
 									<stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.25"/>
 									<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
 								</radialGradient>
-								<!-- 클리핑 마스크 -->
-								<clipPath id="charClip">
-									<path d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z"/>
+								<!-- 클리핑 마스크: 둥근 돔 머리와 통통한 하단 볼살 -->
+								<clipPath id="domeClip">
+									<path d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z"/>
 								</clipPath>
 							</defs>
 
 							<!-- 후면 은은한 대기광 (시그니처 블루) -->
-							<path d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
+							<path d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
 
-							<!-- 3D 캐릭터 본체 ('ㅂ' 실루엣) -->
-							<path class="fluid_main_body" d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z" fill="url(#charBodyGrad)" stroke="url(#charRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
+							<!-- 3D 유기형 돔 본체 (머리 위 굴곡 없이 매끄러운 둥근 머리) -->
+							<path class="fluid_main_body" d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z" fill="url(#charBodyGrad)" stroke="url(#charRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
 
 							<!-- 클리핑 마스크 내부 은은한 3D 곡면 반사광 -->
-							<g clip-path="url(#charClip)">
-								<ellipse cx="145" cy="72" rx="42" ry="22" transform="rotate(-15 145 72)" fill="url(#charHighlight)" opacity="0.8"/>
-								<ellipse cx="255" cy="72" rx="42" ry="22" transform="rotate(15 255 72)" fill="url(#charHighlight)" opacity="0.6"/>
+							<g clip-path="url(#domeClip)">
+								<ellipse cx="160" cy="95" rx="55" ry="28" transform="rotate(-25 160 95)" fill="url(#charHighlight)" opacity="0.85"/>
+								<ellipse cx="140" cy="82" rx="14" ry="7" transform="rotate(-20 140 82)" fill="#FFFFFF" opacity="0.95"/>
 							</g>
 
-							<!-- 캐릭터 눈동자 (시선 추적 인터랙션) -->
+							<!-- 흰색으로 교체하고 크기 줄인 눈/글린트 포인트 -->
 							<g class="character_eyes" id="charEyes">
-								<!-- 왼쪽 눈 -->
-								<g id="leftEye">
-									<ellipse cx="166" cy="154" rx="16" ry="27" fill="#111111"/>
-									<circle class="pupil_glint" cx="172" cy="142" r="5" fill="#FFFFFF"/>
-								</g>
-								<!-- 오른쪽 눈 -->
-								<g id="rightEye">
-									<ellipse cx="234" cy="154" rx="16" ry="27" fill="#111111"/>
-									<circle class="pupil_glint" cx="240" cy="142" r="5" fill="#FFFFFF"/>
-								</g>
+								<ellipse id="leftEye" cx="172" cy="154" rx="10.5" ry="17.5" fill="#FFFFFF" opacity="0.95"/>
+								<ellipse id="rightEye" cx="228" cy="154" rx="10.5" ry="17.5" fill="#FFFFFF" opacity="0.95"/>
 							</g>
 						</svg>
 					</div>

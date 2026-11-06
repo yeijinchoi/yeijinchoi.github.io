@@ -886,7 +886,7 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 	flex: 0 0 calc((100% - 24px) / 2);
 	float: none;
 	background: #EEF0F4;
-	border: 1px solid #E2E5EA;
+	border: none;
 	border-radius: 16px;
 	box-shadow: none;
 	padding: 28px 32px;
@@ -894,11 +894,15 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 	line-height: 1.7;
 }
 
-/* 현재 재직 중인 회사 카드((주)이고진, badge_current 포함) : 화이트 하이라이트 */
+/* 현재 재직 중인 회사 카드((주)이고진, badge_current 포함) : 화이트 바탕 + 포인트 컬러 그라데이션 보더 */
 .career_card:has(.badge_current) {
 	background: #FFFFFF;
-	border: 1px solid #DEDEDE;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+	position: relative;
+	border: 2.5px solid transparent;
+	background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(135deg, #5383F6 0%, #38BDF8 100%);
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+	box-shadow: 0 8px 26px rgba(83, 131, 246, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .company_line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
