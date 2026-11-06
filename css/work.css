@@ -408,16 +408,5 @@ body { background: #f5f6f8; }
 	.ag_mat img { height: 100px; }
 }
 
-/* 립틴트 화보 슬라이드 첫 컷(틴트 포즈) : 얼굴과 틴트가 중심이 되도록 확대 크롭 */
-.ag_slides img:first-child {
-	transform: scale(1.34);
-	transform-origin: 54% 34%;
-}
-/* 가로로 넓은 데스크톱·태블릿 프레임은 모자 윗부분이 잘리지 않게 위쪽을 더 보여줌 */
-@media screen and (min-width: 768px) {
-	.ag_slides img:first-child {
-		transform: scale(1.22);
-		transform-origin: 54% 18%;
-		object-position: 50% 8%;
-	}
-}
+/* 립틴트 화보 슬라이드 첫 컷 : 입술과 틴트가 중앙에 오는 클로즈업 (ai-model-6-close.webp, 2K 업스케일 후 크롭) */
+.ag_slides img:first-child { object-position: 50% 50%; }
