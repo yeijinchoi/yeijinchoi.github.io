@@ -124,20 +124,6 @@ body { background: #f5f6f8; }
 	color: #fff;
 }
 
-.go_site {
-	display: inline-block;
-	margin-top: 16px;
-	color: #5383F6;
-	border: 1px solid #5383F6;
-	background: #fff;
-	border-radius: 30px;
-	padding: 8px 18px;
-	font-size: 14px;
-	transition: background 0.2s, color 0.2s;
-}
-
-.go_site:hover { background: #5383F6; color: #fff; }
-
 /* ---------- 하단 정보 카드 ---------- */
 .p_info {
 	display: flex;
@@ -256,8 +242,6 @@ body { background: #f5f6f8; }
 	}
 
 	.project.reverse .p_side { align-items: center; }
-
-	.go_site { margin-top: 0; padding: 7px 16px; font-size: 14px; }
 
 	.p_info, .project .p_info {
 		flex-direction: column;
