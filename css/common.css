@@ -132,8 +132,8 @@
 	.chat_L { display: block; width: 328px; height: 62px; background: url("../images/message-gray.png") no-repeat left; margin-bottom: 20px; }
 	.chat_R { width: 368px; height: 62px; background: url("../images/message-blue.png") no-repeat right; border-radius: 100px 0 0 100px; }
 
-	.chat_L_p { position: absolute; top: 50%; transform: translateY(-50%); left: 50px; font-size: 13px; width: 90%;}
-	.chat_R_p {  position: absolute; top: 50%; transform: translateY(-50%); right: 24px; color: #fff; font-size: 13px; width: 90%; }
+	.chat_L_p { position: absolute; top: 50%; transform: translateY(-50%); left: 50px; font-size: 14px; width: 90%;}
+	.chat_R_p {  position: absolute; top: 50%; transform: translateY(-50%); right: 24px; color: #fff; font-size: 14px; width: 90%; }
 
 	.Webdesign_section { width: 100%; }
 	.webdesign_wrapper { width: 368px; margin: 0 auto; display: block; }
@@ -249,7 +249,7 @@
 
 	nav:hover .blind-subnav ul { display: block;}
 
-	.blind-subnav li { transform: translateX(-8px); font-size: 13px; }
+	.blind-subnav li { transform: translateX(-8px); font-size: 14px; }
 
 	.blind-subnav li:hover { color: #5383F6; }
 
@@ -390,7 +390,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: #fff;
-		font-size: 15px;
+		font-size: 14px;
 		font-family: "NotoSansKR-Bold", sans-serif;
 		font-weight: bold;
 		text-align: center;
@@ -464,7 +464,7 @@
 
 	nav:hover .blind-subnav ul { display: block;}
 
-	.blind-subnav li { transform: translateX(-8px); font-size: 13px; }
+	.blind-subnav li { transform: translateX(-8px); font-size: 14px; }
 
 	.blind-subnav li:hover { color: #5383F6; }
 
@@ -533,7 +533,7 @@
 	}
 	nav h1 {
 		position: static !important;
-		font-size: 22px;
+		font-size: 20px;
 		font-weight: 700;
 		letter-spacing: -0.5px;
 		margin: 0;
@@ -563,7 +563,7 @@
 		float: none !important;
 		margin: 0 !important;
 		padding: 0 !important;
-		font-size: 15px;
+		font-size: 14px;
 		font-weight: 500;
 	}
 	nav > ul > li > a { color: #222; text-decoration: none; transition: color 0.2s ease; }
@@ -707,7 +707,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: #fff;
-		font-size: 15px;
+		font-size: 14px;
 		font-family: "NotoSansKR-Bold", sans-serif;
 		font-weight: 700;
 		text-align: center;
@@ -1014,7 +1014,7 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 @media screen and (max-width: 767px) {
 	.career_card { padding: 24px 20px; }
 
-	.company_function li { font-size: 13.5px; line-height: 1.65; }
+	.company_function li { font-size: 14px; line-height: 1.65; }
 
 	/* 상단 라인 : 회사명+재직중 배지 1행, 근무기간 2행으로 자연스럽게 배치 */
 	.company_line { flex-wrap: wrap; row-gap: 8px; }
@@ -1163,7 +1163,7 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 	}
 
 	nav ul li.work .blind-subnav li {
-		font-size: 13px !important;
+		font-size: 14px !important;
 		width: 100% !important;
 		float: none !important;
 		margin: 0 !important;
@@ -1237,13 +1237,13 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 		gap: 40px !important;
 	}
 	nav.nav-floating > ul > li {
-		font-size: 14.5px !important;
+		font-size: 14px !important;
 	}
 	nav.nav-floating .Contact-btn {
 		margin-left: auto !important;
 		height: 40px !important;
 		padding: 0 22px !important;
-		font-size: 13.5px !important;
+		font-size: 14px !important;
 	}
 }
 /* ============================================================
@@ -1537,7 +1537,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .visual_badges_row .header_clipwrap {
-	font-size: 14.5px !important;
+	font-size: 14px !important;
 	padding: 6px 20px !important;
 	border: 1px solid #111 !important;
 	border-radius: 50px !important;
@@ -1581,7 +1581,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .clip_right_text {
-	font-size: 14.5px !important;
+	font-size: 14px !important;
 	padding: 6px 20px !important;
 	background: #111 !important;
 	color: #fff !important;
@@ -1992,7 +1992,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .ai_card_keyword {
-	font-size: 13px;
+	font-size: 12px;
 	font-family: "NotoSansKR-Bold", sans-serif;
 	font-weight: 700;
 	color: #94A3B8;
@@ -2074,10 +2074,10 @@ body.mobile-nav-open { overflow: hidden; }
 		padding: 22px 20px;
 	}
 	.ai_card_title {
-		font-size: 17px;
+		font-size: 16px;
 	}
 	.ai_card_tags span {
-		font-size: 11.5px;
+		font-size: 12px;
 		padding: 4px 9px;
 	}
 }
@@ -2213,7 +2213,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .skill_name {
-	font-size: 14.5px !important;
+	font-size: 14px !important;
 	font-family: "NotoSansKR-Bold", sans-serif !important;
 	font-weight: 700 !important;
 	color: #222 !important;
@@ -2221,7 +2221,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .skill_percent {
-	font-size: 13px !important;
+	font-size: 12px !important;
 	font-family: "NotoSansKR-Bold", sans-serif !important;
 	font-weight: 700 !important;
 	color: #5383F6 !important;
@@ -2287,7 +2287,7 @@ body.mobile-nav-open { overflow: hidden; }
 		border-radius: 50% !important;
 	}
 	.skill_name {
-		font-size: 13.5px !important;
+		font-size: 14px !important;
 	}
 	.skill_percent {
 		font-size: 12px !important;
