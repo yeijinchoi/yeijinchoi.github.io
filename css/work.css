@@ -408,5 +408,5 @@ body { background: #f5f6f8; }
 	.ag_mat img { height: 100px; }
 }
 
-/* 립틴트 화보 슬라이드 첫 컷 : 입술과 틴트가 중앙에 오는 클로즈업 (ai-model-6-close.webp, 2K 업스케일 후 크롭) */
+/* 립틴트 화보 슬라이드 첫 컷 : 모자까지 나오고 입술·틴트가 중앙 근처에 오는 크롭 (ai-model-6-close.webp, 2K 업스케일 후 크롭) */
 .ag_slides img:first-child { object-position: 50% 50%; }
