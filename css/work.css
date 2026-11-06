@@ -395,10 +395,15 @@ body { background: #f5f6f8; }
 .ai_gallery .ag_b { grid-column: 2; grid-row: 1; object-position: 50% 45%; }
 .ai_gallery .ag_d { grid-column: 2; grid-row: 2; object-position: 50% 35%; }
 
-/* 립틴트 화보 : 정사각 원본을 가로로 넓게 잘라 모델·제품이 함께 보이게 */
-.ag_wide { margin: 0; }
-.ag_wide img { height: 330px; object-position: 50% 38%; }
-.ag_wide figcaption { margin-top: 8px; font-size: 12px; color: #666; line-height: 1.4; }
+/* 립틴트 화보 : 정사각 원본 2컷을 잘림 없이 나란히 */
+.ag_duo {
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 8px;
+}
+.ag_duo img { height: auto; aspect-ratio: 1 / 1; }
+.ag_duo figcaption { grid-column: 1 / -1; margin-top: 0; font-size: 12px; color: #666; line-height: 1.4; }
 
 .ai_shot {
 	flex: 1 1 auto;
@@ -412,5 +417,5 @@ body { background: #f5f6f8; }
 @media screen and (max-width: 767px) {
 	.ai_gallery { width: 100%; gap: 6px; }
 	.ag_mosaic { height: 300px; gap: 6px; }
-	.ag_wide img { height: 200px; }
+	.ag_duo { gap: 6px; }
 }
