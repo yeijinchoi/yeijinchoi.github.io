@@ -40,7 +40,6 @@
 		var bubble = box.querySelector('.slime_talk_bubble');
 		var typed = box.querySelector('.slime_talk_typed');
 		var ghost = box.querySelector('.slime_talk_ghost');
-		var count = box.querySelector('.slime_talk_count');
 		var next = box.querySelector('.slime_talk_next');
 
 		var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -81,7 +80,6 @@
 			index = i;
 			charPos = 0;
 			typing = true;
-			count.textContent = (index + 1) + ' / ' + SLIME_LINES.length;
 			bubble.classList.remove('is-done');
 
 			// 말풍선 팝 애니메이션 재시작

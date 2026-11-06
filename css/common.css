@@ -2303,7 +2303,7 @@ body.mobile-nav-open { overflow: hidden; }
 	background: #F4F5F9;
 	color: #222;
 	border-radius: 24px;
-	padding: 14px 22px 18px;
+	padding: 18px 22px 22px;
 	box-shadow: 0 0 0 1px #E8EAF0;
 	transform-origin: 50% 0;
 }
@@ -2321,28 +2321,6 @@ body.mobile-nav-open { overflow: hidden; }
 @keyframes slimeBubblePop {
 	0%   { opacity: 0; transform: scale(0.88) translateY(-6px); }
 	100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.slime_talk_top {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 8px;
-}
-.slime_talk_name {
-	background: #000;
-	color: #fff;
-	font-size: 12px;
-	font-weight: 700;
-	font-family: "SUIT", sans-serif;
-	padding: 2px 11px;
-	border-radius: 50px;
-}
-.slime_talk_count {
-	font-size: 12px;
-	font-weight: 400;
-	font-family: "SUIT", sans-serif;
-	color: #666;
 }
 
 .slime_talk_text {
