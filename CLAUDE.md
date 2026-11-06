@@ -75,7 +75,7 @@ yeijinchoi.github.io/
 2. **경력 카드 (`.career_card`)**:
    - **기본 경력 카드**: 테두리 완전 삭제(`border: none;`), 깔끔한 소프트 서피스(`background: #EEF0F4;`)
    - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 4px 포인트 컬러 회전 그라데이션 보더(`conic-gradient` + `@property --career-angle`, 4초 순환 `careerBorderSpin`, `prefers-reduced-motion` 시 정지, 그림자 없음), 블루 포인트 배지(`.badge_current`, `#5383F6`, '재직중')
-   - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음), 터치 시 스케일 인터랙션
+   - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음)를 `.career_nav_icon`의 색조 회전 필터(`hue-rotate(190deg) saturate(2.4) brightness(0.88)`)로 포인트 블루 톤으로 표시, 터치 시 스케일 인터랙션
 
 3. **스킬 섹션 (`.skill_wrapper`, `.skillset`)**:
    - 태블릿·데스크톱: 한 줄에 3개 (flex-wrap, 카드 폭 `calc((100% - 32px) / 3)`, 간격 16px, 마지막 줄은 가운데 정렬) / 모바일: 1열. 스킬 7개 — 순서: HTML5, CSS3, JavaScript / Photoshop, Illustrator, Figma / jQuery. (Communication은 삭제)

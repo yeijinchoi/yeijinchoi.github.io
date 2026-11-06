@@ -2849,3 +2849,10 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 .mobile-nav-close,
 .back_home:hover,
 .works_more_link:hover { box-shadow: none !important; }
+
+/* 경력 슬라이더 손가락 이모지를 포인트 블루 톤으로 (색조 회전 필터, 버튼 배경·테두리는 그대로) */
+.career_nav_icon {
+	display: inline-block;
+	line-height: 1;
+	filter: hue-rotate(190deg) saturate(2.4) brightness(0.88);
+}
