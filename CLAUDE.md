@@ -39,6 +39,7 @@ yeijinchoi.github.io/
 │   ├── blob-interactive.js # 3D 슬라임 그래픽 물리 연산, 눈 깜빡임, 감으며 미소 모프, 패럴랙스
 │   ├── career-slider.js    # 경력 카드 슬라이더 (손가락 버튼 👈/👉, 스와이프, 인디케이터)
 │   ├── slime-talk.js       # 슬라임 클릭 시 아래에 말풍선으로 경력/일하는 방식을 타이핑 효과로 이야기 (대사 배열 SLIME_LINES)
+│   ├── career-days.js      # 히어로 "커리어 시작 n일째" 배지 자동 계산·카운트업 (시작일 CAREER_START)
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
 │   ├── work.js             # 탑버튼 및 보조 스크립트
 │   └── jquery-3.2.1.min.js # jQuery 라이브러리
@@ -177,6 +178,7 @@ yeijinchoi.github.io/
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |
 | 메뉴 항목 | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
 | 슬라임 동작 | `js/blob-interactive.js` + `common.css` 히어로 구간 |
+| 커리어 시작 n일째 배지 | `main.html` `.career_day_badge` + `js/career-days.js` 맨 위 `CAREER_START`(현재 2019-06-01, 정확한 입사일로 수정 가능) / 스타일 `common.css` 맨 아래 |
 | 슬라임 말풍선 대사 수정 | `js/slime-talk.js` 맨 위 `SLIME_LINES` 배열 (경력이 바뀌면 같이 수정, 마지막 줄 다음엔 처음으로 순환) / 스타일은 `common.css` 맨 아래 "슬라임 토크" 블록 |
 
 ### 작업 체크리스트
