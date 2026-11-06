@@ -70,8 +70,15 @@ yeijinchoi.github.io/
 3. **Works 프로젝트 목업 (`.p_mockup`)**:
    - 가로 배치: 좌우 지그재그 (홀수: 목업 좌 / 정보 우, 짝수: 목업 우 / 정보 좌)
    - 마우스오버 시: `transform: translateY(calc(-100% + 520px));`로 5초간 풀페이지 캡처 스크롤 및 `Mouse over` 라벨 페이드아웃.
-4. **메인 Web Design Works 벤토 그리드 (`.Works_wrap`)**:
-   - 데스크톱: 3열 × 5행 CSS Grid (`grid-template-columns: repeat(3, 300px); grid-auto-rows: 180px; gap: 20px;`)
+5. **스킬 섹션 (`.skill_wrapper`)**:
+   - 데스크톱: 2열 CSS Grid (`grid-template-columns: repeat(2, 450px); column-gap: 40px; row-gap: 16px;`)
+   - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 그라데이션 페블 배지**로 감각적 표현 (HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루, Communication 시그니처블루).
+   - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
+
+6. **AI & Creative Works 섹션 (`.ai_works_section`)**:
+   - 데스크톱: 2열 카드 그리드 (`.ai_works_grid`, 2열 균등 배치)
+   - **카드 프리뷰 영역 (`.ai_card_preview`)**: Works 카드 톤과 일체화된 **딥블랙(`background: #0D0E12`)에 볼드 화이트 텍스트(`color: #FFFFFF !important`)** 타이포그래피 배치 (`E-COMMERCE DETAIL PAGE`, `ARG PROJECT · IN PROGRESS`).
+   - 메타 영역: 화이트 서피스, 볼드 제목, 소프트 그레이 키워드 태그 (Higgsfield AI, Claude Code, VS Code, ChatGPT 등).
    - 1~2행: 좌측 KDL v3 (2열 2행 대형), 우측 KDL v2·v1 (각 1열 1행)
    - 3~4행: 좌측 DEEP OCR 홈페이지·뷰어 (각 1열 1행), 우측 POLYGROUND (2열 2행 대형)
    - 5행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)

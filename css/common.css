@@ -1732,6 +1732,18 @@ body.mobile-nav-open { overflow: hidden; }
 	transition: background 0.12s ease-out !important;
 }
 
+.slime_hero_img {
+	width: 380px !important;
+	max-width: 100% !important;
+	height: auto !important;
+	display: block !important;
+	margin: 0 auto !important;
+	user-select: none !important;
+	pointer-events: none !important;
+	transform-origin: center center !important;
+	will-change: transform !important;
+}
+
 /* 궤도 위성 미니 오브 */
 .blob_orbit {
 	position: absolute !important;
@@ -1847,30 +1859,33 @@ body.mobile-nav-open { overflow: hidden; }
 	box-sizing: border-box;
 	position: relative;
 	border-bottom: none;
+	background: #0D0E12 !important;
+	overflow: hidden;
 }
 
-.ai_preview_commerce {
-	background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
-}
-
+.ai_preview_detail,
+.ai_preview_commerce,
 .ai_preview_arg {
-	background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
+	background: #0D0E12 !important;
 }
 
 .ai_preview_keyword {
 	font-size: 20px;
 	font-family: "NotoSansKR-Bold", sans-serif;
 	font-weight: 700;
-	color: #3B82F6;
-	letter-spacing: 1.5px;
+	color: #FFFFFF !important;
+	letter-spacing: 1.8px;
 	text-transform: uppercase;
 	display: inline-block;
 	text-align: center;
 	user-select: none;
+	text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+	transition: transform 0.3s ease, letter-spacing 0.3s ease;
 }
 
-.ai_preview_arg .ai_preview_keyword {
-	color: #5383F6;
+.ai_work_card:hover .ai_preview_keyword {
+	transform: scale(1.05);
+	letter-spacing: 2.2px;
 }
 
 .ai_card_meta {
@@ -1981,24 +1996,83 @@ body.mobile-nav-open { overflow: hidden; }
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
 }
 
+/* 추상 브랜드 그라데이션 배지 공통 */
 .skill_icon_badge {
-	flex: 0 0 42px !important;
-	width: 42px !important;
-	height: 42px !important;
-	background: #F1F4F8 !important;
-	border: none !important;
+	flex: 0 0 38px !important;
+	width: 38px !important;
+	height: 38px !important;
 	border-radius: 12px !important;
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	box-shadow: none !important;
+	position: relative !important;
+	overflow: hidden !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+	transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 	user-select: none !important;
+	display: block !important;
 }
 
-.skill_icon_badge svg {
-	display: block !important;
-	max-width: 24px !important;
-	max-height: 24px !important;
+/* 상단 은은한 3D 반사광 글린트 */
+.skill_icon_badge::before {
+	content: '' !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: 48% !important;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%) !important;
+	border-radius: 12px 12px 0 0 !important;
+	pointer-events: none !important;
+}
+
+.skillset:hover .skill_icon_badge {
+	transform: scale(1.08) rotate(3deg) !important;
+}
+
+/* 1. HTML5 : 웜 오렌지 & 코랄 그라데이션 */
+.skill_icon_badge.badge_html5 {
+	background: linear-gradient(135deg, #FF7A50 0%, #E44D26 55%, #B8320E 100%) !important;
+	box-shadow: 0 6px 14px rgba(228, 77, 38, 0.32) !important;
+}
+
+/* 2. Photoshop : 딥 네이비 & 일렉트릭 시안 그라데이션 */
+.skill_icon_badge.badge_photoshop {
+	background: linear-gradient(135deg, #00C8FF 0%, #004D84 45%, #001E36 100%) !important;
+	box-shadow: 0 6px 14px rgba(0, 30, 54, 0.32) !important;
+}
+
+/* 3. CSS3 : 스카이블루 & 로열 시안 그라데이션 */
+.skill_icon_badge.badge_css3 {
+	background: linear-gradient(135deg, #42B8FF 0%, #1572B6 55%, #0A4B78 100%) !important;
+	box-shadow: 0 6px 14px rgba(21, 114, 182, 0.3) !important;
+}
+
+/* 4. Illustrator : 앰버 골드 & 딥 버건디 그라데이션 */
+.skill_icon_badge.badge_illustrator {
+	background: linear-gradient(135deg, #FFAE34 0%, #FF7700 50%, #4A0000 100%) !important;
+	box-shadow: 0 6px 14px rgba(255, 120, 0, 0.32) !important;
+}
+
+/* 5. JavaScript : 비비드 옐로우 & 골든 앰버 그라데이션 */
+.skill_icon_badge.badge_javascript {
+	background: linear-gradient(135deg, #FFF566 0%, #F7DF1E 55%, #C29D00 100%) !important;
+	box-shadow: 0 6px 14px rgba(247, 223, 30, 0.35) !important;
+}
+
+/* 6. Figma : 아이코닉 5컬러 멀티스톱 스펙트럼 그라데이션 */
+.skill_icon_badge.badge_figma {
+	background: linear-gradient(135deg, #F24E1E 0%, #FF7262 25%, #A259FF 50%, #1ABCFE 75%, #0ACF83 100%) !important;
+	box-shadow: 0 6px 14px rgba(162, 89, 255, 0.32) !important;
+}
+
+/* 7. jQuery : 오션 블루 & 딥 코발트 그라데이션 */
+.skill_icon_badge.badge_jquery {
+	background: linear-gradient(135deg, #5DBBFF 0%, #0769AD 55%, #02385C 100%) !important;
+	box-shadow: 0 6px 14px rgba(7, 105, 173, 0.3) !important;
+}
+
+/* 8. Communication : 예진 시그니처 블루 & 소프트 바이올렛 그라데이션 */
+.skill_icon_badge.badge_communication {
+	background: linear-gradient(135deg, #93C5FD 0%, #5383F6 50%, #1D4ED8 100%) !important;
+	box-shadow: 0 6px 14px rgba(83, 131, 246, 0.32) !important;
 }
 
 .skill_info {

@@ -1,33 +1,24 @@
 /**
- * 3D Interactive Fluid Character / Art Graphic
- * - Smooth rounded dome head + chubby droplet body in signature blue (#5383F6)
- * - White stylized glints / eyes with subtle mouse tracking
- * - 3D perspective tilt tracking cursor
+ * 3D Interactive Slime Graphic
+ * - Real-time 3D tilt tracking mouse cursor
  * - Gentle organic breathing wave
- * - NO click distortion
+ * - Pure fluid physics
  */
 (function() {
-	function initFluidOrb() {
+	function initSlimeGraphic() {
 		var stage = document.getElementById('blobStage');
-		var svg = document.getElementById('blobCore');
-		var leftEye = document.getElementById('leftEye');
-		var rightEye = document.getElementById('rightEye');
-		if (!stage || !svg) return;
+		var core = document.getElementById('blobCore');
+		if (!stage || !core) return;
 
 		var tiltTargetX = 0;
 		var tiltTargetY = 0;
 		var tiltCurX = 0;
 		var tiltCurY = 0;
 
-		var eyeTargetX = 0;
-		var eyeTargetY = 0;
-		var eyeCurX = 0;
-		var eyeCurY = 0;
-
 		var heroWrap = document.querySelector('.visualwrap') || stage;
 
 		function updateMouse(e) {
-			var rect = svg.getBoundingClientRect();
+			var rect = core.getBoundingClientRect();
 			var centerX = rect.left + rect.width / 2;
 			var centerY = rect.top + rect.height / 2;
 			var dx = (e.clientX - centerX) / (window.innerWidth / 2);
@@ -38,9 +29,6 @@
 
 			tiltTargetY = dx * 14;
 			tiltTargetX = -dy * 14;
-
-			eyeTargetX = dx * 7;
-			eyeTargetY = dy * 5;
 		}
 
 		window.addEventListener('mousemove', updateMouse);
@@ -48,29 +36,19 @@
 		heroWrap.addEventListener('mouseleave', function() {
 			tiltTargetX = 0;
 			tiltTargetY = 0;
-			eyeTargetX = 0;
-			eyeTargetY = 0;
 		});
 
 		var time = 0;
 		function render() {
 			time += 0.025;
 
-			var idleY = Math.sin(time) * 4;
+			var idleY = Math.sin(time) * 5;
 			var idleScale = 1 + Math.sin(time * 0.8) * 0.012;
 
 			tiltCurX += (tiltTargetX - tiltCurX) * 0.08;
 			tiltCurY += (tiltTargetY - tiltCurY) * 0.08;
 
-			eyeCurX += (eyeTargetX - eyeCurX) * 0.1;
-			eyeCurY += (eyeTargetY - eyeCurY) * 0.1;
-
-			svg.style.transform = 'perspective(900px) translateY(' + idleY.toFixed(2) + 'px) rotateX(' + tiltCurX.toFixed(2) + 'deg) rotateY(' + tiltCurY.toFixed(2) + 'deg) scale(' + idleScale.toFixed(3) + ')';
-
-			if (leftEye && rightEye) {
-				leftEye.style.transform = 'translate(' + eyeCurX.toFixed(2) + 'px, ' + eyeCurY.toFixed(2) + 'px)';
-				rightEye.style.transform = 'translate(' + eyeCurX.toFixed(2) + 'px, ' + eyeCurY.toFixed(2) + 'px)';
-			}
+			core.style.transform = 'perspective(900px) translateY(' + idleY.toFixed(2) + 'px) rotateX(' + tiltCurX.toFixed(2) + 'deg) rotateY(' + tiltCurY.toFixed(2) + 'deg) scale(' + idleScale.toFixed(3) + ')';
 
 			requestAnimationFrame(render);
 		}
@@ -79,8 +57,8 @@
 	}
 
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initFluidOrb);
+		document.addEventListener('DOMContentLoaded', initSlimeGraphic);
 	} else {
-		initFluidOrb();
+		initSlimeGraphic();
 	}
 })();

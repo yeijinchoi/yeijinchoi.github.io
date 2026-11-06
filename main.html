@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
-	<script type="text/javascript" src="js/blob-interactive.js?v=20261106e"></script>
+	<script type="text/javascript" src="js/blob-interactive.js?v=20261106f"></script>
 
 </head>
 
@@ -91,57 +91,8 @@
 					</div>
 				</div>
 				<div class="visual_graphic_col">
-					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 아트 그래픽">
-						<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
-							<defs>
-								<filter id="dropGlow" x="-30%" y="-30%" width="160%" height="160%">
-									<feGaussianBlur stdDeviation="30" result="blur"/>
-								</filter>
-								<filter id="drop3dShadow" x="-30%" y="-20%" width="160%" height="160%">
-									<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#5383F6" flood-opacity="0.32"/>
-									<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1D4ED8" flood-opacity="0.2"/>
-								</filter>
-								<radialGradient id="charBodyGrad" cx="35%" cy="30%" r="70%">
-									<stop offset="0%" stop-color="#93C5FD"/>
-									<stop offset="28%" stop-color="#5383F6"/>
-									<stop offset="68%" stop-color="#3B6FE8"/>
-									<stop offset="90%" stop-color="#2554D7"/>
-									<stop offset="100%" stop-color="#1E40AF"/>
-								</radialGradient>
-								<linearGradient id="charRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-									<stop offset="45%" stop-color="#93C5FD" stop-opacity="0.22"/>
-									<stop offset="100%" stop-color="#5383F6" stop-opacity="0.8"/>
-								</linearGradient>
-								<radialGradient id="charHighlight" cx="30%" cy="24%" r="35%">
-									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-									<stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.25"/>
-									<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-								</radialGradient>
-								<!-- 클리핑 마스크: 둥근 돔 머리와 통통한 하단 볼살 -->
-								<clipPath id="domeClip">
-									<path d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z"/>
-								</clipPath>
-							</defs>
-
-							<!-- 후면 은은한 대기광 (시그니처 블루) -->
-							<path d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
-
-							<!-- 3D 유기형 돔 본체 (머리 위 굴곡 없이 매끄러운 둥근 머리) -->
-							<path class="fluid_main_body" d="M 200 58 C 255 58, 298 96, 305 152 C 310 196, 292 236, 252 248 C 225 256, 175 256, 148 248 C 108 236, 90 196, 95 152 C 102 96, 145 58, 200 58 Z" fill="url(#charBodyGrad)" stroke="url(#charRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
-
-							<!-- 클리핑 마스크 내부 은은한 3D 곡면 반사광 -->
-							<g clip-path="url(#domeClip)">
-								<ellipse cx="160" cy="95" rx="55" ry="28" transform="rotate(-25 160 95)" fill="url(#charHighlight)" opacity="0.85"/>
-								<ellipse cx="140" cy="82" rx="14" ry="7" transform="rotate(-20 140 82)" fill="#FFFFFF" opacity="0.95"/>
-							</g>
-
-							<!-- 흰색으로 교체하고 크기 줄인 눈/글린트 포인트 -->
-							<g class="character_eyes" id="charEyes">
-								<ellipse id="leftEye" cx="172" cy="154" rx="10.5" ry="17.5" fill="#FFFFFF" opacity="0.95"/>
-								<ellipse id="rightEye" cx="228" cy="154" rx="10.5" ry="17.5" fill="#FFFFFF" opacity="0.95"/>
-							</g>
-						</svg>
+					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 슬라임 아트 그래픽">
+						<img src="images/hero-slime.png?v=20261106" alt="3D 슬라임 그래픽" class="slime_hero_img" id="blobCore">
 					</div>
 				</div>
 			</div>
@@ -170,14 +121,7 @@
 	</section>
 	<div class="Wrapper skill_wrapper">
 		<div class="skillset">
-			<div class="skill_icon_badge" title="HTML5">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M4 3L5.5 19.5L12 21.5L18.5 19.5L20 3H4Z" fill="#E44D26"/>
-					<path d="M12 4.6V19.8L17.2 18.2L18.3 4.6H12Z" fill="#F16529"/>
-					<path d="M12 8.3H8.3L8.5 10.5H12V12.7H8.7L9 15.8L12 16.7V18.8L7.1 17.4L6.5 10.5L6.3 8.3L6.1 6.2H12V8.3Z" fill="#EBEBEB"/>
-					<path d="M12 8.3V6.2H17.9L17.1 14.5L12 16V13.8L15.2 12.9L15.5 10.5H12V8.3Z" fill="#FFFFFF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_html5" title="HTML5"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">HTML5</span>
@@ -188,12 +132,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="Photoshop">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect width="24" height="24" rx="4" fill="#001E36"/>
-					<path d="M5.5 6.5H8.8C10.5 6.5 11.6 7.4 11.6 8.9C11.6 10.4 10.4 11.4 8.7 11.4H7.3V17.5H5.5V6.5ZM7.3 9.9H8.6C9.5 9.9 10 9.5 10 8.9C10 8.3 9.5 7.9 8.6 7.9H7.3V9.9ZM14.9 11.6C16.2 11.6 17.2 12.3 17.4 13.5H15.8C15.7 12.9 15.3 12.7 14.8 12.7C14.2 12.7 13.8 13 13.8 13.5C13.8 14 14.1 14.2 14.9 14.5L15.6 14.7C17 15.2 17.7 15.9 17.7 17.1C17.7 18.4 16.5 19.2 14.9 19.2C13.4 19.2 12.4 18.4 12.2 17.1H13.8C13.9 17.8 14.4 18.1 15 18.1C15.6 18.1 16.1 17.8 16.1 17.2C16.1 16.7 15.8 16.4 14.9 16.1L14.2 15.9C12.9 15.4 12.3 14.8 12.3 13.6C12.3 12.3 13.4 11.6 14.9 11.6Z" fill="#31A8FF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_photoshop" title="Photoshop"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">Photoshop</span>
@@ -204,14 +143,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="CSS3">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M4 3L5.5 19.5L12 21.5L18.5 19.5L20 3H4Z" fill="#1572B6"/>
-					<path d="M12 4.6V19.8L17.2 18.2L18.3 4.6H12Z" fill="#33A9DC"/>
-					<path d="M12 8.3H8.3L8.5 10.5H12V12.7H8.7L9 15.8L12 16.7V18.8L7.1 17.4L6.5 10.5L6.3 8.3L6.1 6.2H12V8.3Z" fill="#EBEBEB"/>
-					<path d="M12 8.3V6.2H17.9L17.1 14.5L12 16V13.8L15.2 12.9L15.5 10.5H12V8.3Z" fill="#FFFFFF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_css3" title="CSS3"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">CSS3</span>
@@ -222,12 +154,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="Illustrator">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect width="24" height="24" rx="4" fill="#330000"/>
-					<path d="M8.8 6.5L12 17.5H10.2L9.5 15H6.5L5.8 17.5H4L7.2 6.5H8.8ZM7 13.5H9L8 10L7 13.5ZM14.8 9.5C14.8 8.9 15.3 8.4 15.9 8.4C16.5 8.4 17 8.9 17 9.5C17 10.1 16.5 10.6 15.9 10.6C15.3 10.6 14.8 10.1 14.8 9.5ZM15 11.8H16.8V17.5H15V11.8Z" fill="#FF9A00"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_illustrator" title="Illustrator"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">Illustrator</span>
@@ -238,12 +165,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="JavaScript">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect width="24" height="24" rx="4" fill="#F7DF1E"/>
-					<path d="M11.5 12.2V17.5C11.5 18.8 10.6 19.3 9.4 19.3C8.2 19.3 7.4 18.6 7 17.7L8.4 16.8C8.7 17.3 9 17.7 9.5 17.7C9.9 17.7 10.1 17.5 10.1 16.8V12.2H11.5ZM17.1 12.2C18.4 12.2 19.3 13.1 19.3 14.4C19.3 15.8 18.4 16.5 17.3 17.1L16.8 17.4C16.2 17.7 15.8 17.9 15.8 18.3C15.8 18.7 16.2 18.9 16.7 18.9C17.3 18.9 17.8 18.5 18.1 18L19.2 18.9C18.6 19.8 17.7 20.3 16.6 20.3C15.1 20.3 14.2 19.3 14.2 18.1C14.2 16.8 15.1 16.1 16.1 15.6L16.6 15.3C17.2 15 17.5 14.7 17.5 14.3C17.5 13.9 17.2 13.7 16.7 13.7C16.1 13.7 15.7 14 15.4 14.5L14.3 13.7C14.9 12.7 15.9 12.2 17.1 12.2Z" fill="#000000"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_javascript" title="JavaScript"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">JavaScript</span>
@@ -254,15 +176,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="Figma">
-				<svg width="18" height="26" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/>
-					<path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/>
-					<path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
-					<path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
-					<path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_figma" title="Figma"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">Figma</span>
@@ -273,12 +187,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="jQuery">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect width="24" height="24" rx="4" fill="#0769AD"/>
-					<path d="M12.5 4.5C11.2 5.8 10.8 7.3 10.6 8.8C10.5 9.8 10.6 10.8 10.8 11.8C10.2 11.2 9.5 10.7 8.7 10.3C7.5 9.7 6.1 9.4 4.8 9.5C5.8 10.4 7 11 8.2 11.6C9.2 12.1 10.3 12.7 11.2 13.5C12 14.2 12.6 15.1 13 16C13.2 16.4 13.3 16.9 13.4 17.3C13.6 16.5 13.9 15.7 14.4 15C15.2 13.9 16.3 13.1 17.5 12.5C18.6 12 19.8 11.7 21 11.7C19.7 12.3 18.5 13.2 17.6 14.2C16.8 15.2 16.2 16.4 15.8 17.6C15.5 18.5 15.3 19.5 15.3 20.5C14.7 18.8 14.5 17 14.2 15.3C13.9 13.2 13.2 11.2 12.2 9.4C11.5 8.1 10.5 6.9 9.3 6C10.4 6 11.5 5.5 12.5 4.5Z" fill="#FFFFFF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_jquery" title="jQuery"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">jQuery</span>
@@ -289,15 +198,7 @@
 		</div>
 
 		<div class="skillset">
-			<div class="skill_icon_badge" title="Communication">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<rect width="24" height="24" rx="4" fill="#EBF2FF"/>
-					<path d="M17 12C17 8.686 14.314 6 11 6C7.686 6 5 8.686 5 12C5 13.257 5.388 14.423 6.052 15.385L5.2 18.2L8.147 17.438C9.014 17.8 9.977 18 11 18C14.314 18 17 15.314 17 12Z" fill="#5383F6"/>
-					<circle cx="8.5" cy="12" r="1" fill="#FFFFFF"/>
-					<circle cx="11" cy="12" r="1" fill="#FFFFFF"/>
-					<circle cx="13.5" cy="12" r="1" fill="#FFFFFF"/>
-				</svg>
-			</div>
+			<div class="skill_icon_badge badge_communication" title="Communication"></div>
 			<div class="skill_info">
 				<div class="skill_header">
 					<span class="skill_name">Communication</span>
