@@ -372,34 +372,24 @@ body { background: #f5f6f8; }
 	flex-direction: column;
 	gap: 36px;               /* 모델(화보)별 구역 사이 */
 }
-.ag_group { display: flex; flex-direction: column; gap: 8px; }
-.ag_title {
-	margin: 0 0 4px;
-	font-size: 16px;
-	font-weight: 700;
-	color: #111;
-	line-height: 1.4;
-}
+.ag_group { display: flex; flex-direction: column; gap: 10px; }
+.ag_title { margin: 0 0 2px; font-size: 16px; font-weight: 700; color: #111; line-height: 1.4; }
 .ag_caption { margin: 0; font-size: 12px; color: #666; line-height: 1.4; }
-.ai_gallery img {
-	display: block;
-	width: 100%;
-	min-width: 0;
-	min-height: 0;
-	object-fit: cover;
-	border-radius: 8px;
-	background: #EEF0F4;
-}
-/* 룩북(정면·뒷면·클로즈업 3컷 합본)은 가로로 넓게 */
-.ag_look { height: 330px; object-position: 50% 22%; }
-.ag_row { display: grid; gap: 8px; }
-.ag_row3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.ag_row img { aspect-ratio: 1 / 1; height: auto; object-position: 50% 30%; }
-/* 운동기구 화보 : 룩북 + 뷰티 컷 나란히 */
-.ag_pair { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 8px; height: 400px; }
-.ag_pair img { height: 100%; }
-.ag_pair img:first-child { object-position: 50% 30%; }
-.ag_pair img:last-child { object-position: 50% 35%; }
+.ai_gallery img { display: block; width: 100%; min-width: 0; min-height: 0; object-fit: cover; border-radius: 8px; background: #EEF0F4; }
+
+/* 화보 슬라이드 (크게) : 같은 자리에서 부드럽게 교차, js/gallery-slider.js */
+.ag_slider { position: relative; }
+.ag_slides { position: relative; height: 460px; border-radius: 8px; overflow: hidden; background: #EEF0F4; }
+.ag_slides img { position: absolute; inset: 0; height: 100%; opacity: 0; transition: opacity 0.7s ease; object-position: 50% 35%; border-radius: 0; }
+.ag_slides img.is-on { opacity: 1; }
+.ag_ctrl { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; }
+
+/* 재료 컷 (작게) : 룩북·뷰티 컷은 보조 자료로 줄여서 */
+.ag_mat { display: grid; grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr); align-items: center; gap: 8px; margin-top: 4px; padding: 10px; background: #EEF0F4; border-radius: 8px; }
+.ag_mat_label { writing-mode: horizontal-tb; padding: 0 6px; font-size: 12px; font-weight: 700; color: #555; white-space: nowrap; }
+.ag_mat img { height: 130px; background: #fff; }
+.ag_mat_look { object-position: 50% 22%; }
+.ag_mat_beauty { object-position: 50% 40%; }
 
 .ai_shot {
 	flex: 1 1 auto;
@@ -412,7 +402,8 @@ body { background: #f5f6f8; }
 
 @media screen and (max-width: 767px) {
 	.ai_gallery { width: 100%; gap: 28px; }
-	.ag_look { height: 200px; }
-	.ag_row { gap: 6px; }
-	.ag_pair { height: 240px; gap: 6px; }
+	.ag_slides { height: 320px; }
+	.ag_mat { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+	.ag_mat_label { grid-column: 1 / -1; }
+	.ag_mat img { height: 100px; }
 }

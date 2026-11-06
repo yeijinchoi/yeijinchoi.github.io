@@ -45,6 +45,7 @@ yeijinchoi.github.io/
 │   ├── chat-typing.js      # 본문 채팅 말풍선(마음가짐 Q&A, 마지막 다짐)이 스크롤 시 톡 떠오르고 타이핑과 함께 말풍선이 늘어나는 효과
 │   ├── skill-gauge.js      # 스킬 게이지가 스크롤로 화면에 들어오면 0 → 목표치로 차오르는 효과
 │   ├── graphic-slider.js   # Graphic Design Works 코버플로우 슬라이드 (순환, 스와이프, 자동재생)
+│   ├── gallery-slider.js   # AI 상세 페이지 화보 슬라이드(.ag_slider): 버튼·점·스와이프, 자동재생
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
 │   ├── work.js             # 탑버튼 및 보조 스크립트
 │   └── jquery-3.2.1.min.js # jQuery 라이브러리
@@ -186,8 +187,8 @@ yeijinchoi.github.io/
 | Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
 | 상세 페이지 "홈으로" 뒤로가기 버튼 | `web_work.html` / `webDesign_work.html` `.work_wrap` 맨 위 `.back_home` (스타일 `work.css` 맨 아래) — 새 상세 페이지를 만들면 같은 마크업을 복사 |
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
-| AI 상세 페이지 내용·이미지 채우기 | `ai_work.html` 각 `.project`: 커머스는 **모델별로 구역을 분리**: ① 립틴트 화보(모자 쓴 웨이브 머리 모델: 룩북 `ai-model-1`, 뷰티 `2`, 화보 `6·7`; 5번 컷은 삭제됨) ② 운동기구 화보(가르마 머리 운동복 모델: 룩북 `3` + 뷰티 `4`). 마크업 `.ai_gallery > .ag_group`(제목 `.ag_title`, 룩북 `.ag_look`, 컷 줄 `.ag_row3`/`.ag_pair`, 캡션 `.ag_caption`). 새 모델 컷은 해당 구역에 추가하고 다른 모델과 섞지 않음. ARG는 이스크라 구동 GIF(`.ai_shot`, 동작 줄이기 시 정지 이미지). 개요 `.p_overview`, 기간 `.p_period`, 작업참여 `.pill`, 툴 `.tool_chip`. **AI 모델 작업(커머스)은 개인 작업물이라 회사명을 쓰지 않습니다**(배지·About 모두 "개인 작업") |
-| AI 카드 썸네일 | 커머스 카드(`.ai_card_commerce`)는 AI 모델 컷 6장 슬라이드: `images/ai-model-1·2·3·4·6·7.webp`(5번 삭제; 룩북 그레이 후디 → 뷰티 컷 → 룩북 화이트 후디 → 뷰티 컷 → 립틴트 화보(6번) → 립틴트 사용 컷(7번), 각 30~60KB), `main.html` `.ai_card_bg` 안 `.ai_slide_1·2·3·4·6·7`(순서는 `common.css`의 `animation-delay`로 결정), 4초마다 교차(24초 순환, 동작 줄이기 시 1번만 정지 표시), 이미지 위치는 `common.css` 맨 아래 `.ai_slide_N`의 `background-position`. ARG 카드는 `images/arg-thumb.gif`(이스크라 구동 화면 7장면 반복: 메일 알림→받은메일함→메일→검색 첫 화면→검색어 입력→검색 결과, 868×520, 약 110KB) + 동작 줄이기용 정지 이미지 `images/arg-thumb.jpg`. 원본 게임은 GitHub `yeijinchoi/iskra-arg`(`index.html`)이고, 게임이 바뀌면 같은 장면으로 다시 캡처해 GIF만 교체 |
+| AI 상세 페이지 내용·이미지 채우기 | `ai_work.html` 각 `.project`: 커머스는 **모델별로 구역을 분리**하고 구역마다 "화보(크게)"와 "재료 컷(작게)"을 나눔. ① 립틴트 화보(모자 쓴 웨이브 머리 모델): 화보 `ai-model-6·7·8`은 **슬라이드**(`.ag_slider`, `js/gallery-slider.js`: 좌우 버튼·점·스와이프·키보드, 화면에 보일 때만 4.5초 자동 재생, 동작 줄이기 시 정지), 재료 컷 룩북 `1` + 뷰티 `2` ② 운동기구 화보(가르마 머리 운동복 모델): 재료 컷 룩북 `3` + 뷰티 `4`(화보 컷이 생기면 같은 `.ag_slider`로 추가). 마크업 `.ai_gallery > .ag_group`(제목 `.ag_title`, 슬라이드 `.ag_slider > .ag_slides > img`, 재료 컷 `.ag_mat`, 캡션 `.ag_caption`). 새 모델 컷은 해당 구역에 추가하고 다른 모델과 섞지 않음(5번 컷은 삭제됨). ARG는 이스크라 구동 GIF(`.ai_shot`, 동작 줄이기 시 정지 이미지). 개요 `.p_overview`, 기간 `.p_period`, 작업참여 `.pill`, 툴 `.tool_chip`. **AI 모델 작업(커머스)은 개인 작업물이라 회사명을 쓰지 않습니다**(배지·About 모두 "개인 작업") |
+| AI 카드 썸네일 | 커머스 카드(`.ai_card_commerce`)는 AI 모델 컷 7장 슬라이드: `images/ai-model-1·2·3·4·6·7·8.webp`(5번 삭제; 룩북 그레이 후디 → 뷰티 컷 → 룩북 화이트 후디 → 뷰티 컷 → 립틴트 화보 6 → 7 → 8, 각 30~60KB), `main.html` `.ai_card_bg` 안 `.ai_slide_1·2·3·4·6·7·8`(순서는 `common.css`의 `animation-delay`로 결정), 4초마다 교차(28초 순환, 동작 줄이기 시 1번만 정지 표시), 이미지 위치는 `common.css` 맨 아래 `.ai_slide_N`의 `background-position`. ARG 카드는 `images/arg-thumb.gif`(이스크라 구동 화면 7장면 반복: 메일 알림→받은메일함→메일→검색 첫 화면→검색어 입력→검색 결과, 868×520, 약 110KB) + 동작 줄이기용 정지 이미지 `images/arg-thumb.jpg`. 원본 게임은 GitHub `yeijinchoi/iskra-arg`(`index.html`)이고, 게임이 바뀌면 같은 장면으로 다시 캡처해 GIF만 교체 |
 | 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
 | Mobile UI/UX 섹션 (이미지 없이 "PDF 포트폴리오에서 확인" 안내 카드 + 다운로드 버튼) | `main.html` `.Mobile_section` `.pdf_card` / 스타일 `common.css` 맨 아래 |
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |
