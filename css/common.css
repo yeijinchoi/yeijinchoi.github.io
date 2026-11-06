@@ -2328,22 +2328,51 @@ body.mobile-nav-open { overflow: hidden; }
 }
 .slime_talk [hidden] { display: none !important; }
 
-/* 첫 안내 */
+/* 첫 안내 : 글래스모피즘 말풍선 (nav 플로팅 알약과 같은 반투명 블러 톤) */
 .slime_talk_hint {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 6px;
 	width: fit-content;
-	margin: 0 auto;
-	padding: 7px 16px;
-	background: #EEF0F4;
-	color: #555;
-	font-size: 12px;
-	font-weight: 700;
+	margin: 12px auto 0;
+	padding: 12px 24px;
+	background: rgba(255, 255, 255, 0.55);
+	-webkit-backdrop-filter: blur(16px) saturate(140%);
+	backdrop-filter: blur(16px) saturate(140%);
+	border: 1px solid rgba(220, 224, 230, 0.85);
+	border-radius: 24px;
+	box-shadow: 0 10px 28px rgba(83, 131, 246, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	color: #333;
+	font-size: 14px;
+	font-weight: 500;
 	font-family: "SUIT", sans-serif;
-	border-radius: 50px;
-	animation: slimeHintBob 1.8s ease-in-out infinite;
+	line-height: 1.3;
+	animation: slimeHintBob 2.2s ease-in-out infinite;
+}
+/* 말풍선 꼬리 (테두리용 + 유리 채움용 삼각형 2겹) */
+.slime_talk_hint::before,
+.slime_talk_hint::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+.slime_talk_hint::before {
+	top: -9px;
+	width: 18px;
+	height: 9px;
+	margin-left: -9px;
+	background: rgba(220, 224, 230, 0.85);
+}
+.slime_talk_hint::after {
+	top: -8px;
+	width: 16px;
+	height: 8px;
+	margin-left: -8px;
+	background: rgba(255, 255, 255, 0.75);
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
 }
 @keyframes slimeHintBob {
 	0%, 100% { transform: translateY(0); }
