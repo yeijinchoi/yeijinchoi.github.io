@@ -91,6 +91,16 @@ yeijinchoi.github.io/
    - 플로팅 전(상단 휴지 상태): `width: 940px; height: 80px; padding: 20px 10px 0 10px;`, Logo 좌측 / Profile·Works 메뉴 중앙 절대 정렬(`left: 50%; transform: translateX(-50%)`, gap 40px) / Contact 버튼 우측 밀착으로 플로팅 전후의 3단 레이아웃 일관성 100% 유지.
    - 컨텐츠 점프 방지: `.nav-placeholder` 요소가 80px 높이를 유지하여 스크롤 시 본문 덜컹거림 원천 차단.
    - 모바일(≤1024px): 네비 앞 `Jean` 로고 숨김(`display: none;`), 햄버거 버튼은 PC 플로팅 알약과 동일한 글래스모피즘 톤(`48×48px`, `border-radius: 50%`, 반투명 블러·그림자)으로 우측 상단(`top: 16px; right: 16px; fixed`)에 고정 플로팅. 드로어 메뉴(Profile, Works 아코디언, Contact) 완벽 유지.
+8. **스킬 섹션 모던 카드형 및 공식 브랜드 컬러 통일 배지 (`.skill_wrapper`, `.skillset`)**:
+   - 8개 스킬을 2열 4행 모던 스킬 카드 그리드로 개편.
+   - 각 스킬에 42×42px 통일 둥근 사각 배지(`skill_icon_badge`, `#FAFAFC` 바탕, `#E8EBEF` 보더, `border-radius: 12px`) 적용.
+   - 내부 벡터 아이콘: 공식 브랜드 컬러 벡터 SVG 적용 (HTML5 오렌지, CSS3 블루, JS 옐로우 스퀘어, jQuery 블루 스퀘어, Photoshop 다크네이비+시안, Illustrator 다크와인+앰버, Figma 5컬러, Communication 로열블루 협업 말풍선).
+   - 각 카드 내부 타이포: 스킬명(`skill_name`, 14.5px Bold, `#222`) + 퍼센티지(`skill_percent`, 13px Bold, `#5383F6`) 상단 배치 및 하단 8px 슬림 트랙 게이지 바(`bar`) 일체화.
+9. **AI & Creative Works 섹션 (`.Ai_section`, `#ai-works`)**:
+   - 생성형 AI를 실무 파이프라인에 적극 도입한 프로젝트 2종을 2열 Bento 카드로 구성.
+   - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Midjourney, Photoshop AI, 프롬프트 엔지니어링, 인페인팅 실무)
+   - 카드 2: AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹 (Claude/ChatGPT 시나리오·암호 로직, 비주얼 단서 생성, 인터랙티브 웹 UI)
+   - 각 카드별 3단계 AI 워크플로우 칩 및 실무 효용성(AI 리터러시 강조) 콜아웃 박스 완비.
 
 ---
 
