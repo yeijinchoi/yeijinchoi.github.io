@@ -74,12 +74,12 @@ yeijinchoi.github.io/
 
 2. **경력 카드 (`.career_card`)**:
    - **기본 경력 카드**: 테두리 완전 삭제(`border: none;`), 깔끔한 소프트 서피스(`background: #EEF0F4;`)
-   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 4px 포인트 컬러 회전 그라데이션 보더(`conic-gradient` + `@property --career-angle`, 4초 순환 `careerBorderSpin` + 글로우 펄스 `careerGlowPulse`, `prefers-reduced-motion` 시 정지), 블루 포인트 배지(`.badge_current`, `#5383F6`, '재직중'), 블루 섀도우
+   - **현재 재직 중인 회사 (`(주)이고진`)**: 화이트 바탕(`background: #FFFFFF;`) + 4px 포인트 컬러 회전 그라데이션 보더(`conic-gradient` + `@property --career-angle`, 4초 순환 `careerBorderSpin`, `prefers-reduced-motion` 시 정지, 그림자 없음), 블루 포인트 배지(`.badge_current`, `#5383F6`, '재직중')
    - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음), 터치 시 스케일 인터랙션
 
 3. **스킬 섹션 (`.skill_wrapper`, `.skillset`)**:
    - 태블릿·데스크톱: 한 줄에 3개 (flex-wrap, 카드 폭 `calc((100% - 32px) / 3)`, 간격 16px, 마지막 줄은 가운데 정렬) / 모바일: 1열. 스킬 7개 — 순서: HTML5, CSS3, JavaScript / Photoshop, Illustrator, Figma / jQuery. (Communication은 삭제)
-   - 테두리 전면 삭제(`border: none !important;`) 및 부드러운 소프트 섀도우(`box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);`).
+   - 테두리 전면 삭제(`border: none !important;`), 그림자 없음(흰 카드 + 배경 대비).
    - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 원형 그라데이션 구슬(Marble/Orb) 배지**를 **스킬 이름 왼쪽에 18px 크기로 작게 붙임**(`.skill_header > .skill_title` 안에 구슬 + 이름, 아래엔 전폭 프로그레스 바) (`border-radius: 50% !important;`, 전 구간 원형 고정; HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루).
    - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
 
@@ -147,7 +147,7 @@ yeijinchoi.github.io/
 
 ### 5.2 분위기 규칙
 - 쿨그레이 + 오프화이트 + 블루 포인트의 **깔끔하고 여백 넉넉한 톤**. 순백 `#fff` 큰 면, 강한 보더, 원색 대면적은 지양.
-- 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), **모서리 라운드는 8px로 통일**(2026-11-06 16px→8px로 축소)(프로필·경력·스킬·Works·AI·그래픽·상세 목업/정보 카드 전부). 알약형 배지·버튼만 `50px`/`30px`, 작은 태그는 6px.
+- 카드: 보더 없이 소프트 서피스, **박스(카드)에는 그림자를 넣지 않습니다**(2026-11-06 사용자 지시 — 호버도 그림자 대신 `translateY` 상승만). 그림자는 네비 알약·버튼·글래스 알약 같은 떠 있는 요소에만. **모서리 라운드는 8px로 통일**(2026-11-06 16px→8px로 축소)(프로필·경력·스킬·Works·AI·그래픽·상세 목업/정보 카드 전부). 알약형 배지·버튼만 `50px`/`30px`, 작은 태그는 6px.
 - 호버: 살짝 상승(`translateY(-4~5px)`) 또는 미세 스케일/회전. 이징은 기존 `cubic-bezier(0.16,1,0.3,1)` / 스프링 `cubic-bezier(0.34,1.56,0.64,1)` 재사용.
 - 폰트: **SUIT Variable** 단일 폰트 (`font/SUIT-Variable.woff2`, `common.css` 상단 `@font-face`, 굵기 100~900). 항상 `font-family: "SUIT", sans-serif` + 숫자 `font-weight`(Light 300 / Regular 400 / Medium 500 / Bold 700 / Black 900)로 지정. 다른 폰트 추가 금지.
 - **배지·알약 안에는 이모지를 넣지 않습니다** (텍스트만. 아이콘이 필요하면 기존 `first-icon` 이미지 방식 사용).

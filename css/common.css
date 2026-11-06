@@ -792,18 +792,14 @@ body { font-family: "SUIT", sans-serif; font-weight: 400; background: #F5F6F8; }
 	background-image: linear-gradient(#FFFFFF, #FFFFFF), conic-gradient(from var(--career-angle), #5383F6, #38BDF8, #A6D4FF, #38BDF8, #5383F6);
 	background-origin: border-box;
 	background-clip: padding-box, border-box;
-	box-shadow: 0 8px 28px rgba(83, 131, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.04);
-	animation: careerBorderSpin 4s linear infinite, careerGlowPulse 3s ease-in-out infinite;
+	box-shadow: none;
+	animation: careerBorderSpin 4s linear infinite;
 }
 
 @keyframes careerBorderSpin {
 	to { --career-angle: 360deg; }
 }
 
-@keyframes careerGlowPulse {
-	0%, 100% { box-shadow: 0 8px 24px rgba(83, 131, 246, 0.16), 0 2px 8px rgba(0, 0, 0, 0.04); }
-	50%      { box-shadow: 0 10px 34px rgba(56, 189, 248, 0.30), 0 2px 8px rgba(0, 0, 0, 0.04); }
-}
 
 @media (prefers-reduced-motion: reduce) {
 	.career_card:has(.badge_current) { animation: none; }
@@ -1837,13 +1833,13 @@ body.mobile-nav-open { overflow: hidden; }
 	display: flex;
 	flex-direction: column;
 	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	box-shadow: none;
 	box-sizing: border-box;
 }
 
 .ai_work_card:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+	box-shadow: none;
 }
 
 /* 나중에 썸네일 이미지가 들어갈 배경 레이어 */
@@ -2010,7 +2006,7 @@ body.mobile-nav-open { overflow: hidden; }
 	border: none !important;
 	border-radius: 8px !important;
 	padding: 14px 18px !important;
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035) !important;
+	box-shadow: none !important;
 	transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 	position: relative !important;
 	width: 100% !important;
@@ -2020,7 +2016,7 @@ body.mobile-nav-open { overflow: hidden; }
 
 .skillset:hover {
 	transform: translateY(-2px) !important;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+	box-shadow: none !important;
 }
 
 /* 추상 브랜드 그라데이션 배지 공통 (원형 3D 구슬 오브) */
@@ -2308,7 +2304,7 @@ body.mobile-nav-open { overflow: hidden; }
 	color: #222;
 	border-radius: 24px;
 	padding: 14px 22px 18px;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px #E8EAF0;
+	box-shadow: 0 0 0 1px #E8EAF0;
 	transform-origin: 50% 0;
 }
 .slime_talk_bubble::before {
@@ -2566,7 +2562,7 @@ div.Name .en_name { transform: none; text-align: left; }
 	border-radius: 8px;
 	overflow: hidden;
 	background: #fff;
-	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+	box-shadow: none;
 	transform-origin: 50% 50%;
 	transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.65s ease;
 	will-change: transform, filter, opacity;
@@ -2585,7 +2581,6 @@ div.Name .en_name { transform: none; text-align: left; }
 	opacity: 0.7;
 	filter: blur(3px);
 	cursor: pointer;
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 .gs_item.is-prev { transform: translateX(calc(var(--gs-off) * -1)) scale(var(--gs-side)); }
 .gs_item.is-next { transform: translateX(var(--gs-off)) scale(var(--gs-side)); }
