@@ -2820,3 +2820,19 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 @media screen and (max-width: 767px) {
 	.works_more { gap: 10px; margin-top: 24px; }
 }
+
+/* 스킬 카드 : 태블릿·PC 한 줄에 3개 (7개 = 3 + 3 + 1, 마지막 줄은 가운데 정렬) */
+@media screen and (min-width: 768px) {
+	.skill_wrapper {
+		display: flex !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		gap: 16px !important;
+		column-gap: 16px !important;
+		row-gap: 16px !important;
+	}
+	.skill_wrapper .skillset {
+		flex: 0 0 calc((100% - 32px) / 3) !important;
+		width: calc((100% - 32px) / 3) !important;
+	}
+}

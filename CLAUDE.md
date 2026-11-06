@@ -78,9 +78,9 @@ yeijinchoi.github.io/
    - **슬라이더 버튼 (`.career_nav`)**: 좌우 손가락 이모지(`👈` 이전 / `👉` 다음), 터치 시 스케일 인터랙션
 
 3. **스킬 섹션 (`.skill_wrapper`, `.skillset`)**:
-   - 데스크톱: 2열 CSS Grid (`grid-template-columns: repeat(2, 450px); column-gap: 40px; row-gap: 16px;`)
+   - 태블릿·데스크톱: 한 줄에 3개 (flex-wrap, 카드 폭 `calc((100% - 32px) / 3)`, 간격 16px, 마지막 줄은 가운데 정렬) / 모바일: 1열. 스킬 7개 — 순서: HTML5, CSS3, JavaScript / Photoshop, Illustrator, Figma / jQuery. (Communication은 삭제)
    - 테두리 전면 삭제(`border: none !important;`) 및 부드러운 소프트 섀도우(`box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);`).
-   - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 원형 그라데이션 구슬(Marble/Orb) 배지**를 **스킬 이름 왼쪽에 18px 크기로 작게 붙임**(`.skill_header > .skill_title` 안에 구슬 + 이름, 아래엔 전폭 프로그레스 바) (`border-radius: 50% !important;`, 전 구간 원형 고정; HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루, Communication 시그니처블루).
+   - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 원형 그라데이션 구슬(Marble/Orb) 배지**를 **스킬 이름 왼쪽에 18px 크기로 작게 붙임**(`.skill_header > .skill_title` 안에 구슬 + 이름, 아래엔 전폭 프로그레스 바) (`border-radius: 50% !important;`, 전 구간 원형 고정; HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루).
    - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
 
 4. **히어로 슬라임 그래픽 & 타이포그래피 (`.visualT`, `#blobCore`)**:
