@@ -218,11 +218,28 @@
 	#Jquery div { width: 95%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#communication div { width: 100%; background: #5383F6; height: 16px; border-radius: 50px;}
 
-	.GraphicDesign_section { width: 368px; border-top: 1px solid #F2F2F2; padding-top: 90px; display: block; margin: 0 auto; }
-	.Graphic_wrapper { width: 368px; margin: 0 auto; margin-bottom: 90px; display: block; }
+	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 70px; display: block; margin: 0 auto; }
+	.Graphic_wrapper {
+		width: 100%;
+		max-width: 368px;
+		margin: 0 auto 70px auto;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 16px;
+		box-sizing: border-box;
+	}
 
-	.Graphic_L { background: #fff; width: 368px; height: 240px; float: left; margin-right: 20px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
-	.Graphic_L img { width: 100%; object-position: center;} 
+	.Graphic_L {
+		background: #fff;
+		width: 100% !important;
+		height: 220px;
+		float: none !important;
+		margin: 0 !important;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	}
+	.Graphic_L img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; } 
 
 	.pf-download-btn { width: 220px; display: block; margin: 0 auto; border: 1px solid #5383F6; text-align: center; padding-top: 10px; padding-bottom: 10px; margin-top: 30px; border-radius: 50px; }
 
@@ -414,11 +431,29 @@
 	#Jquery div { width: 95%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#communication div { width: 100%; background: #5383F6; height: 16px; border-radius: 50px;}
 
-	.GraphicDesign_section { width: 100%; border-top: 1px solid #F2F2F2; padding-top: 90px;  }
-	.Graphic_wrapper { width: 750px; margin: 0 auto; margin-bottom: 90px; display: block; transform: translateX(20px); overflow: hidden;}
+	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 80px; }
+	.Graphic_wrapper {
+		width: 100%;
+		max-width: 768px;
+		margin: 0 auto 80px auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+		transform: none !important;
+		box-sizing: border-box;
+	}
 
-	.Graphic_L { background: #fff; width: 340px; height: 240px; float: left; margin-right: 30px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
-	.Graphic_L img { width: 100%; object-position: center;} 
+	.Graphic_L {
+		background: #fff;
+		width: 100% !important;
+		height: 220px;
+		float: none !important;
+		margin: 0 !important;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	}
+	.Graphic_L img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; } 
 
 	.Last_section { width: 100%; padding-top: 90px; border-top: 1px solid #F2F2F2;}
 	.last_wrapper { width: 750px; margin: 0 auto;  margin-bottom: 90px; position: relative ;}
@@ -674,11 +709,37 @@
 
 	.Mobile_Wrapper { width: 940px; margin: 0 auto; padding-bottom: 90px; }
 
-	.GraphicDesign_section { width: 100%; border-top: 1px solid #F2F2F2; padding-top: 90px;  }
-	.Graphic_wrapper { width: 940px; margin: 0 auto; margin-bottom: 90px; display: block; }
+	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 90px; }
+	.Graphic_wrapper {
+		width: 940px;
+		margin: 0 auto 90px auto;
+		display: grid;
+		grid-template-columns: repeat(3, 300px);
+		gap: 20px;
+	}
 
-	.Graphic_L { background: #fff; width: 326px; height: 240px; float: left; margin-right: 20px; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
-	.Graphic_L img { width: 100%; object-position: center;} 
+	.Graphic_L {
+		background: #fff;
+		width: 100% !important;
+		height: 240px;
+		float: none !important;
+		margin: 0 !important;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	.Graphic_L:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	}
+	.Graphic_L img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
 
 	._last_b { margin-right: 0px; }
 
@@ -973,16 +1034,28 @@ body { font-family: "NotoSansKR-Regular"; background: #F5F6F8; }
 
 	nav ul li.work {
 		position: relative;
+		padding-bottom: 25px;
+		margin-bottom: -25px;
 	}
 
 	nav ul li.work .blind-subnav {
 		position: absolute;
-		top: 40px;
+		top: 25px;
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 1001;
 		display: none;
 		width: max-content;
+		padding-top: 10px;
+	}
+
+	nav ul li.work .blind-subnav::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 25px;
 	}
 
 	nav ul li.work:hover .blind-subnav,
