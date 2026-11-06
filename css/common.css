@@ -2938,17 +2938,19 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	background-repeat: no-repeat;
 	background-size: cover;
 	opacity: 0;
-	animation: aiSlideFade 16s linear infinite;
+	animation: aiSlideFade 20s linear infinite;
 }
+/* 순서(4초 간격): 룩북 → 뷰티 컷 → 립틴트 화보 → 룩북 → 뷰티 컷 */
 .ai_slide_1 { background-image: url('../images/ai-model-1.webp'); background-position: 50% 30%; animation-delay: 0s; }
 .ai_slide_2 { background-image: url('../images/ai-model-2.webp'); background-position: 50% 54%; animation-delay: 4s; }
-.ai_slide_3 { background-image: url('../images/ai-model-3.webp'); background-position: 50% 30%; animation-delay: 8s; }
-.ai_slide_4 { background-image: url('../images/ai-model-4.webp'); background-position: 50% 48%; animation-delay: 12s; }
+.ai_slide_5 { background-image: url('../images/ai-model-5.webp'); background-position: 50% 52%; animation-delay: 8s; }
+.ai_slide_3 { background-image: url('../images/ai-model-3.webp'); background-position: 50% 30%; animation-delay: 12s; }
+.ai_slide_4 { background-image: url('../images/ai-model-4.webp'); background-position: 50% 48%; animation-delay: 16s; }
 @keyframes aiSlideFade {
 	0%   { opacity: 0; }
-	5%   { opacity: 1; }
-	25%  { opacity: 1; }
-	30%  { opacity: 0; }
+	4%   { opacity: 1; }
+	20%  { opacity: 1; }
+	24%  { opacity: 0; }
 	100% { opacity: 0; }
 }
 /* 밝은 배경의 사진 위에서도 라벨·제목·태그가 또렷하도록 ARG 카드와 같은 오버레이/라벨 처리 */
