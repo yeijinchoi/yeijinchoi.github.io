@@ -105,11 +105,11 @@ yeijinchoi.github.io/
      - 하단: 한글 메인 타이틀 (`.ai_card_title`, 20px Bold White `#FFFFFF`) + 반투명 글래스 다크 태그 (`.ai_card_tags span`, Higgsfield AI, Claude Code, VS Code, 상세페이지 퍼블리싱 등)
 
 6. **Web Design Works (`.work_wrap`, CSS Grid)**:
-   - 9개 실무 프로젝트를 940px 컨테이너에 딱 맞춘 현대적인 3열 벤토 그리드(Bento Grid) 구성.
+   - 7개 실무 프로젝트를 940px 컨테이너에 딱 맞춘 현대적인 3열 벤토 그리드(Bento Grid) 구성.
    - 1~2행: 좌측 DEEP OCR 홈페이지·뷰어 (각 1열 1행), 우측 POLYGROUND (2열 2행 대형)
    - 3행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)
-   - 4행: KDL 브랜드페이지 v1, v2, v3 (각 1열 1행 3개 균등 배치, 2026-11-06 맨 위 큰 KDL 카드를 이 줄로 이동)
-   - 태블릿: 2열 반응형 그리드(마지막 KDL v3는 2칸 폭), 모바일: 1열 수직 스택 자동 전환
+   - 4행: KDL 브랜드페이지 1개를 3열 전체 폭(940px)으로 배치 (v1·v2·v3를 하나로 합침, 2026-11-06)
+   - 태블릿: 2열 반응형 그리드(마지막 KDL은 2칸 폭), 모바일: 1열 수직 스택 자동 전환
    - 카드 배치는 `common.css` 데스크톱 블록의 "Bento Grid Placements" 클래스별 `grid-column/grid-row`로 관리, `main.html` 카드 순서는 데스크톱 배치 순서와 맞춰 둠
 
 7. **Graphic Design Works (`.gs`, `#graphicSlider`, `js/graphic-slider.js`)**:
