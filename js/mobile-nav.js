@@ -79,7 +79,7 @@
 			nav.parentNode.insertBefore(placeholder, nav);
 		}
 
-		var threshold = 80;
+		var threshold = 90;
 		var isFloating = false;
 
 		function update() {
