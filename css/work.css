@@ -395,11 +395,11 @@ body { background: #f5f6f8; }
 .ai_gallery .ag_b { grid-column: 2; grid-row: 1; object-position: 50% 45%; }
 .ai_gallery .ag_d { grid-column: 2; grid-row: 2; object-position: 50% 35%; }
 
-/* 립틴트 화보 : 정사각 원본 2컷을 잘림 없이 나란히 */
+/* 립틴트 화보 : 정사각 원본 3컷을 잘림 없이 한 줄로 */
 .ag_duo {
 	margin: 0;
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 8px;
 }
 .ag_duo img { height: auto; aspect-ratio: 1 / 1; }
