@@ -58,10 +58,10 @@ p.gray { font-size: 0.875em; color: #474a6b; }
 	margin: 28px auto 0;
 	padding: 20px 24px 22px;
 	box-sizing: border-box;
-	background: #FAFAFC;
-	border: 1px solid #E2E5EA;
+	background: #EEF0F4;
+	border: none;
 	border-radius: 8px;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+	box-shadow: none;
 }
 .load_note_label {
 	padding: 3px 12px;
