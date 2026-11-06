@@ -5,7 +5,7 @@
 	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css?v=20261105c" type="text/css">
-	<link rel="stylesheet" href="css/common.css?v=20261106k" type="text/css">
+	<link rel="stylesheet" href="css/common.css?v=20261106n" type="text/css">
 	<link rel="stylesheet" href="css/index.css?v=20261105c" type="text/css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<meta property="og:type" content="website">
@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
+	<script type="text/javascript" src="js/blob-interactive.js?v=20261106a"></script>
 
 </head>
 
@@ -73,23 +74,32 @@
 				</ul>
 			</div>
 		</div>
-		<div class="visualwrap clearfix">
+		<div class="visualwrap">
 			<div class="visualT">
-				<h2>
-					Hello, I'm<br><span class="bold">Yeijin Choi </span><span class="jean">aka Jean</span>
-				</h2>
-				
-				<div class="header_clipwrap">
-					<p>ver 2. 2026.11.05</p>
-				</div>
-				<div class="clearfix">
-					<span class="first-icon"><img src="images/first-icon.png" alt=""></span>
-					<div class="clip_right">
-						<p>제안 <span class="bold">받는 중</span></p>
+				<div class="visual_text_col">
+					<h2>
+						Hello, I'm<br><span class="bold">Yeijin Choi </span><span class="jean">aka Jean</span>
+					</h2>
+					<div class="visual_badges_row">
+						<div class="header_clipwrap">
+							<p>ver 2. 2026.11.05</p>
+						</div>
+						<div class="clip_status_badge">
+							<span class="first-icon"><img src="images/first-icon.png" alt=""></span>
+							<span class="clip_right_text">제안 <b class="bold">받는 중</b></span>
+						</div>
 					</div>
 				</div>
-				<div class="visualimg">
-					<img src="images/main-typo.png" alt="">
+				<div class="visual_graphic_col">
+					<div class="blob_stage" id="blobStage" aria-label="3D 입체 인터랙티브 그래픽">
+						<div class="blob_glow"></div>
+						<div class="blob_core" id="blobCore">
+							<div class="blob_inner_sheen"></div>
+							<div class="blob_specular"></div>
+						</div>
+						<div class="blob_orbit orb_1"></div>
+						<div class="blob_orbit orb_2"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -373,85 +383,45 @@
 	</section>
 	<section class="Ai_section" id="ai-works">
 		<div class="Wrapper ai_wrapper">
-			<div class="ai_title_wrap">
-				<span class="ai_badge_chip">AI & Creative</span>
-				<h2 class="wrap_title ai_wrap_title">AI Workflow & Projects</h2>
-				<p class="ai_subtitle">생성형 AI를 실무 파이프라인에 적극 도입하여 기획부터 비주얼 생성, 웹 인터랙션까지 확장한 작업입니다.</p>
-			</div>
-			<div class="ai_cards_grid">
+			<h2 class="wrap_title">AI & Creative Works</h2>
+			<div class="ai_works_grid">
 				<!-- Card 1: Commerce Detail Page AI Image Pipeline -->
-				<article class="ai_card">
-					<div class="ai_card_thumb ai_thumb_commerce">
-						<div class="ai_thumb_visual">
-							<div class="ai_thumb_placeholder">
-								<span class="ai_thumb_icon">🛍️</span>
-								<span class="ai_thumb_label">Commerce AI Visual Pipeline</span>
-								<span class="ai_thumb_sub">상세페이지 AI 가상 모델 & 배경 생성</span>
-							</div>
-						</div>
-						<span class="ai_status_badge">Commercial Project</span>
-					</div>
-					<div class="ai_card_body">
-						<div class="ai_tag_list">
-							<span class="ai_tag">Midjourney</span>
-							<span class="ai_tag">Photoshop AI</span>
-							<span class="ai_tag">Prompt Engineering</span>
-						</div>
-						<h3 class="ai_card_title">커머스 상세페이지 AI 이미지 생성 파이프라인</h3>
-						<p class="ai_card_desc">
-							스튜디오 대관 및 피팅 모델 섭외 리소스를 절감하기 위해 생성형 AI를 실무 상세페이지 제작에 도입했습니다. 제품 톤앤매너에 맞춘 프롬프트 엔지니어링과 인페인팅 보정으로 고품질 상업 비주얼을 기획·생산하고 웹 상세페이지 레이아웃에 직접 마크업했습니다.
-						</p>
-						<div class="ai_workflow_box">
-							<h4 class="ai_workflow_title">AI Workflow</h4>
-							<ol class="ai_workflow_steps">
-								<li><span class="step_num">01</span> 컨셉 정의 & 조명·앵글 프롬프트 튜닝</li>
-								<li><span class="step_num">02</span> AI 모델·배경 생성 및 제품 디테일 인페인팅</li>
-								<li><span class="step_num">03</span> 커머스 상세페이지 UI 디자인 & 반응형 웹 마크업</li>
-							</ol>
-						</div>
-						<div class="ai_point_box">
-							<span class="ai_point_label">💡 AI 활용 포인트</span>
-							<p>단순 이미지 생성을 넘어 촬영 비용·시간 80% 단축 및 다양한 제품 연출 컷 A/B 테스트 파이프라인 구축</p>
+				<div class="ai_work_card">
+					<div class="ai_card_preview ai_preview_commerce">
+						<div class="ai_mockup_inner">
+							<span class="ai_mockup_tag">E-Commerce Detail Page</span>
+							<h3 class="ai_mockup_title">AI 가상 모델 & 제품 연출 이미지 생성</h3>
+							<p class="ai_mockup_desc">Midjourney · Photoshop AI 인페인팅 실무 파이프라인</p>
 						</div>
 					</div>
-				</article>
+					<div class="ai_card_meta">
+						<div class="ai_meta_title">커머스 상세페이지 AI 비주얼 파이프라인</div>
+						<div class="ai_meta_tags">
+							<span>Midjourney</span>
+							<span>Photoshop AI</span>
+							<span>상세페이지 기획</span>
+						</div>
+					</div>
+				</div>
 
 				<!-- Card 2: Interactive ARG Game Project with AI -->
-				<article class="ai_card">
-					<div class="ai_card_thumb ai_thumb_arg">
-						<div class="ai_thumb_visual">
-							<div class="ai_thumb_placeholder">
-								<span class="ai_thumb_icon">🕵️‍♂️</span>
-								<span class="ai_thumb_label">AI-Driven ARG Project</span>
-								<span class="ai_thumb_sub">대체현실 게임 기획 & 인터랙티브 웹</span>
-							</div>
-						</div>
-						<span class="ai_status_badge in_progress">In Progress</span>
-					</div>
-					<div class="ai_card_body">
-						<div class="ai_tag_list">
-							<span class="ai_tag">Claude / ChatGPT</span>
-							<span class="ai_tag">Midjourney</span>
-							<span class="ai_tag">Interactive Web</span>
-						</div>
-						<h3 class="ai_card_title">AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹</h3>
-						<p class="ai_card_desc">
-							가상과 현실의 경계를 넘나드는 미스터리 추리 게임(ARG) 프로젝트입니다. LLM과의 프롬프트 협업으로 다층적 시나리오와 암호 퍼즐을 설계하고, AI 생성 비주얼 단서 에셋과 인터랙티브 웹 마크업을 결합하여 플레이어가 몰입할 수 있는 웹 경험을 구현 중입니다.
-						</p>
-						<div class="ai_workflow_box">
-							<h4 class="ai_workflow_title">AI Workflow</h4>
-							<ol class="ai_workflow_steps">
-								<li><span class="step_num">01</span> LLM 협업 세계관·스토리 트리 & 암호 로직 기획</li>
-								<li><span class="step_num">02</span> 미스터리 단서 문서, 가상 인물 에셋 AI 생성</li>
-								<li><span class="step_num">03</span> 단서 탐색 & 인터랙티브 웹 UI 퍼블리싱</li>
-							</ol>
-						</div>
-						<div class="ai_point_box">
-							<span class="ai_point_label">💡 AI 활용 포인트</span>
-							<p>디자인에 국한되지 않고 기획·시나리오·에셋·웹 퍼블리싱 전반에서 AI를 핵심 파트너로 활용하는 역량 증명</p>
+				<div class="ai_work_card">
+					<div class="ai_card_preview ai_preview_arg">
+						<div class="ai_mockup_inner">
+							<span class="ai_mockup_tag">ARG Project · In Progress</span>
+							<h3 class="ai_mockup_title">AI 기반 대체현실 게임 & 인터랙티브 웹</h3>
+							<p class="ai_mockup_desc">Claude · ChatGPT 시나리오 기획 · 단서 에셋 & 웹 UI</p>
 						</div>
 					</div>
-				</article>
+					<div class="ai_card_meta">
+						<div class="ai_meta_title">대체현실 게임(ARG) 기획 & 인터랙티브 웹</div>
+						<div class="ai_meta_tags">
+							<span>Claude</span>
+							<span>ChatGPT</span>
+							<span>Interactive Web</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
