@@ -118,3 +118,50 @@ yeijinchoi.github.io/
 - master 브랜치에 푸시하면 GitHub Actions의 `pages build and deployment` 워크플로우를 통해 수십 초 내에 `jeanychoi.com` 라이브에 배포됩니다.
 - 브라우저 및 CDN 캐시로 인해 수정 사항이 즉시 보이지 않을 수 있으므로, CSS/JS 변경 시 `main.html` 상단의 캐시버스터 쿼리스트링(`v=...`)을 함께 갱신해야 합니다.
 - 수정 시 기존 레이아웃 규격(데스크톱 내부 폭 940px, 고정 컨테이너 1100px)과 벤토 그리드 규칙을 엄격히 준수합니다.
+
+---
+
+## 5. 🔒 디자인 연속성 원칙 (모든 업데이트 필수 준수)
+
+**앞으로의 모든 포트폴리오 업데이트는 기존 색상·분위기를 그대로 이어가야 합니다.** 새 섹션/컴포넌트를 만들 때 새로운 팔레트나 스타일 언어를 도입하지 않습니다.
+
+### 5.1 허용 팔레트 (새 색 추가 금지, 아래에서만 조합)
+| 용도 | 값 |
+|---|---|
+| 포인트 블루 (CTA·링크·강조, 사용 빈도 1위) | `#5383F6` (보조: `#38BDF8`, `#2554D7`, `#1D4ED8`, `#93C5FD`, `#A6D4FF`) |
+| 바깥 배경 / 컨테이너 | `#F5F6F8` / `#FAFAFC` (보더 `#ECEEF1`) |
+| 소프트 서피스 (카드) | `#EEF0F4` (보더 `#E2E5EA`) |
+| 텍스트 | `#111` `#222` `#333` `#555` `#666` |
+| 다크 카드 (AI 섹션) | `#0D0E12` + 흰 텍스트 |
+| 재직중 배지 | `#10B981` |
+| 스킬 구슬 배지 | 브랜드별 고유 그라데이션 (3.2-3 참고) |
+
+### 5.2 분위기 규칙
+- 쿨그레이 + 오프화이트 + 블루 포인트의 **깔끔하고 여백 넉넉한 톤**. 순백 `#fff` 큰 면, 강한 보더, 원색 대면적은 지양.
+- 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), 라운드 8~20px.
+- 호버: 살짝 상승(`translateY(-4~5px)`) 또는 미세 스케일/회전. 이징은 기존 `cubic-bezier(0.16,1,0.3,1)` / 스프링 `cubic-bezier(0.34,1.56,0.64,1)` 재사용.
+- 폰트: Noto Sans KR (400/700/900) 로컬 `@font-face` 그대로 사용. 다른 폰트 추가 금지.
+- 섹션 타이틀은 기존 `h2.wrap_title`, 내부 폭 940px, 컨테이너 1100px 규격 유지.
+- 반응형 3구간 고정: 모바일 `≤767px` / 태블릿 `768~1024px` / 데스크톱 `≥1025px` (`common.css` 안에 구간별 블록 존재).
+
+---
+
+## 6. ⚡ 빠른 수정 치트시트 (어디를 고치면 되는가)
+
+| 하고 싶은 일 | 파일 / 위치 |
+|---|---|
+| 소개 문구·태그 수정 | `main.html` `.profile_wrapper` (`.intro`, `.Tag`) |
+| 스킬 추가/수정 | `main.html` `.skillset` + `common.css` 스킬 섹션 (`.skill_icon_badge` 색, 바 채움 % 는 `#html` 등 id별 규칙) |
+| 경력 추가 | `main.html` `.career_track` 안에 `.carrer_wrap.career_card` 복제 (현재 재직 카드만 `badge_current`) |
+| Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
+| 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
+| AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image` |
+| 그래픽 이미지 교체 | `images/grapic-1~9.png` 덮어쓰기 (3×3 고정) |
+| PDF 교체 | `images/240723최예진포트폴리오.pdf` |
+| 메뉴 항목 | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
+| 슬라임 동작 | `js/blob-interactive.js` + `common.css` 히어로 구간 |
+
+### 작업 체크리스트
+1. 수정 후 해당 CSS/JS의 `?v=` 캐시버스터 갱신 (**모든 HTML**에서 동일 파일은 같은 버전으로 — 현재 `main.html`만 최신이고 `web_work.html`/`webDesign_work.html`은 `common.css?v=20261106g`, `contentDisign_work.html`/`index.html`은 `20261105m`로 뒤처져 있음).
+2. 데스크톱(1100) / 태블릿 / 모바일 3구간 모두 확인.
+3. 새 색상이 필요하면 5.1 팔레트 안에서 해결, 불가피하면 사용자에게 먼저 확인.
