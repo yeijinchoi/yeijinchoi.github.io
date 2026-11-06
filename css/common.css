@@ -2255,3 +2255,37 @@ body.mobile-nav-open { overflow: hidden; }
 		font-size: 12px !important;
 	}
 }
+
+/* ============================================================
+   말풍선 텍스트 : 모든 구간에서 말풍선 영역의 정중앙 정렬
+   (chat_L / chat_R / last_wrapper 말풍선 공통 규칙, 새 말풍선도 이 패턴 사용)
+   ============================================================ */
+.chat_L,
+.chat_R,
+.last_wrapper div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 28px;
+}
+.chat_L_p,
+.chat_R_p,
+.last_wrapper div p {
+	position: static !important;
+	transform: none !important;
+	width: auto !important;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	line-height: 1.45;
+	word-break: keep-all;
+}
+
+/* 말풍선 요소 폭 = 말풍선 이미지 폭 (".chat_section > div { width: 100% }" 보다 우선) */
+.chat_section > .chat_L { width: 328px; }
+.chat_section > .chat_R { width: 736px; margin-left: auto; }
+@media screen and (max-width: 767px) {
+	.chat_section > .chat_R { width: 368px; }
+}

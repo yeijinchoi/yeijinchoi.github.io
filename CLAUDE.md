@@ -143,6 +143,7 @@ yeijinchoi.github.io/
 - 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), **모서리 라운드는 16px로 통일**(프로필·경력·스킬·Works·AI·그래픽·상세 목업/정보 카드 전부). 알약형 배지·버튼만 `50px`/`30px`, 작은 태그는 6px.
 - 호버: 살짝 상승(`translateY(-4~5px)`) 또는 미세 스케일/회전. 이징은 기존 `cubic-bezier(0.16,1,0.3,1)` / 스프링 `cubic-bezier(0.34,1.56,0.64,1)` 재사용.
 - 폰트: **SUIT Variable** 단일 폰트 (`font/SUIT-Variable.woff2`, `common.css` 상단 `@font-face`, 굵기 100~900). 항상 `font-family: "SUIT", sans-serif` + 숫자 `font-weight`(Light 300 / Regular 400 / Medium 500 / Bold 700 / Black 900)로 지정. 다른 폰트 추가 금지.
+- 말풍선(`.chat_L`, `.chat_R`, `.last_wrapper div`): 텍스트는 **항상 말풍선 영역 정중앙**(flex 중앙정렬, `common.css` 맨 아래 "말풍선" 블록). 말풍선 요소 폭은 이미지 폭(328 / 736px)과 맞춰야 중앙이 어긋나지 않음.
 - 섹션 타이틀은 기존 `h2.wrap_title`, 내부 폭 940px, 컨테이너 1100px 규격 유지.
 - 반응형 3구간 고정: 모바일 `≤767px` / 태블릿 `768~1024px` / 데스크톱 `≥1025px` (`common.css` 안에 구간별 블록 존재).
 
