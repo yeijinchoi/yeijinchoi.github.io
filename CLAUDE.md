@@ -70,6 +70,12 @@ yeijinchoi.github.io/
 3. **Works 프로젝트 목업 (`.p_mockup`)**:
    - 가로 배치: 좌우 지그재그 (홀수: 목업 좌 / 정보 우, 짝수: 목업 우 / 정보 좌)
    - 마우스오버 시: `transform: translateY(calc(-100% + 520px));`로 5초간 풀페이지 캡처 스크롤 및 `Mouse over` 라벨 페이드아웃.
+4. **메인 Web Design Works 벤토 그리드 (`.Works_wrap`)**:
+   - 데스크톱: 3열 × 5행 CSS Grid (`grid-template-columns: repeat(3, 300px); grid-auto-rows: 180px; gap: 20px;`)
+   - 1~2행: 좌측 KDL v3 (2열 2행 대형), 우측 KDL v2·v1 (각 1열 1행)
+   - 3~4행: 좌측 DEEP OCR 홈페이지·뷰어 (각 1열 1행), 우측 POLYGROUND (2열 2행 대형)
+   - 5행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)
+   - 태블릿: 2열 반응형 그리드, 모바일: 1열 수직 스택 자동 전환
 
 ---
 
