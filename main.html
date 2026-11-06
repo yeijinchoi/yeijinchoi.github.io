@@ -5,7 +5,7 @@
 	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css?v=20261105c" type="text/css">
-	<link rel="stylesheet" href="css/common.css?v=20261106ay" type="text/css">
+	<link rel="stylesheet" href="css/common.css?v=20261106az" type="text/css">
 	<link rel="stylesheet" href="css/index.css?v=20261105c" type="text/css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<meta property="og:type" content="website">
@@ -32,6 +32,7 @@
 	<script type="text/javascript" src="js/blob-interactive.js?v=20261106i"></script>
 	<script type="text/javascript" src="js/slime-talk.js?v=20261106d"></script>
 	<script type="text/javascript" src="js/career-years.js?v=20261106a"></script>
+	<script type="text/javascript" src="js/graphic-slider.js?v=20261106a"></script>
 
 </head>
 
@@ -423,12 +424,7 @@
 	</section>
 	<section class="Mobile_section clearfix">
 		<div class="Wrapper Mobile_Wrapper">
-			<h2 class="wrap_title">Mobile UI/UX Design Works</h2>
-			<ul class="clearfix">
-				<li class="Mobile_S"><img src="images/mobile-2.png" alt=""></li>
-				<li class="Mobile_L"><img src="images/mobile-1.png" alt=""></li>
-			</ul>
-			<a class="pf-download-btn" href="images/240723최예진포트폴리오.pdf" download><button>PDF 포트폴리오 Download</button></a>
+			<a class="pf-download-btn" href="images/240723최예진포트폴리오.pdf" download><button>PDF 포트폴리오 Download</button></a>
 		</div>
 	</section>
 	<section class="Ai_section" id="ai-works">
@@ -476,33 +472,22 @@
 	</section>
 	<section class="GraphicDesign_section">
 		<h2 class="wrap_title">Graphic Design Works</h2>
-		<div class="Wrapper Graphic_wrapper clearfix">
-			<div class="Graphic_L">
-				<img src="images/grapic-1.png" alt="">
+		<div class="gs" id="graphicSlider" aria-roledescription="carousel" aria-label="Graphic Design Works">
+			<div class="gs_viewport" tabindex="0">
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="1 / 9"><img src="images/grapic-1.png" alt="그래픽 디자인 작업물 1" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="2 / 9"><img src="images/grapic-2.png" alt="그래픽 디자인 작업물 2" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="3 / 9"><img src="images/grapic-3.png" alt="그래픽 디자인 작업물 3" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="4 / 9"><img src="images/grapic-4.png" alt="그래픽 디자인 작업물 4" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="5 / 9"><img src="images/grapic-5.png" alt="그래픽 디자인 작업물 5" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="6 / 9"><img src="images/grapic-6.png" alt="그래픽 디자인 작업물 6" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="7 / 9"><img src="images/grapic-7.png" alt="그래픽 디자인 작업물 7" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="8 / 9"><img src="images/grapic-8.png" alt="그래픽 디자인 작업물 8" draggable="false"></div>
+				<div class="gs_item" role="group" aria-roledescription="slide" aria-label="9 / 9"><img src="images/grapic-9.png" alt="그래픽 디자인 작업물 9" draggable="false"></div>
 			</div>
-			<div class="Graphic_L">
-				<img src="images/grapic-2.png" alt="">
-			</div>
-			<div class="Graphic_L _last_b">
-				<img src="images/grapic-3.png" alt="">
-			</div>
-			<div class="Graphic_L">
-				<img src="images/grapic-4.png" alt="">
-			</div>
-			<div class="Graphic_L">
-				<img src="images/grapic-5.png" alt="">
-			</div>
-			<div class="Graphic_L _last_b">
-				<img src="images/grapic-6.png" alt="">
-			</div>
-			<div class="Graphic_L">
-				<img src="images/grapic-7.png" alt="">
-			</div>
-			<div class="Graphic_L">
-				<img src="images/grapic-8.png" alt="">
-			</div>
-			<div class="Graphic_L _last_b">
-				<img src="images/grapic-9.png" alt="">
+			<div class="gs_controls">
+				<button type="button" class="gs_btn gs_prev" aria-label="이전 작업물"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+				<div class="gs_dots" role="tablist" aria-label="작업물 위치"></div>
+				<button type="button" class="gs_btn gs_next" aria-label="다음 작업물"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 			</div>
 		</div>
 	</section>

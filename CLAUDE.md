@@ -40,6 +40,7 @@ yeijinchoi.github.io/
 │   ├── career-slider.js    # 경력 카드 슬라이더 (손가락 버튼 👈/👉, 스와이프, 인디케이터)
 │   ├── slime-talk.js       # 슬라임 클릭 시 아래에 말풍선으로 경력/일하는 방식을 타이핑 효과로 이야기 (대사 배열 SLIME_LINES)
 │   ├── career-years.js     # 히어로 "경력 n년 차" 배지: 경력 근무기간(CAREER_PERIODS) 합산 자동 계산·카운트업, window.CAREER_YEARS 로 슬라임 대사에도 공유
+│   ├── graphic-slider.js   # Graphic Design Works 코버플로우 슬라이드 (순환, 스와이프, 자동재생)
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
 │   ├── work.js             # 탑버튼 및 보조 스크립트
 │   └── jquery-3.2.1.min.js # jQuery 라이브러리
@@ -102,10 +103,10 @@ yeijinchoi.github.io/
    - 5행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)
    - 태블릿: 2열 반응형 그리드, 모바일: 1열 수직 스택 자동 전환
 
-7. **Graphic Design Works (`.Graphic_wrapper`)**:
-   - 데스크톱: 3열 × 3행 CSS Grid (`grid-template-columns: repeat(3, 300px); gap: 20px;`) 940px 정돈
-   - 각 카드(`.Graphic_L`): `height: 240px; border-radius: 8px;`, 이미지 `object-fit: cover;`
-   - 호버 시 은은한 상승 애니메이션(`translateY(-4px)` 및 부드러운 그림자)
+7. **Graphic Design Works (`.gs`, `#graphicSlider`, `js/graphic-slider.js`)**:
+   - 한 줄 코버플로우 슬라이드: 가운데 작업물이 가장 크게(데스크톱 480px, 4:3), 좌우 한 장씩은 74% 크기 + 블러(3px) + 반투명, 나머지는 숨김. 9장 순환.
+   - 조작: 좌우 원형 글래스 버튼, 점(활성 점은 알약으로 늘어남), 옆 이미지 클릭, 스와이프/드래그, 키보드 ←→. 화면에 보일 때만 4.5초 자동 재생(호버·직접 조작 시 멈춤, `prefers-reduced-motion` 시 정지).
+   - 이미지 추가: `main.html` `.gs_viewport` 안에 `.gs_item`(img) 복제. 크기 변수는 `.gs`의 `--gs-w`, `--gs-off`, `--gs-side`.
 
 8. **무신사 스타일 쫀득한 플로팅 알약 네비게이션**:
    - 데스크톱(≥1025px)에서 스크롤(scrollY ≥ 90px) 시 상단 고정 플로팅 알약 캡슐(`nav.nav-floating`)로 자연스럽게 변환.
@@ -175,7 +176,8 @@ yeijinchoi.github.io/
 | Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
 | AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image` |
-| 그래픽 이미지 교체 | `images/grapic-1~9.png` 덮어쓰기 (3×3 고정) |
+| 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
+| PDF 다운로드 버튼 (Mobile 섹션은 이미지 없이 버튼만 남김) | `main.html` `.Mobile_section` `.pf-download-btn` |
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |
 | 메뉴 항목 | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
 | 슬라임 동작 | `js/blob-interactive.js` + `common.css` 히어로 구간 |

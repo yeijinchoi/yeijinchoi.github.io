@@ -179,29 +179,6 @@
 	#Jquery div { width: 95%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#communication div { width: 100%; background: #5383F6; height: 16px; border-radius: 50px;}
 
-	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 70px; display: block; margin: 0 auto; }
-	.Graphic_wrapper {
-		width: 100%;
-		max-width: 368px;
-		margin: 0 auto 70px auto;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 16px;
-		box-sizing: border-box;
-	}
-
-	.Graphic_L {
-		background: #fff;
-		width: 100% !important;
-		height: 220px;
-		float: none !important;
-		margin: 0 !important;
-		border-radius: 8px;
-		overflow: hidden;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-	}
-	.Graphic_L img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; } 
-
 	.pf-download-btn { width: 220px; display: block; margin: 0 auto; border: 1px solid #5383F6; text-align: center; padding-top: 10px; padding-bottom: 10px; margin-top: 30px; border-radius: 50px; }
 
 	.pf-download-btn button {color: #5383F6; font-size: 14px; }
@@ -391,30 +368,6 @@
 	#figma div { width: 86%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#Jquery div { width: 95%; background: #5383F6; height: 16px; border-radius: 50px;}
 	#communication div { width: 100%; background: #5383F6; height: 16px; border-radius: 50px;}
-
-	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 80px; }
-	.Graphic_wrapper {
-		width: 100%;
-		max-width: 768px;
-		margin: 0 auto 80px auto;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 16px;
-		transform: none !important;
-		box-sizing: border-box;
-	}
-
-	.Graphic_L {
-		background: #fff;
-		width: 100% !important;
-		height: 220px;
-		float: none !important;
-		margin: 0 !important;
-		border-radius: 8px;
-		overflow: hidden;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-	}
-	.Graphic_L img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; } 
 
 	.Last_section { width: 100%; padding-top: 90px; border-top: 1px solid #F2F2F2;}
 	.last_wrapper { width: 750px; margin: 0 auto;  margin-bottom: 90px; position: relative ;}
@@ -736,37 +689,6 @@
 
 	.Mobile_Wrapper { width: 940px; margin: 0 auto; padding-bottom: 90px; }
 
-	.GraphicDesign_section { width: 100%; border-top: 1px solid #ECEEF1; padding-top: 90px; }
-	.Graphic_wrapper {
-		width: 940px;
-		margin: 0 auto 90px auto;
-		display: grid;
-		grid-template-columns: repeat(3, 300px);
-		gap: 20px;
-	}
-
-	.Graphic_L {
-		background: #fff;
-		width: 100% !important;
-		height: 240px;
-		float: none !important;
-		margin: 0 !important;
-		border-radius: 8px;
-		overflow: hidden;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-	.Graphic_L:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-	}
-	.Graphic_L img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		display: block;
-	}
 
 	._last_b { margin-right: 0px; }
 
@@ -2609,3 +2531,125 @@ div.Name .en_name { transform: none; text-align: left; }
 	height: 18px !important;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14) !important;
 }
+
+/* ============================================================
+   Graphic Design Works : 한 줄 코버플로우 슬라이드 (js/graphic-slider.js)
+   가운데 = 가장 크게 / 좌우 한 장씩 = 작게 + 블러 / 나머지는 숨김
+   --gs-w : 가운데 카드 폭, --gs-off : 옆 카드 중심까지 거리, --gs-side : 옆 카드 축소 비율
+   ============================================================ */
+.gs {
+	--gs-w: 480px;
+	--gs-off: 360px;
+	--gs-side: 0.74;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	padding: 24px 0 8px;
+}
+.gs_viewport {
+	position: relative;
+	height: calc(var(--gs-w) * 0.75 + 8px);
+	outline: none;
+	touch-action: pan-y;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.gs_viewport:focus-visible { outline: 2px solid #5383F6; outline-offset: -2px; border-radius: 8px; }
+
+.gs_item {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: var(--gs-w);
+	aspect-ratio: 4 / 3;
+	margin-left: calc(var(--gs-w) / -2);
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+	transform-origin: 50% 50%;
+	transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.65s ease;
+	will-change: transform, filter, opacity;
+}
+.gs_item img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+
+.gs_item.is-active {
+	transform: translateX(0) scale(1);
+	z-index: 3;
+	opacity: 1;
+	filter: none;
+}
+.gs_item.is-prev,
+.gs_item.is-next {
+	z-index: 2;
+	opacity: 0.7;
+	filter: blur(3px);
+	cursor: pointer;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.gs_item.is-prev { transform: translateX(calc(var(--gs-off) * -1)) scale(var(--gs-side)); }
+.gs_item.is-next { transform: translateX(var(--gs-off)) scale(var(--gs-side)); }
+.gs_item.is-prev:hover,
+.gs_item.is-next:hover { opacity: 0.85; filter: blur(2px); }
+
+.gs_item.is-far-left,
+.gs_item.is-far-right {
+	z-index: 1;
+	opacity: 0;
+	filter: blur(6px);
+	pointer-events: none;
+}
+.gs_item.is-far-left  { transform: translateX(calc(var(--gs-off) * -1.6)) scale(0.6); }
+.gs_item.is-far-right { transform: translateX(calc(var(--gs-off) * 1.6)) scale(0.6); }
+
+/* 컨트롤 : ‹ ••••••••• › */
+.gs_controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	margin-top: 28px;
+}
+.gs_btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(250, 250, 252, 0.88);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(220, 224, 230, 0.85);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+	color: #333;
+	cursor: pointer;
+	transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.gs_btn:hover { background: #5383F6; color: #fff; border-color: #5383F6; }
+.gs_btn:active { transform: scale(0.92); }
+.gs_dots { display: flex; align-items: center; gap: 8px; }
+.gs_dot {
+	width: 8px;
+	height: 8px;
+	padding: 0;
+	border-radius: 50%;
+	background: #D5D9E0;
+	cursor: pointer;
+	transition: background 0.2s ease, width 0.3s ease, border-radius 0.3s ease;
+}
+.gs_dot.active { width: 22px; border-radius: 50px; background: #5383F6; }
+
+@media screen and (max-width: 1024px) {
+	.gs { --gs-w: 400px; --gs-off: 300px; }
+}
+@media screen and (max-width: 767px) {
+	.gs { --gs-w: 250px; --gs-off: 190px; --gs-side: 0.78; padding-top: 16px; }
+	.gs_controls { gap: 14px; margin-top: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.gs_item { transition: none; }
+}
+
+/* PDF 다운로드 버튼만 남은 섹션 */
+.site_wrap .Mobile_section .pf-download-btn { margin-top: 0; }
