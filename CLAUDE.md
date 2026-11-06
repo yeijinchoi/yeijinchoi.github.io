@@ -101,6 +101,10 @@ yeijinchoi.github.io/
    - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Higgsfield AI, Claude Code, VS Code 기반 이미지 생성 및 퍼블리싱 실무)
    - 카드 2: AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹 (Claude/ChatGPT 시나리오·암호 로직, 비주얼 단서 생성, 인터랙티브 웹 UI)
    - 각 카드별 3단계 AI 워크플로우 칩 및 실무 효용성(AI 리터러시 강조) 콜아웃 박스 완비.
+10. **히어로 섹션 및 3D 인터랙티브 고인 물방울 그래픽 (`.visualT`, `.blob_stage`, `.fluid_drop_svg`)**:
+   - 좌측 텍스트 컬럼(`.visual_text_col`): `padding-left: 36px`을 부여하여 좌측 마진에서 오른쪽으로 여유 있게 당겨 시각적 무게감 균형 확보.
+   - 우측 비주얼 그래픽(`.visual_graphic_col`): 예진 님의 직관적인 스케치 기반으로 추출한 부드러운 고인 물방울(비정형 젤리 실루엣) SVG 3D 그래픽.
+   - 표면장력 물리 인터랙션(`js/blob-interactive.js`): 마우스 커서가 다가오면 표면장력으로 스르륵 찌그러지며 피하는(evade/repel) 16개 정점 스프링 물리 모션 및 3D 틸트 적용. 클릭 액션은 배제하고 순수 호버 반응형 액체 물리로 구현.
 
 ---
 

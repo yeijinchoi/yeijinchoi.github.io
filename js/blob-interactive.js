@@ -1,113 +1,196 @@
 /**
- * 3D Interactive Morphing Fluid Blob
- * - Springy 3D tilt tracking cursor
- * - Dynamic specular light reflection
- * - Jelly bounce physics on click
+ * 3D Interactive Liquid Water Droplet (Fluid Surface Tension Physics)
+ * - Exact silhouette from Ye-jin's organic puddle droplet sketch
+ * - Evades and morphs away from the cursor with surface tension spring physics
+ * - Gentle organic breathing wave when idle
+ * - NO click action (pure fluid hover physics)
  */
 (function() {
-	function initBlob() {
+	function initFluidDroplet() {
 		var stage = document.getElementById('blobStage');
-		var blob = document.getElementById('blobCore');
-		if (!stage || !blob) return;
+		var svg = document.getElementById('blobCore');
+		var bodyPath = document.querySelector('.fluid_main_body');
+		var sheenPath = document.querySelector('.fluid_sheen');
+		if (!stage || !svg || !bodyPath) return;
 
-		var rect = stage.getBoundingClientRect();
-		var targetRotateX = 0;
-		var targetRotateY = 0;
-		var currentRotateX = 0;
-		var currentRotateY = 0;
-		var targetScale = 1;
-		var currentScale = 1;
-		var isHovered = false;
-		var isClicking = false;
+		// 16 base vertices from Ye-jin's sketch (viewBox: 0 0 400 280)
+		var basePoints = [
+			{ x: 340.1, y: 26.7 },
+			{ x: 297.3, y: 10.0 },
+			{ x: 251.4, y: 12.6 },
+			{ x: 226.0, y: 25.0 },
+			{ x: 101.7, y: 132.5 },
+			{ x: 24.3,  y: 168.6 },
+			{ x: 10.0,  y: 198.6 },
+			{ x: 23.2,  y: 250.6 },
+			{ x: 53.8,  y: 269.1 },
+			{ x: 72.1,  y: 269.1 },
+			{ x: 172.0, y: 223.3 },
+			{ x: 307.5, y: 228.6 },
+			{ x: 365.5, y: 200.4 },
+			{ x: 389.0, y: 163.4 },
+			{ x: 388.0, y: 131.6 },
+			{ x: 356.4, y: 91.1 }
+		];
 
-		function updateRect() {
-			rect = stage.getBoundingClientRect();
-		}
-		window.addEventListener('resize', updateRect);
-		window.addEventListener('scroll', updateRect, { passive: true });
+		// Dynamic particle points with spring velocity
+		var points = basePoints.map(function(p) {
+			return {
+				ox: p.x,
+				oy: p.y,
+				x: p.x,
+				y: p.y,
+				vx: 0,
+				vy: 0
+			};
+		});
+
+		var mouseIn = false;
+		var mouseSvgX = -1000;
+		var mouseSvgY = -1000;
+		var tiltTargetX = 0;
+		var tiltTargetY = 0;
+		var tiltCurX = 0;
+		var tiltCurY = 0;
+		var repelTargetX = 0;
+		var repelTargetY = 0;
+		var repelCurX = 0;
+		var repelCurY = 0;
 
 		var heroWrap = document.querySelector('.visualwrap') || stage;
 
-		heroWrap.addEventListener('mousemove', function(e) {
+		function updateMouse(e) {
+			var rect = svg.getBoundingClientRect();
+			var scaleX = 400 / rect.width;
+			var scaleY = 280 / rect.height;
+
+			mouseSvgX = (e.clientX - rect.left) * scaleX;
+			mouseSvgY = (e.clientY - rect.top) * scaleY;
+
+			// Normalized delta from center (-1 to 1)
 			var centerX = rect.left + rect.width / 2;
 			var centerY = rect.top + rect.height / 2;
-			var deltaX = (e.clientX - centerX) / (rect.width * 1.2);
-			var deltaY = (e.clientY - centerY) / (rect.height * 1.2);
+			var dx = (e.clientX - centerX) / (rect.width / 2);
+			var dy = (e.clientY - centerY) / (rect.height / 2);
 
-			// Limit range
-			deltaX = Math.max(-1, Math.min(1, deltaX));
-			deltaY = Math.max(-1, Math.min(1, deltaY));
+			dx = Math.max(-1.2, Math.min(1.2, dx));
+			dy = Math.max(-1.2, Math.min(1.2, dy));
 
-			targetRotateY = deltaX * 22; // rotate around Y axis
-			targetRotateX = -deltaY * 22; // rotate around X axis
+			// Whole drop tilts and evades slightly away from cursor
+			tiltTargetY = dx * 14;
+			tiltTargetX = -dy * 14;
+			repelTargetX = -dx * 18; // evades away
+			repelTargetY = -dy * 18;
+		}
 
-			// Update specular light position
-			var specular = blob.querySelector('.blob_specular');
-			if (specular) {
-				var specX = 35 + deltaX * 25;
-				var specY = 30 + deltaY * 25;
-				specular.style.background = 'radial-gradient(circle at ' + specX + '% ' + specY + '%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.2) 25%, transparent 60%)';
-			}
+		heroWrap.addEventListener('mousemove', function(e) {
+			mouseIn = true;
+			updateMouse(e);
 		});
 
-		heroWrap.addEventListener('mouseenter', function() {
-			isHovered = true;
-			targetScale = 1.05;
+		heroWrap.addEventListener('mouseenter', function(e) {
+			mouseIn = true;
+			updateMouse(e);
 		});
 
 		heroWrap.addEventListener('mouseleave', function() {
-			isHovered = false;
-			targetRotateX = 0;
-			targetRotateY = 0;
-			targetScale = 1;
+			mouseIn = false;
+			mouseSvgX = -1000;
+			mouseSvgY = -1000;
+			tiltTargetX = 0;
+			tiltTargetY = 0;
+			repelTargetX = 0;
+			repelTargetY = 0;
 		});
 
-		stage.addEventListener('mousedown', function() {
-			isClicking = true;
-			targetScale = 0.94;
-			blob.classList.add('is-jelly');
-			setTimeout(function() {
-				blob.classList.remove('is-jelly');
-			}, 600);
-		});
+		// Build smooth closed Catmull-Rom Bézier path
+		function pointsToPath(pts) {
+			var len = pts.length;
+			var d = [];
+			for (var i = 0; i < len; i++) {
+				var p0 = pts[(i - 1 + len) % len];
+				var p1 = pts[i];
+				var p2 = pts[(i + 1) % len];
+				var p3 = pts[(i + 2) % len];
 
-		window.addEventListener('mouseup', function() {
-			if (isClicking) {
-				isClicking = false;
-				targetScale = isHovered ? 1.05 : 1;
+				var c1x = p1.x + (p2.x - p0.x) / 6.0;
+				var c1y = p1.y + (p2.y - p0.y) / 6.0;
+				var c2x = p2.x - (p3.x - p1.x) / 6.0;
+				var c2y = p2.y - (p3.y - p1.y) / 6.0;
+
+				if (i === 0) {
+					d.push('M ' + p1.x.toFixed(1) + ' ' + p1.y.toFixed(1));
+				}
+				d.push('C ' + c1x.toFixed(1) + ' ' + c1y.toFixed(1) + ', ' + c2x.toFixed(1) + ' ' + c2y.toFixed(1) + ', ' + p2.x.toFixed(1) + ' ' + p2.y.toFixed(1));
 			}
-		});
-
-		// Touch interaction for mobile
-		stage.addEventListener('touchstart', function(e) {
-			targetScale = 1.08;
-			blob.classList.add('is-jelly');
-		}, { passive: true });
-
-		stage.addEventListener('touchend', function() {
-			targetScale = 1;
-			setTimeout(function() {
-				blob.classList.remove('is-jelly');
-			}, 400);
-		}, { passive: true });
-
-		// Animation render loop
-		function render() {
-			// Smooth lerp
-			currentRotateX += (targetRotateX - currentRotateX) * 0.1;
-			currentRotateY += (targetRotateY - currentRotateY) * 0.1;
-			currentScale += (targetScale - currentScale) * 0.1;
-
-			blob.style.transform = 'perspective(900px) rotateX(' + currentRotateX.toFixed(2) + 'deg) rotateY(' + currentRotateY.toFixed(2) + 'deg) scale(' + currentScale.toFixed(3) + ')';
-
-			requestAnimationFrame(render);
+			d.push('Z');
+			return d.join(' ');
 		}
-		render();
+
+		var time = 0;
+		var spring = 0.085;
+		var damping = 0.82;
+		var repelRadius = 130;
+		var repelStrength = 42;
+
+		function animate() {
+			time += 0.025;
+
+			// Update vertices with spring physics & cursor evasion
+			for (var i = 0; i < points.length; i++) {
+				var pt = points[i];
+
+				// Gentle organic resting wave
+				var idleWaveX = Math.sin(time + i * 0.45) * 3.5;
+				var idleWaveY = Math.cos(time * 0.9 + i * 0.4) * 3.5;
+
+				var tx = pt.ox + idleWaveX;
+				var ty = pt.oy + idleWaveY;
+
+				// Cursor evasion (surface tension repels away from mouse)
+				if (mouseIn) {
+					var distDx = pt.ox - mouseSvgX;
+					var distDy = pt.oy - mouseSvgY;
+					var dist = Math.sqrt(distDx * distDx + distDy * distDy);
+
+					if (dist < repelRadius && dist > 0.01) {
+						var factor = (1.0 - dist / repelRadius);
+						// Push vertex away from cursor
+						tx += (distDx / dist) * factor * repelStrength;
+						ty += (distDy / dist) * factor * repelStrength;
+					}
+				}
+
+				// Spring physics
+				var ax = (tx - pt.x) * spring;
+				var ay = (ty - pt.y) * spring;
+				pt.vx = (pt.vx + ax) * damping;
+				pt.vy = (pt.vy + ay) * damping;
+				pt.x += pt.vx;
+				pt.y += pt.vy;
+			}
+
+			// Render deformed SVG path
+			var pathD = pointsToPath(points);
+			bodyPath.setAttribute('d', pathD);
+
+			// Lerp whole stage tilt & evasion
+			tiltCurX += (tiltTargetX - tiltCurX) * 0.08;
+			tiltCurY += (tiltTargetY - tiltCurY) * 0.08;
+			repelCurX += (repelTargetX - repelCurX) * 0.08;
+			repelCurY += (repelTargetY - repelCurY) * 0.08;
+
+			svg.style.transform = 'perspective(900px) translate3d(' + repelCurX.toFixed(2) + 'px, ' + repelCurY.toFixed(2) + 'px, 0) rotateX(' + tiltCurX.toFixed(2) + 'deg) rotateY(' + tiltCurY.toFixed(2) + 'deg)';
+
+			requestAnimationFrame(animate);
+		}
+
+		requestAnimationFrame(animate);
 	}
 
 	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', initBlob);
+		document.addEventListener('DOMContentLoaded', initFluidDroplet);
 	} else {
-		initBlob();
+		initFluidDroplet();
 	}
 })();
