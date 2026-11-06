@@ -127,7 +127,7 @@
 		// 슬라임 접근성: 키보드로도 대화 가능
 		stage.setAttribute('role', 'button');
 		stage.setAttribute('tabindex', '0');
-		stage.setAttribute('aria-label', '슬라임을 눌러 경력 이야기 듣기');
+		stage.setAttribute('aria-label', '저를 눌러서 인사해 주세요');
 
 		stage.addEventListener('click', onTalk);
 		stage.addEventListener('keydown', function (e) {
