@@ -76,6 +76,12 @@ yeijinchoi.github.io/
    - 3~4행: 좌측 DEEP OCR 홈페이지·뷰어 (각 1열 1행), 우측 POLYGROUND (2열 2행 대형)
    - 5행: DEEP INVOICE, POLYGROUND 사전예약, 포트폴리오 (각 1열 1행 3개 균등 배치)
    - 태블릿: 2열 반응형 그리드, 모바일: 1열 수직 스택 자동 전환
+5. **Graphic Design Works (`.Graphic_wrapper`)**:
+   - 데스크톱: 3열 × 3행 CSS Grid (`grid-template-columns: repeat(3, 300px); gap: 20px;`) 940px 정돈
+   - 각 카드(`.Graphic_L`): `height: 240px; border-radius: 8px;`, 이미지 `object-fit: cover;`
+   - 호버 시 은은한 상승 애니메이션(`translateY(-4px)` 및 부드러운 그림자)
+6. **데스크톱 네비게이션 서브메뉴 호버 브리지**:
+   - `li.work`에 `padding-bottom: 25px; margin-bottom: -25px;` 및 `.blind-subnav` 상단 투명 가상요소(`::before`)를 배치하여, 마우스가 Works에서 알약 팝업으로 이동할 때 호버 상태가 끊기지 않도록 브리지 처리 완료.
 
 ---
 
