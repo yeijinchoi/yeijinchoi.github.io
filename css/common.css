@@ -2945,7 +2945,7 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 .ai_slide_2 { background-image: url('../images/ai-model-2.webp'); background-position: 50% 54%; animation-delay: 4s; }
 .ai_slide_3 { background-image: url('../images/ai-model-3.webp'); background-position: 50% 30%; animation-delay: 8s; }
 .ai_slide_4 { background-image: url('../images/ai-model-4.webp'); background-position: 50% 48%; animation-delay: 12s; }
-.ai_slide_6 { background-image: url('../images/ai-model-6.webp?v=20261106c'); background-position: 50% 22%; animation-delay: 16s; }
+.ai_slide_6 { background-image: url('../images/ai-model-6.webp?v=20261106d'); background-position: 50% 22%; animation-delay: 16s; }
 .ai_slide_7 { background-image: url('../images/ai-model-7.webp'); background-position: 50% 26%; animation-delay: 20s; }
 .ai_slide_8 { background-image: url('../images/ai-model-8.webp'); background-position: 50% 52%; animation-delay: 24s; }
 @keyframes aiSlideFade {
