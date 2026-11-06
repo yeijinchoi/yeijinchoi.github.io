@@ -65,7 +65,7 @@
 	div.Name p { float: left; padding-bottom: 10px;}
 
 	.ko_name { font-size: 24px; font-family: "SUIT", sans-serif; font-weight: 700; width: auto; margin-right: 6px;}
-	.en_name { font-size: 14px; color: #5383F6; text-align: center; transform: translateY(12px);}
+	.en_name { font-size: 14px; font-weight: 700; color: #5383F6; text-align: center; transform: translateY(12px);}
 
 	.intro { margin-bottom: 30px; }
 
@@ -275,7 +275,7 @@
 	div.Name p { float: left; padding-bottom: 10px;}
 
 	.ko_name { font-size: 24px; font-family: "SUIT", sans-serif; font-weight: 700; width: auto; margin-right: 6px;}
-	.en_name { font-size: 14px; color: #5383F6; text-align: center; transform: translateY(12px);}
+	.en_name { font-size: 14px; font-weight: 700; color: #5383F6; text-align: center; transform: translateY(12px);}
 
 	.intro { margin-bottom: 30px; }
 
@@ -590,7 +590,7 @@
 	div.Name p { float: left; padding-bottom: 10px;}
 
 	.ko_name { font-size: 24px; font-family: "SUIT", sans-serif; font-weight: 700; width: auto; margin-right: 6px;}
-	.en_name { font-size: 14px; color: #5383F6; text-align: center; transform: translateY(12px);}
+	.en_name { font-size: 14px; font-weight: 700; color: #5383F6; text-align: center; transform: translateY(12px);}
 
 	.intro { margin-bottom: 30px; }
 
@@ -1485,7 +1485,7 @@ body.mobile-nav-open { overflow: hidden; }
 .visual_text_col h2 .jean {
 	font-size: 22px !important;
 	color: #555 !important;
-	font-family: "SUIT", sans-serif !important; font-weight: 400 !important;
+	font-family: "SUIT", sans-serif !important; font-weight: 700 !important;
 	margin-left: 4px !important;
 }
 
@@ -1829,7 +1829,7 @@ body.mobile-nav-open { overflow: hidden; }
 		width: 100% !important;
 		margin: 0 auto !important;
 	}
-	.visual_text_col h2 .jean { font-size: 16px !important; }
+	.visual_text_col h2 .jean { font-size: 16px !important; font-weight: 700 !important; }
 	.visual_badges_row {
 		justify-content: center !important;
 		margin-top: 18px !important;
