@@ -41,6 +41,8 @@ yeijinchoi.github.io/
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
 │   ├── work.js             # 탑버튼 및 보조 스크립트
 │   └── jquery-3.2.1.min.js # jQuery 라이브러리
+├── font/
+│   └── SUIT-Variable.woff2 # 사이트 전체 웹폰트 (OFL 라이선스: SUIT-LICENSE.txt)
 └── images/
     ├── og-image.png        # 링크 공유용 OpenGraph 썸네일 (1200x630)
     └── 240723최예진포트폴리오.pdf # PDF 포트폴리오 다운로드 원본
@@ -140,7 +142,7 @@ yeijinchoi.github.io/
 - 쿨그레이 + 오프화이트 + 블루 포인트의 **깔끔하고 여백 넉넉한 톤**. 순백 `#fff` 큰 면, 강한 보더, 원색 대면적은 지양.
 - 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), 라운드 8~20px.
 - 호버: 살짝 상승(`translateY(-4~5px)`) 또는 미세 스케일/회전. 이징은 기존 `cubic-bezier(0.16,1,0.3,1)` / 스프링 `cubic-bezier(0.34,1.56,0.64,1)` 재사용.
-- 폰트: Noto Sans KR (400/700/900) 로컬 `@font-face` 그대로 사용. 다른 폰트 추가 금지.
+- 폰트: **SUIT Variable** 단일 폰트 (`font/SUIT-Variable.woff2`, `common.css` 상단 `@font-face`, 굵기 100~900). 항상 `font-family: "SUIT", sans-serif` + 숫자 `font-weight`(Light 300 / Regular 400 / Medium 500 / Bold 700 / Black 900)로 지정. 다른 폰트 추가 금지.
 - 섹션 타이틀은 기존 `h2.wrap_title`, 내부 폭 940px, 컨테이너 1100px 규격 유지.
 - 반응형 3구간 고정: 모바일 `≤767px` / 태블릿 `768~1024px` / 데스크톱 `≥1025px` (`common.css` 안에 구간별 블록 존재).
 

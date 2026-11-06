@@ -1,13 +1,6 @@
 /* +++++++++++++++++++ loading.css +++++++++++++++++++ */
 /* 2026-11-05 개편: flex 수직·수평 중앙정렬, 모바일 잘림·하단 쏠림 해결 */
 
-@font-face {
-    font-family: 'EliceDigitalBaeum_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body { overflow: hidden; }
 
 .load_page {
@@ -50,6 +43,6 @@ body { overflow: hidden; }
 	color: #0072ff;
 }
 
-.bold { font-family: "EliceDigitalBaeum_Bold"; }
+.bold { font-family: "SUIT", sans-serif; font-weight: 700; }
 
 p.gray { font-size: 0.875em; color: #474a6b; }
