@@ -2490,3 +2490,45 @@ div.Name .en_name { transform: none; text-align: left; }
 	line-height: 1;
 }
 .profile_section_wrap .Tag button p { margin: 0; padding: 0; line-height: 1; }
+
+/* ============================================================
+   섹션 간격 시스템 (모든 섹션 사이 간격은 이 블록 한 곳에서만 관리)
+   --sec-gap    : 큰 섹션 사이 간격   (데스크톱 100 / 태블릿 80 / 모바일 64)
+   --sec-gap-sm : 이어지는 묶음 간격   (경력→마음가짐 채팅)
+   --title-gap  : 섹션 타이틀 → 콘텐츠
+   프로필→스킬은 한 묶음이라 24px 고정. 섹션 안 padding/margin으로 간격을 만들지 말 것.
+   ============================================================ */
+:root {
+	--sec-gap: 100px;
+	--sec-gap-sm: 56px;
+	--title-gap: 40px;
+}
+@media screen and (max-width: 1024px) {
+	:root { --sec-gap: 80px; --sec-gap-sm: 48px; }
+}
+@media screen and (max-width: 767px) {
+	:root { --sec-gap: 64px; --sec-gap-sm: 40px; --title-gap: 32px; }
+}
+
+.site_wrap .first_section { margin-top: var(--sec-gap) !important; }
+.site_wrap .visualwrap { padding-bottom: 0 !important; }
+@media screen and (min-width: 1025px) {
+	/* 슬라임 말풍선이 아래로 걸치는 높이만큼만 확보 (말풍선 ~104px + 여유) */
+	.site_wrap .first_section { margin-top: 0 !important; }
+	.site_wrap .visualwrap { padding-bottom: 150px !important; }
+}
+
+.site_wrap .skill_wrapper { margin-top: 0 !important; padding-top: 24px !important; padding-bottom: 0 !important; }
+.site_wrap .Career_section { margin-top: var(--sec-gap); }
+.site_wrap .carrer_wrapper { margin-top: 0; }
+.site_wrap .chat_section { margin: var(--sec-gap-sm) auto 0; padding: 0; height: auto; }
+.site_wrap .Webdesign_section { margin-top: var(--sec-gap); padding-bottom: 0; }
+.site_wrap .Mobile_section { margin-top: var(--sec-gap); }
+.site_wrap .Mobile_Wrapper { padding-bottom: 0; }
+.site_wrap .Ai_section { margin-top: var(--sec-gap); padding-bottom: 0; }
+.site_wrap .GraphicDesign_section { margin-top: var(--sec-gap); padding-top: 0; border-top: 0; }
+.site_wrap .Last_section { margin-top: var(--sec-gap); padding: 0; border-top: 0; }
+.site_wrap .last_wrapper { margin-bottom: 0; height: 62px; }
+.site_wrap .Last_section + footer { margin-top: var(--sec-gap); }
+
+.site_wrap .wrap_title { margin-top: 0; margin-bottom: var(--title-gap); }
