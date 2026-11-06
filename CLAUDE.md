@@ -177,7 +177,7 @@ yeijinchoi.github.io/
 | 상세 작업물 추가 | `web_work.html` (`#work_01~06` 지그재그) / `webDesign_work.html`, 스타일 `css/work.css` |
 | AI 카드 썸네일 | `common.css` `.ai_card_commerce .ai_card_bg` / `.ai_card_arg .ai_card_bg` 에 `background-image` |
 | 그래픽 슬라이드 이미지 교체/추가 | `images/grapic-1~9.png` 덮어쓰기 (4:3 비율 권장) / 추가는 `.gs_viewport`에 `.gs_item` 복제 |
-| PDF 다운로드 버튼 (Mobile 섹션은 이미지 없이 버튼만 남김) | `main.html` `.Mobile_section` `.pf-download-btn` |
+| Mobile UI/UX 섹션 (이미지 없이 "PDF 포트폴리오에서 확인" 안내 카드 + 다운로드 버튼) | `main.html` `.Mobile_section` `.pdf_card` / 스타일 `common.css` 맨 아래 |
 | PDF 교체 | `images/240723최예진포트폴리오.pdf` |
 | 메뉴 항목 | `main.html` `<nav>` + 모바일 드로어는 `js/mobile-nav.js`가 `nav`를 복제해 생성 → 두 곳 확인 |
 | 슬라임 동작 | `js/blob-interactive.js` + `common.css` 히어로 구간 |

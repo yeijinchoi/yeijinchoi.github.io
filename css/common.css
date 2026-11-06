@@ -2653,3 +2653,38 @@ div.Name .en_name { transform: none; text-align: left; }
 
 /* PDF 다운로드 버튼만 남은 섹션 */
 .site_wrap .Mobile_section .pf-download-btn { margin-top: 0; }
+
+/* Mobile UI/UX 섹션 : 작업물은 PDF 포트폴리오로 안내하는 소프트 카드 */
+.site_wrap .Mobile_Wrapper { width: 940px; max-width: calc(100% - 32px); margin: 0 auto; }
+.pdf_card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	padding: 56px 24px;
+	background: #EEF0F4;
+	border-radius: 8px;
+	text-align: center;
+}
+.pdf_card_text {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "SUIT", sans-serif;
+	line-height: 1.7;
+	color: #333;
+	word-break: keep-all;
+}
+.pdf_card .pf-download-btn {
+	margin: 0;
+	background: #5383F6;
+	border-color: #5383F6;
+	transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+	box-shadow: 0 8px 20px rgba(83, 131, 246, 0.25);
+}
+.pdf_card .pf-download-btn button { color: #fff; font-weight: 700; cursor: pointer; }
+.pdf_card .pf-download-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(83, 131, 246, 0.32); }
+@media screen and (max-width: 767px) {
+	.pdf_card { padding: 40px 20px; gap: 20px; }
+	.pdf_card_text br { display: none; }
+}
