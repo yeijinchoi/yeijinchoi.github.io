@@ -2906,3 +2906,25 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	.site_wrap nav,
 	.site_wrap .chat_section { width: 100%; max-width: 368px; box-sizing: border-box; }
 }
+
+/* ============================================================
+   AI 카드 썸네일 : ARG 게임(이스크라) 구동 화면 GIF
+   메일 알림 -> 받은메일함 -> 메일 -> 이스크라 검색 첫 화면 -> 검색어 입력 -> 검색 결과 순으로 반복
+   (images/arg-thumb.gif, 동작 줄이기 설정에서는 검색 첫 화면 정지 이미지 arg-thumb.jpg)
+   밝은 화면이라 오버레이를 더 짙게 해서 라벨·제목·태그가 또렷하게 보이도록 함
+   ============================================================ */
+.ai_card_arg .ai_card_bg {
+	background-image: url('../images/arg-thumb.gif?v=20261106');
+	/* 세로 120%로 키워 아래에 맞추면 위쪽 브라우저 탭·주소창 줄이 잘리고, 화면(메일·검색)만 보임 */
+	background-size: auto 120%;
+	background-position: 50% 100%;
+}
+.ai_card_arg::after {
+	/* 위쪽은 구동 화면이 비치되 라벨이 읽히게, 제목·태그가 있는 아래쪽은 짙게 */
+	background: linear-gradient(180deg, rgba(13, 14, 18, 0.5) 0%, rgba(13, 14, 18, 0.5) 38%, rgba(13, 14, 18, 0.9) 76%, rgba(13, 14, 18, 0.97) 100%);
+}
+.ai_card_arg .ai_card_keyword { color: #fff; text-shadow: 0 1px 8px rgba(13, 14, 18, 0.7); }
+.ai_card_arg .ai_card_arrow { background: rgba(13, 14, 18, 0.55); }
+@media (prefers-reduced-motion: reduce) {
+	.ai_card_arg .ai_card_bg { background-image: url('../images/arg-thumb.jpg?v=20261106'); }
+}
