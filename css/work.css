@@ -370,40 +370,36 @@ body { background: #f5f6f8; }
 	min-width: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 36px;               /* 모델(화보)별 구역 사이 */
 }
-.ag_mosaic {
-	height: 520px;
-	display: grid;
-	grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-	grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);   /* 이미지 원본 크기에 밀리지 않고 항상 영역 안에 들어오게 */
-	gap: 8px;
-	overflow: hidden;
+.ag_group { display: flex; flex-direction: column; gap: 8px; }
+.ag_title {
+	margin: 0 0 4px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #111;
+	line-height: 1.4;
 }
+.ag_caption { margin: 0; font-size: 12px; color: #666; line-height: 1.4; }
 .ai_gallery img {
 	display: block;
 	width: 100%;
-	height: 100%;
 	min-width: 0;
 	min-height: 0;
 	object-fit: cover;
 	border-radius: 8px;
 	background: #EEF0F4;
 }
-.ai_gallery .ag_a { grid-column: 1; grid-row: 1; object-position: 50% 25%; }
-.ai_gallery .ag_c { grid-column: 1; grid-row: 2; object-position: 50% 25%; }
-.ai_gallery .ag_b { grid-column: 2; grid-row: 1; object-position: 50% 45%; }
-.ai_gallery .ag_d { grid-column: 2; grid-row: 2; object-position: 50% 35%; }
-
-/* 립틴트 화보 : 정사각 원본 3컷을 잘림 없이 한 줄로 */
-.ag_duo {
-	margin: 0;
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 8px;
-}
-.ag_duo img { height: auto; aspect-ratio: 1 / 1; }
-.ag_duo figcaption { grid-column: 1 / -1; margin-top: 0; font-size: 12px; color: #666; line-height: 1.4; }
+/* 룩북(정면·뒷면·클로즈업 3컷 합본)은 가로로 넓게 */
+.ag_look { height: 330px; object-position: 50% 22%; }
+.ag_row { display: grid; gap: 8px; }
+.ag_row4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ag_row img { aspect-ratio: 1 / 1; height: auto; object-position: 50% 30%; }
+/* 운동기구 화보 : 룩북 + 뷰티 컷 나란히 */
+.ag_pair { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 8px; height: 400px; }
+.ag_pair img { height: 100%; }
+.ag_pair img:first-child { object-position: 50% 30%; }
+.ag_pair img:last-child { object-position: 50% 35%; }
 
 .ai_shot {
 	flex: 1 1 auto;
@@ -415,7 +411,8 @@ body { background: #f5f6f8; }
 .ai_shot img { display: block; width: 100%; height: auto; }
 
 @media screen and (max-width: 767px) {
-	.ai_gallery { width: 100%; gap: 6px; }
-	.ag_mosaic { height: 300px; gap: 6px; }
-	.ag_duo { gap: 6px; }
+	.ai_gallery { width: 100%; gap: 28px; }
+	.ag_look { height: 200px; }
+	.ag_row { gap: 6px; }
+	.ag_pair { height: 240px; gap: 6px; }
 }
