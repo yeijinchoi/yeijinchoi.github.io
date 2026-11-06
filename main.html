@@ -5,7 +5,7 @@
 	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css?v=20261105c" type="text/css">
-	<link rel="stylesheet" href="css/common.css?v=20261106q" type="text/css">
+	<link rel="stylesheet" href="css/common.css?v=20261106r" type="text/css">
 	<link rel="stylesheet" href="css/index.css?v=20261105c" type="text/css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<meta property="og:type" content="website">
@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/career-slider.js"></script>
 	<script type="text/javascript" src="js/mobile-nav.js?v=20261106c"></script>
-	<script type="text/javascript" src="js/blob-interactive.js?v=20261106c"></script>
+	<script type="text/javascript" src="js/blob-interactive.js?v=20261106d"></script>
 
 </head>
 
@@ -91,53 +91,63 @@
 					</div>
 				</div>
 				<div class="visual_graphic_col">
-					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 젤리빈 인터랙티브 그래픽">
-						<svg width="410" height="250" viewBox="0 0 410 250" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
+					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 캐릭터 인터랙티브 그래픽">
+						<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
 							<defs>
 								<filter id="dropGlow" x="-30%" y="-30%" width="160%" height="160%">
-									<feGaussianBlur stdDeviation="28" result="blur"/>
+									<feGaussianBlur stdDeviation="30" result="blur"/>
 								</filter>
 								<filter id="drop3dShadow" x="-20%" y="-20%" width="150%" height="150%">
-									<feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#5383F6" flood-opacity="0.35"/>
-									<feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2554D7" flood-opacity="0.22"/>
+									<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#5383F6" flood-opacity="0.35"/>
+									<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1D4ED8" flood-opacity="0.22"/>
 								</filter>
-								<radialGradient id="fluidBodyGrad" cx="36%" cy="32%" r="70%">
-									<stop offset="0%" stop-color="#A8C7FA"/>
-									<stop offset="26%" stop-color="#5383F6"/>
-									<stop offset="62%" stop-color="#3B6FE8"/>
-									<stop offset="86%" stop-color="#2554D7"/>
-									<stop offset="100%" stop-color="#183EA8"/>
+								<radialGradient id="charBodyGrad" cx="35%" cy="30%" r="70%">
+									<stop offset="0%" stop-color="#93C5FD"/>
+									<stop offset="28%" stop-color="#5383F6"/>
+									<stop offset="68%" stop-color="#3B6FE8"/>
+									<stop offset="90%" stop-color="#2554D7"/>
+									<stop offset="100%" stop-color="#1E40AF"/>
 								</radialGradient>
-								<linearGradient id="fluidRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+								<linearGradient id="charRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
 									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
 									<stop offset="50%" stop-color="#93C5FD" stop-opacity="0.2"/>
 									<stop offset="100%" stop-color="#5383F6" stop-opacity="0.75"/>
 								</linearGradient>
-								<radialGradient id="specularGlint" cx="30%" cy="24%" r="35%">
-									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.92"/>
-									<stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+								<radialGradient id="charHighlight" cx="30%" cy="24%" r="35%">
+									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.88"/>
+									<stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.25"/>
 									<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
 								</radialGradient>
-								<!-- 클리핑 마스크: 반사광 & 하이라이트가 젤리빈 본체 외곽선 밖으로 삐져나오지 않도록 차단 -->
-								<clipPath id="beanClip">
-									<path d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z"/>
+								<!-- 클리핑 마스크 -->
+								<clipPath id="charClip">
+									<path d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z"/>
 								</clipPath>
 							</defs>
 
-							<!-- Ambient Atmosphere Glow Behind (Pure Signature Blue) -->
-							<path d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
+							<!-- 후면 은은한 대기광 (시그니처 블루) -->
+							<path d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
 
-							<!-- Main 3D Silky Jelly Bean Body (매끄러운 젤리빈) -->
-							<path class="fluid_main_body" d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z" fill="url(#fluidBodyGrad)" stroke="url(#fluidRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
+							<!-- 3D 캐릭터 본체 ('ㅂ' 실루엣) -->
+							<path class="fluid_main_body" d="M 92 68 C 72 105, 78 142, 70 190 C 64 225, 95 248, 140 250 C 175 251, 225 251, 260 250 C 305 248, 336 225, 330 190 C 322 142, 328 105, 308 68 C 292 38, 252 35, 230 62 C 215 78, 185 78, 170 62 C 148 35, 108 38, 92 68 Z" fill="url(#charBodyGrad)" stroke="url(#charRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
 
-							<!-- 클리핑 마스크 적용: 반사광 & 하이라이트가 젤리빈 본체 안쪽에만 머묾 -->
-							<g clip-path="url(#beanClip)">
-								<!-- Upper Specular Sheen (곡면을 따라 흐르는 반사광) -->
-								<path class="fluid_sheen" d="M 145 46 C 190 38, 250 40, 310 58 C 295 72, 255 70, 205 68 C 160 66, 120 85, 95 105 C 88 95, 105 60, 145 46 Z" fill="url(#specularGlint)" opacity="0.85"/>
+							<!-- 클리핑 마스크 내부 은은한 3D 곡면 반사광 -->
+							<g clip-path="url(#charClip)">
+								<ellipse cx="145" cy="72" rx="42" ry="22" transform="rotate(-15 145 72)" fill="url(#charHighlight)" opacity="0.8"/>
+								<ellipse cx="255" cy="72" rx="42" ry="22" transform="rotate(15 255 72)" fill="url(#charHighlight)" opacity="0.6"/>
+							</g>
 
-								<!-- Secondary Gloss Highlight Glints -->
-								<ellipse cx="275" cy="62" rx="28" ry="15" transform="rotate(-15 275 62)" fill="url(#specularGlint)" opacity="0.75"/>
-								<ellipse cx="75" cy="165" rx="16" ry="12" transform="rotate(-30 75 165)" fill="url(#specularGlint)" opacity="0.6"/>
+							<!-- 캐릭터 눈동자 (시선 추적 인터랙션) -->
+							<g class="character_eyes" id="charEyes">
+								<!-- 왼쪽 눈 -->
+								<g id="leftEye">
+									<ellipse cx="166" cy="154" rx="16" ry="27" fill="#111111"/>
+									<circle class="pupil_glint" cx="172" cy="142" r="5" fill="#FFFFFF"/>
+								</g>
+								<!-- 오른쪽 눈 -->
+								<g id="rightEye">
+									<ellipse cx="234" cy="154" rx="16" ry="27" fill="#111111"/>
+									<circle class="pupil_glint" cx="240" cy="142" r="5" fill="#FFFFFF"/>
+								</g>
 							</g>
 						</svg>
 					</div>
