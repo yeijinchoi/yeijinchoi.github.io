@@ -1657,7 +1657,7 @@ body.mobile-nav-open { overflow: hidden; }
 	height: 300px !important;
 	z-index: 2 !important;
 	background: radial-gradient(circle at 28% 26%, #FFFFFF 0%, rgba(255, 255, 255, 0) 30%),
-	            radial-gradient(circle at 35% 32%, #60A5FA 0%, #3B82F6 26%, #6366F1 52%, #7C3AED 78%, #1E1B4B 100%) !important;
+	            radial-gradient(circle at 35% 32%, #A8C7FA 0%, #5383F6 26%, #3B6FE8 52%, #2554D7 78%, #183EA8 100%) !important;
 	box-shadow:
 		inset -22px -22px 42px rgba(15, 23, 42, 0.58),
 		inset 14px 14px 32px rgba(255, 255, 255, 0.72),
@@ -1751,7 +1751,7 @@ body.mobile-nav-open { overflow: hidden; }
 	height: 34px !important;
 	bottom: 30px !important;
 	left: 15px !important;
-	background: radial-gradient(circle at 30% 30%, #FFFFFF 0%, #A78BFA 32%, #7C3AED 72%, #4C1D95 100%) !important;
+	background: radial-gradient(circle at 30% 30%, #FFFFFF 0%, #93C5FD 32%, #5383F6 72%, #2554D7 100%) !important;
 	animation: orbitFloat2 7.5s ease-in-out infinite alternate !important;
 }
 
@@ -1850,7 +1850,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .ai_preview_arg {
-	background: linear-gradient(135deg, #F9F8FD 0%, #F1EEF9 100%);
+	background: linear-gradient(135deg, #F8FAFC 0%, #EEF2F6 100%);
 }
 
 .ai_preview_keyword {
@@ -1866,7 +1866,7 @@ body.mobile-nav-open { overflow: hidden; }
 }
 
 .ai_preview_arg .ai_preview_keyword {
-	color: #7C3AED;
+	color: #5383F6;
 }
 
 .ai_card_meta {

@@ -5,7 +5,7 @@
 	<title>최예진 - 웹퍼블리셔 포트폴리오</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css?v=20261105c" type="text/css">
-	<link rel="stylesheet" href="css/common.css?v=20261106p" type="text/css">
+	<link rel="stylesheet" href="css/common.css?v=20261106q" type="text/css">
 	<link rel="stylesheet" href="css/index.css?v=20261105c" type="text/css">
 	<link rel="shortcut icon" href="images/favicon.ico">
 	<meta property="og:type" content="website">
@@ -91,47 +91,54 @@
 					</div>
 				</div>
 				<div class="visual_graphic_col">
-					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 고인 물방울 인터랙티브 그래픽">
-						<svg width="420" height="300" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
+					<div class="blob_stage" id="blobStage" aria-label="3D 유기형 젤리빈 인터랙티브 그래픽">
+						<svg width="410" height="250" viewBox="0 0 410 250" fill="none" xmlns="http://www.w3.org/2000/svg" class="fluid_drop_svg" id="blobCore">
 							<defs>
 								<filter id="dropGlow" x="-30%" y="-30%" width="160%" height="160%">
 									<feGaussianBlur stdDeviation="28" result="blur"/>
 								</filter>
 								<filter id="drop3dShadow" x="-20%" y="-20%" width="150%" height="150%">
-									<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#3B82F6" flood-opacity="0.32"/>
-									<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#7C3AED" flood-opacity="0.22"/>
+									<feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#5383F6" flood-opacity="0.35"/>
+									<feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#2554D7" flood-opacity="0.22"/>
 								</filter>
 								<radialGradient id="fluidBodyGrad" cx="36%" cy="32%" r="70%">
-									<stop offset="0%" stop-color="#93C5FD"/>
-									<stop offset="22%" stop-color="#3B82F6"/>
-									<stop offset="52%" stop-color="#4F46E5"/>
-									<stop offset="78%" stop-color="#7C3AED"/>
-									<stop offset="100%" stop-color="#1E1B4B"/>
+									<stop offset="0%" stop-color="#A8C7FA"/>
+									<stop offset="26%" stop-color="#5383F6"/>
+									<stop offset="62%" stop-color="#3B6FE8"/>
+									<stop offset="86%" stop-color="#2554D7"/>
+									<stop offset="100%" stop-color="#183EA8"/>
 								</radialGradient>
 								<linearGradient id="fluidRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
-									<stop offset="50%" stop-color="#60A5FA" stop-opacity="0.18"/>
-									<stop offset="100%" stop-color="#C084FC" stop-opacity="0.7"/>
+									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+									<stop offset="50%" stop-color="#93C5FD" stop-opacity="0.2"/>
+									<stop offset="100%" stop-color="#5383F6" stop-opacity="0.75"/>
 								</linearGradient>
 								<radialGradient id="specularGlint" cx="30%" cy="24%" r="35%">
 									<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.92"/>
 									<stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.32"/>
 									<stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
 								</radialGradient>
+								<!-- 클리핑 마스크: 반사광 & 하이라이트가 젤리빈 본체 외곽선 밖으로 삐져나오지 않도록 차단 -->
+								<clipPath id="beanClip">
+									<path d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z"/>
+								</clipPath>
 							</defs>
 
-							<!-- Ambient Atmosphere Glow Behind -->
-							<path d="M 290.0 32.0 C 345.0 32.0, 380.0 68.0, 380.0 120.0 C 380.0 170.0, 335.0 222.0, 275.0 222.0 C 200.0 245.0, 155.0 272.0, 105.0 272.0 C 58.0 272.0, 38.0 242.0, 38.0 205.0 C 38.0 160.0, 88.0 142.0, 150.0 112.0 C 212.0 82.0, 235.0 32.0, 290.0 32.0 Z" fill="#3B82F6" opacity="0.4" filter="url(#dropGlow)"/>
+							<!-- Ambient Atmosphere Glow Behind (Pure Signature Blue) -->
+							<path d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z" fill="#5383F6" opacity="0.32" filter="url(#dropGlow)"/>
 
-							<!-- Main 3D Silky Fluid Droplet Body (완벽한 유기형 고인 물방울) -->
-							<path class="fluid_main_body" d="M 290.0 32.0 C 345.0 32.0, 380.0 68.0, 380.0 120.0 C 380.0 170.0, 335.0 222.0, 275.0 222.0 C 200.0 245.0, 155.0 272.0, 105.0 272.0 C 58.0 272.0, 38.0 242.0, 38.0 205.0 C 38.0 160.0, 88.0 142.0, 150.0 112.0 C 212.0 82.0, 235.0 32.0, 290.0 32.0 Z" fill="url(#fluidBodyGrad)" stroke="url(#fluidRimGrad)" stroke-width="2.5" filter="url(#drop3dShadow)"/>
+							<!-- Main 3D Silky Jelly Bean Body (매끄러운 젤리빈) -->
+							<path class="fluid_main_body" d="M 215.0 36.0 C 290.0 38.0, 350.0 52.0, 368.0 96.0 C 375.0 138.0, 350.0 178.0, 305.0 178.0 C 260.0 175.0, 235.0 165.0, 195.0 148.0 C 155.0 150.0, 120.0 185.0, 75.0 212.0 C 48.0 212.0, 32.0 185.0, 40.0 155.0 C 48.0 105.0, 140.0 48.0, 215.0 36.0 Z" fill="url(#fluidBodyGrad)" stroke="url(#fluidRimGrad)" stroke-width="2.2" filter="url(#drop3dShadow)"/>
 
-							<!-- Upper Specular Sheen (매끄러운 곡면 반사광) -->
-							<path class="fluid_sheen" d="M 210 50 C 255 35, 295 38, 335 60 C 315 80, 270 85, 225 80 C 170 75, 115 125, 75 165 C 55 185, 48 198, 46 200 C 44 185, 58 160, 90 130 C 135 90, 175 58, 210 50 Z" fill="url(#specularGlint)" opacity="0.85"/>
+							<!-- 클리핑 마스크 적용: 반사광 & 하이라이트가 젤리빈 본체 안쪽에만 머묾 -->
+							<g clip-path="url(#beanClip)">
+								<!-- Upper Specular Sheen (곡면을 따라 흐르는 반사광) -->
+								<path class="fluid_sheen" d="M 145 46 C 190 38, 250 40, 310 58 C 295 72, 255 70, 205 68 C 160 66, 120 85, 95 105 C 88 95, 105 60, 145 46 Z" fill="url(#specularGlint)" opacity="0.85"/>
 
-							<!-- Secondary Gloss Highlight Glints -->
-							<ellipse cx="300" cy="70" rx="26" ry="15" transform="rotate(-25 300 70)" fill="url(#specularGlint)" opacity="0.75"/>
-							<ellipse cx="80" cy="205" rx="18" ry="12" transform="rotate(-35 80 205)" fill="url(#specularGlint)" opacity="0.6"/>
+								<!-- Secondary Gloss Highlight Glints -->
+								<ellipse cx="275" cy="62" rx="28" ry="15" transform="rotate(-15 275 62)" fill="url(#specularGlint)" opacity="0.75"/>
+								<ellipse cx="75" cy="165" rx="16" ry="12" transform="rotate(-30 75 165)" fill="url(#specularGlint)" opacity="0.6"/>
+							</g>
 						</svg>
 					</div>
 				</div>

@@ -102,9 +102,10 @@ yeijinchoi.github.io/
    - 프리뷰 영역: 안쪽 복잡한 박스 및 긴 설명 텍스트를 전면 삭제하고, 시원한 대문자 영문 키워드(`E-COMMERCE DETAIL PAGE`, `ARG PROJECT · IN PROGRESS`)만 미니멀하고 세련되게 배치.
    - 카드 1: 커머스 상세페이지 AI 이미지 생성 파이프라인 (Higgsfield AI, Claude Code, VS Code 기반 이미지 생성 및 퍼블리싱 실무)
    - 카드 2: AI 기반 대체현실 게임(ARG) 기획 & 인터랙티브 웹 (Claude/ChatGPT 시나리오·암호 로직, 비주얼 단서 생성, 인터랙티브 웹 UI)
-10. **히어로 섹션 및 3D 인터랙티브 고인 물방울 그래픽 (`.visualT`, `.blob_stage`, `.fluid_drop_svg`)**:
+10. **히어로 섹션 및 3D 인터랙티브 젤리빈 그래픽 (`.visualT`, `.blob_stage`, `.fluid_drop_svg`)**:
    - 좌측 텍스트 컬럼(`.visual_text_col`): `padding-left: 36px`을 부여하여 좌측 마진에서 오른쪽으로 여유 있게 당겨 시각적 무게감 균형 확보.
-   - 우측 비주얼 그래픽(`.visual_graphic_col`): 손그림의 잔떨림이나 찌글찌글한 굴곡을 완전히 걷어내고, 도자기처럼 매끄러운 6개 앵커의 완벽한 실키 C2 연속 곡선으로 다듬은 3D 고인 물방울 SVG.
+   - 우측 비주얼 그래픽(`.visual_graphic_col`): 보라색을 완전히 배제하고 예진 님의 원본 디자인 시그니처 블루(`#5383F6` 계열)로만 구성한 매끄럽고 탱글탱글한 3D 젤리빈(Jelly Bean) SVG.
+   - 클리핑 마스크(`<clipPath id="beanClip">`): 반사광(sheen) 및 하이라이트 글린트가 외곽선 밖으로 삐져나오지 않도록 젤리빈 본체 패스로 클리핑 마스크를 철저히 적용하여 경계선 침범 원천 차단.
    - 표면장력 물리 인터랙션(`js/blob-interactive.js`): 마우스 커서가 다가오면 표면장력으로 스르륵 찌그러지며 피하는(evade/repel) 유체 탄성 물리 모션 및 3D 틸트 적용. 클릭 액션은 배제하고 순수 호버 반응형 액체 물리로 구현.
 
 ---
