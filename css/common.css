@@ -2001,12 +2001,12 @@ body.mobile-nav-open { overflow: hidden; }
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* 추상 브랜드 그라데이션 배지 공통 */
+/* 추상 브랜드 그라데이션 배지 공통 (원형 3D 구슬 오브) */
 .skill_icon_badge {
 	flex: 0 0 38px !important;
 	width: 38px !important;
 	height: 38px !important;
-	border-radius: 12px !important;
+	border-radius: 50% !important;
 	position: relative !important;
 	overflow: hidden !important;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
@@ -2022,9 +2022,9 @@ body.mobile-nav-open { overflow: hidden; }
 	top: 0 !important;
 	left: 0 !important;
 	right: 0 !important;
-	height: 48% !important;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%) !important;
-	border-radius: 12px 12px 0 0 !important;
+	height: 52% !important;
+	background: radial-gradient(ellipse at 50% 20%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 75%) !important;
+	border-radius: 50% 50% 0 0 !important;
 	pointer-events: none !important;
 }
 

@@ -72,7 +72,7 @@ yeijinchoi.github.io/
    - 마우스오버 시: `transform: translateY(calc(-100% + 520px));`로 5초간 풀페이지 캡처 스크롤 및 `Mouse over` 라벨 페이드아웃.
 5. **스킬 섹션 (`.skill_wrapper`)**:
    - 데스크톱: 2열 CSS Grid (`grid-template-columns: repeat(2, 450px); column-gap: 40px; row-gap: 16px;`)
-   - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 그라데이션 페블 배지**로 감각적 표현 (HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루, Communication 시그니처블루).
+   - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 원형 그라데이션 구슬(Marble/Orb) 배지**로 감각적 표현 (`border-radius: 50%`; HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루, Communication 시그니처블루).
    - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
 
 7. **히어로 슬라임 그래픽 (`#blobCore`)**:
