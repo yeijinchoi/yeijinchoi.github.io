@@ -2821,7 +2821,7 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	transform: none;
 	display: block;
 	width: auto;
-	max-width: min(100%, 540px);
+	max-width: min(100%, 720px);       /* 답변·다짐 문장이 한 줄로 들어갈 만큼 넉넉하게 */
 	height: auto;
 	min-height: 52px;
 	margin: 0;
@@ -2833,6 +2833,7 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	line-height: 1.7;
 	text-align: center;
 	word-break: keep-all;
+	text-wrap: balance;                /* 줄이 바뀔 땐 줄 길이를 고르게 나눔 (짧은 말 한 줄만 남지 않게) */
 	-webkit-backdrop-filter: blur(20px) saturate(170%);
 	backdrop-filter: blur(20px) saturate(170%);
 	box-shadow: none;
