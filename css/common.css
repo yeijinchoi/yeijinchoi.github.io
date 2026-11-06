@@ -1900,8 +1900,8 @@ body.mobile-nav-open { overflow: hidden; }
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 	display: inline-block;
-	background: rgba(255, 255, 255, 0.08);
-	padding: 4px 10px;
+	background: transparent;
+	padding: 4px 0;
 	border-radius: 6px;
 }
 
@@ -1932,7 +1932,7 @@ body.mobile-nav-open { overflow: hidden; }
 	display: inline-block;
 	padding: 5px 11px;
 	background: rgba(255, 255, 255, 0.12);
-	border-radius: 6px;
+	border-radius: 50px;
 	font-size: 12px;
 	font-family: "SUIT", sans-serif; font-weight: 500;
 	color: #E2E8F0;
