@@ -41,6 +41,7 @@ yeijinchoi.github.io/
 │   ├── career-slider.js    # 경력 카드 슬라이더 (손가락 버튼 👈/👉, 스와이프, 인디케이터)
 │   ├── slime-talk.js       # 슬라임 클릭 시 아래에 말풍선으로 경력/일하는 방식을 타이핑 효과로 이야기 (대사 배열 SLIME_LINES)
 │   ├── career-years.js     # 히어로 "경력 n년 차" 배지: 경력 근무기간(CAREER_PERIODS) 합산 자동 계산·카운트업, window.CAREER_YEARS 로 슬라임 대사에도 공유
+│   ├── skill-gauge.js      # 스킬 게이지가 스크롤로 화면에 들어오면 0 → 목표치로 차오르는 효과
 │   ├── graphic-slider.js   # Graphic Design Works 코버플로우 슬라이드 (순환, 스와이프, 자동재생)
 │   ├── mobile-nav.js       # 모바일 3줄 햄버거 메뉴 및 아코디언 드로어 토글, 스크롤 플로팅
 │   ├── work.js             # 탑버튼 및 보조 스크립트
@@ -81,6 +82,7 @@ yeijinchoi.github.io/
    - 태블릿·데스크톱: 한 줄에 3개 (flex-wrap, 카드 폭 `calc((100% - 32px) / 3)`, 간격 16px, 마지막 줄은 가운데 정렬) / 모바일: 1열. 스킬 7개 — 순서: HTML5, CSS3, JavaScript / Photoshop, Illustrator, Figma / jQuery. (Communication은 삭제)
    - 테두리 전면 삭제(`border: none !important;`), 그림자 없음(흰 카드 + 배경 대비).
    - **배지 스타일 (`.skill_icon_badge`)**: 복잡한 구형 로고를 직접 그리지 않고, 각 브랜드 고유 대표 컬러를 머금은 **추상적인 3D 원형 그라데이션 구슬(Marble/Orb) 배지**를 **스킬 이름 왼쪽에 18px 크기로 작게 붙임**(`.skill_header > .skill_title` 안에 구슬 + 이름, 아래엔 전폭 프로그레스 바) (`border-radius: 50% !important;`, 전 구간 원형 고정; HTML5 웜오렌지, Ps 딥네이비/시안, CSS3 스카이블루, Ai 앰버/버건디, JS 비비드옐로우, Figma 멀티스톱 스펙트럼, jQuery 오션블루).
+   - **게이지(프로그레스 바)**: 트랙 `#E2E5EA` + 다크 그레이 채움(`#555`). 스크롤로 카드가 화면에 들어오면(`js/skill-gauge.js`, IntersectionObserver) 0에서 목표치까지 1.2초 동안 차오름(같은 줄은 120ms 시차, 동작 줄이기 설정 시 처음부터 채워짐). 목표치는 `common.css`의 `#html { --fill: 100%; }` 같은 스킬별 변수.
    - 호버 인터랙션: 미세 회전 및 스케일업(`transform: scale(1.08) rotate(3deg);`)
 
 4. **히어로 슬라임 그래픽 & 타이포그래피 (`.visualT`, `#blobCore`)**:
@@ -174,7 +176,7 @@ yeijinchoi.github.io/
 | 하고 싶은 일 | 파일 / 위치 |
 |---|---|
 | 소개 문구·태그 수정 | `main.html` `.profile_wrapper` (`.intro`, `.Tag`) |
-| 스킬 추가/수정 | `main.html` `.skillset` + `common.css` 스킬 섹션 (`.skill_icon_badge` 색, 바 채움 % 는 `#html` 등 id별 규칙) |
+| 스킬 추가/수정 | `main.html` `.skillset` + `common.css` 스킬 섹션 (`.skill_icon_badge` 색, 게이지 목표치 % 는 `#html { --fill: 100%; }` 등 id별 변수) |
 | 경력 추가 | `main.html` `.career_track` 안에 `.carrer_wrap.career_card` 복제 (현재 재직 카드만 `badge_current`) |
 | Web Design 카드 추가/교체 | `main.html` `.Works_wrap` (`card-big`/`card-small` + 클래스명) → 벤토 배치는 `common.css`에서 클래스별 `grid-area` |
 | 상세 페이지 "홈으로" 뒤로가기 버튼 | `web_work.html` / `webDesign_work.html` `.work_wrap` 맨 위 `.back_home` (스타일 `work.css` 맨 아래) — 새 상세 페이지를 만들면 같은 마크업을 복사 |

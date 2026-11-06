@@ -2129,11 +2129,11 @@ body.mobile-nav-open { overflow: hidden; }
 	letter-spacing: -0.2px !important;
 }
 
-/* 프로그레스 바 트랙 및 채움 */
+/* 프로그레스 바 트랙 및 채움 : 다크 그레이 게이지, 스크롤로 화면에 들어오면 0 -> 목표치까지 차오름 (js/skill-gauge.js) */
 .skill_info .bar {
 	width: 100% !important;
 	height: 8px !important;
-	background: #EBF1FF !important;
+	background: #E2E5EA !important;
 	border-radius: 50px !important;
 	position: static !important;
 	transform: none !important;
@@ -2143,20 +2143,27 @@ body.mobile-nav-open { overflow: hidden; }
 
 .skill_info .bar div {
 	height: 100% !important;
-	background: #5383F6 !important;
+	width: var(--fill, 100%) !important;
+	background: #555 !important;
 	border-radius: 50px !important;
-	transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+	transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* 각 스킬별 채움 비율 */
-#html div { width: 100% !important; }
-#Photoshop div { width: 100% !important; }
-#css div { width: 98% !important; }
-#illustrator div { width: 98% !important; }
-#javascript div { width: 80% !important; }
-#figma div { width: 86% !important; }
-#Jquery div { width: 95% !important; }
-#communication div { width: 100% !important; }
+/* 각 스킬별 채움 비율 (게이지 목표치) */
+#html { --fill: 100%; }
+#Photoshop { --fill: 100%; }
+#css { --fill: 98%; }
+#illustrator { --fill: 98%; }
+#javascript { --fill: 80%; }
+#figma { --fill: 86%; }
+#Jquery { --fill: 95%; }
+
+/* JS가 켜져 있을 때만: 화면에 들어오기 전엔 0, 들어오면(.is-in) 목표치까지 */
+.gauge-ready .skillset .bar div { width: 0 !important; }
+.gauge-ready .skillset.is-in .bar div { width: var(--fill, 100%) !important; }
+@media (prefers-reduced-motion: reduce) {
+	.skill_info .bar div { transition: none !important; }
+}
 
 /* 태블릿·모바일 반응형 */
 @media screen and (max-width: 1024px) {
