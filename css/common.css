@@ -2698,3 +2698,58 @@ div.Name .en_name { transform: none; text-align: left; }
 .blob_stage.no-ring,
 .blob_stage.no-ring:focus,
 .blob_stage.no-ring:focus-visible { outline: none !important; }
+
+/* ============================================================
+   모바일 프로필 카드 : 카카오톡 대화창처럼
+   왼쪽 위 작은 원형 프로필 사진 + 이름 + 소개 말풍선 + 스킬 태그 말풍선
+   (≤767px 에서만 적용. 태블릿·데스크톱은 기존 가로 레이아웃 유지)
+   ============================================================ */
+@media screen and (max-width: 767px) {
+	.profile_wrapper {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		width: min(368px, calc(100% - 16px));
+		padding: 20px 16px;
+		box-sizing: border-box;
+	}
+	.profile_wrapper .Profile_circle {
+		float: none;
+		flex: 0 0 44px;
+		width: 44px;
+		height: 44px;
+		margin: 0;
+	}
+	.profile_wrapper .profile_section_wrap {
+		flex: 1 1 auto;
+		min-width: 0;
+		overflow: visible;
+	}
+	.profile_wrapper div.Name { margin: 2px 0 6px 2px; gap: 6px; }
+	.profile_wrapper div.Name .ko_name { font-size: 14px; }
+	.profile_wrapper div.Name .en_name { font-size: 12px; }
+
+	/* 소개 말풍선 (첫 말풍선: 왼쪽 위 꼬리 모서리) */
+	.profile_wrapper .profile_section_wrap .intro {
+		display: block;
+		width: fit-content;
+		max-width: 100%;
+		box-sizing: border-box;
+		margin: 0 0 6px;
+		padding: 12px 14px;
+		background: #fff;
+		border-radius: 4px 16px 16px 16px;
+		font-size: 14px;
+		line-height: 1.65;
+	}
+	/* 스킬 태그 말풍선 */
+	.profile_wrapper .profile_section_wrap .Tag {
+		width: fit-content;
+		max-width: 100%;
+		box-sizing: border-box;
+		padding: 12px 14px;
+		background: #fff;
+		border-radius: 16px;
+		gap: 6px;
+	}
+}

@@ -68,6 +68,7 @@ yeijinchoi.github.io/
 ### 3.2 주요 컴포넌트 스타일
 1. **프로필 카드 (`.profile_wrapper`)**:
    - 배경: `#EEF0F4`, 테두리: `1px solid #E2E5EA`, 둥근 모서리: `border-radius: 20px;`
+   - **모바일(≤767px)**: 카카오톡 대화창처럼 — 왼쪽 위 44px 원형 프로필 사진 + 이름 + 흰색 소개 말풍선(첫 말풍선은 왼쪽 위 모서리 4px) + 흰색 스킬 태그 말풍선. 태블릿·데스크톱은 가로 레이아웃 유지.
    - 내부 텍스트 영역(`profile_section_wrap`): `background: transparent !important;` (글자 박스만 하얗게 쪼개지지 않고 단일 카드로 매끄럽게 연결)
 
 2. **경력 카드 (`.career_card`)**:
