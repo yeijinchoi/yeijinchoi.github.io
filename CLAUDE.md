@@ -140,7 +140,7 @@ yeijinchoi.github.io/
 
 ### 5.2 분위기 규칙
 - 쿨그레이 + 오프화이트 + 블루 포인트의 **깔끔하고 여백 넉넉한 톤**. 순백 `#fff` 큰 면, 강한 보더, 원색 대면적은 지양.
-- 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), 라운드 8~20px.
+- 카드: 보더 없이 소프트 서피스 + 아주 옅은 그림자(`rgba(0,0,0,0.03~0.08)`), **모서리 라운드는 16px로 통일**(프로필·경력·스킬·Works·AI·그래픽·상세 목업/정보 카드 전부). 알약형 배지·버튼만 `50px`/`30px`, 작은 태그는 6px.
 - 호버: 살짝 상승(`translateY(-4~5px)`) 또는 미세 스케일/회전. 이징은 기존 `cubic-bezier(0.16,1,0.3,1)` / 스프링 `cubic-bezier(0.34,1.56,0.64,1)` 재사용.
 - 폰트: **SUIT Variable** 단일 폰트 (`font/SUIT-Variable.woff2`, `common.css` 상단 `@font-face`, 굵기 100~900). 항상 `font-family: "SUIT", sans-serif` + 숫자 `font-weight`(Light 300 / Regular 400 / Medium 500 / Bold 700 / Black 900)로 지정. 다른 폰트 추가 금지.
 - 섹션 타이틀은 기존 `h2.wrap_title`, 내부 폭 940px, 컨테이너 1100px 규격 유지.

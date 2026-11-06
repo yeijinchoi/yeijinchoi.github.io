@@ -48,7 +48,7 @@
 	.profile_wrapper { width: 368px; height: 398px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width: 100px; height: 100px; background: #E8E8E8; border-radius: 600px; top: -20px; left: -20px; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 348px; background: transparent; border-radius: 20px; height: 430px; right: 0; padding-top: 100px; padding-left: 25px; padding-right: 20px;}
+	.profile_section_wrap { position: absolute; width: 348px; background: transparent; border-radius: 16px; height: 430px; right: 0; padding-top: 100px; padding-left: 25px; padding-right: 20px;}
 
 	.Profile_circle img { width: 100%; }
 
@@ -118,7 +118,7 @@
 		height: 200px;
 		position: relative;
 		background: #000;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 	}
 	.Works_wrap .hover-before a { display: block; width: 100%; height: 100%; }
@@ -196,7 +196,7 @@
 		height: 220px;
 		float: none !important;
 		margin: 0 !important;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
@@ -260,7 +260,7 @@
 	.profile_wrapper { width: 768px; height: 258px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width: 100px; height: 100px; background: #E8E8E8; border-radius: 600px; left: 0; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 700px; background: transparent; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 45px; }
+	.profile_section_wrap { position: absolute; width: 700px; background: transparent; border-radius: 16px; height: 258px; right: 0; padding-top: 50px; padding-left: 45px; }
 
 	.Profile_circle img { width: 100%; }
 
@@ -328,7 +328,7 @@
 		height: 200px;
 		position: relative;
 		background: #000;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 	}
 	.Works_wrap .card-big.kdl-v3 {
@@ -410,7 +410,7 @@
 		height: 220px;
 		float: none !important;
 		margin: 0 !important;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
@@ -575,7 +575,7 @@
 	.profile_wrapper { width: 940px; height: 258px; display: block; margin: 0 auto; position: relative; }
 
 	.Profile_circle { overflow: hidden; position: absolute;  width:258px; height: 258px; background: #E8E8E8; border-radius: 600px; left: 0; z-index: 50;}
-	.profile_section_wrap { position: absolute; width: 830px; background: transparent; border-radius: 20px; height: 258px; right: 0; padding-top: 50px; padding-left: 80px; }
+	.profile_section_wrap { position: absolute; width: 830px; background: transparent; border-radius: 16px; height: 258px; right: 0; padding-top: 50px; padding-left: 80px; }
 
 	.Profile_circle img { width: 100%; }
 
@@ -641,7 +641,7 @@
 	.Works_wrap .hover-before {
 		position: relative;
 		background: #000;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 		cursor: pointer;
 	}
@@ -751,7 +751,7 @@
 		height: 240px;
 		float: none !important;
 		margin: 0 !important;
-		border-radius: 8px;
+		border-radius: 16px;
 		overflow: hidden;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -989,7 +989,7 @@ body { font-family: "SUIT", sans-serif; font-weight: 400; background: #F5F6F8; }
 	height: auto;
 	background: #EEF0F4;
 	border: 1px solid #E2E5EA;
-	border-radius: 20px;
+	border-radius: 16px;
 	box-shadow: none;
 }
 
@@ -2240,7 +2240,7 @@ body.mobile-nav-open { overflow: hidden; }
 	.skillset {
 		padding: 12px 14px !important;
 		gap: 12px !important;
-		border-radius: 14px !important;
+		border-radius: 16px !important;
 	}
 	.skill_icon_badge {
 		flex: 0 0 38px !important;
