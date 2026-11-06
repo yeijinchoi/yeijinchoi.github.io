@@ -2793,27 +2793,6 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
    ============================================================ */
 .chat_section,
 .last_wrapper { position: relative; isolation: isolate; }
-.chat_section::before,
-.last_wrapper::before {
-	content: "";
-	position: absolute;
-	inset: -150px -60px;
-	z-index: -1;
-	pointer-events: none;
-	/* 빛 크기를 영역 비율(%)로 잡아 화면 폭이 달라져도 영역 밖으로 넘치지 않게 하고,
-	   마스크로 가장자리를 부드럽게 사라지게 해서 어디서도 일직선으로 잘리지 않음 */
-	background:
-		radial-gradient(ellipse 30% 28% at 24% 36%, rgba(56, 189, 248, 0.34), transparent 100%),
-		radial-gradient(ellipse 34% 30% at 76% 64%, rgba(83, 131, 246, 0.36), transparent 100%);
-	-webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-	mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-}
-@media screen and (max-width: 1024px) {
-	/* 화면 폭이 좁을 땐 좌우로 삐져나가 가로 스크롤이 생기지 않게 영역 폭을 줄임 */
-	.chat_section::before,
-	.last_wrapper::before { inset: -130px 0; }
-}
-
 /* 줄(row) : 질문은 왼쪽, 답변은 오른쪽 */
 .site_wrap .chat_section > .chat_L,
 .site_wrap .chat_section > .chat_R {
