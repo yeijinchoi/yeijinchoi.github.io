@@ -11,7 +11,7 @@
 		if (!btn) return;
 
 		var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		var SHOW_AFTER = 300; // px
+		var SHOW_AFTER = 150; // px (짧은 상세 페이지에서도 나타나도록)
 
 		function update() {
 			var y = window.pageYOffset || document.documentElement.scrollTop || 0;

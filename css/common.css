@@ -2763,7 +2763,6 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 .pf-download-btn,
 .pdf_card .pf-download-btn,
 .pdf_card .pf-download-btn:hover,
-.top_btn,
 .mobile-nav-close,
 .back_home:hover,
 .works_more_link:hover { box-shadow: none !important; }
