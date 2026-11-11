@@ -27,7 +27,7 @@ yeijinchoi.github.io/
 ├── main.html               # 포트폴리오 메인 페이지
 ├── web_work.html           # Works 상세 페이지 (웹퍼블리싱 & 웹디자인 지그재그 목업)
 ├── webDesign_work.html     # Works 상세 페이지 (웹디자인 전용 프로젝트)
-├── ai_work.html            # AI & Creative Works 상세 페이지 (커머스 상세페이지 AI 파이프라인 / ARG 프로젝트)
+├── ai_work.html            # AI & Creative Works 상세 페이지 (립틴트 화보 / 운동기구 화보 / ARG 프로젝트)
 ├── contentDisign_work.html # 그래픽/콘텐츠 디자인 페이지
 ├── CNAME                   # jeanychoi.com
 ├── css/
@@ -101,8 +101,8 @@ yeijinchoi.github.io/
    - **배경 썸네일 준비 구조**: 추후 관련 프로젝트 썸네일 이미지를 배경(`background-image`)으로 바로 적용할 수 있도록 `.ai_card_bg` 전용 레이어와 반투명 다크 그라데이션 오버레이(`::after`) 배치. 이미지가 들어가도 타이포그래피가 또렷하게 가독성을 유지함.
    - **상세 페이지 연결**: 카드 전체가 `ai_work.html#ai_01` / `#ai_02` 링크(`<a class="ai_work_card">`), 오른쪽 위 원형 화살표(`.ai_card_arrow`). 상세 페이지는 `web_work.html`과 같은 구조(`.project` / `.p_info`)이고 이미지가 없는 동안엔 같은 딥블랙 톤의 `.ai_mock` 카드 + "상세 이미지 준비 중" 표시.
    - **내부 콘텐츠 배치 (`.ai_card_inner`)**:
-     - 상단: 영문 카테고리 배지 (`.ai_card_keyword`, `E-COMMERCE DETAIL PAGE` / `ARG PROJECT · IN PROGRESS`)
-     - 하단: 한글 메인 타이틀 (`.ai_card_title`, 20px Bold White `#FFFFFF`) + 반투명 글래스 다크 태그 (`.ai_card_tags span`, Higgsfield AI, Claude Code, VS Code, 상세페이지 퍼블리싱 등)
+     - 상단: 영문 카테고리 배지 (`.ai_card_keyword`, `E-COMMERCE AI MODEL` / `ARG PROJECT · IN PROGRESS`)
+     - 하단: 한글 메인 타이틀 (`.ai_card_title`, 20px Bold White `#FFFFFF`) + 반투명 글래스 다크 태그 (`.ai_card_tags span`, Higgsfield AI, Claude Code, VS Code, 모델·상품 일관성 등)
 
 6. **Web Design Works (`.work_wrap`, CSS Grid)**:
    - 7개 실무 프로젝트를 940px 컨테이너에 딱 맞춘 현대적인 3열 벤토 그리드(Bento Grid) 구성.
