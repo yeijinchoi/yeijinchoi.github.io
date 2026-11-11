@@ -196,7 +196,7 @@ body { background: #f5f6f8; }
 
 .color_dot._line { border: 1px solid #ccc; }
 
-.p_overview { font-size: 14px; line-height: 1.7; color: #333; }
+.p_overview { font-size: 14px; line-height: 1.7; color: #333; word-break: keep-all; }
 
 .p_comment { font-size: 14px; color: #666; margin-top: 12px; }
 .p_comment b { color: #111; margin-right: 6px; }
