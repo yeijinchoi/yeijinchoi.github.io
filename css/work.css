@@ -384,6 +384,10 @@ body { background: #f5f6f8; }
 .ag_slides img.is-on { opacity: 1; }
 .ag_ctrl { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; }
 
+/* 세로(4:5) 화보 2컷 나란히 : 전신·기구 전체가 잘리지 않도록 슬라이드 대신 그대로 보여줌 (운동기구 화보) */
+.ag_pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.ag_pair img { aspect-ratio: 4 / 5; height: auto; object-position: 50% 50%; }
+
 /* 재료 컷 (작게) : 룩북·뷰티 컷은 보조 자료로 줄여서 */
 .ag_mat { display: grid; grid-template-columns: auto minmax(0, 2fr) minmax(0, 1fr); align-items: center; gap: 8px; margin-top: 4px; padding: 10px; background: #EEF0F4; border-radius: 8px; }
 .ag_mat_label { writing-mode: horizontal-tb; padding: 0 6px; font-size: 12px; font-weight: 700; color: #555; white-space: nowrap; }
