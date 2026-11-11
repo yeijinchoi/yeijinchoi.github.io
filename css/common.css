@@ -2961,3 +2961,39 @@ a.ai_work_card:focus-visible { outline: 2px solid #5383F6; outline-offset: 3px; 
 	.ai_slide { animation: none; }
 	.ai_slide_1 { opacity: 1; }
 }
+
+/* ============================================================
+   메인 페이지 TOP 버튼 (js/top-btn.js) : 상세 페이지 TOP 버튼과 같은 모양, 그림자 없음
+   - 조금 내려오면 서서히 나타나고 호버 시 포인트 블루로 바뀜
+   ============================================================ */
+.top_btn_main {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	z-index: 900;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: #b9b9b9;
+	color: #fff;
+	font-family: "SUIT", sans-serif;
+	font-size: 12px;
+	font-weight: 900;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: none;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s, background 0.2s ease;
+}
+.top_btn_main.is-show { opacity: 1; visibility: visible; transform: none; }
+.top_btn_main:hover { background: #5383F6; }
+@media screen and (max-width: 767px) {
+	.top_btn_main { right: 16px; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.top_btn_main { transition: none; transform: none; }
+}
