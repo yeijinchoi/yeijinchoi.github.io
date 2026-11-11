@@ -374,7 +374,8 @@ body { background: #f5f6f8; }
 }
 .ag_group { display: flex; flex-direction: column; gap: 10px; }
 .ag_title { margin: 0 0 2px; font-size: 16px; font-weight: 700; color: #111; line-height: 1.4; }
-.ag_caption { margin: 0; font-size: 12px; color: #666; line-height: 1.4; }
+.ag_caption { margin: 0; font-size: 12px; color: #666; line-height: 1.5; word-break: keep-all; }
+.ag_caption b { margin-right: 6px; font-weight: 700; color: #333; }
 .ai_gallery img { display: block; width: 100%; min-width: 0; min-height: 0; object-fit: cover; border-radius: 8px; background: #EEF0F4; }
 
 /* 화보 슬라이드 (크게) : 같은 자리에서 부드럽게 교차, js/gallery-slider.js */
